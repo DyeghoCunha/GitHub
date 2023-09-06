@@ -1,0 +1,152 @@
+import 'package:flutter/material.dart';
+
+class CardPadrao extends StatefulWidget {
+  const CardPadrao({super.key});
+
+  @override
+  State<CardPadrao> createState() => _CardPadraoState();
+}
+
+class _CardPadraoState extends State<CardPadrao> {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: const Color.fromRGBO(56, 58, 71, 1.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 4, left: 4),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.lock,
+                  size: 15,
+                  color: Color.fromRGBO(153, 153, 153, 1),
+                ),
+                Text(
+                  "2 days",
+                  style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2),
+            child: Image.asset("assets/images/arma1.png"),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: Padding(
+              padding: EdgeInsets.only(left: 6),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                  Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.deepPurple.shade100.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child:
+                          Text(
+                            "+26%",
+                            style: TextStyle(
+                              color: Colors.deepPurple.shade100,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 2,),
+                      // Container(
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.green.shade100.withOpacity(0.2),
+                      //     borderRadius: BorderRadius.circular(5),
+                      //   ),
+                      //   child: Padding(
+                      //     padding: const EdgeInsets.all(2.0),
+                      //     child:
+                      //     Text(
+                      //       "-12%",
+                      //       style: TextStyle(
+                      //         color: Colors.green.shade100,
+                      //         fontWeight: FontWeight.w500,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      // SizedBox(width: 2,),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.cyan.shade100.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child:
+                          Row(
+                            children: [
+                              Icon(Icons.rocket_launch_sharp, size: 15,color: Colors.cyan.shade100),
+                              Text(
+                                "15m",
+                                style: TextStyle(
+                                  color: Colors.cyan.shade100,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                 const  SizedBox(height: 2,),
+                  const Text("StatTrak", style: TextStyle(color:  Color.fromRGBO(245, 132, 1, 1)),),
+                  const Text("FN / 0.0183", style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),),
+                  const SizedBox(height: 2,),
+                  const Text("R\$ 55.373,91", style: TextStyle(color: Colors.white, fontWeight: FontWeight
+                      .w500),),
+                ],
+              ),
+            ),
+          ),
+          Row(
+            children: [
+              const SizedBox(
+                width: 2,
+              ),
+              Expanded(
+                  child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(36, 38, 47, 1))),
+                onPressed: () {},
+                child: const Icon(
+                  Icons.shopping_cart,
+                  color: Color.fromRGBO(153, 153, 153, 1),
+                ),
+              )),
+              const SizedBox(
+                width: 2,
+              ),
+              Expanded(
+                  child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(36, 38, 47, 1))),
+                onPressed: () {},
+                child: const Icon(Icons.favorite, color: Color.fromRGBO(153, 153, 153, 1)),
+              )),
+              const SizedBox(
+                width: 2,
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
