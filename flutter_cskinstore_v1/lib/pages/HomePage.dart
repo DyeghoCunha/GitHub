@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 8,
         backgroundColor: const Color.fromRGBO(36, 38, 47, 1),
         showDragHandle: true,
-
+        isScrollControlled: true,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(50),

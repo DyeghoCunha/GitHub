@@ -16,7 +16,22 @@ class MyApp extends StatelessWidget {
       title: 'CSkin Store',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor:const Color.fromRGBO(36, 38, 47, 1)),
+        primaryColor: Color.fromRGBO(36, 38, 47, 1),
+        cardColor: Color.fromRGBO(56, 58, 71, 1.0),
+        highlightColor: Color.fromRGBO(245, 132, 1, 1),
+        colorScheme: const ColorScheme(
+          primary: Color.fromRGBO(36, 38, 47, 1),
+          secondary: Color.fromRGBO(245, 132, 1, 1), // Cor secundária
+          surface: Color.fromRGBO(56, 58, 71, 1.0),
+          background: Color.fromRGBO(56, 58, 71, 1.0),
+          error: Colors.red,
+          onPrimary: Color.fromRGBO(153, 153, 153, 1),
+          onSecondary: Colors.black,
+          onSurface: Colors.white,
+          onBackground: Colors.white,
+          onError: Colors.white,
+          brightness: Brightness.light,
+        )
         //useMaterial3: true,
       ),
       home: const HomePage(),

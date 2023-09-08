@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cskinstore_v1/widget/FiltroCor.dart';
+import 'package:flutter_cskinstore_v1/widget/filtroCustom.dart';
+import 'package:flutter_cskinstore_v1/widget/filtroEntrega.dart';
+import 'package:flutter_cskinstore_v1/widget/filtroPreco.dart';
 
 class Filtro extends StatefulWidget {
   const Filtro({Key? key}) : super(key: key);
@@ -9,7 +13,9 @@ class Filtro extends StatefulWidget {
 
 class _FiltroState extends State<Filtro> {
   bool isPreco = false;
-  double preco = 0.0;
+  bool isEntrega = false;
+  bool isCor = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,41 +23,9 @@ class _FiltroState extends State<Filtro> {
       builder: (context, setState) {
         return ListView(
           children: [
-            InkWell(
-              onTap: () {
-                setState(() {
-                  isPreco = !isPreco;
-                });
-              },
-              child: ListTile(
-                title: Text(
-                  "Preço",
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimary),
-                ),
-                trailing: Icon(
-                  isPreco ? Icons.arrow_downward_rounded : Icons.arrow_upward_rounded,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              child: isPreco? Column(
-                children: [
-                  Text("R\$ $preco "),
-                  Slider(
-                    value: preco,
-                    min: 0,
-                    max: 10000,
-                    onChanged: (value) {
-                      preco = value;
-                    },
-                  )
-                ],
-              ):Container(),
-            ),
-            Divider(thickness: 2, color: Colors.teal),
+FiltroCustom(widget: FiltroPreco(), parametro: isPreco, titulo: "Preço"),
+FiltroCustom(widget: FiltroEntrega(), parametro: isEntrega, titulo:"TradeLock" ,),
+FiltroCustom(widget: FiltroCor(), parametro: isCor, titulo: "Cores")
 // Adicione mais opções aqui, se necessário
           ],
         );
