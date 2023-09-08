@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cskinstore_v1/pages/Filtro.dart';
 import 'package:flutter_cskinstore_v1/pages/TradePage.dart';
+import 'package:flutter_cskinstore_v1/pages/testeWidgets.dart';
 import 'package:flutter_cskinstore_v1/widget/CustomDrawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,20 +21,23 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _mostrarBottomSheet() {
-    showModalBottomSheet(context: context,
+    showModalBottomSheet(
+        context: context,
         elevation: 8,
-        backgroundColor: Color.fromRGBO(36, 38, 47, 1),
+        backgroundColor: const Color.fromRGBO(36, 38, 47, 1),
         showDragHandle: true,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft:Radius.circular(50),
-            topRight: Radius.circular(50))),
-        builder: (ctx) {
-      return Container(
-        // Conteúdo do BottomSheet
-        child: Center(
-          child: Text('Conteúdo do BottomSheet'),
+
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(50),
+            topRight: Radius.circular(50),
+          ),
         ),
-      );
-    });
+
+
+        builder: (ctx) {
+          return Filtro();
+        });
   }
 
   @override
@@ -54,7 +59,7 @@ class _HomePageState extends State<HomePage> {
           // ),
 
           IconButton(
-            icon: const Icon(Icons.menu, color: const Color.fromRGBO(153, 153, 153, 1)),
+            icon: const Icon(Icons.menu, color: Color.fromRGBO(153, 153, 153, 1)),
             onPressed: _openDrawer,
           ),
         ],
@@ -85,10 +90,8 @@ class _HomePageState extends State<HomePage> {
               Container(
                 color: Colors.red,
               ),
-             TradePage(),
-              Container(
-                color: Colors.green,
-              ),
+              TradePage(),
+             TesteWidgets(),
               Container(
                 color: Colors.teal,
               ),

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'CSkin Store',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor:const Color.fromRGBO( 36, 38, 47,1)),
+        colorScheme: ColorScheme.fromSeed(seedColor:const Color.fromRGBO(36, 38, 47, 1)),
         //useMaterial3: true,
       ),
       home: const HomePage(),

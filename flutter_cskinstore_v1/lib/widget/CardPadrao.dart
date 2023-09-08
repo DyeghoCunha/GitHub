@@ -42,7 +42,6 @@ class _CardPadraoState extends State<CardPadrao> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Row(
                     children: [
                       Container(
@@ -52,8 +51,7 @@ class _CardPadraoState extends State<CardPadrao> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(2.0),
-                          child:
-                          Text(
+                          child: Text(
                             "+26%",
                             style: TextStyle(
                               color: Colors.deepPurple.shade100,
@@ -62,7 +60,9 @@ class _CardPadraoState extends State<CardPadrao> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 2,),
+                      SizedBox(
+                        width: 2,
+                      ),
                       // Container(
                       //   decoration: BoxDecoration(
                       //     color: Colors.green.shade100.withOpacity(0.2),
@@ -88,10 +88,9 @@ class _CardPadraoState extends State<CardPadrao> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(2.0),
-                          child:
-                          Row(
+                          child: Row(
                             children: [
-                              Icon(Icons.rocket_launch_sharp, size: 15,color: Colors.cyan.shade100),
+                              Icon(Icons.rocket_launch_sharp, size: 15, color: Colors.cyan.shade100),
                               Text(
                                 "15m",
                                 style: TextStyle(
@@ -105,12 +104,24 @@ class _CardPadraoState extends State<CardPadrao> {
                       ),
                     ],
                   ),
-                 const  SizedBox(height: 2,),
-                  const Text("StatTrak", style: TextStyle(color:  Color.fromRGBO(245, 132, 1, 1)),),
-                  const Text("FN / 0.0183", style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),),
-                  const SizedBox(height: 2,),
-                  const Text("R\$ 55.373,91", style: TextStyle(color: Colors.white, fontWeight: FontWeight
-                      .w500),),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  const Text(
+                    "StatTrak",
+                    style: TextStyle(color: Color.fromRGBO(245, 132, 1, 1)),
+                  ),
+                  const Text(
+                    "FN / 0.0183",
+                    style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
+                  ),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  const Text(
+                    "R\$ 55.373,91",
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+                  ),
                 ],
               ),
             ),
@@ -123,7 +134,10 @@ class _CardPadraoState extends State<CardPadrao> {
               Expanded(
                   child: ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(36, 38, 47, 1))),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color.fromRGBO(36, 38, 47, 1),
+                  ),
+                ),
                 onPressed: () {},
                 child: const Icon(
                   Icons.shopping_cart,
@@ -136,9 +150,17 @@ class _CardPadraoState extends State<CardPadrao> {
               Expanded(
                   child: ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(36, 38, 47, 1))),
-                onPressed: () {},
-                child: const Icon(Icons.favorite, color: Color.fromRGBO(153, 153, 153, 1)),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color.fromRGBO(36, 38, 47, 1),
+                  ),
+                ),
+                onPressed: () {
+
+                },
+                child: const Icon(
+                  Icons.favorite,
+                  color: Color.fromRGBO(153, 153, 153, 1),
+                ),
               )),
               const SizedBox(
                 width: 2,

@@ -8,23 +8,54 @@ class Filtro extends StatefulWidget {
 }
 
 class _FiltroState extends State<Filtro> {
-  // Função para mostrar o BottomSheet
-  void _mostrarBottomSheet() {
-    showModalBottomSheet(context: context, builder: (ctx) {
-      return Container(
-        // Conteúdo do BottomSheet
-        child: Center(
-          child: Text('Conteúdo do BottomSheet'),
-        ),
-      );
-    });
-  }
+  bool isPreco = false;
+  double preco = 0.0;
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: _mostrarBottomSheet, // Chama a função ao pressionar o botão
-      child: Text('Mostrar BottomSheet'),
+    return StatefulBuilder(
+      builder: (context, setState) {
+        return ListView(
+          children: [
+            InkWell(
+              onTap: () {
+                setState(() {
+                  isPreco = !isPreco;
+                });
+              },
+              child: ListTile(
+                title: Text(
+                  "Preço",
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimary),
+                ),
+                trailing: Icon(
+                  isPreco ? Icons.arrow_downward_rounded : Icons.arrow_upward_rounded,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              child: isPreco? Column(
+                children: [
+                  Text("R\$ $preco "),
+                  Slider(
+                    value: preco,
+                    min: 0,
+                    max: 10000,
+                    onChanged: (value) {
+                      preco = value;
+                    },
+                  )
+                ],
+              ):Container(),
+            ),
+            Divider(thickness: 2, color: Colors.teal),
+// Adicione mais opções aqui, se necessário
+          ],
+        );
+      },
     );
   }
 }
