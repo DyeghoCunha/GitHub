@@ -33,8 +33,6 @@ class _HomePageState extends State<HomePage> {
             topRight: Radius.circular(50),
           ),
         ),
-
-
         builder: (ctx) {
           return Filtro();
         });
@@ -71,32 +69,40 @@ class _HomePageState extends State<HomePage> {
               },
               elevation: 10,
               mini: true,
-              child: const Icon(
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              shape: CircleBorder(
+                side: BorderSide(color: Theme.of(context).colorScheme.onPrimary, width: 1),
+              ),
+              child: Icon(
                 Icons.filter_alt,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             )
           : null,
       body: Column(
         children: [
           Expanded(
-              child: PageView(
-            controller: pageController,
-            onPageChanged: (value) {
-              setState(() {
-                posicaoPagina = value;
-              });
-            },
-            children: [
-              Container(
-                color: Colors.red,
-              ),
-              TradePage(),
-             TesteWidgets(),
-              Container(
-                color: Colors.teal,
-              ),
-            ],
-          ))
+            child: PageView(
+              controller: pageController,
+              onPageChanged: (value) {
+                setState(
+                  () {
+                    posicaoPagina = value;
+                  },
+                );
+              },
+              children: [
+                Container(
+                  color: Colors.red,
+                ),
+                TradePage(),
+                TesteWidgets(),
+                Container(
+                  color: Colors.teal,
+                ),
+              ],
+            ),
+          )
         ],
       ),
       drawer: const CustomDrawer(),

@@ -12,6 +12,12 @@ class TradePage extends StatelessWidget {
       child: ListView(
         children: const [
           CardPadraoRow(),
+          CardPadraoRow(),
+          CardPadraoRow(),
+          CardPadraoRow(),
+          CardPadraoRow(),
+          CardPadraoRow(),
+          CardPadraoRow(),
 
         ],
       ),

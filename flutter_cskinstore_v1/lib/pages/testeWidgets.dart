@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cskinstore_v1/widget/filtroCorItem.dart';
+import 'package:flutter_cskinstore_v1/widget/filtroDesgaste.dart';
 
 class TesteWidgets extends StatefulWidget {
   const TesteWidgets({Key? key}) : super(key: key);
@@ -24,6 +25,7 @@ class _TesteWidgetsState extends State<TesteWidgets> {
     'Cinza': Colors.grey,
   };
   Map<String, bool> selectedColors = {};
+
   @override
   void initState() {
     super.initState();
@@ -35,22 +37,6 @@ class _TesteWidgetsState extends State<TesteWidgets> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      childAspectRatio: 4.5,
-        crossAxisCount: 2, // Duas colunas
-        children: colors.keys.map((colorName) {
-      return FiltroCorItem(
-        cor: colors[colorName]!,
-        titulo: colorName,
-        isParametro: selectedColors[colorName]!,
-        onTap: (newValue) {
-          setState(() {
-            selectedColors[colorName] = newValue;
-          });
-        },
-      );
-    }).toList(),
-    );
-  }
-}
+    return FiltroDesgaste();
 
+}}
