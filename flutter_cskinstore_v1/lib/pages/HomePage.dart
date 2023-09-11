@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cskinstore_v1/pages/Filtro.dart';
 import 'package:flutter_cskinstore_v1/pages/TradePage.dart';
 import 'package:flutter_cskinstore_v1/pages/testeWidgets.dart';
+import 'package:flutter_cskinstore_v1/utils/skin3dtest.dart';
 import 'package:flutter_cskinstore_v1/widget/CustomDrawer.dart';
 
 class HomePage extends StatefulWidget {

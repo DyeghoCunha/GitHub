@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cskinstore_v1/widget/CardPadraoStickers.dart';
+import 'package:flutter_cskinstore_v1/widget/labelTag.dart';
 
 import '../pages/CardPage.dart';
 
@@ -39,7 +40,7 @@ class _CardPadraoState extends State<CardPadrao> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 2,vertical: 10),
                   child: Image.asset("assets/images/arma1.png"),
                 ),
                 SizedBox(
@@ -51,25 +52,7 @@ class _CardPadraoState extends State<CardPadrao> {
                       children: [
                         Row(
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.deepPurple.shade100.withOpacity(0.2),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Text(
-                                  "+26%",
-                                  style: TextStyle(
-                                    color: Colors.deepPurple.shade100,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 2,
-                            ),
+                          LabelTag(valor: 26,isPositivo: true,),
                             // Container(
                             //   decoration: BoxDecoration(
                             //     color: Colors.green.shade100.withOpacity(0.2),
@@ -88,27 +71,7 @@ class _CardPadraoState extends State<CardPadrao> {
                             //   ),
                             // ),
                             // SizedBox(width: 2,),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.cyan.shade100.withOpacity(0.2),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.rocket_launch_sharp, size: 15, color: Colors.cyan.shade100),
-                                    Text(
-                                      "15m",
-                                      style: TextStyle(
-                                        color: Colors.cyan.shade100,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                           LabelTag(valor: 5,isEntrega: true,),
                           ],
                         ),
                         const SizedBox(
