@@ -12,37 +12,39 @@ class BtnQuestion extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         showModalBottomSheet(
-            context: context,
-            elevation: 10,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(10),
-                topLeft: Radius.circular(10),
-              ),
+          context: context,
+          elevation: 10,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(10),
+              topLeft: Radius.circular(10),
             ),
-            backgroundColor: Theme.of(context).colorScheme.secondary.withOpacity(1),
-            clipBehavior: Clip.antiAlias,
-            barrierColor: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
-            useSafeArea: true,
-            showDragHandle: true,
-            enableDrag: true,
-            builder: (ctx) => QuestionCustomBottomSheet(texto: texto, titulo: titulo,));
+          ),
+          backgroundColor: Theme.of(context).colorScheme.secondary.withOpacity(1),
+          clipBehavior: Clip.antiAlias,
+          barrierColor: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+          useSafeArea: true,
+          showDragHandle: true,
+          enableDrag: true,
+          builder: (ctx) => QuestionCustomBottomSheet(
+            texto: texto,
+            titulo: titulo,
+          ),
+        );
       },
       style: ElevatedButton.styleFrom(
-        shape: CircleBorder(), // Torna o botão redondo
+        shape: const CircleBorder(), 
+        padding: EdgeInsets.all(0)// Torna o botão redondo
       ),
       child: Ink(
         decoration: ShapeDecoration(
           color: Theme.of(context).colorScheme.primary, // Cor de fundo do botão
-          shape: CircleBorder(), // Torna o fundo do botão redondo
+          shape: const CircleBorder(), // Torna o fundo do botão redondo
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(0.5), // Ajusta o tamanho do ícone
-          child: Icon(
-            Icons.question_mark,
-            color: Theme.of(context).colorScheme.onPrimary,
-            size: 20,
-          ),
+        child: Icon(
+          Icons.question_mark,
+          color: Theme.of(context).colorScheme.onPrimary,
+          size: 20,
         ),
       ),
     );

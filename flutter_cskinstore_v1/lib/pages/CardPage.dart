@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cskinstore_v1/models/questionDb.dart';
-import 'package:flutter_cskinstore_v1/utils/skin3dtest.dart';
-import 'package:flutter_cskinstore_v1/widget/btnQuestion.dart';
-import 'package:flutter_cskinstore_v1/widget/labelTag.dart';
+import 'package:flutter_cskinstore_v1/widget/floatCardPage.dart';
+import 'package:flutter_cskinstore_v1/widget/labelCustomRow.dart';
+import 'package:flutter_cskinstore_v1/widget/nameCardPage.dart';
+import 'package:flutter_cskinstore_v1/widget/stickerCard.dart';
+
+import '../widget/labelCustomTag.dart';
 
 class CardPage extends StatefulWidget {
   const CardPage({super.key});
@@ -14,22 +16,44 @@ class CardPage extends StatefulWidget {
 class _CardPageState extends State<CardPage> {
   @override
   Widget build(BuildContext context) {
-    List<LabelTag> labelTag = [
-      LabelTag(
-        valor: 26,
-        isPositivo: true,
-      ),
-      LabelTag(
-        valor: 15,
-        isNegativo: true,
-      ),
-      LabelTag(
-        valor: 10,
-        isEntrega: true,
-      ),
+    List<LabelCustomTag> labelTag = [
+      LabelCustomTag(texto: "1 day", tradeLock: true),
+      LabelCustomTag(texto: "User item", userItem: true),
+      LabelCustomTag(texto: "Rare Sticker", rare: true),
+      LabelCustomTag(texto: "Rare Float", rare: true),
+      LabelCustomTag(texto: "Disponível"),
     ];
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        actions: [
+          IconButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  elevation: 10,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(10),
+                      topLeft: Radius.circular(10),
+                    ),
+                  ),
+                  backgroundColor: Theme.of(context).colorScheme.secondary.withOpacity(1),
+                  clipBehavior: Clip.antiAlias,
+                  barrierColor: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+                  useSafeArea: true,
+                  showDragHandle: true,
+                  enableDrag: true,
+                  builder: (ctx) => Container(),
+                );
+              },
+              icon: Image.asset("assets/images/logo2.png"))
+        ],
+      ),
       body: Material(
         color: Theme.of(context).colorScheme.primary,
         child: Container(
@@ -45,141 +69,19 @@ class _CardPageState extends State<CardPage> {
                   ),
                 ),
               ),
-              InkWell(
-                onTap: () {
-                  ScaffoldMessenger(
-                    child:const Text("Teste"),
-                  );
-                },
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10, top: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            "AK-47",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Theme.of(context).colorScheme.secondary,
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                          Text(
-                            "/ Field-Tested",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Theme.of(context).colorScheme.onPrimary,
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, top: 5),
-                      child: Row(
-                        children: [
-                          const Text(
-                            "Fuel Injector",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          Icon(
-                            Icons.copy,
-                            color: Theme.of(context).colorScheme.onPrimary,
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
+              NameCardPage(),
+              const SizedBox(
+                height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: 40,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 3, // Número de elementos
-                    itemBuilder: (BuildContext context, int index) {
-                      // Substitua pelo conteúdo do LabelTag
-                      return labelTag[index];
-                    },
-                  ),
-                ),
+              LabelCustomRow(labelTag: labelTag),
+              const SizedBox(
+                height: 10,
               ),
-              Card(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                          child: Text(
-                            "Float",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Theme.of(context).colorScheme.onPrimary,
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ),
-                        Wrap(
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          children: [
-                            Text(
-                              "0.1512",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Theme.of(context).colorScheme.onPrimary,
-                                decoration: TextDecoration.none,
-                              ),
-                            ),
-                            BtnQuestion(
-                              texto: questionDb["float"],
-                              titulo: "Float",
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            Transform.rotate(
-                              angle: 90 * 3.141592653589793 / 180,
-                              child: const Icon(
-                                Icons.label_important,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                        GradientContainer(),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    )
-                  ],
-                ),
+              const FloatCardPage(),
+              const SizedBox(
+                height: 10,
               ),
+              StickerCard(),
             ],
           ),
         ),
