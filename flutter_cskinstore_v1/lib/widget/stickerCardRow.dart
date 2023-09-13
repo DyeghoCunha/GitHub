@@ -12,7 +12,7 @@ List<StickerCardItem> stickerList;
         padding: const EdgeInsets.only(left: 10),
         child: SizedBox(
           width: double.infinity,
-          height: 120,
+          height: 123,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: stickerList.length, // Número de elementos

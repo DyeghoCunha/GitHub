@@ -18,9 +18,9 @@ class StickerCardCustomBottomSheet extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: 60,
+                height: 160,
                 child: Image.asset(
-                  "assets/sticker/1.png",
+                  "assets/sticker/8.png",
                   fit: BoxFit.contain,
                 ),
               ),

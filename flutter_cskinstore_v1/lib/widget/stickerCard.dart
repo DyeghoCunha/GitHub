@@ -14,29 +14,34 @@ class StickerCard extends StatelessWidget {
       StickerCardItem(),
       StickerCardItem(),
     ];
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Stikers",
-                style: TextStyle(
-                    color: Theme.of(context).colorScheme.onPrimary,
-                    fontSize: Theme.of(context).textTheme.titleLarge!.fontSize),
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Stikers",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                        fontSize: Theme.of(context).textTheme.titleLarge!.fontSize),
+                  ),
+                  Text(
+                    listaDeSticker.length.toString(),
+                    style: TextStyle(color: Theme.of(context).colorScheme.onPrimary,
+                        fontSize: Theme.of(context).textTheme.titleLarge!.fontSize),
+                  ),
+                ],
               ),
-              Text(
-                listaDeSticker.length.toString(),
-                style: TextStyle(color: Theme.of(context).colorScheme.onPrimary,
-                    fontSize: Theme.of(context).textTheme.titleLarge!.fontSize),
-              ),
-            ],
-          ),
+            ),
+            StickerCardRow(stickerList: listaDeSticker)
+          ],
         ),
-        StickerCardRow(stickerList: listaDeSticker)
-      ],
+      ),
     );
   }
 }
