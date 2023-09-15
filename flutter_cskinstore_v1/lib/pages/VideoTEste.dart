@@ -22,13 +22,14 @@ class _MyAppState extends State<VideoTest> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Column(
+    return  Column(
             children: [
-               VideoPlayer(_controller),
-
+              Container(
+                height: 200,
+               width: double.infinity,
+                color: Colors.redAccent,
+                child: VideoPlayer(_controller),
+              ),
               ElevatedButton(
                 onPressed: () {
                   // Inicia o vídeo apenas uma vez
@@ -39,9 +40,8 @@ class _MyAppState extends State<VideoTest> {
                 child: Text("Play"),
               ),
             ],
-          ),
-        ),
-      ),
-    );
+          );
+
+
   }
 }

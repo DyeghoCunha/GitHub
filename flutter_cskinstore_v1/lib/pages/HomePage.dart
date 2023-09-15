@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                   child: Image.asset("assets/images/ParaVoce.jpeg",fit: BoxFit.contain,),
                 ),
                 TradePage(),
-                TesteWidgets(),
+               VideoTest(),
                 Container(
                   color: Colors.teal,
                 ),

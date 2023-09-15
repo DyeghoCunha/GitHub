@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cskinstore_v1/pages/VideoTEste.dart';
 import 'package:flutter_cskinstore_v1/widget/cardComprar.dart';
 
 import '../widget/customPriceCardItem.dart';
@@ -47,7 +48,7 @@ class CardPage extends StatelessWidget {
                 useSafeArea: true,
                 showDragHandle: true,
                 enableDrag: true,
-                builder: (ctx) => Container(),
+                builder: (ctx) => VideoTest(),
               );
             },
             icon: Image.asset("assets/images/logo2.png"),
