@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cskinstore_v1/pages/Filtro.dart';
+import 'package:flutter_cskinstore_v1/pages/OfertasPage.dart';
 import 'package:flutter_cskinstore_v1/pages/TradePage.dart';
 import 'package:flutter_cskinstore_v1/pages/testeWidgets.dart';
-import 'package:flutter_cskinstore_v1/utils/skin3dtest.dart';
 import 'package:flutter_cskinstore_v1/widget/CustomDrawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -52,11 +52,6 @@ class _HomePageState extends State<HomePage> {
         ),
         leadingWidth: 150,
         actions: [
-          // IconButton(
-          //   icon: Icon(Icons.filter_alt),
-          //   onPressed: () => print("Pesquisar"),
-          // ),
-
           IconButton(
             icon: const Icon(Icons.menu, color: Color.fromRGBO(153, 153, 153, 1)),
             onPressed: _openDrawer,
@@ -98,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                   child: Image.asset("assets/images/ParaVoce.jpeg",fit: BoxFit.contain,),
                 ),
                 TradePage(),
-               VideoTest(),
+            OfertasPage(),
                 Container(
                   color: Colors.teal,
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cskinstore_v1/pages/UserPage.dart';
 
 class CustomDrawer extends StatefulWidget {
   const CustomDrawer({super.key});
@@ -11,8 +12,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
   @override
   Widget build(BuildContext context) {
     return const Drawer(
-     backgroundColor: Colors.red,
-      child: Text("Custom Drawer"),
+      elevation: 10,
+
+      child: UserPage(),
     );
   }
 }
