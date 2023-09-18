@@ -25,6 +25,7 @@ class _FiltroDesgasteState extends State<FiltroDesgaste> {
     return Expanded(
       child: SizedBox(
         width: double.infinity,
+        height: 290,
         child: Column(
           children:
             List.generate(desgaste.length, (index) {

@@ -13,32 +13,34 @@ class FiltroCustom extends StatefulWidget {
 class _FiltroCustomState extends State<FiltroCustom> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        InkWell(
-          onTap: () {
-            setState(() {
-              widget.parametro = !widget.parametro;
-            });
-          },
-          child: ListTile(
-            title: Text(
-              widget.titulo,
-              style:
-              TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimary),
-            ),
-            trailing: Icon(
-              widget.parametro ?  Icons.arrow_upward_rounded :Icons.arrow_downward_rounded,
-              color: Theme.of(context).colorScheme.onPrimary,
+    return Expanded(
+      child: Column(
+        children: [
+          InkWell(
+            onTap: () {
+              setState(() {
+                widget.parametro = !widget.parametro;
+              });
+            },
+            child: ListTile(
+              title: Text(
+                widget.titulo,
+                style:
+                TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimary),
+              ),
+              trailing: Icon(
+                widget.parametro ?  Icons.arrow_upward_rounded :Icons.arrow_downward_rounded,
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
             ),
           ),
-        ),
-        Container(
-          width: double.infinity,
-          child: widget.parametro? widget.widget:Container(),
-        ),
-        Divider(thickness: 2, color: Colors.teal),
-      ],
+          Container(
+            width: double.infinity,
+            child: widget.parametro? widget.widget:Container(),
+          ),
+          Divider(thickness: 2, color: Colors.teal),
+        ],
+      ),
     );
   }
 }

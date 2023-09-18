@@ -22,6 +22,7 @@ class _FiltroCategoriaState extends State<FiltroCategoria> {
     return Expanded(
       child: SizedBox(
         width: double.infinity,
+        height: 97,
         child: Column(
           children:
           List.generate(categoria.length, (index) {

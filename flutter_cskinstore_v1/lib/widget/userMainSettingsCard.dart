@@ -30,7 +30,16 @@ class UserMainSettingsCard extends StatelessWidget {
                   color: Theme.of(context).colorScheme.primary,
                 ),
                 UserMainSettingsCardCustomRow(icone: Icons.settings, texto: "Settings"),
-
+                Divider(
+                  thickness: 1,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                UserMainSettingsCardCustomRow(icone: Icons.contact_support, texto: "Suporte"),
+                Divider(
+                  thickness: 1,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                UserMainSettingsCardCustomRow(icone: Icons.remove_red_eye, texto: "Estatus do Item")
               ],
             ),
           ),
