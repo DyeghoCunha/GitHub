@@ -41,9 +41,9 @@ class _FiltroCorState extends State<FiltroCor> {
       height: 250,
       child: Row(
         children: [
-          Expanded(child: Container()),
+        //  Expanded(child: Container()),
           Expanded(
-            flex: 4,
+            flex: 6,
             child: ListView.builder(
               itemCount: 5,
               itemBuilder: (context, index) {
@@ -65,7 +65,7 @@ class _FiltroCorState extends State<FiltroCor> {
           ),
           Expanded(child: Container()),
           Expanded(
-            flex: 4,
+            flex: 6,
             child: ListView.builder(
               itemCount: 5,
               itemBuilder: (context, index) {
@@ -85,7 +85,7 @@ class _FiltroCorState extends State<FiltroCor> {
               },
             ),
           ),
-          Expanded(child: Container()),
+         // Expanded(child: Container()),
         ],
       ),
     );

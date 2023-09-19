@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cskinstore_v1/pages/Filtro.dart';
 import 'package:flutter_cskinstore_v1/pages/OfertasPage.dart';
+import 'package:flutter_cskinstore_v1/pages/SorteioPage.dart';
 import 'package:flutter_cskinstore_v1/pages/TradePage.dart';
 import 'package:flutter_cskinstore_v1/pages/testeWidgets.dart';
 import 'package:flutter_cskinstore_v1/widget/CustomDrawer.dart';
@@ -88,10 +89,7 @@ class _HomePageState extends State<HomePage> {
                 );
               },
               children: [
-                Container(
-                  color: Colors.red,
-                  child: Image.asset("assets/images/ParaVoce.jpeg",fit: BoxFit.contain,),
-                ),
+              SorteioPage(),
                 TradePage(),
             OfertasPage(),
                 Container(

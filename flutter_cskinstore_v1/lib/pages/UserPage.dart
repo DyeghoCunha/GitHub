@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cskinstore_v1/widget/PerfilUserCard.dart';
 import 'package:flutter_cskinstore_v1/widget/fotoNomeCard.dart';
+import 'package:flutter_cskinstore_v1/widget/infoContatoCard.dart';
 import 'package:flutter_cskinstore_v1/widget/marketStatusCard.dart';
 import 'package:flutter_cskinstore_v1/widget/userMainSettingsCard.dart';
 import 'package:flutter_cskinstore_v1/widget/yourBalanceCard.dart';
@@ -27,6 +29,14 @@ class UserPage extends StatelessWidget {
             color: Theme.of(context).colorScheme.onPrimary,
           ),
           UserMainSettingsCard(),
+          Divider(
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
+          PerfilUserCard(),
+          Divider(
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
+          InfoContatoCard(),
         ],
       ),
     );
