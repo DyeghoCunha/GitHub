@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pizzariabc/screens/checkOut.dart';
 import 'package:pizzariabc/screens/drink_menu.dart';
 import 'package:pizzariabc/screens/highlight.dart';
 
@@ -44,7 +45,7 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const Home();
+            return const CheckOut();
           }));
         },
         child: const Icon(Icons.point_of_sale),
