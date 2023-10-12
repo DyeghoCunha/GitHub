@@ -1,0 +1,1 @@
+Testando critério Von Mises 
