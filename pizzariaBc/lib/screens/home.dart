@@ -31,6 +31,8 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text("Ristorante Panucci"),
         backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
+        elevation: 4,
+        shadowColor: Colors.black,
         actions: const <Widget>[
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
