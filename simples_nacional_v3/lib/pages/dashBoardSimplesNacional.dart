@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simples_nacional_v3/pages/PaginaPrincipal_page.dart';
 import '../components/sections/account_actions.dart';
 import '../components/sections/header.dart';
 import '../components/sections/recent_activity.dart';
@@ -33,11 +34,9 @@ class _DashBoardSimplesNacionalState extends State<DashBoardSimplesNacional> {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-
             expandedHeight: 113.0,
             floating: true,
             pinned: false,
-
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.parallax,
               background: Column(

@@ -29,17 +29,21 @@ class RecentActivity extends StatefulWidget {
 class _RecentActivityState extends State<RecentActivity> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: BoxCard(
-        boxContent: _RecentActivityContent(
-          faturamento: widget.faturamento,
-          dasSimplesNacional: widget.dasSimplesNacional,
-          rbt12: widget.rbt12,
-          alqFutura: widget.alqFutura,
-          alqEfetiva: widget.alqEfetiva,
+    return Wrap(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(16),
+          child: BoxCard(
+            boxContent: _RecentActivityContent(
+              faturamento: widget.faturamento,
+              dasSimplesNacional: widget.dasSimplesNacional,
+              rbt12: widget.rbt12,
+              alqFutura: widget.alqFutura,
+              alqEfetiva: widget.alqEfetiva,
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }
