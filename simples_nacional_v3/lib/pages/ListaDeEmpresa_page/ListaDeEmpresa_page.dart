@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:simples_nacional_v3/widgets/CustomDrawer_widget/CustomDrawer_widget.dart';
 
+import '../../themes/theme_colors.dart';
 import 'component/ListaDeEmpresaCard_widget.dart';
 import '../../database/empresas.dart';
 import '../../model/EmpresaModel.dart';
@@ -32,31 +34,44 @@ class _ListaDeEmpresaPageState extends State<ListaDeEmpresaPage> {
   Widget build(BuildContext context) {
 
 
-    return Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: Theme.of(context).brightness == Brightness.light
-                  ? const AssetImage("assets/images/fundo3.png")
-                  : const AssetImage("assets/images/fundo3d.png"),
-              fit: BoxFit.cover),
-        ),
-        child: CustomScrollView(
-          slivers: <Widget>[
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) => ListaDeEmpresaCard(empresa: empresa[index]),
-                childCount: empresa.length,
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 3,
+        backgroundColor: Colors.transparent,
+      flexibleSpace: Container(
+      decoration:const BoxDecoration(
+      gradient: LinearGradient(
+      colors: ThemeColors.appBarGradient, // Cores do gradiente
+      begin: Alignment.topLeft, // Início do gradiente
+      end: Alignment.bottomRight, )),),// Fim do gradiente
+        title: const Text("Empresas"),
+      ),
+      body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: Theme.of(context).brightness == Brightness.light
+                    ? const AssetImage("assets/images/fundo3.png")
+                    : const AssetImage("assets/images/fundo3d.png"),
+                fit: BoxFit.cover),
+          ),
+          child: CustomScrollView(
+            slivers: <Widget>[
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                      (context, index) => ListaDeEmpresaCard(empresa: empresa[index]),
+                  childCount: empresa.length,
+                ),
               ),
-            ),
-            SliverToBoxAdapter(
-              child: ElevatedButton(
-                onPressed: (){
-                  print(empresa.length);
-                },
-                child: Text("teste"),
-              ),
-            )
-          ],
-        ));
+              SliverToBoxAdapter(
+                child: ElevatedButton(
+                  onPressed: (){
+                    print(empresa.length);
+                  },
+                  child: Text("teste"),
+                ),
+              )
+            ],
+          )),
+    );
   }
 }

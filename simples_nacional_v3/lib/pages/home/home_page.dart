@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:simples_nacional_v3/pages/PaginaPrincipal_page.dart';
+import 'package:simples_nacional_v3/pages/SimplesNacional_page/CalculaAliquotaSimplesNacional_page/CalculaAliquotaSimplesNacional_page.dart';
 import 'package:simples_nacional_v3/widgets/CustomDrawer_widget/CustomDrawer_widget.dart';
-import '../../themes/theme_colors.dart';
 import '../Blog_page/blog_page.dart';
-import '../dashBoardSimplesNacional.dart';
-import '../SimplesNacional_page/Faturamento_page/faturamentoDoze_page.dart';
 import '../ListaDeEmpresa_page/ListaDeEmpresa_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,10 +26,11 @@ class _HomePageState extends State<HomePage> {
   int posicaoPagina = 0;
 
   final pages = [
-    DashBoardSimplesNacional(rbt12: 0.00, faturamento: 0.00, dasSimplesNacional: 0.00,
-        impostosDetalhados: const {"":0.00}, alqFutura: 0.00, alqEfetiva: 0.00),
-    ListaDeEmpresaPage(),
     PaginaPrincipalPage(),
+    // DashBoardSimplesNacional(rbt12: 0.00, faturamento: 0.00, dasSimplesNacional: 0.00,
+    //     impostosDetalhados: const {"":0.00}, alqFutura: 0.00, alqEfetiva: 0.00),
+    ListaDeEmpresaPage(),
+   CalculaAliquotaSimplesNacionalPage(rbt12: "", faturamento: ""),
     const BlogPage(),
   ];
 
@@ -39,17 +38,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          elevation: 3,
-          backgroundColor: Colors.transparent,
-        flexibleSpace: Container(
-        decoration:const BoxDecoration(
-        gradient: LinearGradient(
-        colors: ThemeColors.appBarGradient, // Cores do gradiente
-        begin: Alignment.topLeft, // Início do gradiente
-        end: Alignment.bottomRight, )),),// Fim do gradiente
-          title: const Text("Simples Nacional"),
-        ),
+
         drawer: const CustomDrawerWidget(),
         body: Column(
           children: [

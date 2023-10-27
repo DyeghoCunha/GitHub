@@ -30,4 +30,15 @@ class Imagens {
     "assets/images/cardNcmD.png",
     "assets/images/cardCfopD.png",
   ];
+  static List<String> cardBeneficioLight = [
+    "assets/images/cardClinicas.png",
+    "assets/images/cardTtd478.png",
+    "assets/images/cardTtd1076.png",
+  ];
+  static List<String> cardBeneficioDark = [
+    "assets/images/cardClinicasD.png",
+    "assets/images/cardTtd478D.png",
+    "assets/images/cardTtd1076D.png",
+  ];
+
 }

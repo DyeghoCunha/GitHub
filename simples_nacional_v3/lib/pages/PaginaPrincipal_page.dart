@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simples_nacional_v3/components/sections/recent_activity.dart';
+import 'package:simples_nacional_v3/pages/ListaDeEmpresa_page/ListaDeEmpresa_page.dart';
 import 'package:simples_nacional_v3/widgets/CustomDrawer_widget/CustomDrawer_widget.dart';
 
 import '../components/sections/header.dart';
@@ -10,24 +11,26 @@ class PaginaPrincipalPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> fundoLista = Theme.of(context).brightness == Brightness.light
+    List<String> listaCardFuncoes = Theme.of(context).brightness == Brightness.light
         ? Imagens.cardFuncoesLight
         : Imagens.cardFuncoesLight;
-    return Scaffold(
-      drawer:const CustomDrawerWidget(),
 
-      body:Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/fundo0.png"),
-              fit: BoxFit.cover,
+    List<String> listaCardBeneficios = Theme.of(context).brightness == Brightness.light
+        ? Imagens.cardBeneficioLight
+        : Imagens.cardBeneficioDark;
+
+    return Scaffold(
+        drawer: const CustomDrawerWidget(),
+        body: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/fundo0.png"),
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          child: CustomScrollView(
-            shrinkWrap: true,
-            slivers: [
+            child: CustomScrollView(shrinkWrap: true, slivers: [
               SliverAppBar(
-                expandedHeight: 90.0,
+                expandedHeight: 120.0,
                 floating: true,
                 pinned: false,
                 flexibleSpace: FlexibleSpaceBar(
@@ -53,6 +56,15 @@ class PaginaPrincipalPage extends StatelessWidget {
                   ),
                 ),
               ),
+              const SliverToBoxAdapter(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Empresa Teste"),
+                    subtitle: Text("CNPJ:00.000.000/0001-01"),
+                    trailing: _PopupMenuButtonCustom(),
+                  ),
+                ),
+              ),
               SliverToBoxAdapter(
                 child: Material(
                   color: Colors.transparent,
@@ -60,42 +72,141 @@ class PaginaPrincipalPage extends StatelessWidget {
                       faturamento: "", dasSimplesNacional: "", rbt12: 0, alqEfetiva: 0, alqFutura: 0),
                 ),
               ),
-              SliverToBoxAdapter(child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Mais acessados",style: Theme.of(context).textTheme.titleMedium,
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Mais acessados",
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
                 ),
-              ),),
+              ),
               SliverGrid(
                 delegate: SliverChildListDelegate(
-
-                  [const cardFuncoesRow()],
+                  [
+                    cardFuncoesRow(
+                      cardList: listaCardFuncoes,
+                    )
+                  ],
                 ),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,
-                    mainAxisExtent: 115),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
+                  mainAxisExtent: 115,
+                ),
               ),
-              SliverToBoxAdapter(child: Container(width: 100,height: 100,child: Card(),),)
-            ]
-          ))
-    );
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Benefícios Fiscais",
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ),
+              ),
+              SliverGrid(
+                delegate: SliverChildListDelegate(
+                  [
+                    cardFuncoesRow(
+                      cardList: listaCardBeneficios,
+                    )
+                  ],
+                ),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
+                  mainAxisExtent: 115,
+                ),
+              ),
+            ])));
+  }
+}
 
+class _PopupMenuButtonCustom extends StatelessWidget {
+  const _PopupMenuButtonCustom({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton<String>(
+      elevation: 10,
+      onSelected: (menu) {
+        print(menu);
+        if(menu == "Alterar"){
+          Navigator.push(context, MaterialPageRoute(builder: (ctx)=>ListaDeEmpresaPage()));
+        }
+      },
+
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: const BorderSide(
+          color: Colors.green,
+          width: 1,
+        ),
+      ),
+      itemBuilder: (BuildContext ctx) {
+        return <PopupMenuEntry<String>>[
+          PopupMenuItem<String>(
+            value: "Alterar",
+            child: Row(
+              children: [
+                Icon(
+                  Icons.swap_horiz,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text("Alterar")
+              ],
+            ),
+          ),
+          PopupMenuItem<String>(
+            value: "Editar",
+            child: Row(
+              children: [
+                Icon(
+                  Icons.edit,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text("Editar")
+              ],
+            ),
+          ),
+          PopupMenuItem<String>(
+            value: "Deletar",
+            child: Row(
+              children: [
+                Icon(
+                  Icons.delete,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text("Lixo")
+              ],
+            ),
+          ),
+        ];
+      },
+    );
   }
 }
 
 class cardFuncoesRow extends StatelessWidget {
-  const cardFuncoesRow({super.key});
+  cardFuncoesRow({super.key, required this.cardList});
+
+  List<String> cardList;
 
   @override
   Widget build(BuildContext context) {
-    List<String> fundoLista = Theme.of(context).brightness == Brightness.light
-        ? Imagens.cardFuncoesLight
-        : Imagens.cardFuncoesLight;
-
     return SizedBox(
       child: CustomScrollView(
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         slivers: [
-          for (var fundo in fundoLista)
+          for (var fundo in cardList)
             SliverToBoxAdapter(
               child: _cardFuncoes(
                 fundo: fundo,
@@ -108,11 +219,11 @@ class cardFuncoesRow extends StatelessWidget {
 }
 
 class _cardFuncoes extends StatelessWidget {
-  _cardFuncoes({super.key, required this.fundo,this.width = 150, this.height = 100});
+  _cardFuncoes({super.key, required this.fundo, this.width = 150, this.height = 100});
 
   final String fundo;
   double width;
-  double height ;
+  double height;
 
   @override
   Widget build(BuildContext context) {
@@ -132,9 +243,7 @@ class _cardFuncoes extends StatelessWidget {
                   image: AssetImage(fundo),
                   fit: BoxFit.fill,
                 ),
-
               ),
-
             ),
           ),
         ),
