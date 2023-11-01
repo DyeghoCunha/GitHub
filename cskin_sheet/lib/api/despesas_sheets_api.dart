@@ -1,7 +1,7 @@
-import 'package:cskin_sheet/user.dart';
+import 'package:cskin_sheet/Model/despesa.dart';
 import 'package:gsheets/gsheets.dart';
 
-class UserSheetsApi {
+class DespesasSheetsApi {
   static final _spreadsheetId = "1FPyRV6cD_9EPT91OlWtgdvgaIoq-8O6ZF-PTEa0aoZs";
   static const _credential = r'''
   {
@@ -20,20 +20,21 @@ class UserSheetsApi {
   ''';
   static final _gsheets = GSheets(_credential);
 
-  static Worksheet? _userSheet;
+  static Worksheet? _despesaSheet;
 
   static Future init() async {
     try {
       final spreadsheet = await _gsheets.spreadsheet(_spreadsheetId);
-      _userSheet = await _getWorkSheet(spreadsheet, title: "Aba1");
-      final firstRow = UserFields.getFields();
-      _userSheet!.values.insertRow(1, firstRow);
+      _despesaSheet= await _getWorkSheet(spreadsheet, title: "Despesas");
+      final firstRow = DespesaFields.getFields();
+      _despesaSheet!.values.insertRow(1, firstRow);
     } catch (e) {
       print("Init Error: $e");
     }
   }
 
-  static Future<Worksheet> _getWorkSheet(Spreadsheet spreadsheet, {
+  static Future<Worksheet> _getWorkSheet(
+    Spreadsheet spreadsheet, {
     required String title,
   }) async {
     try {
@@ -44,34 +45,50 @@ class UserSheetsApi {
   }
 
   static Future insert(Map<String, dynamic> rowList) async {
-    if (_userSheet == null) return;
+    if (_despesaSheet == null) return;
 
-    _userSheet!.values.map.appendRow(rowList);
+    _despesaSheet!.values.map.appendRow(rowList);
   }
 
   static Future<int> getRowCount() async {
-    if (_userSheet == null) return 0;
-    final lastRow = await _userSheet!.values.lastRow();
+    if (_despesaSheet == null) return 0;
+    final lastRow = await _despesaSheet!.values.lastRow();
     return lastRow == null ? 0 : int.tryParse(lastRow.first) ?? 0;
   }
 
-  static Future<List<User>> getAll() async {
-    if (_userSheet == null) return <User>[];
-    final users = await _userSheet!.values.map.allRows();
-    return users == null ? <User>[] : users.map(User.fromJson).toList();
+  static Future<List<Despesa>> getAll() async {
+    if (_despesaSheet == null) return <Despesa>[];
+    final despesas = await _despesaSheet!.values.map.allRows();
+    return despesas == null ? <Despesa>[] : despesas.map(Despesa.fromJson).toList();
   }
 
-  static Future<User?> getById(int id) async {
-    if (_userSheet == null) return null;
-    final json = await _userSheet!.values.map.rowByKey(id, fromColumn: 1);
-    return json == null ? null : User.fromJson(json);
+  static Future<Despesa?> getById(int id) async {
+    if (_despesaSheet == null) return null;
+    final json = await _despesaSheet!.values.map.rowByKey(id, fromColumn: 1);
+    return json == null ? null : Despesa.fromJson(json);
   }
 
   static Future<bool> update(
-      int id,
-      Map<String,dynamic> user,
-      )async{
-    if(_userSheet == null) return false;
-    return _userSheet!.values.map.insertColumnByKey(id, user);
+    int id,
+    Map<String, dynamic> despesa,
+  ) async {
+    if (_despesaSheet == null) return false;
+    return _despesaSheet!.values.map.insertRowByKey(id, despesa);
+  }
+
+  static Future<bool> updateCell({
+    required int id,
+    required String key,
+    required dynamic value,
+  }) async {
+    if(_despesaSheet == null) return false;
+    return _despesaSheet!.values.insertValueByKeys(value, columnKey:key, rowKey: id);
+  }
+
+  static Future<bool> deleteById(int id)async{
+    if(_despesaSheet == null) return false;
+    final index = await _despesaSheet!.values.rowIndexOf(id);
+    if(index ==-1) return false;
+    return _despesaSheet!.deleteRow(index);
   }
 }
