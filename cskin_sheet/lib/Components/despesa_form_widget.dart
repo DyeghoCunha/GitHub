@@ -4,9 +4,8 @@ import 'package:flutter/material.dart';
 class DespesaFormWidget extends StatefulWidget {
   final Despesa? despesa;
   final ValueChanged<Despesa> onSavedUser;
+
   const DespesaFormWidget({super.key, required this.onSavedUser, this.despesa});
-
-
 
   @override
   State<DespesaFormWidget> createState() => _DespesaFormWidgetState();
@@ -53,6 +52,8 @@ class _DespesaFormWidgetState extends State<DespesaFormWidget> {
 
   @override
   Widget build(BuildContext context) {
+
+
     Widget buildSocio() => TextFormField(
           controller: controllerSocio,
           decoration: const InputDecoration(
@@ -61,6 +62,8 @@ class _DespesaFormWidgetState extends State<DespesaFormWidget> {
           ),
           validator: (value) => value != null && value.isEmpty ? "Digite o Nome do Sócio" : null,
         );
+
+
     Widget buildData() => TextFormField(
           controller: controllerData,
           decoration: const InputDecoration(
@@ -69,6 +72,10 @@ class _DespesaFormWidgetState extends State<DespesaFormWidget> {
           ),
           validator: (value) => value != null && value.isEmpty ? "Digite a Data" : null,
         );
+
+
+
+
     Widget buildValor() => TextFormField(
           controller: controllerValor,
           decoration: const InputDecoration(
@@ -109,7 +116,7 @@ class _DespesaFormWidgetState extends State<DespesaFormWidget> {
               final id = widget.despesa == null ? null : widget.despesa!.id;
               final despesa = Despesa(
                 id: id,
-                socio:controllerSocio.text,
+                socio: controllerSocio.text,
                 data: controllerData.text,
                 valor: controllerValor.text,
                 descricao: controllerDescricao.text,

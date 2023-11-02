@@ -1,4 +1,4 @@
-import 'package:cskin_sheet/Components/despesa_card_widget.dart';
+import 'package:cskin_sheet/Page/cria_despesa_page/components/despesa_card_widget/despesa_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class CriaDespesaPage extends StatelessWidget {
