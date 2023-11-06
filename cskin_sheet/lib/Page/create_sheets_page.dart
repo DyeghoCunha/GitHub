@@ -40,6 +40,7 @@ class CreatesheetsPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: DespesaFormWidget(
             onSavedUser: (despesa) async {
+              print("Funcionou");
               final id = await DespesasSheetsApi.getRowCount() + 1;
               final newDespesa = despesa.copy(id: id);
               await DespesasSheetsApi.insert(

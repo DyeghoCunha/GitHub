@@ -2,16 +2,33 @@ import 'package:cskin_sheet/Model/despesa.dart';
 import 'package:cskin_sheet/Page/cria_despesa_page/components/despesa_card_widget/despesa_card_widget_fundo.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../api/despesas_sheets_api.dart';
+
 class DespesaConfirmacaoModalWidget extends StatelessWidget {
   DespesaConfirmacaoModalWidget({
     super.key,
+    required this.despesa,
+    required this.isValid,
   });
+
+  bool isValid;
+  Despesa despesa;
 
   //Despesa despesa;
 
   @override
   Widget build(BuildContext context) {
-    Widget text(String string) => Text(
+
+    Future enviaDespesa(despesa) async {
+      print("Funcionou");
+      final id = await DespesasSheetsApi.getRowCount() + 1;
+      final newDespesa = despesa.copy(id: id);
+      await DespesasSheetsApi.insert(
+        newDespesa.toJson(),
+      );
+    }
+
+      Widget text(String string) => Text(
           string,
           textAlign: TextAlign.start,
         );
@@ -30,7 +47,8 @@ class DespesaConfirmacaoModalWidget extends StatelessWidget {
           ),
         );
 
-    return Container(
+    return isValid ?
+      Container(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Column(
@@ -44,11 +62,11 @@ class DespesaConfirmacaoModalWidget extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        textSpan("Sócio: ", "Lucas"),
-                        textSpan("Data: ", "31/12/2023"),
-                        textSpan("Valor: ", "R\$ 140.230,50"),
-                        textSpan("Operação: ", "Entrada"),
-                        textSpan("Categoria: ", "Registro e Abertura"),
+                        textSpan("Sócio: ", despesa.socio??""),
+                        textSpan("Data: ", despesa.data??""),
+                        textSpan("Valor: ", despesa.valor??""),
+                        textSpan("Operação: ", despesa.operacao??""),
+                        textSpan("Categoria: ", despesa.categoria??""),
                       ],
                     ),
                   ),
@@ -59,7 +77,9 @@ class DespesaConfirmacaoModalWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              enviaDespesa(despesa);
+                            },
                             style: const ButtonStyle(
                               surfaceTintColor: MaterialStatePropertyAll<Color>(Colors.green),
                               side: MaterialStatePropertyAll<BorderSide>(BorderSide(color: Colors.green,
@@ -79,7 +99,10 @@ class DespesaConfirmacaoModalWidget extends StatelessWidget {
                                       color: Theme.of(context).colorScheme.primary.withOpacity(0.4)),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                print("Editar");
+                                Navigator.pop(context);
+                              },
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                                 child: Icon(
@@ -98,9 +121,7 @@ class DespesaConfirmacaoModalWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: textSpan(
-                  "Descrição: ",
-                  "Bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
-                      "blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
+                  "Descrição: ", despesa.descricao??""),
             ),
             const Divider(),
             Container(
@@ -112,12 +133,16 @@ class DespesaConfirmacaoModalWidget extends StatelessWidget {
                         color: Colors.redAccent.withOpacity(0.5),
                         width: 1,
                       ))),
-                  onPressed: () {},
-                  label: Text(
+                  onPressed: () {
+                    print("deletar");
+                    print(despesa.toJson());
+                   // Navigator.pop(context);
+                  },
+                  label: const Text(
                     "Excluir",
                     style: TextStyle(color: Colors.redAccent),
                   ),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.delete,
                     color: Colors.redAccent,
                   ),
@@ -125,6 +150,6 @@ class DespesaConfirmacaoModalWidget extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ):Container(child: Text("Dados Invalidos"),);
   }
 }

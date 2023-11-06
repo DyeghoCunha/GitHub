@@ -17,8 +17,6 @@ class CriaDespesaPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: DespesaCardWidget(onSavedUser: (despesa){},),
           )),
-
-         Card(child: DespesaConfirmacaoModalWidget()),
         ],
       ) ,
     );

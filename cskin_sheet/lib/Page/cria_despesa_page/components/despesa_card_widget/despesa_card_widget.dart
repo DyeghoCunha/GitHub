@@ -18,42 +18,17 @@ class DespesaCardWidget extends StatefulWidget {
 
 class _DespesaCardWidgetState extends State<DespesaCardWidget> {
   final formKey = GlobalKey<FormState>();
-  late TextEditingController controllerSocio;
-  late TextEditingController controllerData;
-  late TextEditingController controllerValor;
-  late TextEditingController controllerDescricao;
-  late TextEditingController controllerCategoria;
-  late TextEditingController controllerOperacao;
+  TextEditingController controllerSocio = TextEditingController();
+  TextEditingController controllerData = TextEditingController();
+  TextEditingController controllerValor = TextEditingController();
+  TextEditingController controllerDescricao = TextEditingController();
+  TextEditingController controllerCategoria = TextEditingController();
+  TextEditingController controllerOperacao = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-    initDespesa();
-  }
-
-  @override
-  void didUpdateWidget(covariant DespesaCardWidget oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    initDespesa();
-  }
-
-  void initDespesa() {
-    final socio = widget.despesa == null ? "" : widget.despesa!.socio;
-    final data = widget.despesa == null ? "" : widget.despesa!.data;
-    final valor = widget.despesa == null ? "" : widget.despesa!.valor;
-    final descricao = widget.despesa == null ? "" : widget.despesa!.descricao;
-    final categoria = widget.despesa == null ? "" : widget.despesa!.categoria;
-    final operacao = widget.despesa == null ? "" : widget.despesa!.operacao;
-
-    setState(() {
-      controllerSocio = TextEditingController(text: socio);
-      controllerData = TextEditingController(text: data);
-      controllerValor = TextEditingController(text: valor);
-      controllerDescricao = TextEditingController(text: descricao);
-      controllerCategoria = TextEditingController(text: categoria);
-      controllerOperacao = TextEditingController(text: operacao);
-    });
-  }
+   bool isSocio = false ;
+  late bool isData;
+  late bool isOperacao;
+  late bool isCategoria;
 
   @override
   Widget build(BuildContext context) {
@@ -77,16 +52,15 @@ class _DespesaCardWidgetState extends State<DespesaCardWidget> {
       return Icon(Icons.bubble_chart, color: Theme.of(context).colorScheme.primary);
     }
 
-    ;
-
     Icon retornaIconeCategoria(String categoria) {
       IconData icone;
 
-      if (categoria.length < 2)
+      if (categoria.length < 2) {
         return const Icon(
           Icons.list,
           size: 30,
         );
+      }
       if (categoria == "Outros") {
         return const Icon(
           Icons.linear_scale_sharp,
@@ -159,7 +133,7 @@ class _DespesaCardWidgetState extends State<DespesaCardWidget> {
                     icon: Icon(
                       Icons.pages,
                       size: 30,
-                      color: Theme.of(context).colorScheme.primary,
+                      color: isSocio==false?Colors.redAccent.withOpacity(0.2):Theme.of(context).colorScheme.primary,
                     ),
                     elevation: 10,
                     onSelected: (menu) {
@@ -257,25 +231,14 @@ class _DespesaCardWidgetState extends State<DespesaCardWidget> {
       );
     }
 
-    Future _modalConfirmacao(Despesa despesa) => showModalBottomSheet(
-         showDragHandle: true,
-          context: context,
-          builder: (_) => Container(
-            child: Column(
-              children: [
-                Text(despesa.socio),
-                Text(despesa.data),
-                Text(despesa.operacao),
-                Text(despesa.categoria),
-                Text(despesa.valor),
-                Text(despesa.descricao),
-              ],
-            ),
-
-
-
-          ),
-        );
+    Future _modalConfirmacao(Despesa despesa, bool isValid, ValueChanged<Despesa> onSavedUser) =>
+        showModalBottomSheet(
+            showDragHandle: true,
+            context: context,
+            builder: (_) => DespesaConfirmacaoModalWidget(
+                  despesa: despesa,
+                  isValid: isValid,
+                ));
 
     Widget buildValor() => DespesaCardWidgetFundo(
             child: Padding(
@@ -414,45 +377,29 @@ class _DespesaCardWidgetState extends State<DespesaCardWidget> {
           ),
         );
 
-    Widget buildSubmit2() => ElevatedButton(
+    Widget buildSubmit() => ElevatedButton(
           onPressed: () {
+            final id = widget.despesa == null ? null : widget.despesa!.id;
             final form = formKey.currentState!;
             final isValid = form.validate();
             if (isValid) {
-              final id = widget.despesa == null ? null : widget.despesa!.id;
-
-              final despesa = Despesa(
-                id: id,
-                socio: controllerSocio.text,
-                data: controllerData.text,
-                valor: controllerValor.text,
-                descricao: controllerDescricao.text,
-                categoria: controllerCategoria.text,
-                operacao: controllerOperacao.text,
-              );
-              widget.onSavedUser(despesa);
+              _modalConfirmacao(
+                  Despesa(
+                    id: id,
+                    socio: controllerSocio.text,
+                    data: controllerData.text,
+                    valor: controllerValor.text,
+                    descricao: controllerDescricao.text,
+                    categoria: controllerCategoria.text,
+                    operacao: controllerOperacao.text,
+                  ),
+                  isValid,
+                  widget.onSavedUser);
             }
           },
           child: const Text("Save"),
         );
 
-    Widget buildSubmit() => ElevatedButton(
-          onPressed: () {
-            final id = widget.despesa == null ? null : widget.despesa!.id;
-            _modalConfirmacao(
-                Despesa(
-                  id: id,
-                  socio: controllerSocio.text,
-                  data: controllerData.text,
-                  valor: controllerValor.text,
-                  descricao: controllerDescricao.text,
-                  categoria: controllerCategoria.text,
-                  operacao: controllerOperacao.text,
-                )
-            );
-          },
-          child: const Text("Save"),
-        );
     return SingleChildScrollView(
       child: Form(
         key: formKey,
