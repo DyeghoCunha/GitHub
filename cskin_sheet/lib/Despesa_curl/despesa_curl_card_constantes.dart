@@ -1,5 +1,5 @@
-class ProjectCardConstants {
-  static const double cornerRadius = 0.0;
+class DespesaCurlCardCosntante {
+  static const double cornerRadius = 10.0;
   static const Duration animationDuration = Duration(milliseconds: 500);
   static const Duration pauseAnimationDuration = Duration(milliseconds: 1000);
   static const Duration deleteAnimationDuration = Duration(milliseconds: 500);

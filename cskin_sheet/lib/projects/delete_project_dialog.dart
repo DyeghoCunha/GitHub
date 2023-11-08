@@ -13,17 +13,17 @@ class DeleteProjectDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoAlertDialog(
-      title: const Text('Delete Project'),
-      content: const Text('Are you sure you want to delete this project?'),
+      title: const Text('Excluir Despesa?'),
+      content: const Text('Você tem certeza que gostaria de excluir esta despesa?'),
       actions: <Widget>[
         CupertinoDialogAction(
           onPressed: onCancel,
-          child: const Text('Cancel'),
+          child: const Text('Cancelar'),
         ),
         CupertinoDialogAction(
           isDestructiveAction: true,
           onPressed: onDelete,
-          child: const Text('Delete'),
+          child: const Text('Excluir'),
         ),
       ],
     );

@@ -1,10 +1,7 @@
-import 'package:cskin_sheet/projects/project.dart';
 import 'package:cskin_sheet/projects/projects_list_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../Model/despesa.dart';
-import '../api/despesas_sheets_api.dart';
 
 class ProjectsList extends StatefulWidget {
   const ProjectsList({super.key});
@@ -15,45 +12,35 @@ class ProjectsList extends StatefulWidget {
 
 class _ProjectsListState extends State<ProjectsList> {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
-  late List<Project> projects;
-  late List<Despesa> despesas =[];
-  final List<Project> defaultProjects = [
-    Project(
-      'https://i.imgur.com/H6jMWDJ.png',
-      "Interstellar",
-    ),
-    Project(
-      'https://i.imgur.com/F3ETQZs.png',
-      "Dunkirk",
-    ),
-    Project(
-      'https://i.imgur.com/s7EqXi6.png',
-      "Oppenheimer",
-    ),
-    Project(
-      'https://i.imgur.com/cf2daHF.png',
-      "Tenet",
-    ),
+  //late List<Project> projects;
+  late List<Despesa> despesas ;
+
+  final List<Despesa> defaultDespesa = [
+    Despesa(socio: "João", data: "2023-08-02", valor: "500.0", descricao: "Descrição da despesa da categoria Alimentação", categoria: "Alimentação", operacao: "Débito"),
+    Despesa(socio: "Maria", data: "2023-07-29", valor: "200.0", descricao: "Descrição da despesa da categoria Transporte", categoria: "Transporte", operacao: "Crédito"),
+    Despesa(socio: "José", data: "2023-08-01", valor: "1000.0", descricao: "Descrição da despesa da categoria Moradia", categoria: "Moradia", operacao: "Débito"),
+    Despesa(socio: "Ana", data: "2023-08-03", valor: "300.0", descricao: "Descrição da despesa da categoria Lazer", categoria: "Lazer", operacao: "Crédito"),
+    Despesa(socio: "Pedro", data: "2023-08-04", valor: "700.0", descricao: "Descrição da despesa da categoria Outros", categoria: "Outros", operacao: "Débito"),
   ];
 
-  Future getDespesas({int index = 0}) async {
-    final despesas = await DespesasSheetsApi.getAll();
-    setState(() {
-      this.despesas = despesas;
-    });
-  }
+  // Future getDespesas({int index = 0}) async {
+  //   final despesas = await DespesasSheetsApi.getAll();
+  //   setState(() {
+  //     this.despesas = despesas;
+  //   });
+  // }
 
 
   @override
   void initState() {
     super.initState();
-    getDespesas();
-    projects = List.from(despesas);
+   // getDespesas();
+    despesas = List.from(defaultDespesa);
 
   }
 
   void _removeProject(int index) async {
-    final removed = projects.removeAt(index);
+    final removed = despesas.removeAt(index);
     const duration = Duration(milliseconds: 800);
     _listKey.currentState!.removeItem(
       index,
@@ -65,7 +52,7 @@ class _ProjectsListState extends State<ProjectsList> {
   Widget _buildRemovedItem(
     int index,
     Animation<double> animation,
-    Project removed,
+    Despesa removed,
   ) {
     return SizeTransition(
       sizeFactor: CurvedAnimation(
@@ -73,7 +60,7 @@ class _ProjectsListState extends State<ProjectsList> {
         curve: Curves.elasticOut,
       ).drive(Tween(begin: 0, end: 0)),
       child: ProjectsListItem(
-        project: removed,
+        despesa: removed,
         onDelete: () {},
       ),
     );
@@ -83,12 +70,12 @@ class _ProjectsListState extends State<ProjectsList> {
   Widget build(BuildContext context) {
     return AnimatedList(
       key: _listKey,
-      initialItemCount: projects.length,
+      initialItemCount: despesas.length,
       itemBuilder: (context, index, animation) {
         return ProjectsListItem(
           key: ValueKey(index),
           onDelete: () => _removeProject(index),
-          project: projects[index],
+          despesa: despesas[index],
         );
       },
     );

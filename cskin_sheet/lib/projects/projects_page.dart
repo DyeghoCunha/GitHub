@@ -20,7 +20,6 @@ class _RiveoProjectsPageState extends State<RiveoProjectsPage> {
         clipBehavior: Clip.none,
         children: [
           ProjectsList(),
-
         ],
       ),
     );

@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import '../Model/despesa.dart';
 
 class DespesaListTileWidget extends StatefulWidget {
-   DespesaListTileWidget({super.key, required this.despesa});
- Despesa? despesa;
+  DespesaListTileWidget({super.key, required this.despesa});
+
+  Despesa? despesa;
+
   @override
   State<DespesaListTileWidget> createState() => _DespesaListTileWidgetState();
 }
 
 class _DespesaListTileWidgetState extends State<DespesaListTileWidget> {
-
-
   @override
   Widget build(BuildContext context) {
-    Despesa despesa = widget.despesa ?? const Despesa(socio: "", data: "", valor: "", descricao: "",
-        categoria: "", operacao: "");
+    Despesa despesa = widget.despesa ??
+        const Despesa(socio: "", data: "", valor: "", descricao: "", categoria: "", operacao: "");
     Widget _subtitulo(Despesa despesa) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,45 +33,57 @@ class _DespesaListTileWidgetState extends State<DespesaListTileWidget> {
         ],
       );
     }
+
     Widget _leading(Despesa? despesa) {
-      return despesa != null ? Card(
-        color: Colors.white,
-        elevation: 5,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: ThemeColors.socios[despesa.socio],
-          ),
-          width: 60,
-          height: 50,
-          alignment: Alignment.center,
-          child: Text(despesa.socio,style: TextStyle(fontSize: 18),),
-        ),
-      ):const Icon(Icons.person);
+      return despesa != null
+          ? Card(
+              color: Colors.white,
+              elevation: 5,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: ThemeColors.socios[despesa.socio],
+                ),
+                width: 60,
+                height: 50,
+                alignment: Alignment.center,
+                child: Text(
+                  despesa.socio,
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            )
+          : const Icon(Icons.person);
     }
-    Widget _trailing(Despesa? despesa){
-      if(despesa==null) return Container();
-      if(despesa.operacao=="Entrada") {
-        return const Icon(Icons.arrow_upward, size: 35, color: Colors.green,);
-      }else{
-        return const Icon(Icons.arrow_downward, size: 35, color: Colors.red,);
+
+    Widget _trailing(Despesa? despesa) {
+      if (despesa == null) return Container();
+      if (despesa.operacao == "Entrada") {
+        return const Icon(
+          Icons.arrow_upward,
+          size: 35,
+          color: Colors.green,
+        );
+      } else {
+        return const Icon(
+          Icons.arrow_downward,
+          size: 35,
+          color: Colors.red,
+        );
       }
     }
 
-    return Center(
-      child: Wrap(
-        children: [
-          Material(
-            elevation: 5,
-            child: ListTile(
-              contentPadding: EdgeInsets.all(0),
-              leading: _leading(despesa),
-              title: Text(despesa.descricao),
-              subtitle: _subtitulo(despesa),
-             trailing: _trailing(despesa),
-            ),
-          ),
-        ],
+    return Material(
+      elevation: 5,
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: ListTile(
+          contentPadding: EdgeInsets.all(0),
+          leading: _leading(despesa),
+          title: Text(despesa.descricao),
+          subtitle: _subtitulo(despesa),
+          trailing: _trailing(despesa),
+        ),
       ),
     );
   }

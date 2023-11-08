@@ -1,14 +1,13 @@
 import 'package:audioplayers/audioplayers.dart';
-import 'package:cskin_sheet/projects/card/project_card_constants.dart';
 import 'package:cskin_sheet/projects/card/shader_helper.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
+import '../projects/delete_project_dialog.dart';
+import 'despesa_curl_card_constantes.dart';
 
-import '../delete_project_dialog.dart';
-
-class ProjectCard extends StatefulWidget {
-  const ProjectCard({
+class DespesaCurlCard extends StatefulWidget {
+  const DespesaCurlCard({
     Key? key,
     required this.child,
     required this.onDelete,
@@ -18,12 +17,12 @@ class ProjectCard extends StatefulWidget {
   final VoidCallback onDelete;
 
   @override
-  State<ProjectCard> createState() => _ProjectCardState();
+  State<DespesaCurlCard> createState() => _DespesaCurlCardState();
 }
 
-class _ProjectCardState extends State<ProjectCard>
+class _DespesaCurlCardState extends State<DespesaCurlCard>
     with TickerProviderStateMixin {
-  final double cornerRadius = 16.0;
+  final double cornerRadius = 10.0;
 
   late final AnimationController _animation;
   late final AudioPlayer _audioPlayer;
@@ -37,7 +36,7 @@ class _ProjectCardState extends State<ProjectCard>
     super.initState();
     _animation = AnimationController.unbounded(
       vsync: this,
-      duration: ProjectCardConstants.animationDuration,
+      duration: DespesaCurlCardCosntante.animationDuration,
     );
     _animation.value = 0.0;
     _audioPlayer = AudioPlayer();
@@ -45,17 +44,17 @@ class _ProjectCardState extends State<ProjectCard>
 
   Future<void> _playPauseAudio() async {
     if (!_isPlaying) {
-      await _audioPlayer.seek(ProjectCardConstants.seekAudioDuration);
-      await _audioPlayer.play(AssetSource(ProjectCardConstants.audioAsset));
+      await _audioPlayer.seek(DespesaCurlCardCosntante.seekAudioDuration);
+      await _audioPlayer.play(AssetSource(DespesaCurlCardCosntante.audioAsset));
       setState(() => _isPlaying = true);
     }
   }
 
-  Future<void> _showCupertinoDialog() async {
+  Future<void> _showDialog() async {
     setState(() {
       _isDialogShown = true;
     });
-    await showCupertinoDialog(
+    await showDialog(
       context: context,
       builder: (BuildContext context) {
         return DeleteProjectDialog(
@@ -74,7 +73,7 @@ class _ProjectCardState extends State<ProjectCard>
     Navigator.of(context).pop();
     await _animation.animateTo(
       0,
-      duration: ProjectCardConstants.pauseAnimationDuration,
+      duration: DespesaCurlCardCosntante.pauseAnimationDuration,
     );
   }
 
@@ -83,7 +82,7 @@ class _ProjectCardState extends State<ProjectCard>
     Navigator.of(context).pop();
     await _animation.animateTo(
       0,
-      duration: ProjectCardConstants.deleteAnimationDuration,
+      duration: DespesaCurlCardCosntante.deleteAnimationDuration,
     );
     widget.onDelete();
   }
@@ -95,8 +94,8 @@ class _ProjectCardState extends State<ProjectCard>
     _animation.value = newPointer;
     final double value = _animation.value + _width;
 
-    if (value < -ProjectCardConstants.dialogThreshold && !_isDialogShown) {
-      _showCupertinoDialog();
+    if (value < -DespesaCurlCardCosntante.dialogThreshold && !_isDialogShown) {
+      _showDialog();
     }
   }
 
@@ -116,16 +115,17 @@ class _ProjectCardState extends State<ProjectCard>
 
   Widget _buildAnimatedCard(BuildContext context, Widget? child) {
     return ShaderBuilder(
-      (context, shader, _) {
+
+          (context, shader, _) {
         return AnimatedSampler(
-          (image, size, canvas) {
+              (image, size, canvas) {
             ShaderHelper.configureShader(shader, size, image, _animation.value);
             ShaderHelper.drawShaderRect(shader, size, canvas);
           },
           child: widget.child,
         );
       },
-      assetKey: ProjectCardConstants.shaderAssetKey,
+      assetKey: DespesaCurlCardCosntante.shaderAssetKey,
     );
   }
 
