@@ -1,9 +1,6 @@
-import 'package:cskin_sheet/Components/despesa_form_widget.dart';
 import 'package:cskin_sheet/Despesa_curl/despesa_curl_page.dart';
 import 'package:cskin_sheet/Page/cria_despesa_page/cria_despesa_page.dart';
-import 'package:cskin_sheet/Page/despesas_page.dart';
 import 'package:flutter/material.dart';
-import '../api/despesas_sheets_api.dart';
 
 class CreatesheetsPage extends StatelessWidget {
   const CreatesheetsPage({super.key});
@@ -13,21 +10,24 @@ class CreatesheetsPage extends StatelessWidget {
 
 
     Widget _bottomSheet = Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         ElevatedButton(
-          child: Text("Despesas"),
+          child: Text("Teste"),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => DespesasPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => Container(color: Colors.blue,child:
+            Center(child: Text("Pagina Teste")),)));
           },
         ),
         ElevatedButton(
-          child: Text("Teste"),
+          child: Text("Incluir"),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) => CriaDespesaPage()));
           },
         ),
         ElevatedButton(
-          child: Text("CURL"),
+          child: Text("Despesas"),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) => DespesaCurlPage()));
           },
@@ -37,26 +37,11 @@ class CreatesheetsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Titulo"),
+        title: const Text("Pagina Principal"),
         centerTitle: true,
       ),
       bottomSheet: _bottomSheet,
-      body: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(32),
-        child: SingleChildScrollView(
-          child: DespesaFormWidget(
-            onSavedUser: (despesa) async {
-              print("Funcionou");
-              final id = await DespesasSheetsApi.getRowCount() + 1;
-              final newDespesa = despesa.copy(id: id);
-              await DespesasSheetsApi.insert(
-                newDespesa.toJson(),
-              );
-            },
-          ),
-        ),
-      ),
+      body: Container(color: Colors.teal,),
     );
   }
 }

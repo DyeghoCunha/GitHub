@@ -1,0 +1,405 @@
+@import '../../../../styles/variaveis';
+
+
+
+
+.container_Card {
+  width: 180px;
+  height: 259px;
+  border-radius: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.imgFundo {
+  position: absolute;
+  z-index: 0;
+  width: fit-content;
+  height: fit-content;
+  transform: translate(-3.5px, 0px);
+
+}
+
+
+
+.card_base {
+  transform: translateZ(10px);
+  position: absolute;
+
+}
+
+.card_personagem {
+  transform: translateZ(25px);
+}
+
+
+//Alterar o Herói
+.card_personagem_imagem {
+  width: 120px;
+  transform: translate(30px, -20px);
+  position: absolute;
+
+
+}
+
+.container_disco {
+  position: absolute;
+  animation: moveAnimation 20s infinite;
+}
+
+.disco_um {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  width: 120px;
+
+
+}
+
+.disco_um_luz {
+  transform: translate(0px, 0px);
+  position: absolute;
+  opacity: 0;
+  animation: moveAnimationLuz 20s infinite;
+  z-index: 10;
+}
+
+
+.disco_um_vaca {
+  transform: translate(0px, 0px);
+  position: absolute;
+  opacity: 0;
+  animation: moveAnimationAbducao 20s linear 0s forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  z-index: 1;
+}
+
+.disco_um_humano {
+  transform: translate(0px, 0px);
+  position: absolute;
+  opacity: 0;
+  animation: moveAnimationAbducao 20s linear 20s forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  z-index: 1;
+}
+
+.disco_um_bicicleta {
+  transform: translate(0px, 0px);
+  position: absolute;
+  opacity: 0;
+  animation: moveAnimationAbducao 20s linear 40s forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  z-index: 11;
+}
+
+
+
+@keyframes moveAnimationAbducao {
+  0% {
+    transform: translate3d(-62px, 0px, 0);
+    opacity: 0;
+  }
+
+  5% {
+    transform: translate3d(140px, 0px, 0);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translate3d(140px, -70px, 0);
+    opacity: 0;
+  }
+
+  15% {
+    transform: translate3d(50px, -90px, 70px);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translate3d(-62px, 160px, 70px);
+    opacity: 0;
+  }
+
+  25% {
+    transform: translate3d(120px, -60px, 10px);
+    opacity: 0;
+
+  }
+
+  45% {
+    transform: translate3d(-62px, -60px, 20px) rotateX(25deg) rotateY(20deg) rotateZ(40deg);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translate3d(-62px, -60px, 5px);
+    opacity: 0;
+  }
+
+  57% {
+    transform: translate3d(-62px, -60px, 5px);
+    opacity: 1;
+  }
+
+  66% {
+    transform: translate3d(-62px, -90px, 5px);
+    opacity: 1;
+  }
+
+  75%,
+  77%,
+  79% {
+    transform: translate3d(-62px, -100px, 5px);
+    opacity: 1;
+  }
+
+  76%,
+  78% {
+    transform: translate3d(-62px, -90px, 5px);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translate3d(-62px, -130px, 5px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(-62px, -130px, 0px) rotateX(25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes moveAnimationLuz {
+  0% {
+    transform: translate3d(-62px, 0px, 0);
+    opacity: 0;
+  }
+
+  5% {
+    transform: translate3d(140px, 0px, 0);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translate3d(140px, -70px, 0);
+    opacity: 0;
+  }
+
+  15% {
+    transform: translate3d(50px, -90px, 70px);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translate3d(-62px, 160px, 70px);
+    opacity: 0;
+  }
+
+  25% {
+    transform: translate3d(120px, 60px, 10px);
+    opacity: 0;
+
+  }
+
+  35%,
+  65%,
+  75%,
+  95% {
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 0;
+  }
+
+  45% {
+    transform: translate3d(-62px, -20px, 20px) rotateX(25deg) rotateY(20deg) rotateZ(40deg);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 0;
+  }
+
+  57% {
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 0.5;
+  }
+
+  66%,
+  68%,
+  70%,
+  72%,
+  74%,
+  77%,
+  79%,
+  80% {
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 1;
+  }
+
+  67%,
+  69%,
+  71%,
+  73%,
+  76%,
+  78% {
+    transform: translate3d(-62px, -20px, 10px);
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate3d(-10px, 0px, 0px) rotateX(25deg);
+  }
+}
+
+@keyframes moveAnimation {
+  0% {
+    transform: translate3d(0px, 0px, 0)scale(0.5);
+
+  }
+
+  5% {
+    transform: translate3d(10px, 10px, 0) scale(0.9);
+  }
+
+  7% {
+    transform: translate3d(140px, 0, 0);
+  }
+
+  10% {
+    transform: translate3d(140px, -70px, 30px) scale(1.2);
+  }
+
+  15% {
+    transform: translate3d(50px, -90px, 70px) scale(1.4);
+  }
+
+  20% {
+    transform: translate3d(0, 150px, 70px) scale(1.6);
+  }
+
+  25% {
+    transform: translate3d(120px, 80px, 30px);
+  }
+
+  35%,
+  65%,
+  75%,
+  95% {
+    transform: translate3d(0, 70px, 10px);
+  }
+
+  45% {
+    transform: translate3d(0, 70px, 50px) rotateX(35deg) rotateY(50deg) rotateZ(30deg) scale(2.3);
+  }
+
+  55%,
+  66%,
+  68%,
+  70%,
+  72%,
+  74%,
+  77%,
+  79%,
+  80% {
+    transform: translate3d(0, 70px, 10px);
+  }
+
+  67%,
+  69%,
+  71%,
+  73%,
+  76%,
+  78% {
+    transform: translate3d(0, 70px, 10px);
+    transform: translate3d(5px, 75px, 10px);
+  }
+
+  100% {
+    transform: translate3d(10px, 10px, 0px) scale(0.2);
+  }
+}
+
+.card_faixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 259px;
+  position: relative;
+
+}
+
+.faixaContainer {
+  position: absolute;
+  transform: translateZ(20px);
+  bottom: -57px;
+  right: -92px;
+
+
+}
+
+.nome_container {
+  transform: translateY(-10px);
+  position: absolute;
+
+}
+
+.nome {
+  position: absolute;
+  font-size: 15px;
+  fill: #644651;
+  font-family: $fonte-normal-WTF-Et;
+  display: none;
+}
+
+//Altera o MiniCard
+.miniCard_container {
+  transform: translateZ(40px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  z-index: 10;
+
+}
+
+.miniCard {
+  width: fit-content;
+  height: fit-content;
+  transform: translate(-5px, 15px);
+
+}
+
+.frase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 141px;
+  height: 47px;
+  text-align: center;
+
+  bottom: -17px;
+  padding: 5px 5px;
+  left: 17px;
+  position: absolute;
+  font-family: $fonte-normal-WTF-Et;
+  color: $cybergreen;
+  font-size: 1.5em;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+  letter-spacing: 5px;
+
+
+}
