@@ -14,22 +14,22 @@ class CreatesheetsPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         ElevatedButton(
-          child: Text("Teste"),
+          child: const Text("Teste"),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) => Container(color: Colors.blue,child:
-            Center(child: Text("Pagina Teste")),)));
+            const Center(child: Text("Pagina Teste")),)));
           },
         ),
         ElevatedButton(
-          child: Text("Incluir"),
+          child: const Text("Incluir"),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => CriaDespesaPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => const CriaDespesaPage()));
           },
         ),
         ElevatedButton(
-          child: Text("Despesas"),
+          child: const Text("Despesas"),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => DespesaCurlPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => const DespesaCurlPage()));
           },
         ),
       ],
