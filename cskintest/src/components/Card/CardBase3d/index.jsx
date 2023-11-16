@@ -7,7 +7,7 @@ import React, { useEffect, useRef } from 'react'
 export default function CardBase3d({ children, inclinacao = 35, velocidade = 5000, brilhoOn = true, reverse = false, segueMouse = false, brilho = 1.5 }) {
   const tiltRef = useRef(null);
 
-//Apenas testando para ver se funciona 
+//Apenas testando para ver se funciona tentando fazer mais alterações para vincular ao guiitbuh 
 
   useEffect(() => {
     if (tiltRef.current) {
