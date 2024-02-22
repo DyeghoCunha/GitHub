@@ -6,9 +6,7 @@ export default function Btn_Loggin() {
 
   return (
    
-    <ButtonGroup gap='4'>
-      <Button colorScheme='whiteAlpha'>Entre</Button>
-    </ButtonGroup>
+      <Button bgGradient="linear(to-r, orange, red)"colorScheme='whiteAlpha' fontSize="20px" fontWeight="bold" color="white">Entre</Button>
     
   )
 }

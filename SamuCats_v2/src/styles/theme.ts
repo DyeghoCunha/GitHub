@@ -111,7 +111,7 @@ export const theme = extendTheme({
       },
       variants: {
         primary: {
-          bg: "#fe7700",
+          bgGradient:"linear(to-r, orange, red)",
           boxShadow: "-1px 3px 2px rgba(0, 0, 0, 0.19)",
           _active: {
             bgGradient: "linear(to-b, #B75C09, #F08200)",

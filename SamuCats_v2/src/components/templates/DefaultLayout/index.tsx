@@ -1,3 +1,4 @@
+import Footer from "@/components/organisms/Footer";
 import Header from "@/components/organisms/Header";
 import { Container, Flex } from "@chakra-ui/react";
 
@@ -18,7 +19,7 @@ export function DefaultLayout({ p, children }: IDefaultLayoutProps) {
         {children}
       </Container>
 
-      <footer>Footer para ser alterado</footer>
+     <Footer/> 
     </Flex>
   );
 }
