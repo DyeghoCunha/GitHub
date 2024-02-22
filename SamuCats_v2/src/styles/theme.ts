@@ -111,7 +111,7 @@ export const theme = extendTheme({
       },
       variants: {
         primary: {
-          bgGradient:"linear(to-r, orange, red)",
+          bgGradient: "linear(to-r, orange, red)",
           boxShadow: "-1px 3px 2px rgba(0, 0, 0, 0.19)",
           _active: {
             bgGradient: "linear(to-b, #B75C09, #F08200)",
@@ -214,14 +214,14 @@ export const theme = extendTheme({
           field: {
             color: "gray.100",
             fontSize: "sm",
-            bgColor: "gray.600",
+            bgColor: "gray.700",
             borderColor: "gray.600",
             px: 2.5,
             "::placeholder": {
               color: "gray.300",
             },
             _hover: {
-              borderColor: "gray.600",
+              borderColor: "#F08200",
             },
           },
         },

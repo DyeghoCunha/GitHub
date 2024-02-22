@@ -1,11 +1,14 @@
 
 
 export interface IProject {
-  id: string
-  name: string
-  progress: number
-  description: string
-  developers: IDeveloper[]
+  id: string;
+  projectName: string;
+  authorName:string;
+  progress?: number;
+  description: string;
+  image?:string;
+  developers?: IDeveloper[];
+
   
 }
 
