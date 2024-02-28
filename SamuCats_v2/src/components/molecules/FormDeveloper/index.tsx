@@ -14,7 +14,34 @@ export default function FormDeveloper() {
 
   function validateName(value: string) {
     let error;
-    if (!value&&value.length===0) {
+    if (!value && value.length === 0) {
+      error = "Coloque o seu Nome Completo";
+    } else if (value.toLowerCase() !== 'naruto') {
+      error = "Jeez! You're not a fan 😱";
+    }
+    return error;
+  }
+  function validateLinkedIn(value: string) {
+    let error;
+    if (!value && value.length === 0) {
+      error = "Coloque o seu Nome Completo";
+    } else if (value.toLowerCase() !== 'naruto') {
+      error = "Jeez! You're not a fan 😱";
+    }
+    return error;
+  }
+    function validateGithub(value: string) {
+    let error;
+    if (!value && value.length === 0) {
+      error = "Coloque o seu Nome Completo";
+    } else if (value.toLowerCase() !== 'naruto') {
+      error = "Jeez! You're not a fan 😱";
+    }
+    return error;
+  }
+    function validateWhatsapp(value: string) {
+    let error;
+    if (!value && value.length === 0) {
       error = "Coloque o seu Nome Completo";
     } else if (value.toLowerCase() !== 'naruto') {
       error = "Jeez! You're not a fan 😱";
@@ -22,40 +49,75 @@ export default function FormDeveloper() {
     return error;
   }
 
-  function validateLinkedIn(value: string) {
-    let error;
-    if (!value) {
-      error = 'Escreva o Seu Nome Completo';
-    } else if (value.toLowerCase() !== 'naruto') {
-      error = "Jeez! You're not a fan 😱";
-    }
-    return error;
+
+
+  type CardFormType = {
+    name: string;
+    validate: Function;
+    formLabel: string;
+    placeHolder:string;
+    isRequired: boolean;
+    helperText: string;
   }
 
-  const component = (props) => <>
-    <Field name='name' validate={validateName}>
-      {({ field, form }) => (
-        <FormControl isInvalid={form.errors.name && form.touched.name}>
-          <FormLabel>Seu Nome</FormLabel>
-          <Input {...field} placeholder='name' />
-          <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-        </FormControl>
-      )}
-    </Field>
 
-    <Button
-      variant="primary"
-      mt={4}
-      colorScheme='teal'
-      isLoading={props.isSubmitting}
-      type='submit'
-    >
-      Submit
-    </Button></>
+  const CardFormProps = [
+    {
+      name: "name",
+      validate: validateName,
+      formLabel: "Nome Completo",
+      isRequired: true,
+      helperText: "Digite o nome de verdade, sem frescura",
+      placeHolder:""
+    },
+    {
+      name: "linkedIn",
+      validate: validateLinkedIn,
+      formLabel: "LinkedIn",
+      isRequired: true,
+      helperText: "Copie e cole a url, vai ser mais fácil 😅",
+      placeHolder:"https://www.linkedin.com/in/<seu_usuario>/"
+    },
+    {
+      name: "gitHub",
+      validate: validateGithub,
+      formLabel: "GitHub",
+      isRequired: true,
+      helperText: "Copia e cola a Url do GitHub também, pra não ter erro",
+      placeHolder:"https://github.com/<seu_usuario>"
+    },
+    {
+      name: "whatsapp",
+      validate: validateWhatsapp,
+      formLabel: "WhatsApp",
+      isRequired: false,
+      helperText: "Se não tiver afim, tranquilo, não vou levar para o coração ❤️‍🩹",
+      placeHolder:""
+    },
+  ]
 
-  function CardForm({ children }: any) {
+
+
+
+
+  function CardForm({ name, validate, formLabel, isRequired, helperText,placeHolder }: CardFormType) {
     return (
-      <Card m="10px" bg="gray.600" p="10px" >{children}</Card>
+      <Card m="10px" bg="gray.600" p="10px" >
+        <Field name={name} validate={validate}>
+          {({ field, form }: any) => (
+            <FormControl isInvalid={form.errors.name && form.touched.name}>
+              <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text">{formLabel}</FormLabel>
+              <Input {...field} placeholder={placeHolder} variant="outline" type='text' id={name} name={name} isRequired={isRequired} />
+              {form.errors.name ? (
+                <Box></Box>
+              ) : (
+                <FormHelperText color="gray">{helperText}</FormHelperText>
+              )}
+              <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+            </FormControl>
+          )}
+        </Field>
+      </Card>
     )
   }
 
@@ -81,86 +143,28 @@ export default function FormDeveloper() {
                   <VStack>
                     <Heading my="10px">Formulário de Cadastro de Projeto</Heading>
                     <Card w={{ base: "800px", sm: "300px", md: "800px" }} bg="gray.500">
-                      <CardForm>
 
-                        <Field name='name' validate={validateName}>
-                          {({ field, form }) => (
-                            <FormControl isInvalid={form.errors.name && form.touched.name}>
-                              <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text">Nome do Projeto</FormLabel>
-                              <Input {...field} placeholder='' variant="outline" type='text' id="name" name="name" isRequired />
-                              {form.errors.name ? (
-                                <Box></Box>
-                              ) : (
-                                <FormHelperText color="gray">Coloque o seu Nome Completo.</FormHelperText>
-                              )}
-                              <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                            </FormControl>
-                          )}
-                        </Field>
+                {CardFormProps.map((item)=><CardForm
+                key={item.name}
+                name={item.name}
+                formLabel={item.formLabel}
+                helperText={item.helperText}
+                placeHolder={item.placeHolder}
+                validate={item.validate}
+                isRequired={item.isRequired}
+                />)}
 
-                     
 
-                    </CardForm>
+                    </Card >
+                  </VStack>
 
-                    <CardForm>
-                      <FormControl>
-                        <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text">Nome do Autor</FormLabel>
-                        <Input type='text' id="authorName" name="authorName" isRequired />
-                        <FormHelperText color="gray">Nome do criador do Projeto</FormHelperText>
-                      </FormControl>
-                    </CardForm>
-
-                    <CardForm>
-                      <FormControl>
-                        <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text">Resumo do Projeto</FormLabel>
-                        <Input type='text' id="summary" name="summary" isRequired />
-                        <FormHelperText color="gray">Descreva a funcionalidade em poucas palavras </FormHelperText>
-                      </FormControl>
-                    </CardForm>
-
-                    <Stack direction={{ base: "row", sm: "column", md: "row" }} alignItems="end">
-                      <Box w="75%" h="100%">
-                        <CardForm>
-                          <FormControl>
-                            <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text">Descrição</FormLabel>
-                            <Textarea
-                              id="instructions"
-                              name="instructions"
-                              rows={10}
-                              required
-                            ></Textarea>
-                            <FormHelperText color="gray">Descreva de forma Objetiva o Projeto</FormHelperText>
-                          </FormControl>
-                        </CardForm>
-                      </Box>
-
-                      <CardForm>
-                        <FormControl>
-                          <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text">Imagem do Projeto</FormLabel>
-                          <ImagePicker name="image" />
-                          <FormHelperText color="gray">Imagem do Figma ou do Conceito do Projeto</FormHelperText>
-                        </FormControl>
-                      </CardForm>
-                    </Stack>
-
-                  </Card >
-                </VStack>
-
-                <Card bg="gray.500" borderRadius="20px">
-                  <Card m="10px" bg="gray.600" p="10px" borderRadius="full">
-                    <Button borderRadius="full" variant="primary" w="150px" h="150px" isLoading={props.isSubmitting}
-      type='submit'>
-                      <LuCheckCircle2 size="350px" opacity="0.5" />
-                    </Button>
-                  </Card>
-                </Card>
+                </HStack>
+                <Image src={SamucaForm.src} />
               </HStack>
-              <Image src={SamucaForm.src} />
-            </HStack>
-          </Center >
+            </Center >
           </Form>
         )}
-    </Formik >
+      </Formik >
     </>
   );
 }

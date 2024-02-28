@@ -45,7 +45,7 @@ export default class Developer implements IDeveloper {
   id: string;
   name: string;
   availability: boolean;
-  linkedIn?: string;
+  linkedIn: string;
   github: string;
   whatsapp?: string;
   primaryStack: Stack;
