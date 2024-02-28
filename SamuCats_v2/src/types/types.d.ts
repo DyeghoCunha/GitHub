@@ -40,6 +40,58 @@ export interface IDeveloper extends Person {
   stylingFrameWork?: StylingFramework[];
   frameWork: Framework[];
 }
+
+export default class Developer implements IDeveloper {
+  id: string;
+  name: string;
+  availability: boolean;
+  linkedIn?: string;
+  github: string;
+  whatsapp?: string;
+  primaryStack: Stack;
+  secondaryStack?: Stack;
+  primaryLanguage: Language;
+  programmingLanguages?: Language[];
+  stylingFrameWork?: StylingFramework[];
+  frameWork: Framework[];
+
+  constructor({
+    id,
+    name,
+    availability,
+    linkedIn,
+    github,
+    whatsapp,
+    primaryStack,
+    secondaryStack,
+    primaryLanguage,
+    programmingLanguages,
+    stylingFrameWork,
+    frameWork,
+  }: IDeveloper) {
+    this.id = id;
+    this.name = name;
+    this.availability = availability;
+    this.linkedIn = linkedIn;
+    this.github = github;
+    this.whatsapp = whatsapp;
+    this.primaryStack = primaryStack;
+    this.secondaryStack = secondaryStack;
+    this.primaryLanguage = primaryLanguage;
+    this.programmingLanguages = programmingLanguages;
+    this.stylingFrameWork = stylingFrameWork;
+    this.frameWork = frameWork;
+  }
+}
+
+
+
+
+
+
+
+
+
 export interface IDesigner extends Person {
   designTools: DesignTool[];
   specialties: DesignerSpecialty[];

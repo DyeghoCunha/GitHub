@@ -1,17 +1,18 @@
-import FormDefault from "@/components/molecules/FormDefault";
+import FormDeveloper from "@/components/molecules/FormDeveloper";
+import FormDefault from "@/components/molecules/FormProject";
 import { DefaultLayout } from "@/components/templates/DefaultLayout";
 
 
 export default function DevelopersPage() {
   return (
     <main>
-    <div>Developers Page !</div>
-    <FormDefault/>
+    <FormDeveloper/> 
+
     </main>
   )
 }
 DevelopersPage.getLayout = function getLayout(page: React.ReactElement) {
   return (
-        <DefaultLayout>{page}</DefaultLayout>
+    <DefaultLayout>{page}</DefaultLayout>
   );
 };

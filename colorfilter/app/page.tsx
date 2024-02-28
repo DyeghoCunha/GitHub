@@ -1,95 +1,53 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
+import ItemCard from "@/components/molecules/ItemCard";
+import { DefaultLayout } from "@/components/templates/DefaultLayout";
+import {useItemColorContext } from "@/context/weaponsContext";
+import { getItens } from "@/lib/itemsWithColor";
+import { Box, Button, Card, Center, Divider, Grid, GridItem, HStack, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import Link from "next/link";
+import { useEffect } from "react";
+import saveAllItemWithColor from "@/lib/actions.js"
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+  const { skins, similarColors, groupColorsFinal, sortedColorGroups, itemWithColor } = useItemColorContext();
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+  let quantidade = 10;
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+  
+    return ( 
+      <>
+      <Box my={10}> 
+      <Link  href="/itensWithDb">Filtro de Cores</Link>
+      </Box>
+  
+      <Button onClick={async () => {
+        const response = await fetch('/api/items', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(itemWithColor),
+        });
+  
+        if (!response.ok) {
+          throw new Error('Erro ao salvar o item');
+        }
+  
+        const data = await response.json();
+        console.log(data.message);
+      }}>Salvar no Banco</Button>
+  {/* 
+        <Grid templateColumns="repeat(5,1fr)" gap={0}>
+          {skins.splice(0,10).map((skin) => (
+            <GridItem id={skin.id} w="100%">
+              <ItemCard skins={skin} />
+            </GridItem>
+          ))}
+        </Grid>*/}
+        <Divider m="10px" />
+      </>
+    );
+    
 }
+

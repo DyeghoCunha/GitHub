@@ -6,13 +6,16 @@ import { Button, FormControl, FormLabel, Input, FormHelperText, Textarea, Card, 
 import { CheckIcon } from '@chakra-ui/icons';
 import { LuCheckCircle2 } from "react-icons/lu";
 import React from 'react';
+import SamucaForm from "@/assets/image/samucaForm.png"
 
 
-export default function FormDefault() {
 
 
 
-  function CardForm({ children }) {
+export default function FormProject() {
+
+
+  function CardForm({ children }:any) {
     return (
       <Card m="10px" bg="gray.600" p="10px" >{children}</Card>
     )
@@ -20,6 +23,7 @@ export default function FormDefault() {
 
   return (
     <Center mb="20px">
+      <HStack alignItems="start">
       <HStack alignItems="end">
         <VStack>
           <Heading my="10px">Formulário de Cadastro de Projeto</Heading>
@@ -80,12 +84,14 @@ export default function FormDefault() {
 
         <Card bg="gray.500" borderRadius="20px">
           <Card m="10px" bg="gray.600" p="10px" borderRadius="full">
-          <Button borderRadius="full" variant="primary" w="150px" h="150px">
-            <LuCheckCircle2 size="350px" opacity="0.5"/>
-          </Button>
+            <Button borderRadius="full" variant="primary" w="150px" h="150px">
+              <LuCheckCircle2 size="350px" opacity="0.5" />
+            </Button>
+          </Card>
         </Card>
-      </Card>
-    </HStack>
+      </HStack>
+      <Image src={SamucaForm.src} />
+      </HStack>
     </Center >
   );
 }
