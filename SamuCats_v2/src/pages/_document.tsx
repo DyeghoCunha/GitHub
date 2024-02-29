@@ -1,3 +1,4 @@
+import { ColorModeScript } from "@chakra-ui/react";
 import { Head, Html, Main, NextScript } from "next/document";
 import Script from "next/script";
 
@@ -35,6 +36,7 @@ export default function Document() {
         </Script>
       </Head>
       <body>
+        <ColorModeScript initialColorMode="light" />
         <Main />
         <Script id="gerencianet" strategy="afterInteractive">
           {`

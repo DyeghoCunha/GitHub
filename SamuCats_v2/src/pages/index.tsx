@@ -5,6 +5,7 @@ import programmersImg from "@/assets/image/programadores.png"
 import shieldIcon from "@/assets/image/shield.png"
 import groupIcon from "@/assets/image/group.png"
 import ButtonDefault from "@/components/atoms/Button";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -32,8 +33,10 @@ export default function Home() {
               <Text lineHeight={1} fontSize="18px">Cadastre-se gratuitamente e faça parte do time</Text>
             </HStack>
           </HStack>
-          <Box mt={10}>
-            <ButtonDefault fontSize="40px" text="Faça já o seu Cadastro" onClick={teste} />
+          <Box mt={5}>
+            <Link href="/developers">
+            <Text fontSize="40px" fontWeight="bold"  bgGradient="linear(to-r, orange, red)" bgClip="text">Faça já o seu Cadastro</Text>
+            </Link>  
           </Box>
         </VStack>
         <Image src={programmersImg.src} borderRadius="20px" w="50%" />

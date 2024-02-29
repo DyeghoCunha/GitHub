@@ -5,6 +5,7 @@ import logo from "@/assets/image/logov2.png"
 import HeaderTab from './HeaderTabs';
 import HeaderLogin from './HeaderLogin';
 import HeaderHamburger from './HeaderHamburger';
+import BtnThemeMode from '@/components/atoms/Btn_ThemeMode';
 
 function Header() {
 
@@ -19,6 +20,9 @@ function Header() {
           <Text fontSize="30px" > SamuCats Dev Team</Text>
         </HStack>
         <HeaderTab />
+
+        <Box w="10px"></Box>
+        <BtnThemeMode/>
         <Box w="10px"></Box>
         <HeaderLogin />
         <HeaderHamburger />
