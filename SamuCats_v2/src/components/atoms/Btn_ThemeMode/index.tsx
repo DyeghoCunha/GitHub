@@ -11,8 +11,10 @@ export default function Btn_ThemeMode() {
   const controls = useAnimation();
 
   const handleClick = async () => {
-    await controls.start({ rotate: 360 });
+    await controls.set({ rotate: 0 });
+    await controls.start({ rotate: 360, opacity: 0 });
     toggleTheme();
+    controls.start({ opacity: 1 });
   };
 
   return (
@@ -28,10 +30,8 @@ export default function Btn_ThemeMode() {
         w="40px"
         onClick={handleClick}
         animate={controls}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         style={{ transformOrigin: "center" }}
-        whileHover={{ scale: 1 }}
-        
       />
     </Box>
   );

@@ -6,6 +6,7 @@ import shieldIcon from "@/assets/image/shield.png"
 import groupIcon from "@/assets/image/group.png"
 import ButtonDefault from "@/components/atoms/Button";
 import Link from "next/link";
+import Sidebar from "@/components/organisms/Sidebar";
 
 
 export default function Home() {

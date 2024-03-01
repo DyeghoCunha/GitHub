@@ -464,6 +464,29 @@ export const lightTheme = extendTheme({
     "2xl": "1900px",
   },
   components: {
+
+
+    Box: {
+      variants: {
+        shimmer: {
+          bgGradient: "linear(to-r, #000103 45%, #1e2631 55%, #000103)",
+          bgSize: "200% 100%",
+          color: "slate.400",
+          border: "1px solid",
+          borderColor: "slate.800",
+          borderRadius: "md",
+          fontWeight: "medium",
+          px: "6",
+          _focus: {
+            outline: "none",
+            ring: "2",
+            ringColor: "slate.400",
+            ringOffset: "2",
+            ringOffsetColor: "slate.50",
+          },
+        },
+      },
+    },
     Button: {
       variants: {
         primary: {
@@ -509,6 +532,7 @@ export const lightTheme = extendTheme({
             filter: "brightness(0.8)",
           },
         },
+        
       },
     },
     Menu: {
