@@ -5,9 +5,7 @@ import { useEffect } from "react";
 
 const ThemeContainer = ({ children }) => {
   const { theme } = useThemeContext();
-useEffect(()=>{
-  console.log(theme)
-},[theme])
+
   return (
     <ChakraProvider theme={theme? lightTheme:darkTheme}>
       {children}

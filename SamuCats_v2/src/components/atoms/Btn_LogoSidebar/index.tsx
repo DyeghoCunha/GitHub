@@ -1,7 +1,9 @@
 import { Avatar, Box, Button, HStack, Text } from '@chakra-ui/react'
 import Logo from "@/assets/image/logoSamucats.png"
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import { motion } from "framer-motion"
 
+const MotionIcon = motion(ChevronRightIcon)
 
 export default function Btn_LogoSidebar({ isOpen, toggleOpen }: any) {
   return (
@@ -9,7 +11,9 @@ export default function Btn_LogoSidebar({ isOpen, toggleOpen }: any) {
       <HStack justifyContent="center" alignItems="center"  >
         <Avatar size="md" src={Logo.src} />
         <Text fontSize="30px" fontWeight="bold">SamucaDoJava</Text>
-        <Button  w="20px" h="40px" variant="primary" borderRadius="full" position="absolute" right="-5"><ChevronRightIcon boxSize="10"  /></Button>
+        <Button onClick={()=>toggleOpen()}  w="20px" h="40px" variant="primary" borderRadius="full" position="absolute" right="-5">
+          <MotionIcon boxSize="10" animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.4 }}/>
+        </Button>
       </HStack>
     </Box>
   )

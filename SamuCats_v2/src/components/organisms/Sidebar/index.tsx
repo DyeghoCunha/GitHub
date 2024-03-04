@@ -1,13 +1,19 @@
-// Importando os componentes necessários
 import Btn_LogoSidebar from '@/components/atoms/Btn_LogoSidebar'
-import { Box, Button, Flex, HStack, Stack, useColorMode } from '@chakra-ui/react'
-import { motion, useCycle } from 'framer-motion'
+import { useThemeContext } from '@/context/ThemeContext';
+import { Box, Button, Divider, Flex, HStack, Icon, Link, Spacer, Stack, Text, useColorMode } from '@chakra-ui/react'
+import { AnimatePresence, motion, useCycle } from 'framer-motion'
+import { MdCalendarMonth, MdMailLock } from "react-icons/md";
+import SidebarLink from './SidebarLink';
+import SidebarAccordion from './SidebarAccordion';
+import { BsSignpost } from "react-icons/bs";
+import { BsPersonVcard } from "react-icons/bs";
+import { GoProjectRoadmap } from "react-icons/go";
+import { FaRegFileCode } from "react-icons/fa";
+import { IoMdInformationCircleOutline } from "react-icons/io";
+import { FaQuestion } from "react-icons/fa6";
 
-// Criando um componente de MotionBox que aceita as props do Framer Motion
 const MotionBox = motion(Box)
-const MotionButton = motion(Button)
 
-// Definindo as variantes de animação da sidebar
 const sidebarVariants = {
   open: {
     width: '317.5px',
@@ -25,85 +31,106 @@ const sidebarVariants = {
   },
 }
 
-// Definindo as variantes de animação do botão
-const buttonVariants = {
-  open: {
-    x: 0,
-    transition: {
-      ease: 'easeOut',
-      duration: 0.3,
-    },
-  },
-  closed: {
-    x: -175,
-    transition: {
-      ease: 'easeIn',
-      duration: 0.3,
-    },
-  },
-}
 
-// Criando um componente de Sidebar
+
+
+
 const Sidebar = ({ isOpen, toggleOpen }: any) => {
-  // Usando o hook useCycle para alternar entre os estados de aberto e fechado
 
-  // Usando o hook useColorMode para obter o colorMode atual
-  const { colorMode } = useColorMode()
+  const { theme } = useThemeContext()
 
-  // Definindo as cores da sidebar de acordo com o colorMode
-  const bgColor = { light: 'gray.100', dark: 'gray.900' }
-  const color = { light: 'black', dark: 'white' }
 
+  const sidebarLinks = [
+    {
+      href: "/Developers",
+      icon: BsPersonVcard,
+      text: "Desenvolvedores"
+    },
+    {
+      href: "/Projects",
+      icon: GoProjectRoadmap,
+      text: "Projetos"
+    },
+    {
+      href: "/",
+      icon: BsSignpost,
+      text: "Posts"
+    },
+    {
+      href: "/",
+      icon: FaRegFileCode,
+      text: "Regras"
+    },
+    {
+      href: "/",
+      icon: IoMdInformationCircleOutline,
+      text: "Sobre"
+    },
+    {
+      href: "/",
+      icon: FaQuestion,
+      text: "FAQ"
+    },
+  ]
 
 
   return (
-    
-    <>
-    
-    <HStack justifyContent="start" alignItems="start" >
-      <Box position="fixed" zIndex="20" top="0" left="0">
-        <Btn_LogoSidebar/>
-      </Box>
-      <MotionBox
-        as="aside"
-        bg={bgColor[colorMode]}
-        color={color[colorMode]}
-        position="fixed"
-        top="60px"
-        left={0}
-        height="100vh"
-        variants={sidebarVariants}
-        initial={false}
-        animate={isOpen ? 'open' : 'closed'}
 
-      >
-        <Flex
-          as="nav"
-          direction="column"
-          align="center"
-          justify="space-between"
-          height="100%"
-          padding={4}
+    <HStack>
+
+      <HStack justifyContent="start" alignItems="start" zIndex="10" >
+        <Box position="fixed" zIndex="20" top="0" left="0">
+          <Btn_LogoSidebar isOpen={isOpen} toggleOpen={toggleOpen} />
+        </Box>
+        <MotionBox
+          as="aside"
+          bg={theme ? "gray.500" : "gray.500"}
+          color={theme ? "black" : "white"}
+          position="fixed"
+          top="60px"
+          left={0}
+          height="100vh"
+          variants={sidebarVariants}
+          initial={false}
+          animate={isOpen ? 'open' : 'closed'}
+
         >
-          {/* Aqui você pode adicionar os itens do seu menu */}
-          <Box>Logo</Box>
-          <Box>Menu</Box>
-          <Box>Perfil</Box>
-        </Flex>
-        <MotionButton
-          as={Button}
-          position="absolute"
-          top={4}
-          right={-4}
-          borderRadius="full"
-          onClick={() => toggleOpen()}
-          variant={buttonVariants}
-        >
-          {isOpen ? 'Fechar' : 'Abrir'}
-        </MotionButton>
-      </MotionBox>
+          <Flex
+            as="nav"
+            direction="column"
+            align="start"
+            justify="start"
+            height="100%"
+            pl={2}
+            pt={10}
+            gap={5}
+          >
+            {sidebarLinks.map((item) => (
+              <SidebarLink href={item.href} icon={item.icon} isOpen={isOpen} >{item.text}</SidebarLink>
+            ))}
+
+
+
+            <Divider />
+
+
+            {isOpen ? (<SidebarAccordion isOpen={isOpen} />) : <></>}
+
+          </Flex>
+
+        </MotionBox>
+      </HStack>
+      <Box
+        position="fixed"
+        top={0}
+        left="0"
+        right={0}
+        bottom={0}
+        bgColor="rgba(255,0,0,0.1)"
+        onClick={toggleOpen}
+        zIndex={isOpen ? 1 : -1}
+      ></Box>
     </HStack>
-    </>
   )
 }
 

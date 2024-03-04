@@ -109,11 +109,8 @@ export default function FormDeveloper() {
 
   function CardForm({ name, validate, formLabel, isRequired, helperText, placeHolder, logo }: CardFormType) {
     return (
-      <HStack>
-        
-
-        <Card m="10px 5px 5px 5px" bg="gray.600" w="100%" p="10px" >
-
+      <HStack zIndex={0}>
+        <Card m="10px 5px 5px 5px" bg="gray.600" w="100%" p="10px" zIndex={0} >
           <Field name={name} validate={validate}>
             {({ field, form }: any) => (
               <FormControl isInvalid={form.errors.name && form.touched.name} >

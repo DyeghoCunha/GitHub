@@ -3,11 +3,18 @@ import Btn_Loggin from '@/components/atoms/Btn_Loggin'
 import { Flex } from '@chakra-ui/react'
 import React from 'react'
 
-export default function HeaderLogin() {
-  return (
-    <Flex mb="10px">
+type HeaderLoginType = {
+  isOpen: boolean;
+  onOpen: () => void;
 
-      <Btn_Loggin />
+}
+
+
+export default function HeaderLogin({onOpen,isOpen}:HeaderLoginType) {
+  return (
+    <Flex mb="0px">
+
+      <Btn_Loggin onClick={onOpen}  />
     </Flex>
   )
 }

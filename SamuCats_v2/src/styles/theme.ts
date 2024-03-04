@@ -12,7 +12,7 @@ export const darkTheme = extendTheme({
         "&::-webkit-scrollbar": {
           width: "8px",
           height: "6px",
-          background: "gray.600",
+          background: "rgba(255,0,0,0.1)",
         },
         "&::-webkit-scrollbar-thumb": {
           background: "#fe7700",
@@ -400,7 +400,7 @@ export const lightTheme = extendTheme({
         "&::-webkit-scrollbar": {
           width: "8px",
           height: "6px",
-          background: "gray.400",
+          background: "rgba(255,0,0,0.1)",
         },
         "&::-webkit-scrollbar-thumb": {
           background: "#fe7700",
@@ -488,7 +488,43 @@ export const lightTheme = extendTheme({
       },
     },
     Button: {
+      baseStyle: {
+        color: "gray.100",
+        fontWeight: "medium",
+        borderRadius: 3,
+        transition: "0.3s",
+        _hover: {
+          filter: "brightness(0.8)",
+        },
+        _disabled: {
+          pointerEvents: "none",
+        },
+      },
+      sizes: {
+        sm: {
+          fontSize: "xs",
+          height: "24px",
+          minHeight: 6,
+          px: 3,
+        },
+        md: {
+          fontSize: "sm",
+          height: "auto",
+          minHeight: 9,
+          px: 5,
+        },
+        lg: {
+          fontSize: "md",
+          height: "auto",
+          minHeight: 12,
+          px: 10,
+        },
+      },
+
       variants: {
+
+
+
         primary: {
           bgGradient: "linear(to-r, orange, red)",
           boxShadow: "-1px 3px 2px rgba(0, 0, 0, 0.19)",
@@ -532,7 +568,7 @@ export const lightTheme = extendTheme({
             filter: "brightness(0.8)",
           },
         },
-        
+
       },
     },
     Menu: {
@@ -553,6 +589,16 @@ export const lightTheme = extendTheme({
           },
         },
       },
+    },
+    Link: {
+      variants: {
+        hover: {
+          _hover: {
+            bgGradient: "linear(to-r, orange, red)",
+            bgClip: "text"
+          }
+        }
+      }
     },
     Input: {
       variants: {
@@ -616,6 +662,7 @@ export const lightTheme = extendTheme({
           color: "gray.800",
           bgColor: "gray.100",
           borderRadius: "10px",
+          
         },
       },
     },
