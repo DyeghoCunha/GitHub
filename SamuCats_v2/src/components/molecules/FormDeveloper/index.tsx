@@ -1,21 +1,19 @@
-import { Box, Button, Card, Center, FormControl, FormErrorMessage, FormHelperText, Image, FormLabel, HStack, Heading, Input, Stack, Textarea, Toast, VStack } from '@chakra-ui/react';
+import { Box, Button, Card, Center, FormControl, FormErrorMessage, FormHelperText, Image, FormLabel, HStack, Heading, Input, Stack, Textarea, Toast, VStack, Select, Text, useStyleConfig } from '@chakra-ui/react';
 import { Field, Form, Formik } from 'formik';
 import { useState } from 'react';
 import { LuCheckCircle2 } from 'react-icons/lu';
 import SamucaForm from "@/assets/image/samucaForm2.png"
 import ImagePicker from '../ImagePicker';
-import Developer, { IDeveloper } from '@/types/types';
 import { BsLinkedin } from "react-icons/bs";
 import WhatsappLogo from "@/assets/image/whatsapp.png"
 import LinkedInLogo from "@/assets/image/linkedin.png"
 import GitHubLogo from "@/assets/image/github.png"
 import PersonLogo from "@/assets/image/person.png"
+import { DeveloperStack } from '@/types/types';
 
 export default function FormDeveloper() {
 
   const [name, setName] = useState("");
-
-
 
   function validateName(value: string) {
     let error;
@@ -53,6 +51,15 @@ export default function FormDeveloper() {
     }
     return error;
   }
+  function validateStackSelect(value: string) {
+    let error;
+    if (!value && value.length === 0) {
+      error = "Coloque o seu Nome Completo";
+    } else if (value.toLowerCase() !== 'naruto') {
+      error = "Jeez! You're not a fan 😱";
+    }
+    return error;
+  }
 
 
 
@@ -65,6 +72,28 @@ export default function FormDeveloper() {
     helperText: string;
     logo: string
   }
+
+  type SelectFormStackType = {
+    name: string;
+    validate: Function;
+    formLabel: string;
+    placeHolder: string;
+    isRequired: boolean;
+    helperText: string;
+    propStack: any;
+  }
+
+  const SeleftFormStackProps = [
+    {
+      name: "primaryStack",
+      validate: validateStackSelect,
+      formLabel: "Seleciona sua Stack Primária",
+      placeHolder: "Stack",
+      isRequired: true,
+      helperText: "A Stack em que você se garante",
+      propStack: DeveloperStack
+    }
+  ]
 
 
   const CardFormProps = [
@@ -103,19 +132,19 @@ export default function FormDeveloper() {
       isRequired: false,
       helperText: "Se não tiver afim, tranquilo, não vou levar para o coração ❤️‍🩹",
       placeHolder: "",
-      logo:WhatsappLogo.src
+      logo: WhatsappLogo.src
     },
   ]
 
   function CardForm({ name, validate, formLabel, isRequired, helperText, placeHolder, logo }: CardFormType) {
     return (
-      <HStack zIndex={0}>
+      <HStack w="100%" zIndex={0}>
         <Card m="10px 5px 5px 5px" bg="gray.600" w="100%" p="10px" zIndex={0} >
           <Field name={name} validate={validate}>
             {({ field, form }: any) => (
               <FormControl isInvalid={form.errors.name && form.touched.name} >
-                <HStack justifyContent="start" alignItems="center"> <Image src={logo} w="20px"  /> <FormLabel  bgGradient="linear(to-r, orange, red)" bgClip="text" m="0px">{formLabel}</FormLabel> </HStack>
-                <Input {...field} placeholder={placeHolder}  variant="outline" type='text' id={name} name={name} isRequired={isRequired} />
+                <HStack justifyContent="start" alignItems="center"> <Image src={logo} w="20px" /> <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text" m="0px">{formLabel}</FormLabel> </HStack>
+                <Input {...field} placeholder={placeHolder} variant="outline" type='text' id={name} name={name} isRequired={isRequired} />
                 {form.errors.name ? (
                   <Box></Box>
                 ) : (
@@ -131,6 +160,37 @@ export default function FormDeveloper() {
     )
   }
 
+  function SelectForm({ name, validate, formLabel, isRequired, helperText, placeHolder, propStack }: SelectFormStackType) {
+    return (
+      <Card m="10px 5px 5px 5px" bg="gray.600" w="300px" p="10px" zIndex={0} >
+        <Field name={name} validate={validate}>
+          {({ field, form }: any) => (
+            <FormControl isInvalid={form.errors.name && form.touched.name} >
+              <HStack justifyContent="start" alignItems="center">
+                <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text" m="0px">{formLabel}</FormLabel>
+              </HStack>
+
+              <Select placeholder={placeHolder} _hover={{ borderColor: "orange" }} _focus={{ border: " 0px solid ", bgColor: "rgba(255,150,0,0.2)" }} isRequired={isRequired} >
+                { propStack.map(([key, value]) => (
+                  <option key={key} value={value}>
+                    {value}
+                  </option>
+                ))}
+              </Select>
+
+              {form.errors.name ? (
+                <Box></Box>
+              ) : (
+                <FormHelperText color="gray">{helperText}</FormHelperText>
+              )}
+              <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+            </FormControl>
+          )}
+        </Field>
+      </Card>
+    )
+  }
+
   return (
     <>
       <Formik
@@ -142,33 +202,43 @@ export default function FormDeveloper() {
           }, 1000);
         }}
       >
-
         {(props) => (
-
-
           <Form>
             <Center mb="20px">
               <HStack alignItems="start">
                 <HStack alignItems="end">
                   <VStack>
                     <Heading my="10px">Formulário de Cadastro de Projeto</Heading>
-                    <Card w={{ base: "800px", sm: "300px", md: "800px" }} bg="gray.500">
+                    <Card bg="gray.500">
+                      <HStack justifyContent="center" alignItems="center">
+                        <VStack justifyContent="start" alignItems="start">
+                          {CardFormProps.map((item) => <CardForm
+                            key={item.name}
+                            name={item.name}
+                            formLabel={item.formLabel}
+                            helperText={item.helperText}
+                            placeHolder={item.placeHolder}
+                            validate={item.validate}
+                            isRequired={item.isRequired}
+                            logo={item.logo}
+                          />)}
+                        </VStack>
+                       
+                          <SelectForm
+                            key={SeleftFormStackProps[0].name}
+                            formLabel={SeleftFormStackProps[0].formLabel}
+                            helperText={SeleftFormStackProps[0].helperText}
+                            isRequired={SeleftFormStackProps[0].isRequired}
+                            placeHolder={SeleftFormStackProps[0].placeHolder}
+                            name={SeleftFormStackProps[0].name}
+                            propStack={SeleftFormStackProps[0].propStack}
+                            validate={SeleftFormStackProps[0].validate}
+                          />
+                       
 
-                      {CardFormProps.map((item) => <CardForm
-                        key={item.name}
-                        name={item.name}
-                        formLabel={item.formLabel}
-                        helperText={item.helperText}
-                        placeHolder={item.placeHolder}
-                        validate={item.validate}
-                        isRequired={item.isRequired}
-                        logo={item.logo}
-                      />)}
-
-
-                    </Card >
+                      </HStack>
+                    </Card>
                   </VStack>
-
                 </HStack>
                 <Image src={SamucaForm.src} />
               </HStack>

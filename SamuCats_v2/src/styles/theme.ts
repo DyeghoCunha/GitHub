@@ -76,6 +76,17 @@ export const darkTheme = extendTheme({
     "2xl": "1900px",
   },
   components: {
+     Select: {
+      variants: {
+        filled: {
+          field: {
+            _focus: {
+              borderColor: "orange", // Altere para a cor desejada
+            },
+          },
+        },
+      },
+    },
     Button: {
       baseStyle: {
         color: "gray.100",

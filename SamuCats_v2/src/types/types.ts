@@ -49,7 +49,7 @@ export default class Developer implements IDeveloper {
   github: string;
   whatsapp?: string;
   primaryStack: DeveloperStack;
-  secondaryStack?:  DeveloperStack;
+  secondaryStack?:  DeveloperStackStack;
   primaryLanguage: Language;
   programmingLanguages?: Language[];
   stylingFrameWork?: StylingFramework[];
