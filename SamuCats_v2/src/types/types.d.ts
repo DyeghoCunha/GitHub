@@ -3,24 +3,24 @@
 export interface IProject {
   id: string;
   projectName: string;
-  authorName:string;
+  authorName: string;
   progress?: number;
   description: string;
-  image?:string;
+  image?: string;
   developers?: IDeveloper[];
 
-  
+
 }
 
-export interface IProjectCard { 
-id:string;
-project:IProject;
+export interface IProjectCard {
+  id: string;
+  project: IProject;
 }
 
 export interface IDeveloperCard {
-  id:string;
-  developer:IDeveloper;
- }
+  id: string;
+  developer: IDeveloper;
+}
 
 
 interface Person {
@@ -49,7 +49,7 @@ export default class Developer implements IDeveloper {
   github: string;
   whatsapp?: string;
   primaryStack: DeveloperStack;
-  secondaryStack?:  DeveloperStack;
+  secondaryStack?: DeveloperStack;
   primaryLanguage: Language;
   programmingLanguages?: Language[];
   stylingFrameWork?: StylingFramework[];
@@ -89,100 +89,93 @@ export interface IDesigner extends Person {
   specialties: DesignerSpecialty[];
 }
 
-export  enum DeveloperStack {
+export enum DeveloperStack {
   Frontend = 'Frontend',
   Backend = 'Backend',
   FullStack = 'Full Stack',
   Mobile = 'Mobile',
   DevOps = 'DevOps',
-  DataScience = 'Data Science'
+  DataScience = 'Data Science',
+  UxUi = "Ux/Ui"
 }
 
 export enum Language {
-  JavaScript = 'JavaScript',
-  TypeScript = 'TypeScript',
-  Python = 'Python',
-  Java = 'Java',
+  ABAP = 'ABAP',
+  Assembly = 'Assembly',
   C = 'C',
-  CSharp = 'C#',
   CPlusPlus = 'C++',
-  PHP = 'PHP',
-  Swift = 'Swift',
-  R = 'R',
+  CSharp = 'C#',
+  COBOL = 'COBOL',
+  Clojure = 'Clojure',
+  Dart = 'Dart',
+  Elixir = 'Elixir',
   Go = 'Go',
+  Java = 'Java',
+  JavaScript = 'JavaScript',
+  Julia = 'Julia',
   Kotlin = 'Kotlin',
+  Lua = 'Lua',
+  MATLAB = 'MATLAB',
+  ObjectiveC = 'Objective-C',
+  Perl = 'Perl',
+  PHP = 'PHP',
+  Python = 'Python',
+  R = 'R',
   Ruby = 'Ruby',
   Rust = 'Rust',
+  Scala = 'Scala',
   Shell = 'Shell',
   SQL = 'SQL',
-  Dart = 'Dart',
-  Scala = 'Scala',
-  Perl = 'Perl',
-  Groovy = 'Groovy',
-  Lua = 'Lua',
-  ObjectiveC = 'Objective-C',
-  MATLAB = 'MATLAB',
-  Ada = 'Ada',
-  COBOL = 'COBOL',
-  Julia = 'Julia',
-  ABAP = 'ABAP',
-  Apex = 'Apex',
-  Assembly = 'Assembly',
-  Bash = 'Bash',
-  Clojure = 'Clojure',
-  CoffeeScript = 'CoffeeScript',
-  Elixir = 'Elixir',
-  Elm = 'Elm',
-  Erlang = 'Erlang',
-  FSharp = 'F#',
-  HCL = 'HCL',
-  Haskell = 'Haskell'
+  Swift = 'Swift',
+  TypeScript = 'TypeScript',
 }
+
 
 export enum Framework {
-  React = 'React',
   Angular = 'Angular',
-  Vue = 'Vue',
-  Node = 'Node',
-  Express = 'Express',
-  Nest = 'Nest',
-  TypeORM = 'TypeORM',
-  Django = 'Django',
-  Flask = 'Flask',
-  Spring = 'Spring',
-  Hibernate = 'Hibernate',
-  DotNET = '.NET',
   ASPNET = 'ASP.NET',
-  Laravel = 'Laravel',
-  Symfony = 'Symfony',
-  Rails = 'Rails',
-  Revel = 'Revel',
-  Vapor = 'Vapor',
-  Ktor = 'Ktor',
-  Play = 'Play',
-  Dancer = 'Dancer',
-  Grails = 'Grails',
-  Next = 'Next',
-  FastAPI = 'FastAPI',
-  Svelte = 'Svelte',
   Blazor = 'Blazor',
-  Nuxt = 'Nuxt',
-  Deno = 'Deno',
-  Gatsby = 'Gatsby',
-  Fastify = 'Fastify',
-  Phoenix = 'Phoenix',
-  Drupal = 'Drupal',
   CodeIgniter = 'CodeIgniter',
-  Solid = 'Solid',
-  Remix = 'Remix',
+  Dancer = 'Dancer',
+  Deno = 'Deno',
+  Django = 'Django',
+  DotNET = '.NET',
+  Drupal = 'Drupal',
   Elm = 'Elm',
-  PlayFramework = 'Play Framework',
+  Express = 'Express',
+  FastAPI = 'FastAPI',
+  Fastify = 'Fastify',
+  Flask = 'Flask',
+  Gatsby = 'Gatsby',
+  Grails = 'Grails',
+  Hibernate = 'Hibernate',
+  Ktor = 'Ktor',
+  Laravel = 'Laravel',
   Lit = 'Lit',
-  Qwik = 'Qwik'
+  Nest = 'Nest',
+  Next = 'Next',
+  Node = 'Node',
+  Nuxt = 'Nuxt',
+  Phoenix = 'Phoenix',
+  Play = 'Play',
+  PlayFramework = 'Play Framework',
+  Qwik = 'Qwik',
+  Rails = 'Rails',
+  React = 'React',
+  Remix = 'Remix',
+  Revel = 'Revel',
+  Solid = 'Solid',
+  Spring = 'Spring',
+  Svelte = 'Svelte',
+  Symfony = 'Symfony',
+  TypeORM = 'TypeORM',
+  Vapor = 'Vapor',
+  Vue = 'Vue',
 }
 
+
 export enum StylingFramework {
-  // Bibliotecas CSS-in-JS
+
   Aphrodite = 'Aphrodite',
   Astroturf = 'Astroturf',
   Emotion = 'Emotion',
@@ -196,13 +189,13 @@ export enum StylingFramework {
   VanillaExtract = 'vanilla-extract',
   WindiCSS = 'Windi CSS',
 
-  // Pré-processadores CSS
+
   Less = 'Less',
   PostCSS = 'PostCSS',
   Sass = 'Sass',
   Stylus = 'Stylus',
 
-  // Frameworks CSS
+ 
   AntDesign = 'Ant Design',
   Atlaskit = 'Atlaskit',
   Base = 'Base',

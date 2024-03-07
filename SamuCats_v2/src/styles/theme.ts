@@ -76,7 +76,7 @@ export const darkTheme = extendTheme({
     "2xl": "1900px",
   },
   components: {
-     Select: {
+    Select: {
       variants: {
         filled: {
           field: {
@@ -188,6 +188,14 @@ export const darkTheme = extendTheme({
             bgColor: "gray.500",
             filter: "brightness(0.8)",
           },
+        },
+      },
+    },
+    Popover: {
+      baseStyle: {
+        content: {
+          bgColor: "#2b2b2b",
+          // Adicione outras estilizações aqui
         },
       },
     },
@@ -475,9 +483,15 @@ export const lightTheme = extendTheme({
     "2xl": "1900px",
   },
   components: {
+    PopoverContent: {
+      baseStyle: {
+        content: {
+          bgColor: "#f2f2f2f2"
+        }
+      }
+    },
 
-
-    Box: {
+Box: {
       variants: {
         shimmer: {
           bgGradient: "linear(to-r, #000103 45%, #1e2631 55%, #000103)",
@@ -673,7 +687,7 @@ export const lightTheme = extendTheme({
           color: "gray.800",
           bgColor: "gray.100",
           borderRadius: "10px",
-          
+
         },
       },
     },
