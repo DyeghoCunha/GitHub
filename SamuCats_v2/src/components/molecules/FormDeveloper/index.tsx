@@ -133,8 +133,8 @@ export default function FormDeveloper() {
 
         <CardHeader borderBottom="1px solid red" m={0} py={2} px={0}>
           <Card p={1} w="100%" bgColor="gray.700" m={0}>
-            <Stack direction='row' spacing={4}>
-              <Avatar>
+            <Stack direction='row' spacing={4} justifyContent="start" alignItems="center">
+              <Avatar src='https://github.com/DyeghoCunha.png'>
                 <AvatarBadge boxSize='1.25em' bg='green.500' />
               </Avatar>
               <Text>Dyegho Moraes Costa Gama Cunha</Text>
@@ -158,16 +158,16 @@ export default function FormDeveloper() {
             <Card bgColor="gray.700" w="100%" p={2}>
               <VStack w="100%" gap={0}>
                 <Text w="100%" bgGradient="linear(to-r, orange, red)" bgClip="text" textAlign="start" >Linguages de Estudo: </Text>
-                <Text w="100%" textAlign="start">Dart, Javascript, Delphi</Text>
+                <Text w="100%" textAlign="start">Dart, Javascript, Go</Text>
               </VStack>
 
               <VStack w="100%" gap={0}>
                 <Text w="100%" bgGradient="linear(to-r, orange, red)" bgClip="text" >FrameWorks: </Text>
-                <Text w="100%" textAlign="start">Next, React, Vue</Text>
+                <Text w="100%" textAlign="start">Next, React, Flutter</Text>
               </VStack>
               <VStack w="100%" gap={0}>
                 <Text w="100%" bgGradient="linear(to-r, orange, red)" bgClip="text" >Styles FrameWork: </Text>
-                <Text w="100%" textAlign="start">Css, Sass, Chakra Ui</Text>
+                <Text w="100%" textAlign="start">Sass, Chakra Ui</Text>
               </VStack>
 
             </Card>
@@ -177,9 +177,9 @@ export default function FormDeveloper() {
           <VStack w="100%">
             <Card bgColor="gray.700" p={2} w="100%">
               <VStack >
-                <HStack w="100%"><Link><Image src={WhatsappLogo.src} w="40px" h="40px" m={0}></Image></Link> <Text>Teste</Text></HStack>
-                <HStack w="100%"><Link> <Image src={GitHubLogo.src} w="40px" h="40px" m={0}></Image></Link><Text>Teste</Text></HStack>
-                <HStack w="100%"> <Link><Image src={LinkedInLogo.src} w="40px" h="40px" m={0}></Image></Link><Text>Teste</Text></HStack>
+                <HStack w="100%"><Link><Image src={WhatsappLogo.src} w="40px" h="40px" m={0}></Image></Link> <Text>(47)99911-0554</Text></HStack>
+                <HStack w="100%"><Link> <Image src={GitHubLogo.src} w="40px" h="40px" m={0}></Image></Link><Text>https://github.com/DyeghoCunha</Text></HStack>
+                <HStack w="100%"> <Link><Image src={LinkedInLogo.src} w="40px" h="40px" m={0}></Image></Link><Text>https://www.linkedin.com/in/dyegho-cunha</Text></HStack>
               </VStack>
             </Card>
             <HStack w="100%" mb={2} >
@@ -194,7 +194,7 @@ export default function FormDeveloper() {
 
 
   return (
-    <>
+    <Center><HStack>
 
       <Formik
         initialValues={{
@@ -263,7 +263,10 @@ export default function FormDeveloper() {
         )
         }
       </Formik >
-    </>
+      <Image h="700px" src={SamucaForm.src} />
+    </HStack>
+    </Center>
+
   );
 }
 

@@ -11,7 +11,7 @@ export default function Footer() {
     <footer>
       <Box w="100%" borderTop="4px solid rgba(255,165,0,0.5)" >
         <HStack>
-          <Image src={footerImage.src} w="200px" />
+          {/*<Image src={footerImage.src} w="200px" />*/}
           <Divider orientation="vertical" color="red" bg="red" m="100px" />
           <List spacing={3} >
             <ListItem justifyContent="center" alignItems="start">
