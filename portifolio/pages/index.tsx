@@ -1,11 +1,10 @@
 import { Box, Center, Flex, keyframes } from "@chakra-ui/react";
-import Cube3d from "@/components/Cube3d/index"
-
+import Cube3dSolo from "@/components/atom/index"
 export default function Home() {
   return (
     <Center>
       <Box >
-      <Cube3d/>
+        <Cube3dSolo/>
       </Box>
     </Center>
   );

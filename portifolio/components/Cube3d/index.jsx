@@ -6,7 +6,7 @@ export default function Cube3d() {
 	return (
 
 
-	<Box  w={300} h={300} >
+	<Box   w={300} h={300} >
 		<div className={styles.container}>
 			<div className={styles.cube}>
 				<div style={{ '--x': -1, '--y': 0 }}>
@@ -60,6 +60,7 @@ export default function Cube3d() {
 					<span style={{ '--i': 1 }}></span>
 				</div>
 			</div>
+			
 		</div>
 		</Box>
 
