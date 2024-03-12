@@ -60,9 +60,11 @@ export default function Cube3dSolo() {
 							color="#ef4149"
 							filter={hover ? "drop-shadow(20px 20px 30px purple)" : undefined}
 							border="5px solid #ffffff"
+							zIndex={2}
 						>
 							<Center w="100%" h="100%">{showButton?<Button onClick={()=> setFront(!front)} ></Button>:<Box transition="1s"></Box>}</Center>
 						</Box>
+						
 						<Box
 							position="absolute"
 							left={left?"-80px":"-40px"}
@@ -76,8 +78,25 @@ export default function Cube3dSolo() {
 							color="#ef4149"
 							filter={hover ? "drop-shadow(-20px 20px 30px purple)" : undefined}
 							border="5px solid #d3d3d3"
+							zIndex={2}
 						>
 							<Center w="100%" h="100%">{showButton?<Button onClick={()=> setLeft(!left)} ></Button>:<Box transition="1s"></Box>}</Center>
+						</Box>
+						<Box
+							position="absolute"
+							left="10px"
+							top="0px"
+							w="40px"
+							h="100%"
+							 bgGradient={hover ? "linear(to-tr, #ef4149, #9c6a6a)" : "linear(to-tr, #FFFFFF, #000000)"}
+							transformOrigin="right"
+							transform="skewY(45deg)"
+							transition="1s"
+							color="#ef4149"
+							filter={hover ? "drop-shadow(-20px 20px 30px purple)" : undefined}
+							border="5px solid #d3d3d3"
+						>
+							<Center w="100%" h="100%">{showButton?<Button onClick={()=> setLeft(!left)} >RB</Button>:<Box transition="1s"></Box>}</Center>
 						</Box>
 						<Box
 							position="absolute"
@@ -91,8 +110,24 @@ export default function Cube3dSolo() {
 							transition="1.0s"
 							filter={hover ? "drop-shadow(20px -20px 30px #ef4149)" : undefined}
 							border="5px solid #f2f2f2"
+							zIndex={2}
 						>
 							<Center w="100%" h="100%">{showButton?<Button onClick={()=> setTop(!top)} ></Button>:<Box transition="1s"></Box>}</Center>
+						</Box>
+						<Box
+							position="absolute"
+							top="10px"
+							left="0px"
+							w="100%"
+							h="40px"
+							 bgGradient={hover ? "linear(to-bl, #ef4149, #9c6a6a)" : "linear(to-bl, #FFFFFF, #000000)"}
+							transformOrigin="bottom"
+							transform="skewX(45deg)"
+							transition="1.0s"
+							filter={hover ? "drop-shadow(20px -20px 30px #ef4149)" : undefined}
+							border="5px solid #f2f2f2"
+						>
+							<Center w="100%" h="100%">{showButton?<Button onClick={()=> setTop(!top)} >bot</Button>:<Box transition="1s"></Box>}</Center>
 						</Box>
 					</Box>
 				</Box>

@@ -6,7 +6,7 @@ export default function Document() {
   return (
     <Html lang="pt-br">
       <Head>
-        <title>Dyegho Cunha</title>
+        <title>SamuCats DevTeam!</title>
         <meta
           name="description"
           content="Venha fazer parte do Maior time de Devs INDEPENDENTES do Brasil !"

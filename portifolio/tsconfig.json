@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/HoverCard_1/card.jsx"
+    "components/TestComponents/HoverCard_1/card.jsx"
   ],
   "exclude": [
     "node_modules"
