@@ -52,9 +52,9 @@ const Sidebar = ({ isOpen, toggleOpen }: any) => {
       text: "Projetos"
     },
     {
-      href: "/",
+      href: "/Forum",
       icon: BsSignpost,
-      text: "Posts"
+      text: "Forum"
     },
     {
       href: "/",
@@ -78,8 +78,8 @@ const Sidebar = ({ isOpen, toggleOpen }: any) => {
 
     <HStack>
 
-      <HStack justifyContent="start" alignItems="start" zIndex="10" >
-        <Box position="fixed" zIndex="20" top="0" left="0">
+      <HStack justifyContent="start" alignItems="start" zIndex="1001" >
+        <Box position="fixed" zIndex="1001" top="0" left="0" >
           <Btn_LogoSidebar isOpen={isOpen} toggleOpen={toggleOpen} />
         </Box>
         <MotionBox

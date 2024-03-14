@@ -25,6 +25,7 @@ export const ModalProvider: React.FC = ({ children }) => {
   return (
     <ModalContext.Provider value={{ isOpen, openModal, closeModal }}>
       {children}
+  
     </ModalContext.Provider>
   );
 };

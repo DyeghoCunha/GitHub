@@ -13,6 +13,8 @@ function HeaderTab() {
       <LinkHeader href="/"><Text fontSize="20px">Home</Text></LinkHeader>
       <LinkHeader href="/Developers"><Text fontSize="20px">Developers</Text></LinkHeader>
       <LinkHeader href="/Projects"><Text fontSize="20px">Projects</Text></LinkHeader>
+
+      <LinkHeader href="/Forum"><Text fontSize="20px">Forum</Text></LinkHeader>
     </HStack>
   );
 }

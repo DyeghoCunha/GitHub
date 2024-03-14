@@ -28,7 +28,7 @@ export default function Home() {
               <Image src={shieldIcon.src} w="55px" />
               <Text lineHeight={1} fontSize="18px">Suas informações estão totalmente seguras</Text>
             </HStack>
-            <Spacer/>
+            <Spacer />
             <HStack w="49%">
               <Image src={groupIcon.src} w="55px" />
               <Text lineHeight={1} fontSize="18px">Cadastre-se gratuitamente e faça parte do time</Text>
@@ -36,12 +36,14 @@ export default function Home() {
           </HStack>
           <Box mt={5}>
             <Link href="/developers">
-            <Text fontSize="40px" fontWeight="bold"  bgGradient="linear(to-r, orange, red)" bgClip="text">Faça já o seu Cadastro</Text>
-            </Link>  
+              <Text fontSize="40px" fontWeight="bold" bgGradient="linear(to-r, orange, red)" bgClip="text">Faça já o seu Cadastro</Text>
+            </Link>
           </Box>
         </VStack>
+
         <Image src={programmersImg.src} borderRadius="20px" w="50%" />
       </HStack>
+
     </Center>
   );
 }
