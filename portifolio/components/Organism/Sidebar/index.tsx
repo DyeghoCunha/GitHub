@@ -11,6 +11,7 @@ import { GoProjectRoadmap } from "react-icons/go";
 import { FaRegFileCode } from "react-icons/fa";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { FaQuestion } from "react-icons/fa6";
+import { usePathname } from 'next/navigation';
 
 const MotionBox = motion(Box)
 
@@ -81,7 +82,6 @@ const Sidebar = ({ isOpen, toggleOpen }: any) => {
         </Box>
         <MotionBox
           as="aside"
-          bg={theme ? "gray.500" : "gray.500"}
           color={theme ? "black" : "white"}
           position="fixed"
           top="60px"
@@ -90,7 +90,15 @@ const Sidebar = ({ isOpen, toggleOpen }: any) => {
           variants={sidebarVariants}
           initial={false}
           animate={isOpen ? 'open' : 'closed'}
-
+          boxSizing="border-box"
+          border="1px solid rgba(255, 255, 255, 0.18)"
+          justifyContent="center"
+          alignItems="center"
+          zIndex={10}
+          bg="rgba(255, 255, 255, 0.1)" // Cor de fundo semi-transparente
+          backdropFilter="blur(20px)"  // Efeito de desfoque
+          boxShadow="0 4px 6px 0 rgba(31, 38, 135, 0.37)"// Sombra da caixa
+         
         >
           <Flex
             as="nav"

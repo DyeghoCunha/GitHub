@@ -6,7 +6,7 @@ import HeaderLink from './HeaderLink'
 
 export default function Header() {
   return (
-    <HStack w="100%" h="60px" borderBottom="3px solid orange">
+    <HStack zIndex={50} w="100%" h="60px" backgroundColor="gray.600" borderBottom="3px solid orange">
       <Flex w="100%" justify="center" align="center" >
 
         <HStack gap={10}>

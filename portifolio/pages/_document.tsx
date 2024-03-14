@@ -36,7 +36,7 @@ export default function Document() {
         </Script>
       </Head>
       <body>
-        <ColorModeScript initialColorMode="light" />
+        <ColorModeScript initialColorMode="light"/>
         <Main />
         <Script id="gerencianet" strategy="afterInteractive">
           {`
