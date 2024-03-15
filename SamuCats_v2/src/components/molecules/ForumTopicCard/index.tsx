@@ -35,15 +35,20 @@ export default function ForumTopicCard({ title, category, avatar, answersCount, 
             ))}
           </HStack>
           <Flex justify="center" align="center" width="100px" ml={5} p={0} >
-            <Tooltip hasArrow label='Número de Respostas' bg='gray.500' placement='top' color="orange">
+            <Tooltip hasArrow label='Número de Respostas' bg='gray.500' placement='top' color="black">
               <Text >{answersCount}</Text>
             </Tooltip>
           </Flex>
           <Flex justify="center" align="center" width="100px" ml={5} p={0} >
+
+            <Tooltip hasArrow label="Contagem de Visualizações" bg='gray.500' placement='top' color="black">
             <Text >{views}</Text>
+            </Tooltip>
           </Flex>
           <Flex justify="center" align="center" width="100px" ml={5} p={0} >
+            <Tooltip hasArrow label='Data de Postagem' bg='gray.500' placement='top' color="black">
             <Text >{date}</Text>
+            </Tooltip>
           </Flex>
         </HStack>
       </HStack>

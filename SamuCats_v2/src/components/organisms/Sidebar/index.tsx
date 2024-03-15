@@ -67,7 +67,7 @@ const Sidebar = ({ isOpen, toggleOpen }: any) => {
       text: "Sobre"
     },
     {
-      href: "/",
+      href: "/Developers/DevelopersCardPage/",
       icon: FaQuestion,
       text: "FAQ"
     },
