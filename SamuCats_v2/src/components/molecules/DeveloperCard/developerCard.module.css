@@ -3,7 +3,7 @@
 }
 
 .card .mail svg:hover {
-  fill: orange;
+  fill: green;
   scale: 1.2;
 }
 
@@ -64,7 +64,7 @@
   left: 10px;
   border-radius: 50%;
   z-index: 3;
-  border: 7px solid orange;
+  border: 7px solid rgba(255, 166, 0, 0.089);
   box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
   transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
 }
@@ -84,4 +84,31 @@
 .card:hover .profile-pic svg {
   transform: scale(2.5);
   transition: all 0.5s ease-in-out 0.5s;
+}
+
+
+.container {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+}
+
+.card-front {
+
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
 }

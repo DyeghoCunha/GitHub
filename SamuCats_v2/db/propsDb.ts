@@ -10,7 +10,6 @@ interface ForumTopicCardProps {
   pin: any;
 }
 
-
 export const forumTopics = [
   {
     title: "Como implementar herança múltipla em Python?",

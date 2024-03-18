@@ -62,9 +62,9 @@ const Sidebar = ({ isOpen, toggleOpen }: any) => {
       text: "Regras"
     },
     {
-      href: "/",
+      href: "/CodeConnect",
       icon: IoMdInformationCircleOutline,
-      text: "Sobre"
+      text: "CodeConnect"
     },
     {
       href: "/Developers/DevelopersCardPage/",
