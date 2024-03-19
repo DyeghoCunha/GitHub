@@ -105,8 +105,8 @@ const Sidebar = ({ isOpen, toggleOpen }: any) => {
             pt={10}
             gap={5}
           >
-            {sidebarLinks.map((item) => (
-              <SidebarLink href={item.href} icon={item.icon} isOpen={isOpen} >{item.text}</SidebarLink>
+            {sidebarLinks.map((item,index) => (
+              <SidebarLink key={index} href={item.href} icon={item.icon} isOpen={isOpen} >{item.text}</SidebarLink>
             ))}
 
 

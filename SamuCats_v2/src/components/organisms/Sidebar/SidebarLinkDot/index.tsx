@@ -1,4 +1,3 @@
-import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Box, HStack, Icon, Link } from '@chakra-ui/react'
 import { AnimatePresence, motion } from 'framer-motion';
 

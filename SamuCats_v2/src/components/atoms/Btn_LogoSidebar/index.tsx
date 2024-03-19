@@ -1,9 +1,9 @@
 import { Avatar, Box, Button, HStack, Text } from '@chakra-ui/react'
 import Logo from "@/assets/image/logoSamucats.png"
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { HiOutlineChevronRight } from "react-icons/hi2";
 import { motion } from "framer-motion"
 
-const MotionIcon = motion(ChevronRightIcon)
+const MotionIcon = motion(HiOutlineChevronRight)
 
 export default function Btn_LogoSidebar({ isOpen, toggleOpen }: any) {
   return (

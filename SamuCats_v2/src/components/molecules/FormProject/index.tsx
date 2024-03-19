@@ -1,9 +1,5 @@
-"use client";
-import { saveProjectForm } from '@/lib/actions';
 import ImagePicker from '../ImagePicker';
-import { useFormState } from "react-dom"
 import { Button, FormControl, FormLabel, Input, FormHelperText, Textarea, Card, Stack, Box, Center, Heading, VStack, HStack, Image } from '@chakra-ui/react';
-import { CheckIcon } from '@chakra-ui/icons';
 import { LuCheckCircle2 } from "react-icons/lu";
 import React from 'react';
 import SamucaForm from "@/assets/image/samucaForm.png"

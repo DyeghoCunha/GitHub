@@ -1,8 +1,6 @@
 import { Box, Divider, HStack, Image, Link, List, ListIcon, ListItem } from '@chakra-ui/react'
 import React from 'react'
-import footerImage from "@/assets/image/logov2.png"
 import ytLogo from "@/assets/image/youtube.png"
-import { ExternalLinkIcon, LinkIcon } from '@chakra-ui/icons'
 
 
 
@@ -18,7 +16,7 @@ export default function Footer() {
               <HStack justifyContent="start" alignItems="center">
                 <Image width="20px" src={ytLogo.src} />
                 <Link href='https://www.youtube.com/@cursodetecnologia' isExternal>
-                  Curso de Tecnologia <ExternalLinkIcon mx='2px' color="orange" />
+                  Curso de Tecnologia 
                 </Link>
               </HStack>
             </ListItem>
@@ -27,7 +25,7 @@ export default function Footer() {
               <HStack justifyContent="start" alignItems="center">
                 <Image width="20px" src={ytLogo.src} />
                 <Link href='https://www.youtube.com/@SamucaDoJava' isExternal>
-                  Samuca do Java <ExternalLinkIcon mx='2px' color="orange" />
+                  Samuca do Java 
                 </Link>
               </HStack>
 

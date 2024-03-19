@@ -4,7 +4,6 @@ import { FiGithub } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, Center, HStack, Heading, Icon, Image, Text, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
-import { MdOutlineEmail } from "react-icons/md";
 import BgCardLight from "@/assets/image/DeveloperCardBackGroundLight3.gif"
 import { FaWhatsapp } from "react-icons/fa";
 import { IoArrowRedoOutline } from "react-icons/io5";

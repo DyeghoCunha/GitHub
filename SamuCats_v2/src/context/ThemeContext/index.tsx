@@ -1,3 +1,4 @@
+"use client"
 import { createContext, useContext, useState } from 'react';
 import { darkTheme, lightTheme } from '@/styles/theme';
 

@@ -9,15 +9,12 @@ interface IDefaultLayoutProps {
   children: React.ReactNode;
 }
 
-export function DefaultLayout({ p, children }: IDefaultLayoutProps) {
-  const [isOpen, toggleOpen] = useCycle(false, true)
+export function BlogLayout({ p, children }: IDefaultLayoutProps) {
   return (
     <>
       <Box position="fixed" w="100%" top={0} m={0} p={0} zIndex={100}>
         <Header />
       </Box>
-      <Sidebar isOpen={isOpen} toggleOpen={toggleOpen} />
-
       <Container
         maxW="full"
         flexGrow={1}

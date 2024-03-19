@@ -1,17 +1,12 @@
-import { useState } from 'react';
+"use client"
 import { Tabs, TabList, Tab, TabPanels, TabPanel, useColorModeValue, HStack, Image, Box, Flex, Text, Spacer, useDisclosure } from '@chakra-ui/react';
 
-import logo from "@/assets/image/logov2.png"
 import HeaderTab from './HeaderTabs';
 import HeaderLogin from './HeaderLogin';
-import HeaderHamburger from './HeaderHamburger';
-import Btn_ThemeMode from '@/components/atoms/Btn_ThemeMode';
 import Switch_ThemeMode from '@/components/atoms/Switch_ThemeMode';
 import { Modal_logIn } from '@/components/molecules/Modal_LogIn';
 
 function Header() {
-
-  const [tabIndex, setTabIndex] = useState(0);
 
   const { isOpen, onClose, onOpen } = useDisclosure();
 
@@ -25,9 +20,9 @@ function Header() {
           </Box>
           <Box w="10px"></Box>
 
-          <Switch_ThemeMode />
+          {/*<Switch_ThemeMode />
           <Modal_logIn isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
-          <HeaderLogin  isOpen={isOpen} onOpen={onOpen}/>
+  <HeaderLogin  isOpen={isOpen} onOpen={onOpen}/>*/}
 
         </Flex>
       </Box>

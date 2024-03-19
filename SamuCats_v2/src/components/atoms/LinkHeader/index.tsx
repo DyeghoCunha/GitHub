@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, useStyleConfig } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'

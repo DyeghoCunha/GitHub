@@ -1,4 +1,5 @@
-import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
+import { HiOutlineChevronUp } from "react-icons/hi2";
+import { HiOutlineChevronDown } from "react-icons/hi2";
 import { Input, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import React from 'react'
 import { css } from '@emotion/react';
@@ -46,7 +47,7 @@ export default function ForumMenuDropDown({ title, children }: FormMenuDropDownP
             _expanded={{ bg: 'blue.400' }}
             _focus={{ boxShadow: 'outline' }}
           >
-            {title} {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+            {title} {isOpen ? <HiOutlineChevronUp/> : <HiOutlineChevronDown />}
           </MenuButton>
           <MenuList zIndex={0} bgColor="white" maxW="100%" minW="100%" py={0}>
             <Input mt={0} />
