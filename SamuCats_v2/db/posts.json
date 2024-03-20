@@ -21,13 +21,13 @@
                 "name": "Ana Beatriz",
                 "username": "anabeatriz_dev",
                 "avatar": [
-                    "https://randomuser.me/api/portraits/men/43.jpg"
+                    "https://randomuser.me/api/portraits/women/23.jpg"
                 ]
             }
         },
         {
             "id": "2",
-            "cover": "https://randomuser.me/api/portraits/women/43.jpg",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
             "title": "Dúvidas sobre Python",
             "slug": "duvidas-sobre-python",
             "body": "Neste post, vamos discutir algumas dúvidas comuns sobre a linguagem de programação Python.",

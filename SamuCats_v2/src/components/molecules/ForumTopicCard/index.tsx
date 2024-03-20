@@ -24,7 +24,7 @@ export default function ForumTopicCard({ title, category, avatar, answersCount, 
           </HStack>
           <HStack>
             {category && category.map((item, index) => (
-              <Tag colorScheme="blue" key={index}>{item}</Tag>
+              <Tag colorScheme="blue" fontSize="10px" key={index}>{item}</Tag>
             ))}
           </HStack>
         </VStack>

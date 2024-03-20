@@ -17,10 +17,11 @@ export default function ForumHeader() {
         <MenuItem><ForumMenuCard /></MenuItem>
       </ForumMenuDropDown>
       <ForumMenuDropDown title='Navegue por Tags'>
-        <MenuItem ><Tag colorScheme='orange'>Teste</Tag></MenuItem>
-        <MenuItem><Tag colorScheme='teal'>Teste</Tag></MenuItem>
-        <MenuItem><Tag colorScheme='red'>Teste</Tag></MenuItem>
-        <MenuItem><Tag colorScheme='purple'>Teste</Tag></MenuItem>
+        <MenuItem ><Tag colorScheme='orange'>POO</Tag></MenuItem>
+        <MenuItem><Tag colorScheme='teal'>Dart</Tag></MenuItem>
+        <MenuItem><Tag colorScheme='red'>Java</Tag></MenuItem>
+        <MenuItem><Tag colorScheme='purple'>Python</Tag></MenuItem>
+        <MenuItem><Tag colorScheme='blue'>TypeScript</Tag></MenuItem>
       </ForumMenuDropDown>
       <Button variant="primary"> Recentes </Button>
       <Button variant="secondary"> Melhores </Button>

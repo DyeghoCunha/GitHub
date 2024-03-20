@@ -1,6 +1,7 @@
+import { ChevronDownIcon, ChevronUpIcon, SearchIcon } from '@chakra-ui/icons'
 import { HiOutlineChevronUp } from "react-icons/hi2";
 import { HiOutlineChevronDown } from "react-icons/hi2";
-import { Input, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
+import { Input, InputGroup, InputRightElement, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import React from 'react'
 import { css } from '@emotion/react';
 interface FormMenuDropDownProps {
@@ -47,10 +48,13 @@ export default function ForumMenuDropDown({ title, children }: FormMenuDropDownP
             _expanded={{ bg: 'blue.400' }}
             _focus={{ boxShadow: 'outline' }}
           >
-            {title} {isOpen ? <HiOutlineChevronUp/> : <HiOutlineChevronDown />}
+            {title} {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
           </MenuButton>
-          <MenuList zIndex={0} bgColor="white" maxW="100%" minW="100%" py={0}>
-            <Input mt={0} />
+          <MenuList  zIndex={100} bgColor="white" maxW="100%" minW="100%" py={0}>
+            <InputGroup>
+              <Input borderRadius="1px 1px 0px 0px" placeholder="Digite para pesquisar" />
+              <InputRightElement  ><SearchIcon color="gray.500" /></InputRightElement>
+            </InputGroup>
             <MenuList zIndex={0} css={customScroll} bgColor="white" maxW="100%" minW="100%" maxH="300px" overflowY="auto" pt={0}>
               {children}
             </MenuList>
