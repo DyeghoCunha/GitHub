@@ -1,3 +1,5 @@
+"use client"
+
 import { ChakraProvider } from "@chakra-ui/react";
 import { ThemeContext, useThemeContext } from "@/context/ThemeContext";
 import { lightTheme,darkTheme } from "@/styles/theme";
