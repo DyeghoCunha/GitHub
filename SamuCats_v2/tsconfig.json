@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/molecules/FormProject/index.tsx"
-  ],
+, "src/lib/actions.ts", "src/app/Projects/ProjectsForm/page.jsx", "src/lib/projects.js"  ],
   "exclude": [
     "node_modules"
   ]

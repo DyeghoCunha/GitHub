@@ -18,7 +18,13 @@ const nextConfig = {
         hostname:"exemplo.com",
         port:"",
         pathname:"**",
-      }
+      },
+        {
+        protocol: 'https',
+        hostname: 'dyeghocunha-udemy-nextjs-demo-user-image.s3.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      },
       
     ]
   }
