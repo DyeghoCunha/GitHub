@@ -1,3 +1,4 @@
+"use client"
 import { Box, Button, Card, Center, FormControl, FormErrorMessage, FormHelperText, Image, FormLabel, HStack, Heading, Input, Stack, Textarea, Toast, VStack, Select, Text, useStyleConfig, Grid, GridItem, CheckboxGroup, Checkbox, Popover, PopoverTrigger, Portal, PopoverContent, PopoverArrow, PopoverHeader, PopoverCloseButton, PopoverBody, PopoverFooter, PopoverAnchor, CardHeader, Avatar, AvatarBadge, CardBody, SimpleGrid, Flex, CardFooter, Link, Spacer } from '@chakra-ui/react';
 import { Field, FieldArray, Form, Formik } from 'formik';
 import { useState } from 'react';
@@ -15,16 +16,6 @@ import { CardFormProps, CheckFormLangProps, CheckFrameWorkProps, CheckStylingFWP
 import InputForm from './InputForm';
 import { SelectForm } from './SelectForm';
 import { CheckForm } from './CheckForm';
-
-
-
-
-
-
-
-
-
-
 
 export default function FormDeveloper() {
 
