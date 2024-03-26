@@ -6,21 +6,19 @@ import { Box, Button, HStack, Input, Spacer, Text, VStack } from "@chakra-ui/rea
 
 import ImageOff from "@/assets/image/semFoto.png"
 
-type ImagePicker = {
-  name: string;
-}
+//type ImagePicker = {name: string;}
 
-export default function ImagePicker({ name }: ImagePicker) {
+export default function ImagePicker({ name }) {
 
   const [pickedImage, setPickedImage] = useState();
 
-  const imageInput = useRef<any>();
+  const imageInput = useRef();
 
   function handlePickClick() {
     imageInput.current.click();
   }
 
-  function handleImageChange(event: any) {
+  function handleImageChange(event) {
     const file = event.target.files[0];
 
     if (!file) {
@@ -31,6 +29,7 @@ export default function ImagePicker({ name }: ImagePicker) {
     const fileReader = new FileReader();
     fileReader.onload = () => {
       setPickedImage(fileReader.result)
+      console.log("Image"+fileReader.result)
     }
     fileReader.readAsDataURL(file)
 
@@ -54,7 +53,7 @@ export default function ImagePicker({ name }: ImagePicker) {
         display="none"
         type="file"
         id={name}
-        accept="image/png,image/jpeg"
+      //  accept="image/png,image/jpeg,image/jpg"
         name={name}
         ref={imageInput}
         onChange={handleImageChange}

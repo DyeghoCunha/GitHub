@@ -25,6 +25,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+       {
+        protocol: 'https',
+        hostname: 'samucatsv2.s3.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      },
       
     ]
   }

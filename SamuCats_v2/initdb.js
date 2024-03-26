@@ -6,7 +6,7 @@ const dummyProjects = [
   {
     title: 'Calculadora Simples',
     slug: 'calculadora-simples',
-    image: './src/assets/projectDummyImg.jpg',
+    image: 'calculadoraSimples.png',
     summary:
       'Um projeto de uma calculadora simples que realiza operações básicas como adição, subtração, multiplicação e divisão.',
     instructions: `
@@ -28,7 +28,7 @@ const dummyProjects = [
   {
     title: 'API de Clima',
     slug: 'api-de-clima',
-    image: './src/assets/projectDummyImg.jpg',
+    image: 'climaApi.png',
     summary:
       'Um projeto de uma API de clima que retorna informações meteorológicas atuais e previsões.',
     instructions: `
@@ -50,7 +50,7 @@ const dummyProjects = [
 {
     title: 'Blog Pessoal',
     slug: 'blog-pessoal',
-    image: './src/assets/projectDummyImg.jpg',
+    image: 'blogPessoal.png',
     summary:
       'Um projeto de um blog pessoal onde você pode compartilhar seus pensamentos e ideias.',
     instructions: `

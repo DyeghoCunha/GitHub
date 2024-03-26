@@ -73,13 +73,12 @@ export default function FormProject() {
                     <FormControl>
                       <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text">Imagem do Projeto</FormLabel>
                       <ImagePicker name="image" />
-
                       <FormHelperText color="gray">Imagem do Figma ou do Conceito do Projeto</FormHelperText>
                     </FormControl>
                   </CardForm>
                   <Card m="10px" bg="gray.600" p="10px" borderRadius="full">
 
-                    <Button disabled={pending} type='submit' borderRadius="full" variant="primary" w="150px" h="150px">
+                    <Button disabled={pending} variant={pending?"primary":"secondary"} type='submit' borderRadius="full" w="150px" h="150px">
                       {pending ? <LuAlarmClock size="350px" opacity="0.5" /> : <LuCheckCircle2 size="350px" opacity="0.5" />}
                     </Button>
 

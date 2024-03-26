@@ -26,7 +26,9 @@ export default function RootLayout({
       <Container
         maxW="full"
         flexGrow={1}
-        px="120.1px"
+        pl="60.1px"
+        pr={0}
+        pt={16}
       >
         {children}
       </Container>

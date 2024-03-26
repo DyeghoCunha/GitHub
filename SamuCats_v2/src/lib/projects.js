@@ -1,11 +1,10 @@
 import sql from "better-sqlite3"
-import slugfy from 'slugify'
+import slugify from 'slugify'
 import xss from 'xss'
-import fs from "node:fs"
 import { S3 } from '@aws-sdk/client-s3';
 
 const s3 = new S3({
-  region: 'us-east-1',
+  region: "sa-east-1",
   credentials: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -14,7 +13,7 @@ const s3 = new S3({
 
 
 const db = sql("projects.db");
-//TODO Arrumar o Banco de Dados e Aparecer a Imagem do Formulário 
+
 export async function getProjects() {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   //throw new Error("Loading projects Failed");
@@ -26,26 +25,22 @@ export function getProject(slug) {
 }
 
 export async function saveProject(project) {
-  project.slug = slugfy(project.title, { lower: true });
+  project.slug = slugify(project.title, { lower: true });
   project.instructions = xss(project.instructions);
-
+  console.log("SLUG"+ project.slug)
   const extension = project.image.name.split(".").pop();
   const fileName = `${project.slug}.${extension}`
-
+  console.log("Filename"+fileName)
   const bufferedImage = await project.image.arrayBuffer();
 
   s3.putObject({
-    Bucket: 'dyeghocunha-udemy-nextjs-demo-user-image',
+    Bucket: 'samucatsv2',
     Key: fileName,
     Body: Buffer.from(bufferedImage),
     ContentType: project.image.type,
   });
 
-  project.image = `/images/${fileName}`
-
-
-
-
+  project.image = fileName
 
   db.prepare(`
   INSERT INTO projects (title,summary,instructions,creator,creator_email,image,slug)

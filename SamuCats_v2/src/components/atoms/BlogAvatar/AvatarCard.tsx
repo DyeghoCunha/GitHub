@@ -4,7 +4,7 @@ import { Badge, Box, Flex, Text, Avatar, HStack, VStack } from "@chakra-ui/react
 
 export const AvatarCard = ({ userName, name, imageSrc }) => {
     return (
-        <HStack >
+        <HStack m={0} p={0}  >
             <Avatar boxSize="40px" borderRadius="50%" src={imageSrc} />
             <VStack justifyContent="start" alignItems="start" gap={0}>
                 <Text m={0} fontWeight='bold'>
