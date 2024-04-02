@@ -4,7 +4,7 @@ import FormProject from "@/components/molecules/FormProject";
 import ImagePicker from "@/components/molecules/ImagePicker";
 import { DefaultLayout } from "@/components/templates/DefaultLayout";
 import { getProject, getProjects } from "@/lib/projects";
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Center, Heading, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Center, CircularProgress, GridItem, Heading, HStack, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 //import Image from "next/image";
 
 import Link from "next/link";
@@ -32,9 +32,11 @@ async function Projects() {
 
 
   return (
-    <>
+    <SimpleGrid columns={4}>
+
       {projects.map((project) => (
-        <FlipCard3d key={project.id} front={
+        <GridItem key={project.id}>
+        <FlipCard3d  front={
           <_cardContainer>
             <CardHeader p={0}  position="relative" mb="35px">
               <Heading w="100%" backdropFilter="Blur(5px)" bgColor="rgba(255,0,0,0.7)" borderRadius="10px 10px 0px 0px" justifyContent="center" alignItems="center"  position="absolute" pl="5px" pb="10px" zIndex={5} fontSize="30px">{project.title}</Heading>
@@ -60,11 +62,15 @@ async function Projects() {
               </VStack>
             </CardFooter>
           </_cardContainer>
+
         }>
         </FlipCard3d>
+        
+        
+        </GridItem>
 
       ))}
-    </>
+    </SimpleGrid>
   );
 }
 
@@ -73,7 +79,15 @@ export default function ProjectsPage() {
   return (
     <main>
     <Box h="100vh"  mt={0}>
-      <Suspense fallback={<Text>Procurando Projetos</Text>}>
+      <Suspense fallback={<Center>
+        <HStack h="100vh">
+          <CircularProgress  scale={2} color="orange"/>
+        <Text fontSize="60px">Procurando Projetos</Text> 
+        </HStack>
+        
+      </Center>
+     }
+      >
         <Center>
           <Projects />
         </Center>
@@ -81,7 +95,11 @@ export default function ProjectsPage() {
       <Box>
 
       </Box>
-      <Link href="/Projects/ProjectsForm">Formulário</Link>
+      <Card w="100%" h="80px" bgColor="gray.600" p={5} position="fixed" bottom={0} left={20} >
+        <Box w="100px" h="30px" bgColor="rgba(255,0,0,0.6)" pl="10px" justifyContent="center" alignItems="center" borderRadius="20px">
+        <Link href="/Projects/ProjectsForm">Formulário</Link>  
+        </Box>
+      </Card>
     </Box>
     </main>
   )
