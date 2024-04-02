@@ -1,0 +1,448 @@
+{
+    "posts": [
+        {
+            "id": "1",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Introdução ao React",
+            "slug": "introducao-ao-react",
+            "body": "Neste post, vamos explorar os conceitos básicos do React, uma biblioteca JavaScript para construir interfaces de usuário. Vamos cobrir componentes, JSX e estados.",
+            "markdown": "# Introdução ao React\n\nReact, também conhecido como React.js ou ReactJS, é uma biblioteca JavaScript de código aberto mantida pelo Facebook e por uma comunidade de desenvolvedores individuais e empresas. É amplamente utilizado para construir interfaces de usuário modernas e interativas para aplicativos web.\n\n## O que é React?\n\nSegundo seu slogan oficial, React é uma biblioteca para construção de interfaces de usuário. React não é um framework – nem mesmo é exclusivo para web. É utilizado com outras bibliotecas para renderização em certos ambientes. Por exemplo, React Native pode ser usado para construção de aplicativos móveis; React 360 pode ser usado para construir aplicações de realidade virtual; e muitas outras possibilidades. Para construir para web, desenvolvedores usam React em conjunto com ReactDOM.\n\n## Casos de Uso\n\nDiferente de outros frameworks, React nao implementa regras restritas no código como convenções ou organizações de arquivos. Isto permite que times criem convenções próprias que melhor se adequem e para adotar o React do jeito que desejar. React pode manusear um botão único, poucas partes da interface ou a interface inteira de um app.\n\n## Configurando seu primeiro app React\n\nPara configurar um ambiente local de desenvolvimento React, é necessário ter alguma familiaridade com HTML, CSS, e linguagem JavaScript, conhecimento de terminal/linha de comandos. React usa a sintaxe HTML-in-JavaScript com o nome JSX (JavaScript e  XML). Familiaridade em ambos HTML e JavaScript ajudará aprender JSX, e  identificar melhor se os erros na sua aplicação estão relacionado ao  JavaScript ou na parte especifíca do React.\n\n## Explorando seu primeiro componente React\n\nA meta primária do React é minimizar os erros que ocorrem quando os desenvolvedores estão construindo UIs (User Interface). Isto é devido ao uso de componentes - autocontidos, partes lógicas de códigos que descrevem uma parte da interface do usuário. Estes componentes são adicionados para criar uma UI completa e o React concentra muito do trabalho de renderizar, proporcionando que se concentre no projeto de UI.\n\n## Conclusão\n\nReact é uma biblioteca JavaScript para a criação de interfaces de usuário e, nesse contexto, uma das tecnologias mais utilizadas pelo mercado. Com o React, você pode criar as suas primeiras SPAs (Single Page Applications) e aprimorar suas habilidades como desenvolvedor.\n\nEspero que esta introdução ao React tenha sido útil para você. Se você tiver mais perguntas sobre React, fique à vontade para perguntar.\n",
+            "category": [
+                "Python",
+                "Backend",
+                "Programação Orientada a Objetos"
+            ],
+            "views": "10000",
+            "date": "01/01/2024",
+            "pin": null,
+            "answersCount": "42",
+            "author": {
+                "id": 101,
+                "name": "Ana Beatriz",
+                "username": "anabeatriz_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/women/23.jpg"
+                ]
+            }
+        },
+        {
+            "id": "2",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Dúvidas sobre Python",
+            "slug": "duvidas-sobre-python",
+            "body": "Neste post, vamos discutir algumas dúvidas comuns sobre a linguagem de programação Python.",
+            "markdown": "# Dúvidas sobre Python\n\nPython é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991[^1^][1].\n\n## O que é Python?\n\nPython é uma linguagem de programação poderosa e fácil de aprender. Possui estruturas de dados de alto nível eficientes e uma abordagem simples, mas eficaz, para a programação orientada a objetos. A sintaxe elegante e a digitação dinâmica de Python, juntamente com sua natureza interpretada, tornam-na uma linguagem ideal para scripting e desenvolvimento rápido de aplicativos em diversas áreas e na maioria das plataformas[^1^][1].\n\n## Por que aprender Python?\n\nPython é uma linguagem de propósito geral muito versátil, o que significa que pode ser usada para construir praticamente qualquer tipo de aplicativo, incluindo web, desktop e aplicativos móveis. Além disso, Python é amplamente utilizado em campos científicos para pesquisa acadêmica e ciência de dados[^2^][2].\n\n## Como começar com Python?\n\nPara começar com Python, você precisa instalar o Python em seu computador. Depois de instalado, você pode usar um editor de texto ou um ambiente de desenvolvimento integrado (IDE) para escrever e executar seu código Python[^2^][2].\n\n## Conclusão\n\nPython é uma linguagem de programação poderosa e versátil que é amplamente utilizada em muitos campos diferentes. Se você está pensando em aprender Python, espero que este texto tenha respondido algumas de suas dúvidas iniciais. Se você tiver mais perguntas sobre Python, fique à vontade para perguntar.\n",
+            "category": [
+                "Python",
+                "Backend"
+            ],
+            "views": "5000",
+            "date": "02/02/2024",
+            "pin": null,
+            "answersCount": "30",
+            "author": {
+                "id": 102,
+                "name": "João Silva",
+                "username": "joaosilva_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/men/43.jpg"
+                ]
+            }
+        },
+        {
+            "id": "3",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Introdução ao JavaScript",
+            "slug": "introducao-ao-javascript",
+            "body": "Neste post, vamos explorar os conceitos básicos do JavaScript, uma linguagem de programação usada principalmente para web.",
+            "markdown": " ",
+            "category": [
+                "JavaScript",
+                "Frontend"
+            ],
+            "views": "8000",
+            "date": "03/03/2024",
+            "pin": null,
+            "answersCount": "25",
+            "author": {
+                "id": 103,
+                "name": "Maria Santos",
+                "username": "mariasantos_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/women/42.jpg"
+                ]
+            }
+        },
+        {
+            "id": "4",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Dúvidas sobre Banco de Dados",
+            "slug": "duvidas-sobre-banco-de-dados",
+            "body": "Neste post, vamos discutir algumas dúvidas comuns sobre bancos de dados SQL e NoSQL.",
+            "markdown": " ",
+            "category": [
+                "Banco de Dados",
+                "Backend"
+            ],
+            "views": "6000",
+            "date": "04/04/2024",
+            "pin": null,
+            "answersCount": "35",
+            "author": {
+                "id": 104,
+                "name": "Carlos Oliveira",
+                "username": "carlosoliveira_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/men/40.jpg"
+                ]
+            }
+        },
+        {
+            "id": "5",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Introdução ao HTML e CSS",
+            "slug": "introducao-ao-html-css",
+            "body": "Neste post, vamos explorar os conceitos básicos de HTML e CSS, as linguagens de marcação usadas para estruturar e estilizar páginas web.",
+            "markdown": " ",
+            "category": [
+                "HTML",
+                "CSS",
+                "Frontend"
+            ],
+            "views": "7000",
+            "date": "05/05/2024",
+            "pin": null,
+            "answersCount": "28",
+            "author": {
+                "id": 105,
+                "name": "Lucas Costa",
+                "username": "lucascosta_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/men/39.jpg"
+                ]
+            }
+        },
+        {
+            "id": "6",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Dúvidas sobre Algoritmos",
+            "slug": "duvidas-sobre-algoritmos",
+            "body": "Neste post, vamos discutir algumas dúvidas comuns sobre algoritmos e estruturas de dados.",
+            "markdown": " ",
+            "category": [
+                "Algoritmos",
+                "Estruturas de Dados"
+            ],
+            "views": "9000",
+            "date": "06/06/2024",
+            "pin": null,
+            "answersCount": "32",
+            "author": {
+                "id": 106,
+                "name": "Fernanda Lima",
+                "username": "fernandalima_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/women/41.jpg"
+                ]
+            }
+        },
+        {
+            "id": "7",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Introdução ao Machine Learning",
+            "slug": "introducao-ao-machine-learning",
+            "body": "Neste post, vamos explorar os conceitos básicos de Machine Learning, uma subárea da Inteligência Artificial que se concentra no desenvolvimento de algoritmos que permitem aos computadores aprender a partir de dados.",
+            "markdown": " ",
+            "category": [
+                "Machine Learning",
+                "Inteligência Artificial"
+            ],
+            "views": "11000",
+            "date": "07/07/2024",
+            "pin": null,
+            "answersCount": "38",
+            "author": {
+                "id": 107,
+                "name": "Roberto Alves",
+                "username": "robertoalves_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/men/37.jpg"
+                ]
+            }
+        },
+        {
+            "id": "8",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Dúvidas sobre Redes Neurais",
+            "slug": "duvidas-sobre-redes-neurais",
+            "body": "Neste post, vamos discutir algumas dúvidas comuns sobre Redes Neurais, uma técnica de Machine Learning inspirada no funcionamento do cérebro humano.",
+            "markdown": " ",
+            "category": [
+                "Redes Neurais",
+                "Machine Learning"
+            ],
+            "views": "12000",
+            "date": "08/08/2024",
+            "pin": null,
+            "answersCount": "40",
+            "author": {
+                "id": 108,
+                "name": "Patricia Souza",
+                "username": "patriciasouza_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/women/40.jpg"
+                ]
+            }
+        },
+        {
+            "id": "9",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Introdução ao Desenvolvimento Web",
+            "slug": "introducao-ao-desenvolvimento-web",
+            "body": "Neste post, vamos explorar os conceitos básicos do Desenvolvimento Web, incluindo HTML, CSS, JavaScript e muito mais.",
+            "markdown": " ",
+            "category": [
+                "Desenvolvimento Web",
+                "Frontend",
+                "Backend"
+            ],
+            "views": "13000",
+            "date": "09/09/2024",
+            "pin": null,
+            "answersCount": "45",
+            "author": {
+                "id": 109,
+                "name": "Ricardo Pereira",
+                "username": "ricardopereira_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/men/36.jpg"
+                ]
+            }
+        },
+        {
+            "id": "10",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Dúvidas sobre Git e GitHub",
+            "slug": "duvidas-sobre-git-github",
+            "body": "Neste post, vamos discutir algumas dúvidas comuns sobre Git e GitHub, ferramentas essenciais para o controle de versão e colaboração em projetos de desenvolvimento de software.",
+            "markdown": " ",
+            "category": [
+                "Git",
+                "GitHub",
+                "Controle de Versão"
+            ],
+            "views": "14000",
+            "date": "10/10/2024",
+            "pin": null,
+            "answersCount": "50",
+            "author": {
+                "id": 110,
+                "name": "Juliana Martins",
+                "username": "julianamartins_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/women/39.jpg"
+                ]
+            }
+        },
+        {
+            "id": "11",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Introdução ao Desenvolvimento de Jogos",
+            "slug": "introducao-ao-desenvolvimento-de-jogos",
+            "body": "Neste post, vamos explorar os conceitos básicos do Desenvolvimento de Jogos, incluindo gráficos, física, IA e muito mais.",
+            "markdown": " ",
+            "category": [
+                "Desenvolvimento de Jogos",
+                "Gráficos",
+                "IA"
+            ],
+            "views": "15000",
+            "date": "11/11/2024",
+            "pin": null,
+            "answersCount": "55",
+            "author": {
+                "id": 111,
+                "name": "Pedro Rocha",
+                "username": "pedrorocha_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/men/35.jpg"
+                ]
+            }
+        },
+        {
+            "id": "12",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Dúvidas sobre Desenvolvimento Mobile",
+            "slug": "duvidas-sobre-desenvolvimento-mobile",
+            "body": "Neste post, vamos discutir algumas dúvidas comuns sobre Desenvolvimento Mobile, incluindo Android, iOS e Flutter.",
+            "markdown": " ",
+            "category": [
+                "Desenvolvimento Mobile",
+                "Android",
+                "iOS"
+            ],
+            "views": "16000",
+            "date": "12/12/2024",
+            "pin": null,
+            "answersCount": "60",
+            "author": {
+                "id": 112,
+                "name": "Carla Mendes",
+                "username": "carlamendes_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/women/38.jpg"
+                ]
+            }
+        },
+        {
+            "id": "13",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Introdução ao Desenvolvimento de Aplicativos",
+            "slug": "introducao-ao-desenvolvimento-de-aplicativos",
+            "body": "Neste post, vamos explorar os conceitos básicos do Desenvolvimento de Aplicativos, incluindo design de interface do usuário, programação e testes.",
+            "markdown": " ",
+            "category": [
+                "Desenvolvimento de Aplicativos",
+                "UI",
+                "Programação"
+            ],
+            "views": "17000",
+            "date": "13/01/2025",
+            "pin": null,
+            "answersCount": "65",
+            "author": {
+                "id": 113,
+                "name": "Rafael Cardoso",
+                "username": "rafaelcardoso_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/men/34.jpg"
+                ]
+            }
+        },
+        {
+            "id": "14",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Dúvidas sobre Segurança da Informação",
+            "slug": "duvidas-sobre-seguranca-da-informacao",
+            "body": "Neste post, vamos discutir algumas dúvidas comuns sobre Segurança da Informação, incluindo criptografia, firewalls e ataques cibernéticos.",
+            "markdown": " ",
+            "category": [
+                "Segurança da Informação",
+                "Criptografia",
+                "Firewalls"
+            ],
+            "views": "18000",
+            "date": "14/02/2025",
+            "pin": null,
+            "answersCount": "70",
+            "author": {
+                "id": 114,
+                "name": "Gabriela Silva",
+                "username": "gabrielasilva_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/women/38.jpg"
+                ]
+            }
+        },
+        {
+            "id": "15",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Introdução ao Desenvolvimento de Software",
+            "slug": "introducao-ao-desenvolvimento-de-software",
+            "body": "Neste post, vamos explorar os conceitos básicos do Desenvolvimento de Software, incluindo programação, testes e manutenção de software.",
+            "markdown": " ",
+            "category": [
+                "Desenvolvimento de Software",
+                "Programação",
+                "Testes"
+            ],
+            "views": "19000",
+            "date": "15/03/2025",
+            "pin": null,
+            "answersCount": "75",
+            "author": {
+                "id": 115,
+                "name": "Bruno Ferreira",
+                "username": "brunoferreira_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/men/33.jpg"
+                ]
+            }
+        },
+        {
+            "id": "16",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Dúvidas sobre Desenvolvimento Web",
+            "slug": "duvidas-sobre-desenvolvimento-web",
+            "body": "Neste post, vamos discutir algumas dúvidas comuns sobre Desenvolvimento Web, incluindo HTML, CSS, JavaScript e muito mais.",
+            "markdown": " ",
+            "category": [
+                "Desenvolvimento Web",
+                "HTML",
+                "CSS"
+            ],
+            "views": "20000",
+            "date": "16/04/2025",
+            "pin": null,
+            "answersCount": "80",
+            "author": {
+                "id": 116,
+                "name": "Camila Ribeiro",
+                "username": "camilaribeiro_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/women/37.jpg"
+                ]
+            }
+        },
+        {
+            "id": "17",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Introdução ao Desenvolvimento de Jogos",
+            "slug": "introducao-ao-desenvolvimento-de-jogos-2",
+            "body": "Neste post, vamos explorar os conceitos básicos do Desenvolvimento de Jogos, incluindo gráficos, física, IA e muito mais.",
+            "markdown": " ",
+            "category": [
+                "Desenvolvimento de Jogos",
+                "Gráficos",
+                "IA"
+            ],
+            "views": "21000",
+            "date": "17/05/2025",
+            "pin": null,
+            "answersCount": "85",
+            "author": {
+                "id": 117,
+                "name": "Guilherme Costa",
+                "username": "guilhermecosta_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/men/32.jpg"
+                ]
+            }
+        },
+        {
+            "id": "18",
+            "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png",
+            "title": "Dúvidas sobre Desenvolvimento Mobile",
+            "slug": "duvidas-sobre-desenvolvimento-mobile-2",
+            "body": "Neste post, vamos discutir algumas dúvidas comuns sobre Desenvolvimento Mobile, incluindo Android, iOS e Flutter.",
+            "markdown": " ",
+            "category": [
+                "Desenvolvimento Mobile",
+                "Android",
+                "iOS"
+            ],
+            "views": "22000",
+            "date": "18/06/2025",
+            "pin": null,
+            "answersCount": "90",
+            "author": {
+                "id": 118,
+                "name": "Julia Santos",
+                "username": "juliasantos_dev",
+                "avatar": [
+                    "https://randomuser.me/api/portraits/women/36.jpg"
+                ]
+            }
+        }
+    ]
+}

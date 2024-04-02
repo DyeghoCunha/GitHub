@@ -51,3 +51,8 @@ Interessado em aprofundar seus conhecimentos em Next.js e SSR? [Acesse o curso](
 
 ## Docker
 docker compose up -d
+
+## Prisma
+
+npx prisma migrate dev --name init
+npx prisma generate
