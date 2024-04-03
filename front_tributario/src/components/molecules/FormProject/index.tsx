@@ -3,7 +3,6 @@ import ImagePicker from '../ImagePicker';
 import { Button, FormControl, FormLabel, Input, FormHelperText, Textarea, Card, Stack, Box, Center, Heading, VStack, HStack, Image } from '@chakra-ui/react';
 import { LuAlarmClock, LuCheckCircle2 } from "react-icons/lu";
 import React from 'react';
-import SamucaForm from "@/assets/image/samucaForm.png"
 import { useFormState, useFormStatus } from 'react-dom';
 import { saveProjectForm } from '@/lib/actions';
 
@@ -71,7 +70,6 @@ const {pending} = useFormStatus();
                 <CardForm>
                   <FormControl>
                     <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text">Imagem do Projeto</FormLabel>
-                    <ImagePicker name="image" />
                    
                     <FormHelperText color="gray">Imagem do Figma ou do Conceito do Projeto</FormHelperText>
                   </FormControl>
@@ -92,7 +90,6 @@ const {pending} = useFormStatus();
           </Card>
         </Card>
       </HStack>
-      <Image src={SamucaForm.src} />
       </HStack>
     </Center >
   );

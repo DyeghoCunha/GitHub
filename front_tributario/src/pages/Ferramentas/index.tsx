@@ -15,7 +15,7 @@ const cardProps =[
     id:1,
     image:SimplesImg.src,
     text:"Simples Nacional",
-    href:"/"
+    href:"/SimplesNacional"
   },
    {
     id:2,
