@@ -1,3 +1,4 @@
+{/*
 //Interfaces _________________
 interface Iimposto{
   fatMes:number;
@@ -25,7 +26,6 @@ interface IsimplesNacional extends ItributosFederais,ItributosEstaduais,Itributo
   alqReal:number;
   das:number;
 }
-
 //Enum______________________________________________________________
 
 enum AnexoSN{
@@ -35,7 +35,6 @@ enum AnexoSN{
   AnexoIV= "Anexo IV",
   AnexoV= "Anexo V",
 }
-
 //Classes_______________________________________________________________
 
 export class EmpresaSimplesNacional implements IsimplesNacional{
@@ -71,5 +70,7 @@ export class EmpresaSimplesNacional implements IsimplesNacional{
     this.alqIss = alqIss;
   }
 }
+* */}
+
 
 
