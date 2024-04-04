@@ -1,3 +1,4 @@
+{/**
 import sql from "better-sqlite3"
 import slugify from 'slugify'
 import xss from 'xss'
@@ -55,3 +56,11 @@ export async function saveProject(project) {
   )
   `).run(project);
 }
+ */}
+export async function saveSimplesNacional(SimplesNacional) {
+
+
+console.log(SimplesNacional)
+
+}
+

@@ -72,5 +72,59 @@ export class EmpresaSimplesNacional implements IsimplesNacional{
 }
 * */}
 
+enum AnexoSimplesNacional{
+  "Anexo I" = 1,
+  "Anexo II" = 2,
+  "Anexo III" = 3,
+  "Anexo IV" = 4,
+  "Anexo V" = 5,
+  "Serviços de transporte e comunicação" = 6,
+  "Serviços de locação de bens móveis" = 7
+}
 
 
+
+export type TaxType = "ICMS" | "PIS COFINS" | "ISS";
+
+export interface ISimplesNacional {
+  annexOption: AnexoSimplesNacional;
+  rbt12: number;
+  salesValue: number; //receita no mercado interno
+  salesValueToExterior: number;
+  valueIcmsReplacement: number;
+  valuePisCofinsReplacement: number;
+  valueIssReplacement: number;
+  taxesReplaced: TaxType[];
+}
+export interface ISimplesNacionalForm {
+
+  annexOption:FormDataEntryValue |null;
+  rbt12: FormDataEntryValue |null;
+  salesValue: FormDataEntryValue |null; //receita no mercado interno
+  salesValueToExterior: FormDataEntryValue |null;
+  valueIcmsReplacement: FormDataEntryValue |null;
+  valuePisCofinsReplacement: FormDataEntryValue |null;
+  valueIssReplacement: FormDataEntryValue |null;
+  taxesReplaced: FormDataEntryValue |null;
+}
+
+export class SimplesNacional implements ISimplesNacional {
+  annexOption!: AnexoSimplesNacional;
+  rbt12!: number;
+  salesValue!: number;
+  salesValueToExterior!: number;
+  taxesReplaced!: TaxType[];
+  valueIcmsReplacement!: number;
+  valueIssReplacement!: number;
+  valuePisCofinsReplacement!: number;
+
+  private constructor(init: Partial<SimplesNacional>) {
+    Object.assign(this, init);
+  }
+
+  static fromValues(annexOption: AnexoSimplesNacional, rbt12: number, salesValue: number, salesValueToExterior: number, taxesReplaced: TaxType[], valueIcmsReplacement: number, valueIssReplacement: number, valuePisCofinsReplacement: number): SimplesNacional {
+    return new SimplesNacional({annexOption, rbt12, salesValue, salesValueToExterior, taxesReplaced, valueIcmsReplacement, valueIssReplacement, valuePisCofinsReplacement});
+  }
+
+  // Adicione mais métodos estáticos conforme necessário
+}
