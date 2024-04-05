@@ -351,7 +351,7 @@ export default function SimplesNacionalForm() {
     )
   }
 
- const FormSelectAnnexOption = ({ isValid, setIsValid, state, setState, label, placeHolder, id, helperText, errorText, validate }: IFormImput) => {
+  const FormSelectAnnexOption = ({ isValid, setIsValid, state, setState, label, placeHolder, id, helperText, errorText, validate }: IFormImput) => {
     const [localState, setLocalState] = useState(state);
     useEffect(() => {
       setLocalState(state);
@@ -361,13 +361,14 @@ export default function SimplesNacionalForm() {
     return (
       <Card bg="gray.600" h="116px" p="10px" minW="220px" justifyContent="space-between" alignItems="self-end" >
         <FormControl isInvalid={!isValid} id={id} >
+          <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text" fontWeight="bold" >{label}</FormLabel>
           <Menu >
             <MenuButton w="100%" as={Button} fontWeight="bold" variant="primary" rightIcon={<MdArrowDropDown />} >
               {localState || label}
             </MenuButton>
             <MenuList bgGradient="linear(to-r, orange, red)" borderRadius="10px">
               {Object.entries(anexo).map(([key, value]) => (
-                <MenuItem fontWeight="bold" key={key} onClick={ () => { setLocalState(value); setState(value); }}>
+                <MenuItem fontWeight="bold" key={key} onClick={() => { setLocalState(value); setState(value); }}>
                   {value}
                 </MenuItem>
               ))}
@@ -380,6 +381,7 @@ export default function SimplesNacionalForm() {
       </Card>
     )
   }
+
 
 
 
@@ -439,21 +441,21 @@ export default function SimplesNacionalForm() {
       <HStack alignItems="start">
         <HStack alignItems="end">
           <VStack>
-            <FormSelectAnnexOption
-              errorText={formProps[0].errorText}
-              helperText={formProps[0].helperText}
-              id={formProps[0].id}
-              isValid={formProps[0].isValid}
-              label={formProps[0].label}
-              placeHolder={formProps[0].placeHolder}
-              setIsValid={formProps[0].setIsValid}
-              setState={formProps[0].setState}
-              state={formProps[0].state}
-              validate={formProps[0].validate}
-            />
+
             <Card bg="gray.500">
               <form action={formAction}>
-
+                <FormSelectAnnexOption
+                  errorText={formProps[0].errorText}
+                  helperText={formProps[0].helperText}
+                  id={formProps[0].id}
+                  isValid={formProps[0].isValid}
+                  label={formProps[0].label}
+                  placeHolder={formProps[0].placeHolder}
+                  setIsValid={formProps[0].setIsValid}
+                  setState={formProps[0].setState}
+                  state={formProps[0].state}
+                  validate={formProps[0].validate}
+                />
                 {/** 
                 <VStack justifyContent="space-between" alignItems="start">
                   <HStack w="100%" justifyContent="start" alignItems="start">
