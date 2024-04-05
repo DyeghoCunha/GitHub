@@ -72,15 +72,16 @@ export class EmpresaSimplesNacional implements IsimplesNacional{
 }
 * */}
 
-enum AnexoSimplesNacional{
-  "Anexo I" = 1,
-  "Anexo II" = 2,
-  "Anexo III" = 3,
-  "Anexo IV" = 4,
-  "Anexo V" = 5,
-  "Serviços de transporte e comunicação" = 6,
-  "Serviços de locação de bens móveis" = 7
+export enum AnexoSimplesNacional {
+  AnexoI = "Anexo I",
+  AnexoII = "Anexo II",
+  AnexoIII = "Anexo III",
+  AnexoIV = "Anexo IV",
+  AnexoV = "Anexo V",
+  //ServicosTransporteComunicacao = "Serviços de transporte e comunicação",
+  //ServicosLocacaoBensMoveis = "Serviços de locação de bens móveis"
 }
+
 
 
 
@@ -105,7 +106,7 @@ export interface ISimplesNacionalForm {
   valueIcmsReplacement: FormDataEntryValue |null;
   valuePisCofinsReplacement: FormDataEntryValue |null;
   valueIssReplacement: FormDataEntryValue |null;
-  taxesReplaced: FormDataEntryValue |null;
+  taxesReplaced: FormDataEntryValue[] |null;
 }
 
 export class SimplesNacional implements ISimplesNacional {

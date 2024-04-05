@@ -49,14 +49,14 @@ export async function saveSimplesNacionalForm(prevState: unknown, formData: Form
     rbt12: formData.get("rbt12"),
     salesValue: formData.get("salesValue"),
     salesValueToExterior: formData.get("salesValueToExterior"),
-    taxesReplaced: formData.get("taxesReplaced"),
+    taxesReplaced: formData.getAll("taxesReplaced"),
     valueIcmsReplacement: formData.get("valueIcmsReplacement"),
     valueIssReplacement: formData.get("valueIssReplacement"),
     valuePisCofinsReplacement: formData.get("valuePisCofinsReplacement"),
 
   }
-
-  
+ console.log(simplesNacional)
+  {/** 
     if (
       isInvalidText(simplesNacional.annexOption) ||
       isInvalidText(simplesNacional.rbt12) ||
@@ -67,7 +67,7 @@ export async function saveSimplesNacionalForm(prevState: unknown, formData: Form
       message: 'Invalid input.',
     };
   }
-
+*/}
   await saveSimplesNacional(simplesNacional)
   // revalidatePath("/Projects")
   // redirect("/Projects");
