@@ -20,18 +20,18 @@ export default function DrawerDefault() {
       <Drawer placement={"left"} variant="side-menu" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerHeader borderBottomWidth='1px' bgGradient="linear(to-r, orange, red)" bgClip="text" >
+          <DrawerHeader borderBottomWidth='1px' bgGradient="linear(to-b, #B7F9A8, #32821C)" bgClip="text" >
             SamuCats
-            </DrawerHeader>
+          </DrawerHeader>
           <DrawerBody>
             <Link href="/">
-              <Text bgGradient="linear(to-r, orange, red)" bgClip="text">Projetos</Text>
+              <Text bgGradient="linear(to-b, #B7F9A8, #32821C)" bgClip="text">Projetos</Text>
             </Link>
             <Link href="/">
-              <Text bgGradient="linear(to-r, orange, red)" bgClip="text">Cadastro</Text>
+              <Text bgGradient="linear(to-b, #B7F9A8, #32821C)" bgClip="text">Cadastro</Text>
             </Link>
             <Link href="/">
-              <Text bgGradient="linear(to-r, orange, red)" bgClip="text">Configuração</Text>
+              <Text bgGradient="linear(to-b, #B7F9A8, #32821C)" bgClip="text">Configuração</Text>
             </Link>
 
           </DrawerBody>

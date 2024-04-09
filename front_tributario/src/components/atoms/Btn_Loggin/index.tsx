@@ -7,7 +7,7 @@ interface Btn_LogginProps {
 
 const Btn_Loggin: React.FC<Btn_LogginProps> = ({ onClick }) => {
   return (
-    <Button onClick={onClick} bgGradient="linear(to-r, orange, red)" colorScheme='whiteAlpha' fontSize="20px" fontWeight="bold" color="white">Entre</Button>
+    <Button onClick={onClick} bgGradient="linear(to-b, #B7F9A8, #32821C)" colorScheme='whiteAlpha' fontSize="20px" fontWeight="bold" color="white">Entre</Button>
   )
 }
 

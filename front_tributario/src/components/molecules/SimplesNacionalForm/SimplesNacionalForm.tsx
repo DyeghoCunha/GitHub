@@ -1,7 +1,7 @@
 "use client"
 import { saveSimplesNacionalForm } from "@/lib/actions";
 import { AnexoSimplesNacional, IFormImput, TaxType } from "@/types/types";
-import { Center, Checkbox, CheckboxGroup, Divider, FormErrorMessage, GridItem, Link, Menu, MenuButton, MenuItem, MenuList, SimpleGrid, Text } from "@chakra-ui/react";
+import { Center, Checkbox, CheckboxGroup, Divider, FormErrorMessage, GridItem, Link, Menu, MenuButton, MenuItem, MenuList, SimpleGrid, Skeleton, Text } from "@chakra-ui/react";
 import { FormHelperText } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import { Card } from "@chakra-ui/react";
@@ -14,7 +14,10 @@ import { TbRuler } from "react-icons/tb";
 import Select_TaxesReplaced from "./Select_TaxesReplaced/Select_TaxesReplaced";
 import Input_Value from "./Input_Value/Input_Value";
 import Select_AnnexOption from "./Select_AnnexOption/Select_AnnexOption";
-
+import { validateRbt12 } from "./utils/validation";
+import { motion, AnimatePresence } from "framer-motion";
+import SkeletonDefault from "@/components/atoms/SkeletonDefault/SkeletonDefault";
+import { CleanedValue } from "./utils/convertions";
 
 
 
@@ -25,30 +28,53 @@ export default function SimplesNacionalForm() {
 
   const [salesValue, setSalesValue] = useState<string>("");
   const [isValidSalesValue, setIsValidSalesValue] = useState<boolean>(true);
+  const [isValidSalesValueForm, setIsValidSalesValueForm] = useState<boolean>(false);
   const [annexOption, setAnnexOption] = useState<string>("");
   const [isValidAnnexOption, setIsValidAnnexOption] = useState<boolean>(true);
+  const [isValidAnnexOptionForm, setIsValidAnnexOptionForm] = useState<boolean>(false);
   const [salesValueToExterior, setSalesValueToExterior] = useState<string>("");
   const [isValidSalesValueToExterior, setIsValidSalesValueToExterior] = useState<boolean>(true);
+  const [isValidSalesValueToExteriorForm, setIsValidSalesValueToExteriorForm] = useState<boolean>(false);
   const [taxesReplaced, setTaxesReplaced] = useState<TaxType[]>([]);
   const [isValidTaxesReplaced, setIsValidTaxesReplaced] = useState<boolean>(true);
+  const [isValidTaxesReplacedForm, setIsValidTaxesReplacedForm] = useState<boolean>(false);
   const [valueIcmsReplacement, setValueIcmsReplacement] = useState<string>("");
   const [isValidValueIcmsReplacement, setIsValidValueIcmsReplacement] = useState<boolean>(true);
+  const [isValidValueIcmsReplacementForm, setIsValidValueIcmsReplacementForm] = useState<boolean>(false);
   const [valueIssReplacement, setValueIssReplacement] = useState<string>("");
   const [isValidValueIssReplacement, setIsValidValueIssReplacement] = useState<boolean>(true);
+  const [isValidValueIssReplacementForm, setIsValidValueIssReplacementForm] = useState<boolean>(false);
   const [valuePisCofinsReplacement, setValuePisCofinsReplacement] = useState<string>("");
   const [isValidValuePisCofinsReplacement, setIsValidValuePisCofinsReplacement] = useState<boolean>(true);
+  const [isValidValuePisCofinsReplacementForm, setIsValidValuePisCofinsReplacementForm] = useState<boolean>(false);
   const [isValidRbt12, setIsValidRbt12] = useState<boolean>(true);
+  const [isValidRbt12Form, setIsValidRbt12Form] = useState<boolean>(true);
   const [rbt12, setRbt12] = useState<string>("");
   const [isIcmsSt, setIsIcmsSt] = useState(false);
   const [isPisCofinsSt, setIsPisCofinsSt] = useState(false);
   const [isIssSt, setIsIssSt] = useState(false);
   const [checkedValues, setCheckedValues] = useState<TaxType[]>([]);
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 50 }
+  };
+  const skeletonOut = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 }
+  };
+  const MotionCard = motion(Card)
 
   useEffect(() => {
     setIsIcmsSt(checkedValues.includes("ICMS"))
     setIsPisCofinsSt(checkedValues.includes("PIS COFINS"))
     setIsIssSt(checkedValues.includes("ISS"))
   }, [checkedValues])
+
+
 
   const formProps = [
     {
@@ -91,7 +117,7 @@ export default function SimplesNacionalForm() {
       id: "salesValueToExterior",
       label: "Faturamento Internacional",
       placeHolder: "R$ 0,00",
-      helperText: "O Faturamento não pode ser Zero",
+      helperText: "O Faturamento não pode ser nulo",
       validate: validateSalesValueToExterior,
       errorText: "O Valor precisa ser maior do que Zero",
       state: salesValueToExterior,
@@ -117,7 +143,7 @@ export default function SimplesNacionalForm() {
       placeHolder: "R$ 0,00",
       helperText: "ICMS de Substituição Tributária",
       validate: validateIcmsReplacement,
-      errorText: "O Valor precisa ser maior do que Zero",
+      errorText: "Valor Maior que o Faturamento",
       state: valueIcmsReplacement,
       setState: setValueIcmsReplacement,
       isValid: isValidValueIcmsReplacement, // Adicione esta linha
@@ -129,7 +155,7 @@ export default function SimplesNacionalForm() {
       placeHolder: "R$ 0,00",
       helperText: "ISS de Substituição Tributária",
       validate: validateIssReplacement,
-      errorText: "O Valor precisa ser maior do que Zero",
+      errorText: "Valor Maior que o Faturamento",
       state: valueIssReplacement,
       setState: setValueIssReplacement,
       isValid: isValidValueIssReplacement, // Adicione esta linha
@@ -141,7 +167,7 @@ export default function SimplesNacionalForm() {
       placeHolder: "R$ 0,00",
       helperText: "Regime Monofásico de Pis e Cofins",
       validate: validatePisCofinsReplacement,
-      errorText: "O Valor precisa ser maior do que Zero",
+      errorText: "Valor Maior que o Faturamento",
       state: valuePisCofinsReplacement,
       setState: setValuePisCofinsReplacement,
       isValid: isValidValuePisCofinsReplacement, // Adicione esta linha
@@ -149,140 +175,189 @@ export default function SimplesNacionalForm() {
     },
   ]
 
-  function validateRbt12(value: string) {
-    const input = Number(value)
-    if (input > 0) {
+
+  function validateAnnexOption(value: string) {
+
+    if (value.length > 0) {
+      setIsValidAnnexOptionForm(true)
       return true
     } else {
+      setIsValidAnnexOptionForm(false)
       return false
     }
   }
-  function validateAnnexOption(value: string) {
-    return true
-  }
 
   function validateSalesValue(value: string) {
-    const input = Number(value)
+    const cleanedValue = CleanedValue(value)
+    const input = Number(cleanedValue);
     if (input > 0) {
-      setSalesValue(input)
+      setSalesValue(value)
+      setIsValidSalesValueForm(true)
       return true
-    } else { return false }
+    } else {
+      setIsValidSalesValueForm(false)
+      return false
+    }
   }
   function validateSalesValueToExterior(value: string) {
-    const input = Number(value)
-    if (input > 0) {
+    const cleanedValue = CleanedValue(value)
+    const input = Number(cleanedValue);
+    if (input >= 0) {
+      setIsValidSalesValueToExteriorForm(true)
       return true
-    } else { return false }
+    } else {
+      setIsValidSalesValueToExteriorForm(false)
+      return false
+    }
   }
   function validateTaxesReplaced(value: string) {
-    const input = Number(value)
+    const cleanedValue = CleanedValue(value)
+    const input = Number(cleanedValue);
     const sales = Number(salesValue)
     if (input > 0 && input < sales) {
+      setIsValidTaxesReplacedForm(true)
       return true
-    } else { return false }
+    } else {
+      setIsValidTaxesReplacedForm(false)
+      return false
+    }
   }
   function validateIcmsReplacement(value: string) {
-    const input = Number(value)
+    const cleanedValue = CleanedValue(value)
+    const input = Number(cleanedValue);
     const sales = Number(salesValue)
     if (input > 0 && input < sales) {
+      setIsValidValueIcmsReplacementForm(true)
       return true
-    } else { return false }
+    } else {
+      setIsValidValueIcmsReplacementForm(false)
+      return false
+    }
   }
   function validateIssReplacement(value: string) {
-    const input = Number(value)
+    const cleanedValue = CleanedValue(value)
+    const input = Number(cleanedValue);
     const sales = Number(salesValue)
     if (input > 0 && input < sales) {
+      setIsValidValueIssReplacementForm(true)
       return true
-    } else { return false }
+    } else {
+      setIsValidValueIssReplacementForm(false)
+      return false
+    }
   }
   function validatePisCofinsReplacement(value: string) {
-    const input = Number(value)
+    const cleanedValue = CleanedValue(value)
+    const input = Number(cleanedValue);
     const sales = Number(salesValue)
     if (input > 0 && input < sales) {
+      setIsValidValuePisCofinsReplacementForm(true)
       return true
-    } else { return false }
+    } else {
+      setIsValidValuePisCofinsReplacementForm(false)
+      return false
+    }
   }
 
+  function validateCalc() {
+    const isFirstConditionValid = isValidRbt12Form && isValidSalesValueForm && isValidSalesValueToExteriorForm && checkedValues.length === 0;
+    const isSecondConditionValid = isValidRbt12Form && isValidSalesValueForm && isValidSalesValueToExteriorForm && checkedValues.length > 0 && (isValidValueIcmsReplacementForm || isValidValuePisCofinsReplacementForm || isValidValueIssReplacementForm);
+    return isFirstConditionValid || isSecondConditionValid;
+  }
 
-
-
+  useEffect(() => {
+    setIsFormValid(validateCalc());
+  }, [rbt12, salesValue, salesValueToExterior, checkedValues, valueIcmsReplacement, valuePisCofinsReplacement, valueIssReplacement]);
 
   return (
-    <Center mt="40px" mb="20px">
-            <Card bg="gray.500" p="5px" >
-              <form action={formAction}>
-                <VStack >
-                  <HStack w="100%" justifyContent="start" alignItems="start">
-                    <Select_AnnexOption
-                      errorText={formProps[0].errorText}
-                      helperText={formProps[0].helperText}
-                      id={formProps[0].id}
-                      isValid={formProps[0].isValid}
-                      label={formProps[0].label}
-                      placeHolder={formProps[0].placeHolder}
-                      setIsValid={formProps[0].setIsValid}
-                      setState={formProps[0].setState}
-                      state={formProps[0].state}
-                      validate={formProps[0].validate}
-                    />
-                    <Input_Value
-                      errorText={formProps[1].errorText}
-                      helperText={formProps[1].helperText}
-                      id={formProps[1].id}
-                      isValid={formProps[1].isValid}
-                      label={formProps[1].label}
-                      placeHolder={formProps[1].placeHolder}
-                      setIsValid={formProps[1].setIsValid}
-                      setState={formProps[1].setState}
-                      state={formProps[1].state}
-                      validate={formProps[1].validate}
-                    />
-                  </HStack>
-                <Divider />
-                  <HStack w="100%" justifyContent="center" alignItems="center">
-                      <Input_Value
-                        errorText={formProps[2].errorText}
-                        helperText={formProps[2].helperText}
-                        id={formProps[2].id}
-                        isValid={formProps[2].isValid}
-                        label={formProps[2].label}
-                        placeHolder={formProps[2].placeHolder}
-                        setIsValid={formProps[2].setIsValid}
-                        setState={formProps[2].setState}
-                        state={formProps[2].state}
-                        validate={formProps[2].validate}
-                      />
-                      <Input_Value
-                        errorText={formProps[3].errorText}
-                        helperText={formProps[3].helperText}
-                        id={formProps[3].id}
-                        isValid={formProps[3].isValid}
-                        label={formProps[3].label}
-                        placeHolder={formProps[3].placeHolder}
-                        setIsValid={formProps[3].setIsValid}
-                        setState={formProps[3].setState}
-                        state={formProps[3].state}
-                        validate={formProps[3].validate}
-                      />
-                  </HStack>
-                <Divider />
-                  <VStack w="100%" justifyContent="center" alignItems="center">
-                      <Select_TaxesReplaced
-                        errorText={formProps[4].errorText}
-                        helperText={formProps[4].helperText}
-                        id={formProps[4].id}
-                        isValid={formProps[4].isValid}
-                        label={formProps[4].label}
-                        placeHolder={formProps[4].placeHolder}
-                        setIsValid={formProps[4].setIsValid}
-                        setState={formProps[4].setState}
-                        state={formProps[4].state}
-                        validate={formProps[4].validate}
-                        checkedValues={checkedValues}
-                        setCheckedValues={setCheckedValues}
-                      />
-                      <SimpleGrid gap="5px" w="100%" columns={2} row={2}>
-                        <GridItem>
+    <Center>
+      <Card transition="height 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11)" bg="gray.700" p="5px" >
+        <form action={formAction}>
+          <VStack >
+            <HStack w="100%" justifyContent="start" alignItems="start">
+
+              <Select_AnnexOption
+                errorText={formProps[0].errorText}
+                helperText={formProps[0].helperText}
+                id={formProps[0].id}
+                isValid={formProps[0].isValid}
+                label={formProps[0].label}
+                placeHolder={formProps[0].placeHolder}
+                setIsValid={formProps[0].setIsValid}
+                setState={formProps[0].setState}
+                state={formProps[0].state}
+                validate={formProps[0].validate}
+              />
+
+              {annexOption.length > 1 ?
+                <Box as={motion.div} variants={skeletonOut} initial="hidden" animate="visible" exit="exit">
+                  <Input_Value
+                    errorText={formProps[1].errorText}
+                    helperText={formProps[1].helperText}
+                    id={formProps[1].id}
+                    isValid={formProps[1].isValid}
+                    label={formProps[1].label}
+                    placeHolder={formProps[1].placeHolder}
+                    setIsValid={formProps[1].setIsValid}
+                    setState={formProps[1].setState}
+                    state={formProps[1].state}
+                    validate={formProps[1].validate}
+                  /></Box> :
+                <SkeletonDefault width="250px" height="118px" />}
+            </HStack>
+
+            {Number(rbt12) > 0 ?
+              <Box as={motion.div} variants={skeletonOut} initial="hidden" animate="visible" exit="exit">
+                <Divider borderColor="rgba(183, 249, 168, 0.8)" mb="5px" />
+                <HStack w="100%" justifyContent="center" alignItems="center">
+                  <Input_Value
+                    errorText={formProps[2].errorText}
+                    helperText={formProps[2].helperText}
+                    id={formProps[2].id}
+                    isValid={formProps[2].isValid}
+                    label={formProps[2].label}
+                    placeHolder={formProps[2].placeHolder}
+                    setIsValid={formProps[2].setIsValid}
+                    setState={formProps[2].setState}
+                    state={formProps[2].state}
+                    validate={formProps[2].validate}
+                  />
+                  <Input_Value
+                    errorText={formProps[3].errorText}
+                    helperText={formProps[3].helperText}
+                    id={formProps[3].id}
+                    isValid={formProps[3].isValid}
+                    label={formProps[3].label}
+                    placeHolder={formProps[3].placeHolder}
+                    setIsValid={formProps[3].setIsValid}
+                    setState={formProps[3].setState}
+                    state={formProps[3].state}
+                    validate={formProps[3].validate}
+                  />
+                </HStack></Box>
+              : <Box></Box>}
+            {Number(salesValue) > 0 || Number(salesValueToExterior) > 0 ?
+              <Box w="100%">
+                <Divider borderColor="rgba(183, 249, 168, 0.8)" mb="5px" />
+                <VStack w="100%" justifyContent="center" alignItems="center">
+                  <Select_TaxesReplaced
+                    errorText={formProps[4].errorText}
+                    helperText={formProps[4].helperText}
+                    id={formProps[4].id}
+                    isValid={formProps[4].isValid}
+                    label={formProps[4].label}
+                    placeHolder={formProps[4].placeHolder}
+                    setIsValid={formProps[4].setIsValid}
+                    setState={formProps[4].setState}
+                    state={formProps[4].state}
+                    validate={formProps[4].validate}
+                    checkedValues={checkedValues}
+                    setCheckedValues={setCheckedValues}
+                  />
+                  <SimpleGrid gap="5px" w="100%" columns={2} row={2}>
+                    <AnimatePresence>
+                      {isIcmsSt && (
+                        <GridItem as={motion.div} variants={variants} initial="hidden" animate="visible" exit="exit">
                           <Input_Value
                             errorText={formProps[5].errorText}
                             helperText={formProps[5].helperText}
@@ -294,8 +369,12 @@ export default function SimplesNacionalForm() {
                             setState={formProps[5].setState}
                             state={formProps[5].state}
                             validate={formProps[5].validate}
-                          /></GridItem>
-                        <GridItem>
+                          />
+                        </GridItem>)}
+                    </AnimatePresence>
+                    <AnimatePresence>
+                      {isIssSt && (
+                        <GridItem as={motion.div} variants={variants} initial="hidden" animate="visible" exit="exit">
                           <Input_Value
                             errorText={formProps[6].errorText}
                             helperText={formProps[6].helperText}
@@ -307,8 +386,11 @@ export default function SimplesNacionalForm() {
                             setState={formProps[6].setState}
                             state={formProps[6].state}
                             validate={formProps[6].validate}
-                          /></GridItem>
-                        <GridItem>
+                          /></GridItem>)}
+                    </AnimatePresence>
+                    <AnimatePresence>
+                      {isPisCofinsSt && (
+                        <GridItem as={motion.div} variants={variants} initial="hidden" animate="visible" exit="exit">
                           <Input_Value
                             errorText={formProps[7].errorText}
                             helperText={formProps[7].helperText}
@@ -321,19 +403,24 @@ export default function SimplesNacionalForm() {
                             state={formProps[7].state}
                             validate={formProps[7].validate}
                           /></GridItem>
-                      </SimpleGrid>
-                  </VStack>
-               
+                      )}
+                    </AnimatePresence>
+                  </SimpleGrid>
                 </VStack>
-                <Card mt="10px" bg="gray.400" borderRadius="20px">
-                  <Card m="10px" bg="gray.600" p="10px" borderRadius="full">
-                    <Button type="submit" disabled={true} borderRadius="full" variant={!pending ? "primary" : "secondary"}  >
-                      {pending ? <LuAlarmClock size="35px" opacity="0.5" /> : <LuCheckCircle2 size="35px" opacity="0.5" />}
-                    </Button>
-                  </Card>
-                </Card>
-              </form >
-            </Card >
+
+              </Box> : <Box></Box>}
+
+          </VStack>
+          {isFormValid ?
+            <Card mt="10px" bg="gray.400" borderRadius="10px">
+              <Card m="10px" bg="gray.600" p="10px" borderRadius="full">
+                <Button type="submit" disabled={true} borderRadius="full" variant={!pending ? "primary" : "secondary"}  >
+                  <Text fontWeight="bold" fontSize="20px">Calcular</Text>
+                </Button>
+              </Card>
+            </Card> : <SkeletonDefault width="100%" height="60px"></SkeletonDefault>}
+        </form >
+      </ Card>
     </Center >
   );
 }

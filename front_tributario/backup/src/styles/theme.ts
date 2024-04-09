@@ -122,7 +122,7 @@ export const darkTheme = extendTheme({
       },
       variants: {
         primary: {
-          bgGradient: "linear(to-r, orange, red)",
+          bgGradient: "linear(to-b, #B7F9A8, #32821C)",
           boxShadow: "-1px 3px 2px rgba(0, 0, 0, 0.19)",
           _active: {
             bgGradient: "linear(to-b, #B75C09, #F08200)",
@@ -491,7 +491,7 @@ export const lightTheme = extendTheme({
       }
     },
 
-Box: {
+    Box: {
       variants: {
         shimmer: {
           bgGradient: "linear(to-r, #000103 45%, #1e2631 55%, #000103)",
@@ -551,7 +551,7 @@ Box: {
 
 
         primary: {
-          bgGradient: "linear(to-r, orange, red)",
+          bgGradient: "linear(to-b, #B7F9A8, #32821C)",
           boxShadow: "-1px 3px 2px rgba(0, 0, 0, 0.19)",
           _active: {
             bgGradient: "linear(to-b, #B75C09, #F08200)",
@@ -619,7 +619,7 @@ Box: {
       variants: {
         hover: {
           _hover: {
-            bgGradient: "linear(to-r, orange, red)",
+            bgGradient: "linear(to-b, #B7F9A8, #32821C)",
             bgClip: "text"
           }
         }

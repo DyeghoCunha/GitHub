@@ -122,7 +122,7 @@ export const darkTheme = extendTheme({
       },
       variants: {
         primary: {
-          bgGradient: "linear(to-r, orange, red)",
+          bgGradient: "linear(to-b, #B7F9A8, #32821C)",
           boxShadow: "-1px 3px 2px rgba(0, 0, 0, 0.19)",
           _active: {
             bgGradient: "linear(to-b, #B75C09, #F08200)",
@@ -458,15 +458,15 @@ export const lightTheme = extendTheme({
       start: "#F08200",
       end: "#B75C09",
     },
-    bgColor:{
-      100:"#0D150B",
-      200:"#121C12"
+    bgColor: {
+      100: "#0D150B",
+      200: "#121C12"
     },
-    intComp:{
-      400:"#183C10"
+    intComp: {
+      400: "#183C10"
     },
-    solidColor:{
-      900:"#32821C"
+    solidColor: {
+      900: "#32821C"
     }
   },
   zIndices: {
@@ -501,7 +501,7 @@ export const lightTheme = extendTheme({
       }
     },
 
-Box: {
+    Box: {
       variants: {
         shimmer: {
           bgGradient: "linear(to-r, #000103 45%, #1e2631 55%, #000103)",
@@ -600,7 +600,7 @@ Box: {
       variants: {
         hover: {
           _hover: {
-            bgGradient: "linear(to-r, orange, red)",
+            bgGradient: "linear(to-b, #B7F9A8, #32821C)",
             bgClip: "text"
           }
         }
@@ -610,13 +610,13 @@ Box: {
       variants: {
         outline: {
           field: {
-            color: "#E6F1E6",
+            color: "#296B18",
             fontSize: "sm",
-            bgColor: "#2B402C",
+            bgColor: "rgba(183, 249, 168, 0.4)",
             borderColor: "#296B18",
             px: 2.5,
             "::placeholder": {
-              color: "#243525",
+              color: "#296B18",
             },
             _hover: {
               borderColor: "#B7F9A8",

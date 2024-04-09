@@ -35,7 +35,7 @@ function SidebarAccordionLink({ icon, href, children }: SidebarAccordionLinkType
     <HStack mb="4px" as={Link} href={href} _hover={{ color: "red" }}>
       <Icon as={icon} boxSize={6} />
 
-      <Text _hover={{ bgGradient: "linear(to-r, orange, red)", bgClip: "text" }}>{children}</Text>
+      <Text _hover={{ bgGradient: "linear(to-b, #B7F9A8, #32821C)", bgClip: "text" }}>{children}</Text>
     </HStack>
   )
 }
@@ -50,7 +50,7 @@ function SidebarAccordionLinkDot({ color, href, children }: SidebarAccordionLink
           d='M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0'
         />
       </Icon>
-      <Text _hover={{ bgGradient: "linear(to-r, orange, red)", bgClip: "text", fontWeight: "bold" }}>{children}</Text>
+      <Text _hover={{ bgGradient: "linear(to-b, #B7F9A8, #32821C)", bgClip: "text", fontWeight: "bold" }}>{children}</Text>
     </HStack>
   )
 }

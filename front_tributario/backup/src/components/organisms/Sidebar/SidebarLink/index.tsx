@@ -51,7 +51,7 @@ export default function SidebarLink({ isOpen, icon, href, children }: SidebarLin
         <Icon m="0" p="0" as={icon} boxSize={10} _hover={{ color: "#FF5349" }} />
       </Link>
       <Link href={href}>
-        <TextComponent isOpen={isOpen} ><Text fontSize="20px" _hover={{ bgGradient: "linear(to-r, orange, red)", bgClip: "text" }}>{children}</Text></TextComponent>
+        <TextComponent isOpen={isOpen} ><Text fontSize="20px" _hover={{ bgGradient: "linear(to-b, #B7F9A8, #32821C)", bgClip: "text" }}>{children}</Text></TextComponent>
       </Link>
     </HStack>
   )
