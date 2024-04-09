@@ -129,3 +129,17 @@ export class SimplesNacional implements ISimplesNacional {
 
   // Adicione mais métodos estáticos conforme necessário
 }
+
+export interface IFormImput {
+    id: string,
+    label: string,
+    placeHolder: string,
+    helperText: string,
+    validate: (value: string) => boolean, // Adicione esta linha
+    errorText: string,
+    state: string | number | TaxType[] | undefined,
+    setState: React.Dispatch<React.SetStateAction<string | number | TaxType[]>>,
+    isValid: boolean,
+    setIsValid: React.Dispatch<React.SetStateAction<boolean>>
+    children: React.ReactNode
+  }
