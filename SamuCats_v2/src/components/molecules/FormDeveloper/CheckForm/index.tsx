@@ -9,7 +9,6 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
   const open = () => setIsOpen(!isOpen);
   const close = () => setIsOpen(false);
 
-  const [value, setValue] = useState([]);
 
   return (
     <Card m="10px 5px 5px 5px" bg="gray.600" w="300px" p="10px" zIndex={0} >
@@ -63,7 +62,6 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
                   <PopoverFooter borderColor="orange" w="100%" minH={50} 
                   bgGradient="linear(to-r, gray,orange, red)" bgClip="text"
                   >{field.value.join(", ")}
-
                   </PopoverFooter>
 
                   {field.value.length > 0 ? (<Button variant="primary" width="100%" onClick={close}>Validar</Button>) : (<Button variant="secondary" isDisabled width="100%" onClick={close}>Validar</Button>)}
