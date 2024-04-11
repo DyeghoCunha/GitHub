@@ -1,59 +1,59 @@
 "use server"
 import { redirect } from "next/navigation";
-import { saveProject } from "./projects";
+import { saveDeveloper } from "./developer";
 import { revalidatePath } from "next/cache";
-import Developer from "@/types/types";
 
 
 interface IDeveloperForm {
-
-  title: FormDataEntryValue | null;
-  summary: FormDataEntryValue | null;
-  instructions: FormDataEntryValue | null;
-  image: FormDataEntryValue | null;
-  creator: FormDataEntryValue | null;
-  creator_email:  FormDataEntryValue | null;
-  id: FormDataEntryValue | null;
-  name: FormDataEntryValue | null;
   availability: FormDataEntryValue | null;
-  linkedIn: FormDataEntryValue | null;
-  github: FormDataEntryValue | null;
-  whatsapp?: FormDataEntryValue | null;
-  primaryStack: FormDataEntryValue | null;
-  secondaryStack?: FormDataEntryValue | null;
-  primaryLanguage: FormDataEntryValue | null;
-  programmingLanguages?: FormDataEntryValue | null;
-  stylingFrameWork?: FormDataEntryValue | null;
+  email: FormDataEntryValue | null;
   frameWork: FormDataEntryValue | null;
+  github: FormDataEntryValue | null;
+  image: string;
+  linkedIn: FormDataEntryValue | null;
+  name: FormDataEntryValue | null;
+  primaryLanguage: FormDataEntryValue | null;
+  primaryStack: FormDataEntryValue | null;
+  programmingLanguages?: FormDataEntryValue | null;
+  secondaryStack?: FormDataEntryValue | null;
+  stylingFrameWork?: FormDataEntryValue | null;
+  summary: FormDataEntryValue | null;
+  title: FormDataEntryValue | null;
+  whatsapp?: FormDataEntryValue | null;
 }
 
 function isInvalidText(text: any) {
   return !text || text.trim() === '';
 }
 
+async function getGithubProfileImage(username:FormDataEntryValue | null) {
+  const response = await fetch(`https://api.github.com/users/${username}`);
+  const data = await response.json();
+  return data.avatar_url;
+}
+
+
+
 export async function saveDeveloperForm(prevState: unknown, formData: FormData) {
-  const project: IDeveloperForm = {
-    title: formData.get("name"),
-  summary: formData.get("name"),
-  instructions: formData.get("name"),
-  image:formData.get("name"),
-  creator: formData.get("name"),
-  creator_email:formData.get("name"),
-  id: formData.get("name"),
-  name: formData.get("name"),
-  availability: formData.get("name"),
-  linkedIn: formData.get("name"),
-  github: formData.get("name"),
-  whatsapp: formData.get("name"),
-  primaryStack: formData.get("name"),
-  secondaryStack: formData.get("name"),
-  primaryLanguage: formData.get("name"),
-  programmingLanguages: formData.get("name"),
-  stylingFrameWork: formData.get("name"),
-  frameWork: formData.get("name"),
 
-  }
-
+const developer: IDeveloperForm = {
+    availability: formData.get("availability"),
+    email: formData.get("email"),
+    frameWork: formData.get("framework"),
+    github: formData.get("github"),
+    image: await getGithubProfileImage(formData.get("githug")),
+    linkedIn: formData.get("linkedin"),
+    name: formData.get("name"),
+    primaryLanguage: formData.get("primarylanguage"),
+    primaryStack: formData.get("primarystack"),
+    programmingLanguages: formData.get("programminglanguages"),
+    secondaryStack: formData.get("secondarystack"),
+    stylingFrameWork: formData.get("stylingframework"),
+    summary: formData.get("summary"),
+    title: formData.get("title"),
+    whatsapp: formData.get("whatsapp"),
+}
+{/**
   if (
     isInvalidText(project.title) ||
     isInvalidText(project.summary) ||
@@ -64,7 +64,8 @@ export async function saveDeveloperForm(prevState: unknown, formData: FormData) 
       message: 'Invalid input.',
     };
   }
-  await saveProject(project)
-  revalidatePath("/Projects")
-  redirect("/Projects");
+   */}
+  await saveDeveloper(developer)
+  revalidatePath("/developers")
+  redirect("/developers");
 }

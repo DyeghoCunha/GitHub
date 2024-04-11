@@ -1,6 +1,7 @@
 import { Box, Button, Card, Checkbox, CheckboxGroup, FormControl, FormErrorMessage, Grid, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal } from "@chakra-ui/react";
 import { Field, FieldArray } from "formik";
 import { useState } from "react";
+import { CheckFormLangType } from "../types";
 
 export function CheckForm({ name, validate, formLabel, isRequired, helperText, placeHolder, propStack }: CheckFormLangType) {
   const languageChoices = Object.values(propStack)
@@ -26,26 +27,24 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
                   <PopoverCloseButton border="1px solid orange" />
                   <PopoverBody w="400px"  >
                     <Box w={500} p={4}>
-
                       <FieldArray name={name}>
                         {({ push, remove }) => (
                           <CheckboxGroup value={field.value} onChange={(value) => {
-
-                            languageChoices.forEach((language:any) => {
+                            languageChoices.forEach((language: any) => {
                               if (value.includes(language)) {
-
                                 if (!field.value.includes(language)) {
-                                  push(language);
+                                  console.log('Adicionando: ', language);
+                                  form.setFieldValue(name, [...field.value, language]);
                                 }
                               } else {
-
                                 if (field.value.includes(language)) {
-                                  const index = field.value.indexOf(language);
-                                  remove(index);
+                                  console.log('Removendo: ', language);
+                                  form.setFieldValue(name, field.value.filter((item: any) => item !== language));
                                 }
                               }
                             });
                           }}>
+                          
                             <Grid templateColumns="repeat(3, 1fr)" gap={2}>
                               {languageChoices.map((language) => (
                                 <Checkbox key={language} value={language} colorScheme="orange">
@@ -59,13 +58,11 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
 
                     </Box>
                   </PopoverBody>
-                  <PopoverFooter borderColor="orange" w="100%" minH={50} 
-                  bgGradient="linear(to-r, gray,orange, red)" bgClip="text"
-                  >{field.value.join(", ")}
+                  <PopoverFooter borderColor="orange" w="100%" minH={50} bgGradient="linear(to-r, gray,orange, red)" bgClip="text">
+                    {Array.isArray(field.value) ? field.value.join(", ") : ""}
                   </PopoverFooter>
 
-                  {field.value.length > 0 ? (<Button variant="primary" width="100%" onClick={close}>Validar</Button>) : (<Button variant="secondary" isDisabled width="100%" onClick={close}>Validar</Button>)}
-
+                  {Array.isArray(field.value) && field.value.length > 0 ? (<Button variant="primary" width="100%" onClick={close}>Validar</Button>) : (<Button variant="secondary" isDisabled width="100%" onClick={close}>Validar</Button>)}
                 </PopoverContent>
               </Portal>
             </Popover>

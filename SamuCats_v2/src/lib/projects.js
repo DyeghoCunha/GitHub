@@ -12,7 +12,7 @@ const s3 = new S3({
 });
 
 
-const db = sql("projects.db");
+const db = sql("samucats.db");
 
 export async function getProjects() {
   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -27,10 +27,10 @@ export function getProject(slug) {
 export async function saveProject(project) {
   project.slug = slugify(project.title, { lower: true });
   project.instructions = xss(project.instructions);
-  console.log("SLUG"+ project.slug)
+  console.log("SLUG" + project.slug)
   const extension = project.image.name.split(".").pop();
   const fileName = `${project.slug}.${extension}`
-  console.log("Filename"+fileName)
+  console.log("Filename" + fileName)
   const bufferedImage = await project.image.arrayBuffer();
 
   s3.putObject({
@@ -55,3 +55,6 @@ export async function saveProject(project) {
   )
   `).run(project);
 }
+
+
+

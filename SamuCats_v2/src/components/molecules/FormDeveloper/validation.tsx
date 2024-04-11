@@ -25,3 +25,7 @@ export function validateTest(value: string) {
 
   return
 }
+export function validateEmail(value: string) {
+
+  return
+}

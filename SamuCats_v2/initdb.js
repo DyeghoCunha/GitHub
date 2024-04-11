@@ -1,15 +1,15 @@
 const sql = require('better-sqlite3');
-const db = sql('projects.db');
+const db = sql('samucats.db');
 
 
 const dummyProjects = [
-  {
-    title: 'Calculadora Simples',
-    slug: 'calculadora-simples',
-    image: 'calculadoraSimples.png',
-    summary:
-      'Um projeto de uma calculadora simples que realiza operações básicas como adição, subtração, multiplicação e divisão.',
-    instructions: `
+   {
+      title: 'Calculadora Simples',
+      slug: 'calculadora-simples',
+      image: 'calculadoraSimples.png',
+      summary:
+         'Um projeto de uma calculadora simples que realiza operações básicas como adição, subtração, multiplicação e divisão.',
+      instructions: `
       1. Configurar o ambiente:
          Instale um editor de código, como o Visual Studio Code, e o Node.js.
 
@@ -22,16 +22,16 @@ const dummyProjects = [
       4. Testar a calculadora:
          Execute o arquivo 'calculadora.js' no terminal para testar as funções da calculadora.
     `,
-    creator: 'João Silva',
-    creator_email: 'joaosilva@example.com',
-  },
-  {
-    title: 'API de Clima',
-    slug: 'api-de-clima',
-    image: 'climaApi.png',
-    summary:
-      'Um projeto de uma API de clima que retorna informações meteorológicas atuais e previsões.',
-    instructions: `
+      creator: 'João Silva',
+      creator_email: 'joaosilva@example.com',
+   },
+   {
+      title: 'API de Clima',
+      slug: 'api-de-clima',
+      image: 'climaApi.png',
+      summary:
+         'Um projeto de uma API de clima que retorna informações meteorológicas atuais e previsões.',
+      instructions: `
       1. Configurar o ambiente:
          Instale um editor de código, como o Visual Studio Code, e o Node.js.
 
@@ -44,16 +44,16 @@ const dummyProjects = [
       4. Testar a API:
          Execute o arquivo 'clima.js' no terminal para testar as funções da API.
     `,
-    creator: 'Maria Santos',
-    creator_email: 'mariasantos@example.com',
-},
-{
-    title: 'Blog Pessoal',
-    slug: 'blog-pessoal',
-    image: 'blogPessoal.png',
-    summary:
-      'Um projeto de um blog pessoal onde você pode compartilhar seus pensamentos e ideias.',
-    instructions: `
+      creator: 'Maria Santos',
+      creator_email: 'mariasantos@example.com',
+   },
+   {
+      title: 'Blog Pessoal',
+      slug: 'blog-pessoal',
+      image: 'blogPessoal.png',
+      summary:
+         'Um projeto de um blog pessoal onde você pode compartilhar seus pensamentos e ideias.',
+      instructions: `
       1. Configurar o ambiente:
          Instale um editor de código, como o Visual Studio Code, e o Node.js.
 
@@ -66,9 +66,9 @@ const dummyProjects = [
       4. Publicar o blog:
          Hospede o blog em um serviço de hospedagem e compartilhe o link com seus amigos.
     `,
-    creator: 'Carlos Oliveira',
-    creator_email: 'carlosoliveira@example.com',
-}
+      creator: 'Carlos Oliveira',
+      creator_email: 'carlosoliveira@example.com',
+   }
 
 ];
 
@@ -85,8 +85,30 @@ db.prepare(`
     )
 `).run();
 
+db.prepare(`
+   CREATE TABLE IF NOT EXISTS developers (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       name TEXT NOT NULL,
+       availability BOOLEAN NOT NULL,
+       linkedIn TEXT,
+       github TEXT NOT NULL,
+       whatsapp TEXT,
+       primaryStack TEXT NOT NULL,
+       secondaryStack TEXT,
+       primaryLanguage TEXT NOT NULL,
+       programmingLanguages TEXT,
+       stylingFrameWork TEXT,
+       frameWork TEXT NOT NULL,
+       slug TEXT NOT NULL,
+       summary TEXT NOT NULL,
+       image TEXT NOT NULL,
+       email TEXT NOT NULL
+    )
+`).run();
+
+
 async function initData() {
-  const stmt = db.prepare(`
+   const stmt = db.prepare(`
       INSERT INTO projects VALUES (
          null,
          @slug,
@@ -99,9 +121,9 @@ async function initData() {
       )
    `);
 
-  for (const project of dummyProjects) {
-    stmt.run(project);
-  }
+   for (const project of dummyProjects) {
+      stmt.run(project);
+   }
 }
 
 initData();

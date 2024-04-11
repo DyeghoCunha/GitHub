@@ -30,6 +30,8 @@ interface Person {
   linkedIn?: string;
   github: string;
   whatsapp?: string;
+  image:string;
+  email:string;
 }
 
 export interface IDeveloper extends Person {
@@ -39,6 +41,8 @@ export interface IDeveloper extends Person {
   programmingLanguages?: Language[];
   stylingFrameWork?: StylingFramework[];
   frameWork: Framework[];
+  slug:string;
+  summary:string;
 }
 
 export default class Developer implements IDeveloper {
@@ -47,6 +51,7 @@ export default class Developer implements IDeveloper {
   availability: boolean;
   linkedIn: string;
   github: string;
+  slug:string;
   whatsapp?: string;
   primaryStack: DeveloperStack;
   secondaryStack?: DeveloperStack;
@@ -54,6 +59,9 @@ export default class Developer implements IDeveloper {
   programmingLanguages?: Language[];
   stylingFrameWork?: StylingFramework[];
   frameWork: Framework[];
+  summary:string;
+  image:string;
+  email:string;
 
   constructor({
     id,
@@ -68,6 +76,10 @@ export default class Developer implements IDeveloper {
     programmingLanguages,
     stylingFrameWork,
     frameWork,
+    slug,
+    summary,
+    image,
+    email
   }: IDeveloper) {
     this.id = id;
     this.name = name;
@@ -81,6 +93,10 @@ export default class Developer implements IDeveloper {
     this.programmingLanguages = programmingLanguages;
     this.stylingFrameWork = stylingFrameWork;
     this.frameWork = frameWork;
+    this.slug = slug
+    this.summary = summary
+    this.image = image
+    this.email = email
   }
 }
 

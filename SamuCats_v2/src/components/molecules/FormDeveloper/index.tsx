@@ -19,7 +19,6 @@ import { CheckForm } from './CheckForm';
 
 export default function FormDeveloper() {
 
-  const [formState, formAction] = useFormState(saveDeveloperForm,{message:null})
 
   const [devState, setDevState] = useState<Developer>();
 
@@ -189,33 +188,42 @@ export default function FormDeveloper() {
 
       <Formik
         initialValues={{
+          id: '', // valor inicial para o campo 'id'
           name: '', // valor inicial para o campo 'name'
+          availability: true, // valor inicial para o campo 'availability'
           linkedin: '', // valor inicial para o campo 'linkedin'
           github: '', // valor inicial para o campo 'github'
           whatsapp: '', // valor inicial para o campo 'whatsapp'
           primaryStack: "", // valor inicial para o campo 'primaryStack'
-          secondaryStack: typeof DeveloperStack, // valor inicial para o campo 'secondaryStack'
-          primaryLanguage: typeof Language, // valor inicial para o campo 'primaryLanguage'
+          secondaryStack: "", // valor inicial para o campo 'secondaryStack'
+          primaryLanguage: "", // valor inicial para o campo 'primaryLanguage'
           programmingLanguages: [], // valor inicial para o campo 'programmingLanguages'
           stylingFrameWork: [], // valor inicial para o campo 'stylingFrameWork'
           frameWork: [], // valor inicial para o campo 'frameWork'
+          slug: '', // valor inicial para o campo 'slug'
+          summary: '', // valor inicial para o campo 'summary'
+          image: '', // valor inicial para o campo 'image'
+          email: '', // valor inicial para o campo 'email'
         }}
         onSubmit={(values, actions) => {
           setTimeout(() => {
-            // Crie uma nova instância de Developer com os valores do formulário
             const developer = new Developer({
-              id: 'id', // Substitua por um ID real
+              id: values.id,
               name: values.name,
-              availability: true, // Substitua por um valor real
+              availability: values.availability,
               linkedIn: values.linkedin,
               github: values.github,
               whatsapp: values.whatsapp,
               primaryStack: values.primaryStack as DeveloperStack,
-              secondaryStack: values.secondaryStack[0] as DeveloperStack,
+              secondaryStack: values.secondaryStack as DeveloperStack,
               primaryLanguage: values.primaryLanguage as Language,
               programmingLanguages: values.programmingLanguages,
               stylingFrameWork: values.stylingFrameWork,
               frameWork: values.frameWork,
+              slug: values.slug,
+              summary: values.summary,
+              image: values.image,
+              email: values.email,
             });
 
             setDevState(developer)

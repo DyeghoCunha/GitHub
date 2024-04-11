@@ -1,5 +1,5 @@
 import { DeveloperStack, Framework, Language, StylingFramework } from "@/types/types"
-import { validateGithub, validateLinkedIn, validateName, validateStackSelect, validateTest, validateWhatsapp } from "./validation"
+import { validateEmail, validateGithub, validateLinkedIn, validateName, validateStackSelect, validateTest, validateWhatsapp } from "./validation"
 import WhatsappLogo from "@/assets/image/whatsapp.png"
 import LinkedInLogo from "@/assets/image/linkedin.png"
 import GitHubLogo from "@/assets/image/github.png"
@@ -7,7 +7,7 @@ import PersonLogo from "@/assets/image/person.png"
 
 export const SelectFormPrimaryLangProps = [
   {
-    name: "primaryLanguage",
+    name: "primarylanguage",
     validate: validateTest,
     formLabel: "Linguagem Principal",
     placeHolder: " ",
@@ -19,7 +19,7 @@ export const SelectFormPrimaryLangProps = [
 
 export const CheckFormLangProps = [
   {
-    name: "programmingLanguages",
+    name: "programminglanguages",
     validate: validateTest,
     formLabel: "Linguagens Estudas",
     placeHolder: "",
@@ -31,7 +31,7 @@ export const CheckFormLangProps = [
 
 export const CheckStylingFWProps = [
   {
-    name: "stylingFrameWork",
+    name: "stylingframeWork",
     validate: validateTest,
     formLabel: "FrameWorks de Estilo",
     placeHolder: "nenhum",
@@ -44,7 +44,7 @@ export const CheckStylingFWProps = [
 
 export const CheckFrameWorkProps = [
   {
-    name: "frameWork",
+    name: "framework",
     validate: validateTest,
     formLabel: "FrameWorks",
     placeHolder: "nenhum",
@@ -56,7 +56,7 @@ export const CheckFrameWorkProps = [
 
 export const SeleftFormStackProps = [
   {
-    name: "primaryStack",
+    name: "primarystack",
     validate: validateStackSelect,
     formLabel: "Seleciona sua Stack Primária",
     placeHolder: " ",
@@ -74,26 +74,9 @@ export const CardFormProps = [
     isRequired: true,
     helperText: "Digite o nome de verdade, sem frescura",
     placeHolder: "",
+    text:"",
     logo: PersonLogo.src
 
-  },
-  {
-    name: "linkedin",
-    validate: validateLinkedIn,
-    formLabel: "LinkedIn",
-    isRequired: true,
-    helperText: "Copie e cole a url, vai ser mais fácil 😅",
-    placeHolder: "https://www.linkedin.com/in/<seu_usuario>/",
-    logo: LinkedInLogo.src
-  },
-  {
-    name: "github",
-    validate: validateGithub,
-    formLabel: "GitHub",
-    isRequired: true,
-    helperText: "Copia e cola a Url do GitHub também, pra não ter erro",
-    placeHolder: "https://github.com/<seu_usuario>",
-    logo: GitHubLogo.src
   },
   {
     name: "whatsapp",
@@ -103,5 +86,46 @@ export const CardFormProps = [
     helperText: "Se não tiver afim, tranquilo, não vou levar para o coração ❤️‍🩹",
     placeHolder: "",
     logo: WhatsappLogo.src
+  },
+    {
+    name: "email",
+    validate: validateEmail,
+    formLabel: "e-Mail",
+    isRequired: false,
+    helperText: "",
+    placeHolder: "exemplo@exemplo.com",
+    logo: WhatsappLogo.src
+  },
+    {
+    name: "summary",
+    validate: validateEmail,
+    formLabel: "Descrição",
+    isRequired: false,
+    helperText: "Uma breve Descrição sobre você",
+    placeHolder: "Uma descrição de uma Linha",
+    logo: WhatsappLogo.src
+  },
+]
+
+export const CardMediaProps=[
+   {
+    name: "linkedin",
+    validate: validateLinkedIn,
+    formLabel: "LinkedIn",
+    isRequired: true,
+    helperText: "",
+    placeHolder: "<seu_usuario>",
+    text:"https://www.linkedin.com/in/",
+    logo: LinkedInLogo.src
+  },
+  {
+    name: "github",
+    validate: validateGithub,
+    formLabel: "GitHub",
+    isRequired: true,
+    helperText: "",
+    placeHolder: "<seu_usuario>",
+    text:"https://github.com/",
+    logo: GitHubLogo.src
   },
 ]
