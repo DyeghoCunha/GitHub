@@ -37,8 +37,8 @@ export interface IDeveloper extends Person {
   secondaryStack?: DeveloperStack;
   primaryLanguage: Language;
   programmingLanguages?: Language[];
-  stylingFrameWork?: StylingFramework[];
-  frameWork: Framework[];
+  stylingFramework?: stylingFramework[];
+  framework: framework[];
 }
 
 export default class Developer implements IDeveloper {
@@ -52,8 +52,8 @@ export default class Developer implements IDeveloper {
   secondaryStack?: DeveloperStack;
   primaryLanguage: Language;
   programmingLanguages?: Language[];
-  stylingFrameWork?: StylingFramework[];
-  frameWork: Framework[];
+  stylingFramework?: stylingFramework[];
+  framework: framework[];
 
   constructor({
     id,
@@ -66,8 +66,8 @@ export default class Developer implements IDeveloper {
     secondaryStack,
     primaryLanguage,
     programmingLanguages,
-    stylingFrameWork,
-    frameWork,
+    stylingFramework,
+    framework,
   }: IDeveloper) {
     this.id = id;
     this.name = name;
@@ -77,10 +77,10 @@ export default class Developer implements IDeveloper {
     this.whatsapp = whatsapp;
     this.primaryStack = primaryStack;
     this.secondaryStack = secondaryStack;
-    this.primaryLanguage = primaryLanguage;
+    this.primarylanguage = primaryLanguage;
     this.programmingLanguages = programmingLanguages;
-    this.stylingFrameWork = stylingFrameWork;
-    this.frameWork = frameWork;
+    this.stylingFramework = stylingFramework;
+    this.framework = framework;
   }
 }
 
@@ -131,7 +131,7 @@ export enum Language {
 }
 
 
-export enum Framework {
+export enum framework {
   Angular = 'Angular',
   ASPNET = 'ASP.NET',
   Blazor = 'Blazor',
@@ -158,7 +158,7 @@ export enum Framework {
   Nuxt = 'Nuxt',
   Phoenix = 'Phoenix',
   Play = 'Play',
-  PlayFramework = 'Play Framework',
+  Playframework = 'Play framework',
   Qwik = 'Qwik',
   Rails = 'Rails',
   React = 'React',
@@ -174,7 +174,7 @@ export enum Framework {
 }
 
 
-export enum StylingFramework {
+export enum stylingFramework {
 
   Aphrodite = 'Aphrodite',
   Astroturf = 'Astroturf',
@@ -195,7 +195,7 @@ export enum StylingFramework {
   Sass = 'Sass',
   Stylus = 'Stylus',
 
- 
+
   AntDesign = 'Ant Design',
   Atlaskit = 'Atlaskit',
   Base = 'Base',

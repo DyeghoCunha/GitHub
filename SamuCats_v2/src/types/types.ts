@@ -30,8 +30,8 @@ interface Person {
   linkedIn?: string;
   github: string;
   whatsapp?: string;
-  image:string;
-  email:string;
+  image: string;
+  email: string;
 }
 
 export interface IDeveloper extends Person {
@@ -39,10 +39,10 @@ export interface IDeveloper extends Person {
   secondaryStack?: DeveloperStack;
   primaryLanguage: Language;
   programmingLanguages?: Language[];
-  stylingFrameWork?: StylingFramework[];
-  frameWork: Framework[];
-  slug:string;
-  summary:string;
+  stylingFramework?: stylingFramework[];
+  framework: framework[];
+  slug: string;
+  summary: string;
 }
 
 export default class Developer implements IDeveloper {
@@ -51,17 +51,17 @@ export default class Developer implements IDeveloper {
   availability: boolean;
   linkedIn: string;
   github: string;
-  slug:string;
+  slug: string;
   whatsapp?: string;
   primaryStack: DeveloperStack;
   secondaryStack?: DeveloperStack;
   primaryLanguage: Language;
   programmingLanguages?: Language[];
-  stylingFrameWork?: StylingFramework[];
-  frameWork: Framework[];
-  summary:string;
-  image:string;
-  email:string;
+  stylingFramework?: stylingFramework[];
+  framework: framework[];
+  summary: string;
+  image: string;
+  email: string;
 
   constructor({
     id,
@@ -74,8 +74,8 @@ export default class Developer implements IDeveloper {
     secondaryStack,
     primaryLanguage,
     programmingLanguages,
-    stylingFrameWork,
-    frameWork,
+    stylingFramework,
+    framework,
     slug,
     summary,
     image,
@@ -91,8 +91,8 @@ export default class Developer implements IDeveloper {
     this.secondaryStack = secondaryStack;
     this.primaryLanguage = primaryLanguage;
     this.programmingLanguages = programmingLanguages;
-    this.stylingFrameWork = stylingFrameWork;
-    this.frameWork = frameWork;
+    this.stylingFramework = stylingFramework;
+    this.framework = framework;
     this.slug = slug
     this.summary = summary
     this.image = image
@@ -147,7 +147,7 @@ export enum Language {
 }
 
 
-export enum Framework {
+export enum framework {
   Angular = 'Angular',
   ASPNET = 'ASP.NET',
   Blazor = 'Blazor',
@@ -174,7 +174,7 @@ export enum Framework {
   Nuxt = 'Nuxt',
   Phoenix = 'Phoenix',
   Play = 'Play',
-  PlayFramework = 'Play Framework',
+  Playframework = 'Play framework',
   Qwik = 'Qwik',
   Rails = 'Rails',
   React = 'React',
@@ -190,7 +190,7 @@ export enum Framework {
 }
 
 
-export enum StylingFramework {
+export enum stylingFramework {
   AntDesign = 'Ant Design',
   Aphrodite = 'Aphrodite',
   Atlaskit = 'Atlaskit',

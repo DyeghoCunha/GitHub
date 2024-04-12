@@ -5,7 +5,7 @@ export function validateName(value: string) {
   }
   return error;
 }
-export function validateLinkedIn(value: string) {
+export function validatelinkedIn(value: string) {
   return;
 }
 export function validateGithub(value: string) {

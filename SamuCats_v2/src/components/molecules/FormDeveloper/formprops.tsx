@@ -1,13 +1,15 @@
-import { DeveloperStack, Framework, Language, StylingFramework } from "@/types/types"
-import { validateEmail, validateGithub, validateLinkedIn, validateName, validateStackSelect, validateTest, validateWhatsapp } from "./validation"
+import { DeveloperStack, framework, Language, stylingFramework } from "@/types/types"
+import { validateEmail, validateGithub, validatelinkedIn, validateName, validateStackSelect, validateTest, validateWhatsapp } from "./validation"
 import WhatsappLogo from "@/assets/image/whatsapp.png"
-import LinkedInLogo from "@/assets/image/linkedin.png"
+import linkedInLogo from "@/assets/image/linkedIn.png"
 import GitHubLogo from "@/assets/image/github.png"
 import PersonLogo from "@/assets/image/person.png"
+import EmailLogo from "@/assets/image/email.png"
+import AboutLogo from "@/assets/image/about.png"
 
 export const SelectFormPrimaryLangProps = [
   {
-    name: "primarylanguage",
+    name: "primaryLanguage",
     validate: validateTest,
     formLabel: "Linguagem Principal",
     placeHolder: " ",
@@ -19,7 +21,7 @@ export const SelectFormPrimaryLangProps = [
 
 export const CheckFormLangProps = [
   {
-    name: "programminglanguages",
+    name: "programmingLanguages",
     validate: validateTest,
     formLabel: "Linguagens Estudas",
     placeHolder: "",
@@ -31,32 +33,32 @@ export const CheckFormLangProps = [
 
 export const CheckStylingFWProps = [
   {
-    name: "stylingframework",
+    name: "stylingFramework",
     validate: validateTest,
-    formLabel: "FrameWorks de Estilo",
+    formLabel: "frameworks de Estilo",
     placeHolder: "nenhum",
     isRequired: true,
     helperText: "O que você usa para pintar botão",
-    propStack: StylingFramework
+    propStack: stylingFramework
   }
 ]
 
 
-export const CheckFrameWorkProps = [
+export const CheckframeworkProps = [
   {
     name: "framework",
     validate: validateTest,
-    formLabel: "FrameWorks",
+    formLabel: "frameworks",
     placeHolder: "nenhum",
     isRequired: true,
-    helperText: "Os FrameWorks ou Bibliotecas que você usa ",
-    propStack: Framework
+    helperText: "Os frameworks ou Bibliotecas que você usa ",
+    propStack: framework
   }
 ]
 
 export const SeleftFormStackProps = [
   {
-    name: "primarystack",
+    name: "primaryStack",
     validate: validateStackSelect,
     formLabel: "Seleciona sua Stack Primária",
     placeHolder: " ",
@@ -74,58 +76,60 @@ export const CardFormProps = [
     isRequired: true,
     helperText: "Digite o nome de verdade, sem frescura",
     placeHolder: "",
-    text:"",
+    text: "",
     logo: PersonLogo.src
 
   },
   {
-    name: "whatsapp",
-    validate: validateWhatsapp,
-    formLabel: "WhatsApp",
-    isRequired: false,
-    helperText: "Se não tiver afim, tranquilo, não vou levar para o coração ❤️‍🩹",
-    placeHolder: "",
-    logo: WhatsappLogo.src
-  },
-    {
-    name: "email",
-    validate: validateEmail,
-    formLabel: "e-Mail",
-    isRequired: false,
-    helperText: "",
-    placeHolder: "exemplo@exemplo.com",
-    logo: WhatsappLogo.src
-  },
-    {
     name: "summary",
     validate: validateEmail,
     formLabel: "Descrição",
     isRequired: false,
     helperText: "Uma breve Descrição sobre você",
     placeHolder: "Uma descrição de uma Linha",
+    logo: AboutLogo.src
+  },
+
+  {
+    name: "whatsapp",
+    validate: validateWhatsapp,
+    formLabel: "WhatsApp",
+    isRequired: false,
+    helperText: "Se não tiver afim, não vou levar para o coração ❤️‍🩹",
+    placeHolder: "",
     logo: WhatsappLogo.src
   },
+  {
+    name: "email",
+    validate: validateEmail,
+    formLabel: "e-Mail",
+    isRequired: false,
+    helperText: "Eu sei que ninguém lê e-mail, mas coloca",
+    placeHolder: "exemplo@exemplo.com",
+    logo: EmailLogo.src
+  },
+
 ]
 
-export const CardMediaProps=[
-   {
-    name: "linkedin",
-    validate: validateLinkedIn,
-    formLabel: "LinkedIn",
+export const CardMediaProps = [
+  {
+    name: "linkedIn",
+    validate: validatelinkedIn,
+    formLabel: "linkedIn",
     isRequired: true,
-    helperText: "",
+    helperText: "Coloca só o nome do Usuário",
     placeHolder: "<seu_usuario>",
-    text:"https://www.linkedin.com/in/",
-    logo: LinkedInLogo.src
+    text: "https://www.linkedIn.com/in/",
+    logo: linkedInLogo.src
   },
   {
     name: "github",
     validate: validateGithub,
     formLabel: "GitHub",
     isRequired: true,
-    helperText: "",
+    helperText: "Só o nome do Usuário",
     placeHolder: "<seu_usuario>",
-    text:"https://github.com/",
+    text: "https://github.com/",
     logo: GitHubLogo.src
   },
 ]

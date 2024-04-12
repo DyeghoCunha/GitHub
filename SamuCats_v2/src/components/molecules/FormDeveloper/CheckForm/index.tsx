@@ -63,7 +63,7 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
                     {Array.isArray(field.value) ? field.value.join(", ") : ""}
                   </PopoverFooter>
 
-                  {Array.isArray(field.value) && field.value.length > 0 ? (<Button variant="primary" width="100%" onClick={close}>Validar</Button>) : (<Button variant="secondary" isDisabled width="100%" onClick={close}>Validar</Button>)}
+                  {Array.isArray(field.value) && field.value.length > 0 ? (<Button variant="primary" width="100%" onClick={close}>Confirmar</Button>) : (<Button variant="secondary" isDisabled width="100%" onClick={close}>Validar</Button>)}
                 </PopoverContent>
               </Portal>
             </Popover>

@@ -1,4 +1,4 @@
-import { Language, StylingFramework } from "@/types/types";
+import { Language, stylingFramework } from "@/types/types";
 
 
 export type BaseFormType = {
@@ -8,6 +8,7 @@ export type BaseFormType = {
   placeHolder: string;
   isRequired: boolean;
   helperText: string;
+  text?:string;
 }
 
 export type SelectFormStackType = BaseFormType & {
@@ -23,12 +24,12 @@ export type CheckFormLangType = BaseFormType & {
 }
 
 export type CheckStylingFWType = BaseFormType & {
-  propStack: typeof StylingFramework
-  
+  propStack: typeof stylingFramework
+
   ;
 }
 
-export type CheckFrameWorkType = BaseFormType & {
+export type CheckframeworkType = BaseFormType & {
   propStack: any;
 }
 
