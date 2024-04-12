@@ -31,7 +31,7 @@ export const CheckFormLangProps = [
 
 export const CheckStylingFWProps = [
   {
-    name: "stylingframeWork",
+    name: "stylingframework",
     validate: validateTest,
     formLabel: "FrameWorks de Estilo",
     placeHolder: "nenhum",

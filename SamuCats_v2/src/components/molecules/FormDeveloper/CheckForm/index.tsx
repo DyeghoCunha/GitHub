@@ -2,6 +2,7 @@ import { Box, Button, Card, Checkbox, CheckboxGroup, FormControl, FormErrorMessa
 import { Field, FieldArray } from "formik";
 import { useState } from "react";
 import { CheckFormLangType } from "../types";
+import { Language } from "@/types/types";
 
 export function CheckForm({ name, validate, formLabel, isRequired, helperText, placeHolder, propStack }: CheckFormLangType) {
   const languageChoices = Object.values(propStack)
@@ -9,7 +10,6 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
   const [isOpen, setIsOpen] = useState(false);
   const open = () => setIsOpen(!isOpen);
   const close = () => setIsOpen(false);
-
 
   return (
     <Card m="10px 5px 5px 5px" bg="gray.600" w="300px" p="10px" zIndex={0} >
@@ -29,22 +29,23 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
                     <Box w={500} p={4}>
                       <FieldArray name={name}>
                         {({ push, remove }) => (
-                          <CheckboxGroup value={field.value} onChange={(value) => {
-                            languageChoices.forEach((language: any) => {
-                              if (value.includes(language)) {
-                                if (!field.value.includes(language)) {
-                                  console.log('Adicionando: ', language);
-                                  form.setFieldValue(name, [...field.value, language]);
-                                }
-                              } else {
-                                if (field.value.includes(language)) {
-                                  console.log('Removendo: ', language);
-                                  form.setFieldValue(name, field.value.filter((item: any) => item !== language));
-                                }
+                         <CheckboxGroup value={field.value} onChange={(value) => {
+                          languageChoices.forEach((language: any, index: number) => {
+                            if (value.includes(language)) {
+                              if (!field.value.includes(language)) {
+                                console.log('Adicionando: ', language);
+                                push(language);
                               }
-                            });
-                          }}>
-                          
+                            } else {
+                              if (field.value.includes(language)) {
+                                console.log('Removendo: ', language);
+                                const idx = field.value.indexOf(language);
+                                remove(idx);
+                              }
+                            }
+                          });
+                        }}>
+
                             <Grid templateColumns="repeat(3, 1fr)" gap={2}>
                               {languageChoices.map((language) => (
                                 <Checkbox key={language} value={language} colorScheme="orange">
@@ -66,7 +67,7 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
                 </PopoverContent>
               </Portal>
             </Popover>
-            <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+            <FormErrorMessage>{form.errors[name]}</FormErrorMessage>
           </FormControl>
         )}
       </Field>

@@ -17,6 +17,7 @@ import InputForm from './InputForm';
 import { SelectForm } from './SelectForm';
 import { CheckForm } from './CheckForm';
 
+
 export default function FormDeveloper() {
 
 
@@ -194,12 +195,12 @@ export default function FormDeveloper() {
           linkedin: '', // valor inicial para o campo 'linkedin'
           github: '', // valor inicial para o campo 'github'
           whatsapp: '', // valor inicial para o campo 'whatsapp'
-          primaryStack: "", // valor inicial para o campo 'primaryStack'
-          secondaryStack: "", // valor inicial para o campo 'secondaryStack'
-          primaryLanguage: "", // valor inicial para o campo 'primaryLanguage'
-          programmingLanguages: [], // valor inicial para o campo 'programmingLanguages'
-          stylingFrameWork: [], // valor inicial para o campo 'stylingFrameWork'
-          frameWork: [], // valor inicial para o campo 'frameWork'
+          primarystack: "", // valor inicial para o campo 'primaryStack'
+          secondarystack: "", // valor inicial para o campo 'secondaryStack'
+          primarylanguage: "", // valor inicial para o campo 'primaryLanguage'
+          programminglanguages:[], // valor inicial para o campo 'programmingLanguages'
+          stylingframework: [], // valor inicial para o campo 'stylingFrameWork'
+          framework: [], // valor inicial para o campo 'frameWork'
           slug: '', // valor inicial para o campo 'slug'
           summary: '', // valor inicial para o campo 'summary'
           image: '', // valor inicial para o campo 'image'
@@ -214,12 +215,12 @@ export default function FormDeveloper() {
               linkedIn: values.linkedin,
               github: values.github,
               whatsapp: values.whatsapp,
-              primaryStack: values.primaryStack as DeveloperStack,
-              secondaryStack: values.secondaryStack as DeveloperStack,
-              primaryLanguage: values.primaryLanguage as Language,
-              programmingLanguages: values.programmingLanguages,
-              stylingFrameWork: values.stylingFrameWork,
-              frameWork: values.frameWork,
+              primaryStack: values.primarystack as DeveloperStack,
+              secondaryStack: values.secondarystack as DeveloperStack,
+              primaryLanguage: values.primarylanguage as Language,
+              programmingLanguages: values.programminglanguages,
+              stylingFrameWork: values.stylingframework,
+              frameWork: values.framework,
               slug: values.slug,
               summary: values.summary,
               image: values.image,
