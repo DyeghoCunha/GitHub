@@ -190,16 +190,16 @@ export default function FormDeveloper() {
             <Card bgColor="gray.700" w="100%" p={2}>
               <VStack w="100%" gap={0}>
                 <Text w="100%" bgGradient="linear(to-r, orange, red)" bgClip="text" textAlign="start" >Linguages de Estudo: </Text>
-                <Text w="100%" textAlign="start">{programmingLanguages}</Text>
+                <Text w="100%" textAlign="start">{programmingLanguages?.join(", ")}</Text>
               </VStack>
 
               <VStack w="100%" gap={0}>
                 <Text w="100%" bgGradient="linear(to-r, orange, red)" bgClip="text" >Frameworks: </Text>
-                <Text w="100%" textAlign="start">{framework}</Text>
+                <Text w="100%" textAlign="start">{framework?.join(", ")}</Text>
               </VStack>
               <VStack w="100%" gap={0}>
                 <Text w="100%" bgGradient="linear(to-r, orange, red)" bgClip="text" >Styles framework: </Text>
-                <Text w="100%" textAlign="start">{stylingFramework}</Text>
+                <Text w="100%" textAlign="start">{stylingFramework?.join(", ")}</Text>
               </VStack>
 
             </Card>

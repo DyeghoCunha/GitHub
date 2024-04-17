@@ -138,8 +138,10 @@ export default function DeveloperCard({ availability, email, framework, github, 
                       <Text>{primaryStack}</Text></HStack>
                     <HStack><Text fontWeight="bold">Linguagem: </Text>
                       <Text >{primaryLanguage}</Text></HStack>
-                    <HStack><Text noOfLines={1} fontWeight="bold">FrameWork: </Text>
-                      <Text>{framework}</Text></HStack>
+                    <HStack
+                    justifyContent="start" alignItems="start"
+                    ><Text  fontWeight="bold">FrameWork: </Text>
+                      <Text noOfLines={2}>{framework.join(", ")}</Text></HStack>
 
                   </VStack>
                 </Text>
