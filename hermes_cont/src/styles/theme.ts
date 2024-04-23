@@ -7,7 +7,7 @@ export const lightTheme = extendTheme({
     global: {
       "html, body, #root": {
         color: "gray.800",
-        bgColor: "hermesBlue.500",
+        bgColor: "hermesBlue.400",
       },
       body: {
         overflowY: "scroll",
@@ -36,11 +36,13 @@ export const lightTheme = extendTheme({
     },
     hermesBlue: {
       400: "#28283c",
+      rgba:"rgba(40, 40, 60,0.3)",
       500: "#131f45"
     },
     hermesGold: {
-      400: "#d69e40",
-      500: "#f2ab21",
+      300: "#f2ab21",
+      400: "#f7d526",
+      500: "#F1AC19",
       600: "#856232"
     },
     hermesWhite: {
@@ -339,7 +341,7 @@ export const lightTheme = extendTheme({
     Mark: {
       variants: {
         gradientGold: {
-          bgGradient: "linear(to-r,hermesGold.400, hermesGold.500)",
+          bgGradient: "linear(to-r, hermesGold.400, hermesGold.500)",
           bgClip: "text"
         }
       }

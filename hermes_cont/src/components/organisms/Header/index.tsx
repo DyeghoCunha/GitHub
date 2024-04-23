@@ -10,7 +10,7 @@ function Header() {
   return (
     <Box as='header'zIndex={10000}>
       <Box m={0} p={0} >
-        <Flex backgroundColor="hermesBlue.500" h="60px" justifyContent="space-around" alignItems="center" p={0} w="100%">
+        <Flex backgroundColor="hermesBlue.400" h="60px" justifyContent="space-around" alignItems="center" p={0} w="100%">
           <Box w="300px"></Box>
           <HeaderTab />
           <Box mb={0}>

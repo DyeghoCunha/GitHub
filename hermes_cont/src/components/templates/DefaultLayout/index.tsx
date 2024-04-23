@@ -17,6 +17,8 @@ export function DefaultLayout({ p, children }: IDefaultLayoutProps) {
       </Box>
       <Container
         maxW="full"
+        m={0}
+        p={0}
         flexGrow={1}
       >
         {children}
