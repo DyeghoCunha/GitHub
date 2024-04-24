@@ -37,7 +37,9 @@ export const lightTheme = extendTheme({
     hermesBlue: {
       400: "#28283c",
       rgba:"rgba(40, 40, 60,0.3)",
-      500: "#131f45"
+      500: "#131f45",
+      rgba2:"rgba(19, 31, 69, 0.8)",
+      rgba3:"rgba(39, 78, 115, 0.8)"
     },
     hermesGold: {
       300: "#f2ab21",

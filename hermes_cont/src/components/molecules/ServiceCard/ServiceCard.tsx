@@ -1,8 +1,16 @@
 import { Box, Card, CardBody, CardFooter, CardHeader, Center, CheckboxIcon, Flex, Heading, Icon, Tag, Text, VStack } from '@chakra-ui/react';
 import React, { useEffect, useRef } from 'react'
 import VanillaTilt from "vanilla-tilt";
+import image from "@/assets/image/serviços/1.svg"
 
-export default function ServiceCard() {
+interface IServiceCard{
+  name:string;
+  image:any;
+}
+
+
+
+export default function ServiceCard({name,image}:IServiceCard) {
 
   const tiltRef = useRef(null);
   useEffect(() => {
@@ -13,16 +21,16 @@ export default function ServiceCard() {
         glare: true,
         reverse: false,
         "full-page-listening": false,
-        "max-glare": 1.0,
+        "max-glare": 2.0,
       });
     }
   }, []);
 
 
   return (
-    <Center position="relative" >
+    <Center  >
       <Card
-        h="200px"
+        h="180px"
         w="350px"
         ref={tiltRef}
         color="gray.100"
@@ -33,9 +41,20 @@ export default function ServiceCard() {
         resize="both"
         alignItems="center"
         justifyContent="center"
+        position="relative"
+        bgImage={image.src}
+       
         >
-        <Box  style={{ transform: `translateZ(20px)` }}  >
-        <Heading textAlign="center">Assessoria Contábil</Heading>
+        <Box  style={{ transform: `translateZ(30px)` }} 
+        position="absolute" border="1px solid rgba(255,255,255,0.3)" 
+        //backdropFilter="blur(1px)" 
+        boxShadow="inset 5px 5px 5px rgba(255,255,255,0.3),inset -5px -5px 5px rgba(0,0,0,0.3)"  
+        bgColor="hermesBlue.rgba2" w="97%" h="97.5%" 
+        borderRadius="10px" >
+        </Box>
+
+        <Box  style={{ transform: `translateZ(80px)` }} position="absolute" p={6}>
+        <Heading fontSize="30px" textAlign="center"   textShadow="2px 2px 5px black">{name}</Heading>
         </Box>
       </Card>
     </Center>
@@ -46,137 +65,3 @@ export default function ServiceCard() {
 
 
 
-
-export function ItemCard() {
-
-
-  //!!____
-  //! Aleração para CARD 3d
-  const tiltRef = useRef(null);
-  useEffect(() => {
-    if (tiltRef.current) {
-      VanillaTilt.init(tiltRef.current, {
-        max: 15,
-        speed: 5000,
-        glare: true,
-        reverse: false,
-        "full-page-listening": false,
-        "max-glare": 1.0,
-      });
-    }
-  }, []);
-
-
-  return (
-    <Flex
-      w={{ base: "auto", md: "auto", lg: "auto", xl: "auto", "2xl": "269px" }}
-      position="relative"
-      pl={{ base: "10px", sm: "0px" }}
-
-    >
-      <Card
-        h="500px"
-        ref={tiltRef}
-        color="gray.100"
-        cursor="pointer"
-        boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-        style={{ transformStyle: "preserve-3d" }}
-
-        backgroundSize="cover"
-        resize="both"
-      >
-        <CardHeader
-          m="0px"
-          pb="0px"
-          h="20%"
-          style={{ transform: `translateZ(20px)` }}
-        >
-          <Flex justify="space-between" w="100%">
-            <Box minH="100px" mb={1.5} >
-              <Heading
-                transform={{ translateZ: "30px" }}
-                fontSize="sm"
-                mb={1}
-              >
-                Text1
-              </Heading>
-              <Text
-                fontSize="xs"
-                mb={1.5}
-
-              >
-                Type1
-              </Text>
-            </Box>
-
-            <VStack align="flex-end" gap="7px !important" zIndex={3}>
-
-              <Tag
-                color="gray.100"
-                fontSize="xs"
-                bgColor="#1B931B"
-                mt="0px !important"
-                mb="0px !important"
-              >
-                50%
-              </Tag>
-            </VStack>
-          </Flex>
-        </CardHeader>
-
-        <CardBody
-          mb="0px"
-          pb="0px"
-          zIndex="3"
-          style={{ transform: `translateZ(50px)` }}
-          display="flex"
-          flexDirection="column"
-          maxH={500}
-        >
-
-          <Flex
-            textAlign="center"
-            direction="column"
-            align="center"
-            flex={1}
-          >
-
-
-          </Flex>
-        </CardBody>
-
-        <Flex
-          textAlign="center"
-          direction="column"
-          align="center"
-          zIndex="6"
-          flex={1}
-          style={{ transform: `translateZ(60px)` }}
-        >
-
-        </Flex>
-        <CardFooter
-          m="0px"
-          pt="0px"
-          style={{ transform: `translateZ(20px)` }}
-        >
-          <Flex
-            textAlign="center"
-            direction="column"
-            align="center"
-            flex={1}
-          >
-            <Flex align="center" color={"#1B931B"}>
-              <Icon as={CheckboxIcon} boxSize={3.5} mr={1} />
-              <Text fontSize="xs" fontWeight="medium">
-                Disponível Imediatamente
-              </Text>
-            </Flex>
-
-
-          </Flex>
-        </CardFooter>
-      </Card>
-    </Flex>
-  );
-}
