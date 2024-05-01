@@ -10,9 +10,6 @@ export default function FourthSection() {
 
   const props = segmentProps;
 
-
-
-
   return (
     <Box as='section' w="100vw" h="100vh" bgGradient="linear(180deg, rgba(242,242,243,1) 0%,rgba(242,242,243,1) 50% , rgba(241,226,194,1)100%)" >
       <HStack justifyContent="space-around" alignItems="center" px="80px">

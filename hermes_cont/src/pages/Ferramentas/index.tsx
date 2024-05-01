@@ -3,9 +3,7 @@ import React from 'react'
 import { DefaultLayout } from '@/components/templates/DefaultLayout';
 import FlipCard3d from '@/components/atoms/flipCard3d/FlipCard3d';
 import FerramentasCard from '@/components/molecules/FerramentasCard/FerramentasCard';
-import SimplesImg from "@/assets/image/calc.png"
-import truckImg from "@/assets/image/truck.png"
-import sifraoImg from "@/assets/image/sif.png"
+
 import Link from 'next/link';
 
 
@@ -13,19 +11,19 @@ import Link from 'next/link';
 const cardProps =[
   {
     id:1,
-    image:SimplesImg.src,
+    
     text:"Simples Nacional",
     href:"/SimplesNacional"
   },
    {
     id:2,
-    image:truckImg.src,
+   
     text:"Calculo de Comunicação de Transporte e Serviço",
     href:"/"
   },
    {
     id:3,
-    image:sifraoImg.src,
+  
     text:"Locação de Bens Móveis",
     href:"/"
   },
@@ -53,7 +51,7 @@ export default function FerramentasPage() {
           <HStack gap={10}>
             {cardProps.map((card)=>(
               <Link key={card.id}href={card.href}>
-              <FerramentasCard  image={card.image} text={card.text} />
+              <FerramentasCard  image={""} text={card.text} />
               </Link>
             ))}
             

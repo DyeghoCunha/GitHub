@@ -27,6 +27,7 @@ export default function GradientText({ children, style }: IGradientText) {
 
   return (
     <Text
+      as="strong"
       bgGradient={bgGradientValue}
       css={waveAnimationStyle}
       bgClip="text"

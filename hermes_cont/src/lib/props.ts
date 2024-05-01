@@ -19,6 +19,9 @@ import image6a from "../assets/image/segmentos/6.svg";
 import image7a from "../assets/image/segmentos/7.svg";
 import image8a from "../assets/image/segmentos/8.svg";
 import image9a from "../assets/image/segmentos/9.svg";
+import emir from "@/assets/image/emir.png"
+import valmor from "@/assets/image/valmor.png"
+import gabriel from "@/assets/image/gabriel.png"
 
 export const servicesProps=[
   {
@@ -107,5 +110,21 @@ export const segmentProps=[
   {
     name:"Profissionais Liberais",
     image:image9a
+  }
+]
+
+export const squadProps=[
+  {
+    name:"Valmor Alberto Dalago Neto",
+    text:"Formado em contabilidade desde 2018, mas desde 2016 atuo na área. Minhas principais características, que me acompanham durante toda essa jornada, são a lealdade, atenção aos detalhes e o perfeccionismo. Sempre presei por prestar um atendimento de excelência aos meus clientes, me adaptando para atender da melhor forma às necessidades e peculiaridades de cada um."
+    ,image:valmor.src
+  },
+  {name:"Emir Adan Muse",
+    text:"Sou formado em Contabilidade com MBA em Gestão Empresarial pela Fundação Getúlio Vargas, iniciei minha carreira em 2009, passando por multinacionais, setor público e privado. Desde então atuo e amo a área, seus desafios e aprendizados. Acredito que todo o conhecimento adquirido só é válido quando colocado em prática, por isso valorizo muito minha habilidade em aplicar o que aprendo à realidade e procuro ser exemplo para inspirar mais pessoas a adotarem essa conduta."
+    ,image:emir.src
+  },
+  {name:"Gabriel Von Fruhauf",
+    text:"Sou contador, formado em 2019 e com atuação ativa na contabilidade de empresas desde 2012, tenho em mente que ser contador vai muito além de lidar com números, demonstrativos e declarações fiscais. Com a contabilidade podemos nos conectar com pessoas, absorver mais conhecimento e trocar experiências de vida para guardar em nossas memórias!"
+  ,image:gabriel.src
   }
 ]

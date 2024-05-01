@@ -7,6 +7,7 @@ import HomeSection from "@/components/organisms/Sections/HomeSection/HomeSection
 import SecondSection from "@/components/organisms/Sections/SecondSection/SecondSection";
 import ThirdSection from "@/components/organisms/Sections/ThirdSection/ThirdSection";
 import FourthSection from "@/components/organisms/Sections/FourthSection/FourthSection";
+import FifthSection from "@/components/organisms/Sections/FifthSection/FifthSection";
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
         <SecondSection/>
         <ThirdSection/>
         <FourthSection/>
+        <FifthSection/>
       </VStack>
     </Center>
   );

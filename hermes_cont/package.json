@@ -30,6 +30,8 @@
     "eslint-config-next": "13.1.6",
     "formik": "^2.4.5",
     "framer-motion": "^10.18.0",
+    "google-auth-library": "^9.9.0",
+    "google-spreadsheet": "^4.1.1",
     "immer": "^10.0.2",
     "json-server": "^1.0.0-alpha.23",
     "json-to-csv-export": "^2.1.1",

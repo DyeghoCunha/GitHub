@@ -9,7 +9,7 @@ const ThemeContainer = ({ children }) => {
   const { theme } = useThemeContext();
 
   return (
-    <ChakraProvider theme={theme? lightTheme:darkTheme}>
+    <ChakraProvider resetCSS theme={theme? lightTheme:darkTheme}>
       {children}
     </ChakraProvider>
   );
