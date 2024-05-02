@@ -10,8 +10,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { IoArrowRedoOutline } from "react-icons/io5";
 
 interface IFlipCard3d {
-  front: React.ReactNode;
-  back: React.ReactNode;
+  front: any;
+  back: any;
 }
 
 export default function FlipCard3d({ front, back }: IFlipCard3d) {

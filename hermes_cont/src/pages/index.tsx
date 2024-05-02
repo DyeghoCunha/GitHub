@@ -8,6 +8,8 @@ import SecondSection from "@/components/organisms/Sections/SecondSection/SecondS
 import ThirdSection from "@/components/organisms/Sections/ThirdSection/ThirdSection";
 import FourthSection from "@/components/organisms/Sections/FourthSection/FourthSection";
 import FifthSection from "@/components/organisms/Sections/FifthSection/FifthSection";
+import ParallaxSection from "@/components/organisms/Sections/ParallaxSection/ParallaxSection";
+import Sobre from "@/components/organisms/Sections/Sobre";
 
 
 
@@ -18,15 +20,16 @@ export default function Home() {
   }
 
   return (
-    <Center mt="50px"  w="100vw" h="100%" overflow="hidden">
+    <main   >
       <VStack>
         <HomeSection/>
         <SecondSection/>
         <ThirdSection/>
         <FourthSection/>
+        <Sobre/>
         <FifthSection/>
       </VStack>
-    </Center>
+    </main>
   );
 }
 
