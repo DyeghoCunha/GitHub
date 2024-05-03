@@ -12,12 +12,7 @@ function Header() {
       <Box ml={20} w="300px"><Image h="70px" src={logo.src} alt='Logo' /></Box>
       <HStack w="100%" h="100%" pt={5} pr="50px" justifyContent="center" alignItems="center">
         <HeaderTab />
-        </HStack>
-      
-    
-
-
-
+      </HStack>
     </HStack>
   );
 }

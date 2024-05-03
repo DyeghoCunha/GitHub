@@ -1,6 +1,11 @@
 import styles from './styles.module.scss';
-import Picture1 from '/public/images/1.jpeg';
-import Picture2 from '/public/images/2.jpeg';
+import Picture1 from './images/1.jpeg';
+import Picture1a from './images/1a.jpeg';
+import Picture2a from './images/2a.jpeg';
+import Picture3a from './images/3a.jpeg';
+import Picture4a from './images/4a.jpeg';
+import Picture5a from './images/5a.jpeg';
+import Picture6a from './images/6a.jpeg';
 import Picture3 from '/public/images/3.jpg';
 import Picture4 from '/public/images/4.jpg'
 import Picture5 from '/public/images/5.jpg'
@@ -20,10 +25,15 @@ export default function Index() {
     })
 
     const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
-    const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
-    const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
-    const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
-    const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
+    const scale1a = useTransform(scrollYProgress, [0, 1], [1, 4]);
+    const scale2a = useTransform(scrollYProgress, [0, 1], [1, 5]);
+    const scale3a = useTransform(scrollYProgress, [0, 1], [1, 6]);
+    const scale4a = useTransform(scrollYProgress, [0, 1], [1, 7]);
+    const scale5a = useTransform(scrollYProgress, [0, 1], [1, 8]);
+    const scale6a = useTransform(scrollYProgress, [0, 1], [1, 9]);
+    const scale6 = useTransform(scrollYProgress, [0, 1], [1, 16]);
+    const scale8 = useTransform(scrollYProgress, [0, 1], [1, 18]);
+    const scale9 = useTransform(scrollYProgress, [0, 1], [1, 19]);
     const scale10 = useTransform(scrollYProgress, [0, 1], [1, 10]);
     const scale11 = useTransform(scrollYProgress, [0, 1], [1, 11]);
 
@@ -33,33 +43,31 @@ export default function Index() {
             scale: scale4
         },
         {
-            src: Picture2,
-            scale: scale5
-        },
-        {
-            src: Picture3,
-            scale: scale6
-        },
-        {
-            src: Picture4,
-            scale: scale5
-        },
-        {
-            src: Picture5,
-            scale: scale6
-        },
-        {
-            src: Picture6,
-            scale: scale8
-        },
-        {
-            src: Picture7,
-            scale: scale9
+            src: Picture6a,
+            scale: scale1a
         },
           {
-            src: Picture7,
-            scale: scale10
+            src: Picture5a,
+            scale: scale2a
         },
+           {
+            src: Picture4a,
+            scale: scale3a
+        },
+          {
+            src: Picture3a,
+            scale: scale4a
+        },
+           {
+            src: Picture2a,
+            scale: scale5a
+        },
+           {
+            src: Picture1a,
+            scale: scale6a
+        },
+      
+      
         
     ]
 
