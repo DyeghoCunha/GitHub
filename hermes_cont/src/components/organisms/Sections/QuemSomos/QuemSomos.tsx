@@ -7,10 +7,11 @@ import emir from "@/assets/image/emir.png"
 import valmor from "@/assets/image/valmor.png"
 import gabriel from "@/assets/image/gabriel.png"
 import { motion } from 'framer-motion'
+import GradientText from '@/components/atoms/GradientText/GradientText'
 
 const MotionImage = motion(Image);
 
-export default function FifthSection() {
+export default function QuemSomos() {
 
   const [imageSrc, setImageSrc] = useState(equipe.src);
 
@@ -33,7 +34,7 @@ export default function FifthSection() {
           <MotionImage src={imageSrc} alt='Foto da equipe Hermes' initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }} />
-          <Heading position="absolute" top="-50px" left="130px" fontSize="80px" color="white">Quem Somos</Heading>
+          <Heading position="absolute" top="-15%" w="100vw" left="1%" fontSize="7vw" color="white"><GradientText>Quem Somos</GradientText></Heading>
         </Box>
         <VStack w="50%"  >
           <Box onMouseLeave={handleMouseLeave} >

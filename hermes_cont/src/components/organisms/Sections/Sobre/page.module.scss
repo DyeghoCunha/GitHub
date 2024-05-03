@@ -1,5 +1,10 @@
 .main{
-    //margin-top: 50vh;
+    margin-top: 15vh;
     margin-bottom: 0vh;
     width: 100vw;
+    position: relative;
+    background-image: url("./logo.svg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: fit;
 }
