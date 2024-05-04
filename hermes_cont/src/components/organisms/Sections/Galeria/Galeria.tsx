@@ -1,3 +1,4 @@
+import CurvedTextFooter from '@/components/atoms/CurvedTextFooter/CurvedTextFooter'
 import GradientText from '@/components/atoms/GradientText/GradientText'
 import FooterCurved from '@/components/molecules/FooterCurved/FooterCurved'
 import SmoothParallaxScroll from '@/components/molecules/SmoothParallaxScroll/SmoothParallaxScroll'
@@ -103,8 +104,9 @@ export default function Galeria() {
 
 
       </Card>
-      <Box position="absolute" bottom="0px" w="100vw">
-        <FooterCurved/>
+      
+      <Box position="absolute" bottom="0px" h="80vh" w="100vw" zIndex={20}>
+        <CurvedTextFooter/>
       </Box>
 
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { useScroll, useTransform, motion } from 'framer-motion';
+import { useScroll} from 'framer-motion';
+import { Box } from "@chakra-ui/react";
 
 export default function Footer() {
     const container = useRef();
@@ -18,7 +19,7 @@ export default function Footer() {
     }, [])
 
     return (
-        <div ref={container}>
+        <Box ref={container}>
             <svg className="w-full mb-10" viewBox="0 0 250 90">
                 <path fill="none" id="curve" d="m0,88.5c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"/>
                 <text className="text-[5px] uppercase" style={{fill: "red"}}>
@@ -29,6 +30,6 @@ export default function Footer() {
                     }
                 </text>
             </svg>
-        </div>
+        </Box>
     )
 }

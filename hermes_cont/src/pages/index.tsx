@@ -32,7 +32,6 @@ export default function Home() {
         <FourthSection/>
         <Sobre/> 
         <Galeria/>
-        <FooterCurved/>
         <FifthSection/>
       </VStack>
     </main>

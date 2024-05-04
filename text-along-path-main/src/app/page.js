@@ -19,10 +19,10 @@ export default function Home() {
 
     return (
         <ChakraProvider>
-            <main className="">
+            <Box as="main" w="100vw">
                 <Box h="100vh"></Box>
                 <Footer />
-            </main>
+            </Box>
         </ChakraProvider>
     );
 }
