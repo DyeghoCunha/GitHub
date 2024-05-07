@@ -1,6 +1,8 @@
 import { Box, Button, Card, Checkbox, CheckboxGroup, FormControl, FormErrorMessage, Grid, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal } from "@chakra-ui/react";
 import { Field, FieldArray } from "formik";
 import { useState } from "react";
+import { CheckFormLangType } from "../types";
+import { Language } from "@/types/types";
 
 export function CheckForm({ name, validate, formLabel, isRequired, helperText, placeHolder, propStack }: CheckFormLangType) {
   const languageChoices = Object.values(propStack)
@@ -8,8 +10,6 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
   const [isOpen, setIsOpen] = useState(false);
   const open = () => setIsOpen(!isOpen);
   const close = () => setIsOpen(false);
-
-  const [value, setValue] = useState([]);
 
   return (
     <Card m="10px 5px 5px 5px" bg="gray.600" w="300px" p="10px" zIndex={0} >
@@ -27,26 +27,25 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
                   <PopoverCloseButton border="1px solid orange" />
                   <PopoverBody w="400px"  >
                     <Box w={500} p={4}>
-
                       <FieldArray name={name}>
                         {({ push, remove }) => (
-                          <CheckboxGroup value={field.value} onChange={(value) => {
-
-                            languageChoices.forEach((language:any) => {
-                              if (value.includes(language)) {
-
-                                if (!field.value.includes(language)) {
-                                  push(language);
-                                }
-                              } else {
-
-                                if (field.value.includes(language)) {
-                                  const index = field.value.indexOf(language);
-                                  remove(index);
-                                }
+                         <CheckboxGroup value={field.value} onChange={(value) => {
+                          languageChoices.forEach((language: any, index: number) => {
+                            if (value.includes(language)) {
+                              if (!field.value.includes(language)) {
+                                console.log('Adicionando: ', language);
+                                push(language);
                               }
-                            });
-                          }}>
+                            } else {
+                              if (field.value.includes(language)) {
+                                console.log('Removendo: ', language);
+                                const idx = field.value.indexOf(language);
+                                remove(idx);
+                              }
+                            }
+                          });
+                        }}>
+
                             <Grid templateColumns="repeat(3, 1fr)" gap={2}>
                               {languageChoices.map((language) => (
                                 <Checkbox key={language} value={language} colorScheme="orange">
@@ -60,18 +59,15 @@ export function CheckForm({ name, validate, formLabel, isRequired, helperText, p
 
                     </Box>
                   </PopoverBody>
-                  <PopoverFooter borderColor="orange" w="100%" minH={50} 
-                  bgGradient="linear(to-r, gray,orange, red)" bgClip="text"
-                  >{field.value.join(", ")}
-
+                  <PopoverFooter borderColor="orange" w="100%" minH={50} bgGradient="linear(to-r, gray,orange, red)" bgClip="text">
+                    {Array.isArray(field.value) ? field.value.join(", ") : ""}
                   </PopoverFooter>
 
-                  {field.value.length > 0 ? (<Button variant="primary" width="100%" onClick={close}>Validar</Button>) : (<Button variant="secondary" isDisabled width="100%" onClick={close}>Validar</Button>)}
-
+                  {Array.isArray(field.value) && field.value.length > 0 ? (<Button variant="primary" width="100%" onClick={close}>Confirmar</Button>) : (<Button variant="secondary" isDisabled width="100%" onClick={close}>Validar</Button>)}
                 </PopoverContent>
               </Portal>
             </Popover>
-            <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+            <FormErrorMessage>{form.errors[name]}</FormErrorMessage>
           </FormControl>
         )}
       </Field>

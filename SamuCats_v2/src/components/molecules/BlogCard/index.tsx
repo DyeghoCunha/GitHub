@@ -1,4 +1,4 @@
-import { Avatar, AvatarCard } from "@/components/atoms/BlogAvatar"
+import { Avatar, AvatarCard } from "@/components/atoms/BlogAvatar/AvatarCard"
 import styles from './cardpost.module.css'
 import Link from "next/link"
 import { Box, Card, CardBody, CardFooter, CardHeader, Center, Divider, Heading, Image, Text } from "@chakra-ui/react"

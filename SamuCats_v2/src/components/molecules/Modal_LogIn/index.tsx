@@ -3,7 +3,7 @@ import { Box, Button, Divider, FormControl, FormLabel, HStack, Image, Input, Mod
 
 import googleLogo from "@/assets/image/googleLogo.png"
 import gitHubLofo from "@/assets/image/github.png"
-import linkedIn from "@/assets/image/linkedin.png"
+import linkedIn from "@/assets/image/linkedIn.png"
 
 
 type ModalLoginType = {
@@ -39,16 +39,16 @@ export function Modal_logIn({ isOpen, onClose, onOpen }: ModalLoginType) {
             </FormControl>
             <Divider mt={10} />
             <HStack justifyContent="center" alignItems="center" gap="5" mt="15px">
-              <Box p={3} borderRadius="10px" bgColor="rgba(255,255,255,0.2)" _hover={{bgColor:"rgba(255,150,0,0.2)",border:"2px solid rgba(255,150,0,0.7)"}} backdropFilter="blur(30px)" border="1px solid rgba(255,255,255,0.5)">
-                <Image  src={gitHubLofo.src} w="50px" h="50px" />
+              <Box p={3} borderRadius="10px" bgColor="rgba(255,255,255,0.2)" _hover={{ bgColor: "rgba(255,150,0,0.2)", border: "2px solid rgba(255,150,0,0.7)" }} backdropFilter="blur(30px)" border="1px solid rgba(255,255,255,0.5)">
+                <Image src={gitHubLofo.src} w="50px" h="50px" />
               </Box>
 
-              <Box p={3} borderRadius="10px" bgColor="rgba(255,255,255,0.2)" _hover={{bgColor:"rgba(255,150,0,0.2)",border:"2px solid rgba(255,150,0,0.7)"}} backdropFilter="blur(30px)" border="1px solid rgba(255,255,255,0.5)">
-              <Image src={googleLogo.src} w="50px" h="50px" />
+              <Box p={3} borderRadius="10px" bgColor="rgba(255,255,255,0.2)" _hover={{ bgColor: "rgba(255,150,0,0.2)", border: "2px solid rgba(255,150,0,0.7)" }} backdropFilter="blur(30px)" border="1px solid rgba(255,255,255,0.5)">
+                <Image src={googleLogo.src} w="50px" h="50px" />
               </Box>
- 
-              <Box p={3} borderRadius="10px" bgColor="rgba(255,255,255,0.2)" _hover={{bgColor:"rgba(255,150,0,0.2)",border:"2px solid rgba(255,150,0,0.7)"}} backdropFilter="blur(30px)" border="1px solid rgba(255,255,255,0.5)">
-              <Image src={linkedIn.src} w="50px" h="50px" />
+
+              <Box p={3} borderRadius="10px" bgColor="rgba(255,255,255,0.2)" _hover={{ bgColor: "rgba(255,150,0,0.2)", border: "2px solid rgba(255,150,0,0.7)" }} backdropFilter="blur(30px)" border="1px solid rgba(255,255,255,0.5)">
+                <Image src={linkedIn.src} w="50px" h="50px" />
               </Box>
 
 

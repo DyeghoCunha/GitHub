@@ -1,15 +1,18 @@
+"use client"
 import ImagePicker from '../ImagePicker';
 import { Button, FormControl, FormLabel, Input, FormHelperText, Textarea, Card, Stack, Box, Center, Heading, VStack, HStack, Image } from '@chakra-ui/react';
-import { LuCheckCircle2 } from "react-icons/lu";
+import { LuAlarmClock, LuCheckCircle2 } from "react-icons/lu";
 import React from 'react';
 import SamucaForm from "@/assets/image/samucaForm.png"
-
-
-
+import { useFormState, useFormStatus } from 'react-dom';
+import { saveProjectForm } from '@/lib/actions';
 
 
 export default function FormProject() {
 
+const [state, formAction] = useFormState(saveProjectForm,{message:null})
+
+const {pending} = useFormStatus();
 
   function CardForm({ children }:any) {
     return (
@@ -24,7 +27,7 @@ export default function FormProject() {
         <VStack>
           <Heading my="10px">Formulário de Cadastro de Projeto</Heading>
           <Card w={{ base: "800px", sm: "300px", md: "800px" }} bg="gray.500">
-            <form>
+            <form action={formAction}>
               <CardForm>
                 <FormControl >
                   <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text" >Nome do Projeto</FormLabel>
@@ -69,6 +72,7 @@ export default function FormProject() {
                   <FormControl>
                     <FormLabel bgGradient="linear(to-r, orange, red)" bgClip="text">Imagem do Projeto</FormLabel>
                     <ImagePicker name="image" />
+                   
                     <FormHelperText color="gray">Imagem do Figma ou do Conceito do Projeto</FormHelperText>
                   </FormControl>
                 </CardForm>
@@ -80,9 +84,11 @@ export default function FormProject() {
 
         <Card bg="gray.500" borderRadius="20px">
           <Card m="10px" bg="gray.600" p="10px" borderRadius="full">
-            <Button borderRadius="full" variant="primary" w="150px" h="150px">
-              <LuCheckCircle2 size="350px" opacity="0.5" />
+
+            <Button disabled={pending}  borderRadius="full" variant="primary" w="150px" h="150px">
+              {pending ? <LuAlarmClock size="350px" opacity="0.5"/> : <LuCheckCircle2 size="350px" opacity="0.5" /> }
             </Button>
+
           </Card>
         </Card>
       </HStack>

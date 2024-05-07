@@ -5,7 +5,7 @@ export function validateName(value: string) {
   }
   return error;
 }
-export function validateLinkedIn(value: string) {
+export function validatelinkedIn(value: string) {
   return;
 }
 export function validateGithub(value: string) {
@@ -22,6 +22,10 @@ export function validateStackSelect(value: string) {
 }
 
 export function validateTest(value: string) {
+
+  return
+}
+export function validateEmail(value: string) {
 
   return
 }

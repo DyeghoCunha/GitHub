@@ -2,19 +2,37 @@ import styles from './developerCard.module.css'; // Substitua pelo caminho corre
 import { RiTwitterXLine } from "react-icons/ri";
 import { FiGithub } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Center, HStack, Heading, Icon, Image, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Center, HStack, Heading, Icon, Image, Link, Text, VStack, css } from '@chakra-ui/react';
 import { useState } from 'react';
 import BgCardLight from "@/assets/image/DeveloperCardBackGroundLight3.gif"
 import { FaWhatsapp } from "react-icons/fa";
 import { IoArrowRedoOutline } from "react-icons/io5";
+import Developer from '@/types/types';
+import { EmailIcon } from '@chakra-ui/icons';
 
-export default function DeveloperCard() {
+export default function DeveloperCard({ availability, email, framework, github, id, image, linkedIn, name, primaryLanguage, primaryStack, slug, summary, programmingLanguages, secondaryStack, stylingFramework, whatsapp }: Developer) {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isFlip, setIsFlip] = useState(false)
 
 
-
+ const ScrollbarCSS = css({
+  '&::-webkit-scrollbar': {
+    width: '10px',
+  },
+  '&::-webkit-scrollbar-track': {
+    background: "linear-gradient(180deg, rgba(254, 119, 0, 0.5), rgba(255,0,0,0.0))",
+    borderRadius: '0px 10px 10px 0px',
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: "linear-gradient(180deg, rgba(254, 119, 0, 0.1), rgba(254, 119, 0, 0.8))",
+    borderRadius: '0px 10px 10px 0px',
+   
+  },
+  '&::-webkit-scrollbar-thumb:hover': {
+    background: 'red',
+  },
+});
 
   return (
     <Box className={styles.container}>
@@ -51,7 +69,7 @@ export default function DeveloperCard() {
               m={0}
               p={0}
               className={styles.mail}>
-              <Icon as={FaWhatsapp} boxSize="30px" />
+              <Link href="/"><Icon as={FaWhatsapp} boxSize="30px" /></Link>
             </CardHeader>
 
             <CardBody
@@ -66,7 +84,7 @@ export default function DeveloperCard() {
               m={0}
               className={styles['profile-pic']}>
               <Image
-                src="https://github.com/DyeghoCunha.png"
+                src={image}
                 alt="Profile"
                 boxSize="300px"
                 objectFit="cover"
@@ -107,15 +125,25 @@ export default function DeveloperCard() {
                   fontSize="1.2rem"
                   color="white"
                   fontWeight="bold"
-                >Dyegho M C G Cunha</Text>
+                >{name}</Text>
 
                 <Text
                   display="block"
                   fontSize="0.9rem"
                   color="white"
-                  mt="0.5rem"
+                  mt="0"
                 >
-                  Programador Front-End,Odeia Python, PHP, Linux e acha Java muito Verboso
+                  <VStack pb="5px" css ={ScrollbarCSS} display={isHovered ? "block" : "none"} justifyContent="start" alignItems="start" w="230px" h="100px" overflowY="auto">
+                    <HStack><Text fontWeight="bold">Stack: </Text>
+                      <Text>{primaryStack}</Text></HStack>
+                    <HStack><Text fontWeight="bold">Linguagem: </Text>
+                      <Text >{primaryLanguage}</Text></HStack>
+                    <HStack
+                    justifyContent="start" alignItems="start"
+                    ><Text  fontWeight="bold">FrameWork: </Text>
+                      <Text noOfLines={2}>{framework.join(", ")}</Text></HStack>
+
+                  </VStack>
                 </Text>
               </Box>
 
@@ -130,9 +158,9 @@ export default function DeveloperCard() {
                 <HStack
                   gap="1rem"
                   className={styles['social-links-container']}>
-                  <Icon as={RiTwitterXLine} boxSize="30px" />
-                  <Icon as={FiGithub} boxSize="30px" />
-                  <Icon as={FiInstagram} boxSize="30px" />
+                  <Link><Icon as={RiTwitterXLine} color="orange" boxSize="30px" /></Link>
+                  <Link href={github}><Icon as={FiGithub} boxSize="30px" /></Link>
+                  <Link href={linkedIn}><Icon as={FiInstagram} boxSize="30px" /></Link>
                 </HStack>
                 <HStack>
                   <Button
@@ -193,8 +221,8 @@ export default function DeveloperCard() {
           >
             <CardBody>
               <VStack>
-                <Heading>Titulo</Heading>
-                <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, eum.</Text>
+                <Heading>Sobre Mim</Heading>
+                <Text>{summary}</Text>
               </VStack>
             </CardBody>
           </Card>
