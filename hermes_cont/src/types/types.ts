@@ -1,76 +1,4 @@
-{/*
-//Interfaces _________________
-interface Iimposto{
-  fatMes:number;
-}
-interface ItributosFederais{
-alqIr:number;
-alqCsll:number;
-alqCpp:number;
-alqPis:number;
-alqCofins:number;
-alqIpi:number;
-}
-interface ItributosEstaduais{
-alqIcms:number;  
-}
-interface ItributosMunicipais{
- alqIss:number; 
-}
 
-interface IsimplesNacional extends ItributosFederais,ItributosEstaduais,ItributosMunicipais{
-  fatMes:number;
-  rbt12:number;
-  anexo: AnexoSN;
-  alqEfetiva:number;
-  alqReal:number;
-  das:number;
-}
-//Enum______________________________________________________________
-
-enum AnexoSN{
-  AnexoI="Anexo I",
-  AnexoII="Anexo II",
-  AnexoIII="Anexo III",
-  AnexoIV= "Anexo IV",
-  AnexoV= "Anexo V",
-}
-//Classes_______________________________________________________________
-
-export class EmpresaSimplesNacional implements IsimplesNacional{
-  fatMes: number;
-  rbt12: number;
-  anexo: AnexoSN;
-  alqEfetiva: number;
-  alqReal: number;
-  das: number;
-  alqIr: number;
-  alqCsll: number;
-  alqCpp: number;
-  alqPis: number;
-  alqCofins: number;
-  alqIpi: number;
-  alqIcms: number;
-  alqIss: number;
-
-  constructor(fatMes: number, rbt12: number, anexo: AnexoSN, alqEfetiva: number, alqReal: number, das: number, alqIr: number, alqCsll: number, alqCpp: number, alqPis: number, alqCofins: number, alqIpi: number, alqIcms: number, alqIss: number) {
-    this.fatMes = fatMes;
-    this.rbt12 = rbt12;
-    this.anexo = anexo;
-    this.alqEfetiva = alqEfetiva;
-    this.alqReal = alqReal;
-    this.das = das;
-    this.alqIr = alqIr;
-    this.alqCsll = alqCsll;
-    this.alqCpp = alqCpp;
-    this.alqPis = alqPis;
-    this.alqCofins = alqCofins;
-    this.alqIpi = alqIpi;
-    this.alqIcms = alqIcms;
-    this.alqIss = alqIss;
-  }
-}
-* */}
 
 export enum AnexoSimplesNacional {
   AnexoI = "Anexo I",
@@ -81,7 +9,6 @@ export enum AnexoSimplesNacional {
   //ServicosTransporteComunicacao = "Serviços de transporte e comunicação",
   //ServicosLocacaoBensMoveis = "Serviços de locação de bens móveis"
 }
-
 
 
 
@@ -143,3 +70,44 @@ export interface IFormImput {
     setIsValid: React.Dispatch<React.SetStateAction<boolean>>
     children: React.ReactNode
   }
+
+  export interface Empresa {
+  cnpj: string;
+  identificador_matriz_filial: number;
+  descricao_matriz_filial: string;
+  razao_social: string;
+  nome_fantasia: string;
+  situacao_cadastral: number;
+  descricao_situacao_cadastral: string;
+  data_situacao_cadastral: string;
+  motivo_situacao_cadastral: number;
+  nome_cidade_exterior: string | null;
+  codigo_natureza_juridica: number;
+  data_inicio_atividade: string;
+  cnae_fiscal: number;
+  cnae_fiscal_descricao: string;
+  descricao_tipo_de_logradouro: string;
+  logradouro: string;
+  numero: string;
+  complemento: string;
+  bairro: string;
+  cep: number;
+  uf: string;
+  codigo_municipio: number;
+  municipio: string;
+  ddd_telefone_1: string;
+  ddd_telefone_2: string | null;
+  ddd_fax: string | null;
+  qualificacao_do_responsavel: number;
+  capital_social: number;
+  porte: number;
+  descricao_porte: string;
+  opcao_pelo_simples: boolean;
+  data_opcao_pelo_simples: string | null;
+  data_exclusao_do_simples: string | null;
+  opcao_pelo_mei: boolean;
+  situacao_especial: string | null;
+  data_situacao_especial: string | null;
+  cnaes_secundarios: any[];
+  qsa: any[];
+}

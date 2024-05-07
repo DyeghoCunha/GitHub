@@ -36,10 +36,10 @@ export const lightTheme = extendTheme({
     },
     hermesBlue: {
       400: "#28283c",
-      rgba:"rgba(40, 40, 60,0.3)",
+      rgba: "rgba(40, 40, 60,0.3)",
       500: "#131f45",
-      rgba2:"rgba(19, 31, 69, 0.8)",
-      rgba3:"rgba(39, 78, 115, 0.8)"
+      rgba2: "rgba(19, 31, 69, 0.8)",
+      rgba3: "rgba(39, 78, 115, 0.8)"
     },
     hermesGold: {
       300: "#f2ab21",
@@ -141,6 +141,14 @@ export const lightTheme = extendTheme({
           bg: "#466A47",
           color: "black",
         },
+        hermes:{
+          bgColor:"transparent" ,
+          bgGradient:"linear(145deg, rgba(241,226,194,1) 0%, white 50%, rgba(242,242,243,1) 100%)",
+          fontSize:"26px",
+          _hover: {
+            bgGadient: "linear(180deg, rgba(241,226,194,1) 0%, #f7d526 40%, rgba(242,242,243,1) 100%)", 
+          },
+        }
       },
     },
     Menu: {
@@ -204,6 +212,14 @@ export const lightTheme = extendTheme({
             },
           },
         },
+        hermes: {
+          field: {
+            bgColor: "hermesBlue.400",
+            border: "3px solid gray",
+            fontSize: "26px",
+            color: "white"
+          }
+        }
       },
     },
     Switch: {

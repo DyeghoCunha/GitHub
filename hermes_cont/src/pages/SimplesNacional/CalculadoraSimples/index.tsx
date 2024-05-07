@@ -28,6 +28,7 @@ import CardImposto from './CardImposto/CardImposto';
 import GradientText from '@/components/atoms/GradientText/GradientText';
 import { funcCalculaAliqEfetiva, funcCalculaImpostoDetalhado } from '@/utils/calculo';
 import { isatty } from 'tty';
+import ModalCnpj from '../ModalCnpj/ModalCnpj';
 
 
 
@@ -290,25 +291,8 @@ export default function CalculadoraSimples() {
           <Heading><GradientText>Calculadora do Simples Nacional</GradientText></Heading>
         </CardHeader>
         <CardBody>
-          <FormControl as='fieldset' isInvalid={isError} px={4} borderRadius="8px" border="3px solid gray">
-            <FormLabel as='legend' border="3px solid gray" px={2} borderRadius="8px">Selecione um Anexo</FormLabel>
-            <RadioGroup defaultValue='' onChange={(value) => setAnexo(value)} colorScheme='yellow'>
-              <HStack justify="space-around">
-                <Radio size="lg" value='Anexo I'><Text fontSize="20px">Anexo I</Text></Radio>
-                <Radio size="lg" value='Anexo II'><Text fontSize="20px">Anexo II</Text></Radio>
-                <Radio size="lg" value='Anexo III'><Text fontSize="20px">Anexo III</Text></Radio>
-                <Radio size="lg" value='Anexo IV'><Text fontSize="20px">Anexo IV</Text></Radio>
-                <Radio size="lg" value='Anexo V'><Text fontSize="20px">Anexo V</Text></Radio>
-              </HStack>
-            </RadioGroup>
-            {!isError ? (
-              <FormHelperText>Em caso de dúvida leia o nosso <Link target='_blank' rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"><strong>artigo</strong></Link></FormHelperText>
-            ) : (
-              <FormErrorMessage>É necessário escolher um anexo</FormErrorMessage>
-            )}
-          </FormControl>
-
-          <HStack my="20px">
+<ModalCnpj/>
+          <HStack my="10px">
             <FormControl isInvalid={isRbt12} >
               <FormLabel>RBT12</FormLabel>
               <Input
@@ -340,12 +324,12 @@ export default function CalculadoraSimples() {
                 style={{ pointerEvents: "none" }}
               />
 
-              {!isError ? (
+              {!isRbt12 ? (
                 <FormHelperText>
                   Receita Bruta dos últimos 12 meses
                 </FormHelperText>
               ) : (
-                <FormErrorMessage>Você não preencheu o valor do RBT12 </FormErrorMessage>
+                <FormErrorMessage><Text>Você não preencheu o valor da <strong> Receita Bruta</strong></Text> </FormErrorMessage>
               )}
             </FormControl>
             <FormControl isInvalid={isFaturamento}>
@@ -378,25 +362,48 @@ export default function CalculadoraSimples() {
                 position="absolute"
                 style={{ pointerEvents: "none" }}
               />
-              {!isError ? (
+              {!isFaturamento ? (
                 <FormHelperText>
                   Faturamento para base de Cálculo
                 </FormHelperText>
               ) : (
-                <FormErrorMessage>Você não preencheu o valor do Faturamento </FormErrorMessage>
+                <FormErrorMessage><Text>Você não preencheu o valor do <strong> Faturamento </strong></Text></FormErrorMessage>
               )}
             </FormControl>
+
+
           </HStack>
-          <Button bgColor="transparent" isDisabled={!isBtnValid} bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)"
-            fontSize="26px"
-            w="100%"
-            onClick={() => handleButton({ rbt12Prop: rbt12, anexoProp: anexo, faturamentoProp: faturamento })}
+
+          <FormControl as='fieldset' isInvalid={isError} px={4} borderRadius="8px" my={10} border="3px solid gray">
+            <FormLabel as='legend' border="3px solid gray" px={2} borderRadius="8px">Selecione um Anexo</FormLabel>
+            <RadioGroup defaultValue='' onChange={(value) => setAnexo(value)} colorScheme='yellow'>
+              <HStack justify="space-around">
+                <Radio size="lg" value='Anexo I'><Text fontSize="20px">Anexo I</Text></Radio>
+                <Radio size="lg" value='Anexo II'><Text fontSize="20px">Anexo II</Text></Radio>
+                <Radio size="lg" value='Anexo III'><Text fontSize="20px">Anexo III</Text></Radio>
+                <Radio size="lg" value='Anexo IV'><Text fontSize="20px">Anexo IV</Text></Radio>
+                <Radio size="lg" value='Anexo V'><Text fontSize="20px">Anexo V</Text></Radio>
+              </HStack>
+            </RadioGroup>
+            {!isError ? (
+              <FormHelperText>Em caso de dúvida leia o nosso <Link target='_blank' rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"><strong>artigo</strong></Link></FormHelperText>
+            ) : (
+              <FormErrorMessage>É necessário escolher um anexo</FormErrorMessage>
+            )}
+          </FormControl>
+
+          <Button 
+          bgColor="transparent" 
+          isDisabled={!isBtnValid} 
+          bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)"
+          fontSize="26px"
+          w="100%"
+          onClick={() => handleButton({ rbt12Prop: rbt12, anexoProp: anexo, faturamentoProp: faturamento })}
           >
             <GradientText>Calcular</GradientText>
           </Button>
         </CardBody>
-        <CardFooter gap={2} display={isFooter?"flex":"none"} >
-
+        <CardFooter gap={2} display={isFooter ? "flex" : "none"} >
 
           <VStack w="100%" >
             <HStack w="100%" justify="space-around">
