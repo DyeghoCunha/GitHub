@@ -21,6 +21,7 @@ import {
   SimpleGrid,
   Divider,
   Button,
+  Mark,
 } from '@chakra-ui/react'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -28,7 +29,7 @@ import CardImposto from './CardImposto/CardImposto';
 import GradientText from '@/components/atoms/GradientText/GradientText';
 import { funcCalculaAliqEfetiva, funcCalculaImpostoDetalhado } from '@/utils/calculo';
 import { isatty } from 'tty';
-import ModalCnpj from '../ModalCnpj/ModalCnpj';
+import ModalConsultaAnexo from '../components/ModalConsultaAnexo/ModalConsultaAnexo';
 
 
 
@@ -291,7 +292,6 @@ export default function CalculadoraSimples() {
           <Heading><GradientText>Calculadora do Simples Nacional</GradientText></Heading>
         </CardHeader>
         <CardBody>
-<ModalCnpj/>
           <HStack my="10px">
             <FormControl isInvalid={isRbt12} >
               <FormLabel>RBT12</FormLabel>
@@ -376,7 +376,7 @@ export default function CalculadoraSimples() {
 
           <FormControl as='fieldset' isInvalid={isError} px={4} borderRadius="8px" my={10} border="3px solid gray">
             <FormLabel as='legend' border="3px solid gray" px={2} borderRadius="8px">Selecione um Anexo</FormLabel>
-            <RadioGroup defaultValue='' onChange={(value) => setAnexo(value)} colorScheme='yellow'>
+            <RadioGroup defaultValue='' onChange={(value) => setAnexo(value)} colorScheme='yellow' mb={8}>
               <HStack justify="space-around">
                 <Radio size="lg" value='Anexo I'><Text fontSize="20px">Anexo I</Text></Radio>
                 <Radio size="lg" value='Anexo II'><Text fontSize="20px">Anexo II</Text></Radio>
@@ -386,19 +386,22 @@ export default function CalculadoraSimples() {
               </HStack>
             </RadioGroup>
             {!isError ? (
-              <FormHelperText>Em caso de dúvida leia o nosso <Link target='_blank' rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"><strong>artigo</strong></Link></FormHelperText>
+              <FormHelperText><Text>Em caso de dúvida leia o nosso <Link target='_blank'  rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"> <GradientText>artigo</GradientText></Link></Text></FormHelperText>
             ) : (
               <FormErrorMessage>É necessário escolher um anexo</FormErrorMessage>
             )}
+            <Box position="absolute" right={0} bottom={0}>
+              <ModalConsultaAnexo />
+            </Box>
           </FormControl>
 
-          <Button 
-          bgColor="transparent" 
-          isDisabled={!isBtnValid} 
-          bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)"
-          fontSize="26px"
-          w="100%"
-          onClick={() => handleButton({ rbt12Prop: rbt12, anexoProp: anexo, faturamentoProp: faturamento })}
+          <Button
+            bgColor="transparent"
+            isDisabled={!isBtnValid}
+            bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)"
+            fontSize="26px"
+            w="100%"
+            onClick={() => handleButton({ rbt12Prop: rbt12, anexoProp: anexo, faturamentoProp: faturamento })}
           >
             <GradientText>Calcular</GradientText>
           </Button>

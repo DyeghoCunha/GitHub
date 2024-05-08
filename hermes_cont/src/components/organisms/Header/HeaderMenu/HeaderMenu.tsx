@@ -10,19 +10,20 @@ export default function HeaderMenu() {
         <HStack gap={0} color="white" fontSize="26px"><Text>Ferramentas</Text><ChevronDownIcon color="hermesGold.400" /></HStack>
       </MenuButton>
       <MenuList 
-      //backdropFilter="blur(10px)" 
+      
       bgColor="hermesBlue.400" 
-      //</Menu>bgGradient="linear(130deg, rgba(241,226,194,0.8) 0%, white 40%, rgba(242,242,243,0.5) 100%)" 
+      boxShadow=" 5px 4px 10px rgba(0,0,0,0.5)"
       >
         <MenuGroup fontSize="26px" color="white" fontWeight="400"  title="Calculadora">
-          <MenuItem as={Link} href="/" fontSize="20px" color="grey" _hover={{color:"hermesGold.400"}} >Fator R</MenuItem>
-          <MenuItem as={Link} href="/SimplesNacional/CalculadoraSimples"  fontSize="20px" color="grey"  _hover={{color:"hermesGold.400"}} >Simples Nacional</MenuItem>
+          <MenuItem as={Link} href="/" fontSize="20px" color="grey" _hover={{color:"#F1AC19"}} >Fator R</MenuItem>
+          <MenuItem as={Link} href="/SimplesNacional/CalculadoraSimples"  fontSize="20px" color="grey"  _hover={{color:"#F1AC19"}} >Simples Nacional</MenuItem>
         </MenuGroup>
         <Divider/>
         <MenuGroup fontSize="26px"  color="white" fontWeight="400" title="Consultar">
+        <MenuItem as={Link} href="/ConsultaCnpj" fontSize="20px" color="grey"  _hover={{color:"#F1AC19"}} >CNPJ</MenuItem>
         <MenuItem as={Link} href="/" fontSize="20px" color="grey"  _hover={{color:"hermesGold.400"}} >CNAE</MenuItem>
         <MenuItem as={Link} href="/" fontSize="20px"  color="grey"  _hover={{color:"hermesGold.400"}} >NCM</MenuItem>
-        <MenuItem as={Link} href="/SimplesNacional/TabelaSimplesNacionalCompleta" fontSize="20px" color="grey"  _hover={{color:"hermesGold.400"}} >Anexo Simples Nacional</MenuItem>
+        <MenuItem as={Link} href="/SimplesNacional/TabelaSimplesNacionalCompleta" fontSize="20px" color="grey"  _hover={{color:"#F1AC19"}} >ANEXO Simples Nacional</MenuItem>
       </MenuGroup>
     </MenuList>
     </Menu >

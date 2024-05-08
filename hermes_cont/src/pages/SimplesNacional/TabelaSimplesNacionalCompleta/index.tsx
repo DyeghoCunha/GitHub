@@ -13,10 +13,10 @@ export default function TabelaSimplesNacionalCompleta() {
       <HStack w="80%"  >
         <Box border="1px solid white" as='aside' h="100vh" w="10%" ></Box>
         <Box w="100%" h="100%" pb={10}>
-          <VStack >
+          <VStack  mt={10}>
             <Box as='section'>
               <Heading my={10} fontSize="40" color="hermesBlue.500" w="100%" pl={5}>
-                O que é o Simples Nacional?
+                O que é o Simples Nacional ?
               </Heading>
               <Text px={5} fontSize="23px" lineHeight="35px">
                 Ao iniciar uma empresa e registrar o CNPJ, o empresário deve definir um regime tributário.
