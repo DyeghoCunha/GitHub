@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import GradientText from '@/components/atoms/GradientText/GradientText';
 import { IEmpresa } from '@/types/types';
-import InputValue from '../InputValue/InputCnpj';
+import InputValue from '../InputCnpj/InputCnpj';
 import { contemCaractereInvalido, formatarNumero, limparNumero } from '@/utils/manipulaNumeros';
 import AnexoBox from '../AnexoBox/AnexoBox';
 

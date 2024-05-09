@@ -19,3 +19,23 @@ export function formatarNumero(numero: string): string {
     ];
     return `${partes[0]}.${partes[1]}.${partes[2]}/${partes[3]}-${partes[4]}`;
 }
+
+export function formatarData(data: string): string {
+    const partes = data.split('-');
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
+}
+
+
+export function removerCaracteresEspeciais(data: string) {
+    return data.replace(/[^a-zA-Z]/g, '');
+}
+
+export function substituirAcentos(data: string): string {
+    const mapaAcentos: { [key: string]: string } = {
+        'á': 'a', 'ã': 'a', 'à': 'a', 'â': 'a', 'é': 'e', 'ê': 'e', 'í': 'i', 'ó': 'o', 'õ': 'o', 'ô': 'o', 'ú': 'u',
+        'Á': 'A', 'Ã': 'A', 'À': 'A', 'Â': 'A', 'É': 'E', 'Ê': 'E', 'Í': 'I', 'Ó': 'O', 'Õ': 'O', 'Ô': 'O', 'Ú': 'U',
+        'ç': 'c', 'Ç': 'C'
+    };
+
+    return data.split('').map(letra => mapaAcentos[letra] || letra).join('');
+}

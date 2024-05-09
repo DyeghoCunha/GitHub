@@ -22,7 +22,7 @@ export default function HeaderMenu() {
         <MenuGroup fontSize="26px"  color="white" fontWeight="400" title="Consultar">
         <MenuItem as={Link} href="/ConsultaCnpj" fontSize="20px" color="grey"  _hover={{color:"#F1AC19"}} >CNPJ</MenuItem>
         <MenuItem as={Link} href="/" fontSize="20px" color="grey"  _hover={{color:"hermesGold.400"}} >CNAE</MenuItem>
-        <MenuItem as={Link} href="/" fontSize="20px"  color="grey"  _hover={{color:"hermesGold.400"}} >NCM</MenuItem>
+        <MenuItem as={Link} href="/ConsultaNcm" fontSize="20px"  color="grey"  _hover={{color:"hermesGold.400"}} >NCM</MenuItem>
         <MenuItem as={Link} href="/SimplesNacional/TabelaSimplesNacionalCompleta" fontSize="20px" color="grey"  _hover={{color:"#F1AC19"}} >ANEXO Simples Nacional</MenuItem>
       </MenuGroup>
     </MenuList>

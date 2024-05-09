@@ -36,10 +36,10 @@ export default function InputCnpj({ setCnpjProp, setEmpresaProp, setIsValidated 
     setCnpjFormated(value)
   }
 
-  const consultaCNPJApi = async (cnpj: any) => {
+  const consultaCNPJApi = async (prop: any) => {
 
     try {
-      const data = await buscarEmpresa({ cnpj });
+      const data = await buscarEmpresa({ prop });
       console.log("Buscando na API")
       setEmpresaProp(data);
       setIsValidated(true);
