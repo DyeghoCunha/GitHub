@@ -140,6 +140,7 @@ export default function CalculadoraSimples() {
 
     setRbt12(value)
   }
+  
   const handleInputFaturamento = (e: any) => {
     let value = e.target.value
     let valorFormatado = formatarParaReal(value)

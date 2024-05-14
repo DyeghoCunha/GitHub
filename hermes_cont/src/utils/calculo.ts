@@ -4,7 +4,7 @@ interface ICanculaAliqEfetiva {
   rbt12: number,
   anexo: string
 }
-export function funcCalculaAliqEfetiva({ rbt12, anexo }: ICanculaAliqEfetiva) {
+export  function funcCalculaAliqEfetiva({ rbt12, anexo }: ICanculaAliqEfetiva) {
   let alqEfetiva: number ;
   let faixa: any = []
   let alq: number = 0
@@ -62,11 +62,11 @@ export function funcCalculaAliqEfetiva({ rbt12, anexo }: ICanculaAliqEfetiva) {
 
   for (let i = 0; i < faixa.length; i++) {
     if (rbt12 < faixa[i][0]) {
-      console.log(rbt12)
+     // console.log(rbt12)
       alq = faixa[i][1];
-      console.log(alq)
+     // console.log(alq)
       pd = faixa[i][2];
-      console.log(pd)
+     // console.log(pd)
       alqEfetiva = (((rbt12 * alq)) - pd) / rbt12;
       return (alqEfetiva * 100);
     }

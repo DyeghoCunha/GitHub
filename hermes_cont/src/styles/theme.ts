@@ -245,6 +245,7 @@ export const lightTheme = extendTheme({
       },
     },
     Card: {
+      
       baseStyle: {
         container: {
           color: "#E6F1E6",
@@ -253,6 +254,7 @@ export const lightTheme = extendTheme({
 
         },
       },
+      
     },
     Modal: {
       parts: ["header"],
