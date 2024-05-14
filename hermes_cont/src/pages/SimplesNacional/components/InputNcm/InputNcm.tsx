@@ -8,9 +8,11 @@ import React, { useState } from 'react'
 
 interface IInputNcm {
   setResultProp: React.Dispatch<React.SetStateAction<INcm>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsSearching: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-export default function InputNcm({ setResultProp }: IInputNcm) {
+export default function InputNcm({ setResultProp, setIsLoading, setIsSearching }: IInputNcm) {
 
   const [ncm, setNcm] = useState("");
   // const [ncmFormatado, setNcmFormatado] = useState("");
@@ -25,13 +27,17 @@ export default function InputNcm({ setResultProp }: IInputNcm) {
   }
 
   const consultaNcmApi = async (prop: any) => {
-    
+
     try {
-      const data = await buscarNcm({prop});
+      setIsSearching(false)
+      setIsLoading(true)
+      const data = await buscarNcm({ prop });
       console.log("Buscando na API")
       console.log(data)
       setResultProp(data);
+      setIsLoading(false)
     } catch (error) {
+      setIsLoading(true)
       console.error(error);
     }
   };
