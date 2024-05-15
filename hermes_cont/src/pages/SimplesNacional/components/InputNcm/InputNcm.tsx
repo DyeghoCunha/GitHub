@@ -3,16 +3,17 @@ import GradientText from '@/components/atoms/GradientText/GradientText';
 import { buscarNcm, IBrApiSearch } from '@/pages/api/brasilApi';
 import { INcm } from '@/types/types';
 import { contemCaractereInvalido, formatarNumero, limparNumero, removerCaracteresEspeciais, substituirAcentos } from '@/utils/manipulaNumeros';
-import { Box, Button, FormControl, FormErrorMessage, FormHelperText, FormLabel, HStack, Input, Text, useTab } from '@chakra-ui/react'
+import { Box, Button, CircularProgress, FormControl, FormErrorMessage, FormHelperText, FormLabel, HStack, Input, Text, useTab } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
 interface IInputNcm {
   setResultProp: React.Dispatch<React.SetStateAction<INcm>>,
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
   setIsSearching: React.Dispatch<React.SetStateAction<boolean>>,
+  isLoading: boolean;
 }
 
-export default function InputNcm({ setResultProp, setIsLoading, setIsSearching }: IInputNcm) {
+export default function InputNcm({ setResultProp, setIsLoading, isLoading, setIsSearching }: IInputNcm) {
 
   const [ncm, setNcm] = useState("");
   // const [ncmFormatado, setNcmFormatado] = useState("");
@@ -32,12 +33,12 @@ export default function InputNcm({ setResultProp, setIsLoading, setIsSearching }
       setIsSearching(false)
       setIsLoading(true)
       const data = await buscarNcm({ prop });
-      console.log("Buscando na API")
-      console.log(data)
+      //console.log("Buscando na API")
+      //console.log(data)
       setResultProp(data);
       setIsLoading(false)
     } catch (error) {
-      setIsLoading(true)
+      setIsLoading(false)
       console.error(error);
     }
   };
@@ -82,11 +83,12 @@ export default function InputNcm({ setResultProp, setIsLoading, setIsSearching }
             </Box>
 
           </Box>
-          <Button onClick={() => consultaNcmApi(ncm)} isDisabled={isValidar} position="absolute" w="40px" h="40px" right="1px" top="33px" variant="hermes">
+          {!isLoading ?
+            <Button onClick={() => consultaNcmApi(ncm)} isDisabled={isValidar} position="absolute" w="40px" h="40px" right="1px" top="33px" variant="hermes">
+              <Text><GradientText>☑︎</GradientText></Text>
+            </Button> :
+            (<CircularProgress isIndeterminate color="hermesGold.500" thickness={6} trackColor='transparent' position="absolute" w="40px" h="40px" right="1px" top="29px" />)}
 
-            <Text><GradientText>☑︎</GradientText></Text>
-            <Text display="none"><GradientText>☒︎</GradientText></Text>
-          </Button>
         </FormControl>
       </Box>
     </Box>

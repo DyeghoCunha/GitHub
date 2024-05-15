@@ -1,6 +1,6 @@
 import { DefaultLayout } from '@/components/templates/DefaultLayout';
 import React from 'react'
-import { Box, Center, Heading, HStack, Table, TableCaption, TableContainer, Tbody, Text, Tfoot, Th, Thead, Td, Tr, VStack, Card, Tooltip, Button, CardFooter, Divider, Flex } from '@chakra-ui/react'
+import { Box, Center, Heading, HStack, Table, TableCaption, TableContainer, Tbody, Text, Tfoot, Th, Thead, Td, Tr, VStack, Card, Tooltip, Button, CardFooter, Divider, Flex, UnorderedList, ListItem } from '@chakra-ui/react'
 import GradientText from '@/components/atoms/GradientText/GradientText';
 import Link from 'next/link';
 
@@ -9,10 +9,9 @@ export default function AnexoIV() {
 
 
   return (
-    <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" my={10}>
-      <HStack w="80%"  >
-        <Box border="1px solid white" as='aside' h="100vh" w="10%" ></Box>
-        <Box w="100%" h="100%" pb={10}>
+    <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" mt="80px">
+      <VStack align="center" mt="50px" justify="start" h="100%" w="100%" >
+        <Box w="50%" h="100%" pb={10}>
           <VStack  >
             <Flex w="100%" justify="center" align="center" direction="column">
               <Box as='section'>
@@ -20,7 +19,7 @@ export default function AnexoIV() {
                   O que é Anexo IV do Simples Nacional?
                 </Heading>
                 <Text px={5} fontSize="23px" lineHeight="35px">
-                  O Anexo IV da tabela do <Link href="/"><GradientText style={{ fontWeight: "bold" }}>Simples Nacional </GradientText></Link>é destinado às empresas de Serviços: empresas que fornecem serviço de limpeza, vigilância, obras, construção de imóveis, serviços advocatícios. Percentual destinado a cada Tributo de acordo com a sua respectiva Faixa.
+                  O Anexo IV da tabela do <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/"><GradientText style={{ fontWeight: "bold" }}>Simples Nacional </GradientText></Link>é destinado às empresas de Serviços: empresas que fornecem serviço de limpeza, vigilância, obras, construção de imóveis, serviços advocatícios. Percentual destinado a cada Tributo de acordo com a sua respectiva Faixa.
                 </Text>
               </Box>
               <Box as='section'>
@@ -40,14 +39,13 @@ export default function AnexoIV() {
                 </Text>
 
 
-                <Flex w="100%" justify="center" align="center" >
-                  <Card mx={40} mt={5} color="hermesBlue.400" border="1px solid #28283c" p={2} w="55%" fontSize="20px">
-                    <Text px={2}><strong>1.</strong>Construção de imóveis e obras de engenharia em geral, inclusive sob a forma de subempreitada.</Text>
-                    <Text px={2}><strong>2.</strong>Execução de projetos e serviços de paisagismo, bem como decoração de interiores.</Text>
-                    <Text px={2}><strong>3.</strong>Serviço de vigilância, limpeza ou conservação</Text>
-                    <Text px={2}><strong>4.</strong>Serviços advocatícios. (Incluído pela LC nº 147/2014; efeitos: 1º/01/2015)</Text>
-
-                  </Card>
+                <Flex  justify="center" align="center" >
+                  <UnorderedList border="3px solid #28283c" my="40px" bgColor="white" borderRadius="8px" boxShadow=" 4px 4px 8px rgba(0,0,0,0.5)"  px="40px" fontSize="20px" lineHeight="35px">
+                    <ListItem>Construção de imóveis e obras de engenharia em geral, inclusive sob a forma de subempreitada. </ListItem>
+                    <ListItem>Execução de projetos e serviços de paisagismo, bem como decoração de interiores.</ListItem>
+                    <ListItem>Serviço de vigilância, limpeza ou conservação</ListItem>
+                    <ListItem>Serviços advocatícios. (Incluído pela LC nº 147/2014; efeitos: 1º/01/2015)</ListItem>
+                  </UnorderedList>
                 </Flex>
               </Box>
 
@@ -236,7 +234,7 @@ export default function AnexoIV() {
           </VStack>
 
         </Box>
-      </HStack>
+      </VStack>
     </Center >
   )
 }

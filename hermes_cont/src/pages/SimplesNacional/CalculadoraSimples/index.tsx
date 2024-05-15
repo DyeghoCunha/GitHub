@@ -30,6 +30,7 @@ import GradientText from '@/components/atoms/GradientText/GradientText';
 import { funcCalculaAliqEfetiva, funcCalculaImpostoDetalhado } from '@/utils/calculo';
 import { isatty } from 'tty';
 import ModalConsultaAnexo from '../components/ModalConsultaAnexo/ModalConsultaAnexo';
+import PageContainer from '@/components/atoms/PageContainer/PageContainer';
 
 
 
@@ -120,14 +121,14 @@ export default function CalculadoraSimples() {
       setIpi(formatNumberToPercentage2(IpiProp))
       setSimplesNacional(simplesNacionalProp)
       setIsFooter(true)
-      console.log("click")
-      console.log(simplesNacionalProp)
+      //console.log("click")
+      //console.log(simplesNacionalProp)
     }
   }
 
 
   useEffect(() => {
-    console.log(simplesNacional)
+    //console.log(simplesNacional)
   }, [simplesNacional])
 
   const isError = false;
@@ -140,7 +141,7 @@ export default function CalculadoraSimples() {
 
     setRbt12(value)
   }
-  
+
   const handleInputFaturamento = (e: any) => {
     let value = e.target.value
     let valorFormatado = formatarParaReal(value)
@@ -153,7 +154,7 @@ export default function CalculadoraSimples() {
     let numero = Number(valor);
 
     if (isNaN(numero)) {
-      console.log(`Valor inválido: ${valor}`);
+      //console.log(`Valor inválido: ${valor}`);
       return valor;
     }
 
@@ -180,7 +181,7 @@ export default function CalculadoraSimples() {
     let numero = Number(valor);
 
     if (isNaN(numero)) {
-      console.log(`Valor inválido: ${valor}`);
+      //console.log(`Valor inválido: ${valor}`);
       return valor;
     }
 
@@ -206,7 +207,7 @@ export default function CalculadoraSimples() {
     let numero = Number(valor) / 10000;
 
     if (isNaN(numero)) {
-      console.log(`Valor inválido: ${valor}`);
+      //console.log(`Valor inválido: ${valor}`);
       return valor;
     }
 
@@ -271,7 +272,7 @@ export default function CalculadoraSimples() {
   }
 
   useEffect(() => {
-    console.log(anexo)
+    //console.log(anexo)
     if (anexo && anexo.length > 1) {
       setIsAnexo(true)
     } else {
@@ -287,7 +288,7 @@ export default function CalculadoraSimples() {
 
 
   return (
-    <Center w="100vw" h="100vh" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)">
+    <PageContainer>
       <Card bgColor="hermesBlue.400" w="700px" >
         <CardHeader>
           <Heading><GradientText>Calculadora do Simples Nacional</GradientText></Heading>
@@ -387,7 +388,7 @@ export default function CalculadoraSimples() {
               </HStack>
             </RadioGroup>
             {!isError ? (
-              <FormHelperText><Text>Em caso de dúvida leia o nosso <Link target='_blank'  rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"> <GradientText>artigo</GradientText></Link></Text></FormHelperText>
+              <FormHelperText><Text>Em caso de dúvida leia o nosso <Link target='_blank' rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"> <GradientText>artigo</GradientText></Link></Text></FormHelperText>
             ) : (
               <FormErrorMessage>É necessário escolher um anexo</FormErrorMessage>
             )}
@@ -432,7 +433,7 @@ export default function CalculadoraSimples() {
           </VStack>
         </CardFooter>
       </Card>
-    </Center >
+    </PageContainer>
   )
 }
 

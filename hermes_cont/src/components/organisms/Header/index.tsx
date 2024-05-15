@@ -1,11 +1,10 @@
-"use client"
 import { Tabs, TabList, Tab, TabPanels, TabPanel, useColorModeValue, HStack, Image, Box, Flex, Text, Spacer, useDisclosure } from '@chakra-ui/react';
 
 import HeaderTab from './HeaderTabs';
 import logo from "@/assets/image/logoHeaderHermes.png"
-function Header() {
 
-  const { isOpen, onClose, onOpen } = useDisclosure();
+
+function Header() {
 
   return (
     <HStack as='header' zIndex={10000} backgroundColor="hermesBlue.400" h="80px">

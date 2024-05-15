@@ -1259,11 +1259,11 @@ export const listaCnae: { [key: string]: [string, boolean] } = {
 };
 
 
-export function retornaAnexo(cnae: string): string{
+export function retornaAnexo(cnae: string): string {
   const cnaeEscolhido = cnae;
   if (!listaCnae.hasOwnProperty(cnaeEscolhido)) {
-    console.log((`O CNAE ${cnaeEscolhido} não existe na listaCnae.`))
-    return "Não Optante" ;
+    //console.log((`O CNAE ${cnaeEscolhido} não existe na listaCnae.`))
+    return "Não Optante";
   }
   const anexo = listaCnae[cnaeEscolhido][0];
   return anexo;

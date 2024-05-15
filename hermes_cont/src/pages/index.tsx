@@ -19,20 +19,20 @@ import FooterCurved from "@/components/molecules/FooterCurved/FooterCurved";
 export default function Home() {
 
   function teste() {
-    console.log("Teste")
+    //console.log("Teste")
   }
 
   return (
     <main   >
       <VStack>
         {/***/}
-        <HomeSection/>
-        <SecondSection/>
-        <ThirdSection/>
-        <FourthSection/>
-        <Sobre/> 
-        <Galeria/>
-        <FifthSection/>
+        <HomeSection />
+        <SecondSection />
+        <ThirdSection />
+        <FourthSection />
+        <Sobre />
+        <Galeria />
+        <FifthSection />
       </VStack>
     </main>
   );

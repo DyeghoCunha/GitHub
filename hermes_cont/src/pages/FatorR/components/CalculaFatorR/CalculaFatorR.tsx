@@ -53,11 +53,11 @@ export default function CalculaFatorR() {
   }
 
   useEffect(() => {
-    console.log(isSalario)
-    console.log(isFaturamento)
+    //console.log(isSalario)
+    //console.log(isFaturamento)
     if (!isSalario && !isFaturamento) {
       setIsDisabled(false)
-      console.log(isDisabled)
+      //console.log(isDisabled)
     } else {
       setIsDisabled(true)
     }
@@ -93,11 +93,11 @@ export default function CalculaFatorR() {
           <MenuButton w="100%" as={Button} boxShadow="inset 4px 4px 8px rgba(0,0,0,0.5),inset -4px -4px 8px rgba(0,0,0,0.5)" outline="1px solid rgba(0,0,0,0.3)" variant={isAtividade ? "outlined" : "hermes"} fontSize="20px">
             <Text><GradientText>Selecione a Atividade</GradientText></Text>
           </MenuButton>
-          <MenuList zIndex={12} m={0} bgColor="rgba(255,255,255,0.4)" border=" 2px solid rgba(255,255,255,0.6)" 
-          backdropFilter="blur(5px)"
-          boxShadow="inset 4px 4px 8px rgba(0,0,0,0.5),inset -4px -4px 8px rgba(0,0,0,0.5), 4px 4px 8px rgba(0,0,0,1), -4px -4px 8px rgba(0,0,0,1)" 
-          outline="5px solid rgba(40, 40, 60,1)"
-           >
+          <MenuList zIndex={12} m={0} bgColor="rgba(255,255,255,0.4)" border=" 2px solid rgba(255,255,255,0.6)"
+            backdropFilter="blur(5px)"
+            boxShadow="inset 4px 4px 8px rgba(0,0,0,0.5),inset -4px -4px 8px rgba(0,0,0,0.5), 4px 4px 8px rgba(0,0,0,1), -4px -4px 8px rgba(0,0,0,1)"
+            outline="5px solid rgba(40, 40, 60,1)"
+          >
             <Card overflowY="auto" bgColor="hermesBlue.400" h="500px" w="600px" m={5}
               sx={{
                 '::-webkit-scrollbar': {

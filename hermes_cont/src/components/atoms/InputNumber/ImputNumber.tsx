@@ -17,10 +17,10 @@ interface IImputNumber {
 
 export default function ImputNumber({ isInvalid, valueNumber, onChange, onBlurValidate, valueString, isValue, label, helper, error }: IImputNumber) {
 
-  //console.log(valueNumber)
-  //console.log(valueString)
+  ////console.log(valueNumber)
+  ////console.log(valueString)
   function blur() {
-    
+
     var blur = onBlurValidate(Number(valueNumber))
     return blur
   }

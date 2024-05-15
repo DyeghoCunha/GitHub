@@ -9,17 +9,16 @@ export default function AnexoI() {
 
 
   return (
-    <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" my={10}>
-      <HStack w="80%"  >
-        <Box border="1px solid white" as='aside' h="100vh" w="10%" ></Box>
-        <Box w="100%" h="100%" pb={10}>
+  <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" mt="80px">
+      <VStack align="center" mt="50px" justify="start" h="100%" w="100%" >
+        <Box w="50%" h="100%" pb={10}>
           <VStack >
             <Box as='section'>
               <Heading my={10} fontSize="40" color="hermesBlue.500" w="100%" pl={5}>
                 O que é Anexo I do Simples Nacional?
               </Heading>
               <Text px={5} fontSize="23px" lineHeight="35px">
-                O Anexo I da tabela do <Link href="/"><GradientText style={{ fontWeight: "bold" }}>Simples Nacional</GradientText></Link> é destinado às empresas do Comércio em geral. Os impostos são calculados com base em percentual destinado a cada Tributo de acordo com a sua respectiva Faixa.
+                O Anexo I da tabela do <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/"><GradientText style={{ fontWeight: "bold" }}>Simples Nacional</GradientText></Link> é destinado às empresas do Comércio em geral. Os impostos são calculados com base em percentual destinado a cada Tributo de acordo com a sua respectiva Faixa.
               </Text>
             </Box>
             <Box as='section'>
@@ -215,7 +214,7 @@ export default function AnexoI() {
           </VStack>
 
         </Box>
-      </HStack>
+        </VStack>
     </Center>
   )
 }

@@ -4,8 +4,8 @@ interface ICanculaAliqEfetiva {
   rbt12: number,
   anexo: string
 }
-export  function funcCalculaAliqEfetiva({ rbt12, anexo }: ICanculaAliqEfetiva) {
-  let alqEfetiva: number ;
+export function funcCalculaAliqEfetiva({ rbt12, anexo }: ICanculaAliqEfetiva) {
+  let alqEfetiva: number;
   let faixa: any = []
   let alq: number = 0
   let pd: number = 0
@@ -57,16 +57,16 @@ export  function funcCalculaAliqEfetiva({ rbt12, anexo }: ICanculaAliqEfetiva) {
       [4800000, 30.5 / 100, 540000]
     ];
   } else {
-    console.log('Erro nos Anexos');
+    //console.log('Erro nos Anexos');
   }
 
   for (let i = 0; i < faixa.length; i++) {
     if (rbt12 < faixa[i][0]) {
-     // console.log(rbt12)
+      // //console.log(rbt12)
       alq = faixa[i][1];
-     // console.log(alq)
+      // //console.log(alq)
       pd = faixa[i][2];
-     // console.log(pd)
+      // //console.log(pd)
       alqEfetiva = (((rbt12 * alq)) - pd) / rbt12;
       return (alqEfetiva * 100);
     }
@@ -78,11 +78,11 @@ export  function funcCalculaAliqEfetiva({ rbt12, anexo }: ICanculaAliqEfetiva) {
 interface ICalculaImpostoDetalhado {
   faturamento: number,
   anexo: string,
-  alqEfetiva: number|null,
+  alqEfetiva: number | null,
   rbt12: number
 }
 
-export function funcCalculaImpostoDetalhado({ faturamento, anexo, alqEfetiva, rbt12 }: ICalculaImpostoDetalhado):any {
+export function funcCalculaImpostoDetalhado({ faturamento, anexo, alqEfetiva, rbt12 }: ICalculaImpostoDetalhado): any {
   let impostos: { [key: string]: number } = {
     "IR": 0,
     "CSLL": 0,
@@ -144,7 +144,7 @@ export function funcCalculaImpostoDetalhado({ faturamento, anexo, alqEfetiva, rb
       [4800000, 0.3500, 0.1550, 0.0356, 0.1644, 0.2950, 0.0000, 0.0000, 0]
     ];
   } else {
-    console.log('Erro nos Anexos');
+    //console.log('Erro nos Anexos');
   }
 
   for (let i = 0; i < faixa.length; i++) {

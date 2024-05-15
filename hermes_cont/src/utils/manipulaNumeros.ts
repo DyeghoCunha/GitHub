@@ -40,29 +40,29 @@ export function substituirAcentos(data: string): string {
     return data.split('').map(letra => mapaAcentos[letra] || letra).join('');
 }
 
- export function formatarParaReal(valor: string): string {
+export function formatarParaReal(valor: string): string {
     let numero = Number(valor);
 
     if (isNaN(numero)) {
-      console.log(`Valor inválido: ${valor}`);
-      return valor;
+        //console.log(`Valor inválido: ${valor}`);
+        return valor;
     }
 
     let reais = Math.floor(numero / 100);
     let centavos = numero % 100;
 
     let formatter = new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-      minimumFractionDigits: 2
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2
     });
 
     let valorFormatado = formatter.format(reais + centavos / 100);
 
     // Remove o zero à esquerda, se houver
     if (valorFormatado.startsWith("R$ 0,0")) {
-      valorFormatado = "R$" + valorFormatado.substring(3);
+        valorFormatado = "R$" + valorFormatado.substring(3);
     }
 
     return valorFormatado;
-  }
+}

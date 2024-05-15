@@ -9,7 +9,6 @@ interface IDefaultLayoutProps {
 }
 
 export function DefaultLayout({ p, children }: IDefaultLayoutProps) {
-  const [isOpen, toggleOpen] = useCycle(false, true)
   return (
     <>
       <Box position="fixed" w="100%" top={0} m={0} p={0} zIndex={100}>
@@ -20,6 +19,7 @@ export function DefaultLayout({ p, children }: IDefaultLayoutProps) {
         m={0}
         p={0}
         flexGrow={1}
+        
       >
         {children}
       </Container>

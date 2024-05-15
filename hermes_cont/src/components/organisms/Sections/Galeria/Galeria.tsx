@@ -6,6 +6,17 @@ import { Box, Card, Text } from '@chakra-ui/react'
 import React from 'react'
 
 export default function Galeria() {
+
+
+
+
+
+
+
+
+
+
+  
   return (
     <Box w="100vw" h="100%" position="relative">
       <Card bgColor="transparent" boxShadow="5px 5px 5px rgba(0,0,0,0.5)" border="1px solid white"
@@ -111,6 +122,8 @@ export default function Galeria() {
 
 
       <SmoothParallaxScroll />
+
+
     </Box >
   )
 }

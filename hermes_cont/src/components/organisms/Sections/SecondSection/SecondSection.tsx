@@ -1,11 +1,33 @@
 import { Box, Center, Heading, HStack, Image, Mark, Text, VStack } from '@chakra-ui/react'
-import React from 'react'
+import React, { useRef } from 'react'
 import logo from "@/assets/image/logo.svg"
 import GradientText from '@/components/atoms/GradientText/GradientText'
+import styles from "./style.module.css"
+import { useScroll, useTransform, motion } from 'framer-motion'
+
+
+const MotionBox = motion(Box);
+
+
 
 export default function SecondSection() {
+
+
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  })
+
+  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0])
+
+
+
+
+
+
   return (
-    <Box as='section' w="100vw" h="100vh" >
+    <Box as='section' w="100vw" h="100vh" ref={container} position="relative" >
       <HStack justifyContent="space-around" alignItems="center">
         <VStack w="50%" h="100vh" px="40px" pt="150px" gap="60px">
           <Heading color="hermesWhite.500">Sabemos que a sua empresa é única, tem
@@ -29,10 +51,28 @@ export default function SecondSection() {
           </Text>
         </VStack>
         <Center w="50%" h="100vh"  >
-          <Image src={logo.src} filter="drop-shadow( 2px 3px 5px black)" alt='logo'  />
+          <Image src={logo.src} filter="drop-shadow( 2px 3px 5px black)" alt='logo' />
         </Center>
         {/*<Box w="50%" h="100vh" bgImage={logo.src} bgPosition="center" bgSize="contain" bgRepeat="no-repeat"></Box>*/}
+
+
+
       </HStack>
-    </Box>
+      <MotionBox w="100%" style={{ height }}
+        position="relative"
+        mt="0px"
+      >
+        <Box bgColor="hermesBlue.400" 
+          h="1850%"
+          w="120%"
+          left="-10%"
+          borderRadius="0 0 50% 50%"
+          zIndex={1}
+          position="absolute"
+          boxShadow="0px 60px 50px rgba(0, 0, 0, 0.748)"
+
+        ></Box>
+      </MotionBox >
+    </Box >
   )
 }

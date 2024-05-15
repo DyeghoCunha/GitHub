@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, Skeleton } from "@chakra-ui/react";
 
 
 
@@ -90,6 +90,14 @@ export const lightTheme = extendTheme({
 
       },
     },
+    Skeleton: {
+      baseStyle: {
+        startColor: 'white',
+        fadeDuration: "4",
+        endColor: 'hermesGold.400'
+      }
+    },
+
     Button: {
       baseStyle: {
         color: "gray.100",
@@ -141,12 +149,12 @@ export const lightTheme = extendTheme({
           bg: "#466A47",
           color: "black",
         },
-        hermes:{
-          bgColor:"transparent" ,
-          bgGradient:"linear(145deg, rgba(241,226,194,1) 0%, white 50%, rgba(242,242,243,1) 100%)",
-          fontSize:"26px",
+        hermes: {
+          bgColor: "transparent",
+          bgGradient: "linear(145deg, rgba(241,226,194,1) 0%, white 50%, rgba(242,242,243,1) 100%)",
+          fontSize: "26px",
           _hover: {
-            bgGadient: "linear(180deg, rgba(241,226,194,1) 0%, #f7d526 40%, rgba(242,242,243,1) 100%)", 
+            bgGadient: "linear(180deg, rgba(241,226,194,1) 0%, #f7d526 40%, rgba(242,242,243,1) 100%)",
           },
         }
       },
@@ -245,7 +253,7 @@ export const lightTheme = extendTheme({
       },
     },
     Card: {
-      
+
       baseStyle: {
         container: {
           color: "#E6F1E6",
@@ -254,7 +262,7 @@ export const lightTheme = extendTheme({
 
         },
       },
-      
+
     },
     Modal: {
       parts: ["header"],
