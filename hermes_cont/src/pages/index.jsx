@@ -37,12 +37,12 @@ export default function Home() {
   return (
     <main   >
       <VStack>
-        <AnimatePresence mode="wait">
+        {/** <AnimatePresence mode="wait">
           {isLoading && <Preloader/>}
         </AnimatePresence>
-        {/***/}
-        <HomeSection />
-        <SecondSection />
+      
+       
+        <SecondSection /> */} <HomeSection />
         <ThirdSection />
         <FourthSection />
         <Sobre />
