@@ -30,11 +30,11 @@ export default function SecondSection() {
     <Box as='section' w="100vw" h="100vh" ref={container} position="relative" >
       <HStack justifyContent="space-around" alignItems="center">
         <VStack w="50%" h="100vh" px="40px" pt="150px" gap="60px">
-          <Heading color="hermesWhite.500">Sabemos que a sua empresa é única, tem
+          <Heading data-scroll data-scroll-speed={0.3} color="hermesWhite.500">Sabemos que a sua empresa é única, tem
             necessidades singulares e detalhes
             importantes que precisam ser considerados
             para que o nosso trabalho seja efetivo.</Heading>
-          <Box>
+          <Box data-scroll data-scroll-speed={0.3}>
             <Text fontSize="30px" color="hermesWhite.500">
               Combinamos a essência do atendimento humanizado
               com a precisão e agilidade proporcionadas pela
@@ -43,14 +43,14 @@ export default function SecondSection() {
                 estratégias de sucesso para seus negócios.</GradientText>
             </Text>
           </Box>
-          <Text fontSize="30px" color="hermesWhite.500">
+          <Text data-scroll data-scroll-speed={0.3} fontSize="30px" color="hermesWhite.500">
             Buscamos ser parceiros indispensáveis no
             crescimento e na sustentabilidade dos nossos
             clientes, contribuindo ativamente para o seu
             desenvolvimento econômico.
           </Text>
         </VStack>
-        <Center w="50%" h="100vh"  >
+        <Center data-scroll data-scroll-speed={0.1} w="50%" h="100vh"  >
           <Image src={logo.src} filter="drop-shadow( 2px 3px 5px black)" alt='logo' />
         </Center>
         {/*<Box w="50%" h="100vh" bgImage={logo.src} bgPosition="center" bgSize="contain" bgRepeat="no-repeat"></Box>*/}

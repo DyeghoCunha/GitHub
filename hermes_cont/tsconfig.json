@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/api/tabela.js", "src/components/organisms/Sections/ParallaxSection/ParallaxSection.jsx", "src/components/organisms/Sections/Sobre/index.jsx", "src/components/atoms/CurvedTextFooter/CurvedTextFooter.jsx", "src/components/molecules/FooterCurved/FooterCurved.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/api/tabela.js", "src/components/organisms/Sections/ParallaxSection/ParallaxSection.jsx", "src/components/organisms/Sections/Sobre/index.jsx", "src/components/atoms/CurvedTextFooter/CurvedTextFooter.jsx", "src/components/molecules/FooterCurved/FooterCurved.jsx", "src/pages/index.jsx"],
   "exclude": ["node_modules"]
 }
