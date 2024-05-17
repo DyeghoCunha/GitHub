@@ -8,7 +8,7 @@ import HermesCharacter from "@/components/TextOpacityScroll/HermesCharacter/Herm
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const MotionBox = motion(Box);
-export default function FourthSection() {
+export default function Segmentos() {
 
 
   const props = segmentProps;
@@ -33,7 +33,7 @@ export default function FourthSection() {
       <VStack w="100%" h="100%">
 
         <Box ml="120px" mt="40px" w="100%">
-          <HermesCharacter paragraph={paragraph} />
+          <HermesCharacter colorProp={""} fontSize={""}  paragraph={paragraph} />
         </Box>
 
 

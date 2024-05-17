@@ -3,22 +3,21 @@ import GradientText from '@/components/atoms/GradientText/GradientText'
 import FooterCurved from '@/components/molecules/FooterCurved/FooterCurved'
 import SmoothParallaxScroll from '@/components/molecules/SmoothParallaxScroll/SmoothParallaxScroll'
 import { Box, Card, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
+const MotionBox = motion(Box);
 export default function Galeria() {
 
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  })
+  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0])
 
-
-
-
-
-
-
-
-
-  
   return (
-    <Box w="100vw" h="100%" position="relative">
+    <Box w="100vw" h="100%" position="relative" ref={container}>
       <Card bgColor="transparent" boxShadow="5px 5px 5px rgba(0,0,0,0.5)" border="1px solid white"
         bgGradient="linear(130deg, rgba(241,226,194,0.8) 0%, rgba(242,242,243,0.5) 40%, rgba(242,242,243,0.9) 100%)"
         backdropFilter="blur(10px)"
@@ -115,14 +114,28 @@ export default function Galeria() {
 
 
       </Card>
-      
-      <Box position="absolute" bottom="0px" h="80vh" w="100vw" zIndex={20}>
-        <CurvedTextFooter/>
-      </Box>
+
+   
 
 
       <SmoothParallaxScroll />
 
+      <MotionBox w="100%" style={{ height }}
+        position="relative"
+        mt="0px"
+        zIndex={20}
+      >
+        <Box
+          bgColor="hermesBlue.400"
+          h="3550%"
+          w="100%"
+          borderRadius="0 0 50% 50%"
+          zIndex={1}
+
+          boxShadow="0px 60px 50px rgba(0, 0, 0, 0.748)"
+
+        ></Box>
+      </MotionBox >
 
     </Box >
   )

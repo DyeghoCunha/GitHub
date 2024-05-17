@@ -4,7 +4,7 @@ import { Box, Center, Flex, HStack, Heading, Image, Mark, Text, VStack } from "@
 import HomeSection from "@/components/organisms/Sections/HomeSection/HomeSection";
 import SecondSection from "@/components/organisms/Sections/SecondSection/SecondSection";
 import ThirdSection from "@/components/organisms/Sections/ThirdSection/ThirdSection";
-import FourthSection from "@/components/organisms/Sections/FourthSection/FourthSection";
+import Segmentos from "@/components/organisms/Sections/Segmentos/Segmentos";
 import FifthSection from "@/components/organisms/Sections/QuemSomos/QuemSomos";
 import ParallaxSection from "@/components/organisms/Sections/ParallaxSection/ParallaxSection";
 import Sobre from "@/components/organisms/Sections/Sobre";
@@ -16,6 +16,7 @@ import Preloader from "@/components/Preloader/Preloader"
 import { useEffect, useRef, useState } from "react";
 import Lenis from 'lenis';
 import Valores from "@/components/organisms/Sections/Valores/Valores";
+import Footer from "@/components/organisms/Footer";
 const MotionBox = motion(Box);
 
 const Section1 = ({ scrollYProgress }) => {
@@ -47,7 +48,7 @@ const Section2 = ({ scrollYProgress }) => {
 
   return (
     <MotionBox style={{ scale, rotate }} h="100vh" position="relative">
-      <FourthSection />
+      <Segmentos />
     </MotionBox>
   );
 };
@@ -107,6 +108,7 @@ export default function Home() {
         <Galeria /> */}
         <Valores/>
         <FifthSection />
+        <Footer/>
       </VStack>
     </main>
   );

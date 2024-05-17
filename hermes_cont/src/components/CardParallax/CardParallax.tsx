@@ -48,7 +48,7 @@ const CardParallax = ({ i, title, description, src, color, progress, range, targ
 
       <MotionCard
         style={{
-          backgroundColor: `${color}99`
+          backgroundColor: i === 0 ? color : `${color}80`
           , scale, top: `calc(-5vh + ${i * 25}px)`
         }}
         backdropFilter="blur(10px)"
@@ -64,7 +64,7 @@ const CardParallax = ({ i, title, description, src, color, progress, range, targ
         <HStack color="white" position="relative">
           <ClientImg h="80px" src={Triangulo.src} />
           <Box position="absolute" top="5px" left="90px">
-            <HermesCharacter colorProp={i ===2? "black":"white"} fontSize="45px" paragraph={title} />
+            <HermesCharacter colorProp={i === 2 ? "black" : "white"} fontSize="45px" paragraph={title} />
           </Box>
         </HStack>
         <Flex h="100%" mt="50px" gap="50px" >
