@@ -41,7 +41,7 @@ export default function ThirdSection() {
           </Text>
         </Center>
         <Center w="70%" h="100vh"  >
-          <SimpleGrid columns={3} gap={3} data-scroll data-scroll-speed={0.5}>
+          <SimpleGrid columns={3} gap={3} data-scroll data-scroll-speed={0.1}>
             {props.map((card, index) => (
               <GridItem key={index} ><ServiceCard name={card.name} image={card.image} /></GridItem>
             ))}

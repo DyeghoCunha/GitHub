@@ -30,11 +30,11 @@ export default function SecondSection() {
     <Box as='section' w="100vw" h="100vh" ref={container} position="relative" >
       <HStack justifyContent="space-around" alignItems="center">
         <VStack w="50%" h="100vh" px="40px" pt="150px" gap="60px">
-          <Heading data-scroll data-scroll-speed={0.3} color="hermesWhite.500">Sabemos que a sua empresa é única, tem
+          <Heading data-scroll data-scroll-speed={0.1} color="hermesWhite.500">Sabemos que a sua empresa é única, tem
             necessidades singulares e detalhes
             importantes que precisam ser considerados
             para que o nosso trabalho seja efetivo.</Heading>
-          <Box data-scroll data-scroll-speed={0.3}>
+          <Box data-scroll data-scroll-speed={0.1}>
             <Text fontSize="30px" color="hermesWhite.500">
               Combinamos a essência do atendimento humanizado
               com a precisão e agilidade proporcionadas pela
@@ -43,7 +43,7 @@ export default function SecondSection() {
                 estratégias de sucesso para seus negócios.</GradientText>
             </Text>
           </Box>
-          <Text data-scroll data-scroll-speed={0.3} fontSize="30px" color="hermesWhite.500">
+          <Text data-scroll data-scroll-speed={0.1} fontSize="30px" color="hermesWhite.500">
             Buscamos ser parceiros indispensáveis no
             crescimento e na sustentabilidade dos nossos
             clientes, contribuindo ativamente para o seu
@@ -55,17 +55,17 @@ export default function SecondSection() {
         </Center>
         {/*<Box w="50%" h="100vh" bgImage={logo.src} bgPosition="center" bgSize="contain" bgRepeat="no-repeat"></Box>*/}
 
-
-
       </HStack>
+
       <MotionBox w="100%" style={{ height }}
         position="relative"
-        mt="0px"
+        mt="-60px"
       >
         <Box bgColor="hermesBlue.400" 
-          h="1850%"
+          h="1550%"
           w="120%"
           left="-10%"
+
           borderRadius="0 0 50% 50%"
           zIndex={1}
           position="absolute"
