@@ -17,7 +17,7 @@ export default function HomeSection() {
     <Box bgImage={bgSide.src}  overflow="hidden" w="100%"  right="0" position="absolute" h="100%" bgPosition="end" bgSize="cover" bgRepeat="no-repeat"></Box>
       <Text mx="20px" bgColor="rgba(255,255,255,0.3)" p={3} 
       borderRadius="8px" boxShadow="4px 4px 8px black" 
-      backdropFilter="blur(10px)" data-scroll data-scroll-speed={0.8}  position="absolute" left={0} bottom="-35%" opacity="1" color="white" fontSize="8vw" w="100%" lineHeight="8vw" ><GradientText>Relaxe enquanto nós fazemos as contas</GradientText></Text>
+      backdropFilter="blur(10px)" data-scroll data-scroll-speed={0.8}  position="absolute" left={0} bottom="-33%" opacity="1" color="white" fontSize="8vw" w="100%" lineHeight="8vw" ><GradientText>Relaxe enquanto nós fazemos as contas</GradientText></Text>
     </Box>
   )
 }
