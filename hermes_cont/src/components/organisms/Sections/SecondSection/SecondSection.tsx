@@ -27,7 +27,7 @@ export default function SecondSection() {
 
 
   return (
-    <Box as='section' w="100vw" h="100vh" ref={container} position="relative" >
+    <Box as='section' w="100%" h="100vh" ref={container} position="relative" >
       <HStack justifyContent="space-around" alignItems="center">
         <VStack w="50%" h="100vh" px="40px" pt="150px" gap="60px">
           <Heading data-scroll data-scroll-speed={0.1} color="hermesWhite.500">Sabemos que a sua empresa é única, tem
@@ -60,12 +60,13 @@ export default function SecondSection() {
       <MotionBox w="100%" style={{ height }}
         position="relative"
         mt="-60px"
+       
       >
         <Box bgColor="hermesBlue.400" 
           h="1550%"
-          w="120%"
-          left="-10%"
-
+          w="101%"
+          right="0"
+          left="0"
           borderRadius="0 0 50% 50%"
           zIndex={1}
           position="absolute"

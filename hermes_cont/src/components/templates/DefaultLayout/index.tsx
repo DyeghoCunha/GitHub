@@ -11,7 +11,7 @@ interface IDefaultLayoutProps {
 export function DefaultLayout({ p, children }: IDefaultLayoutProps) {
   return (
     <>
-      <Box position="fixed" w="100%" top={0} m={0} p={0} zIndex={100}>
+      <Box  position="fixed" w="100%" top={0} m={0} p={0} zIndex={100}>
         <Header />
       </Box>
       <Container

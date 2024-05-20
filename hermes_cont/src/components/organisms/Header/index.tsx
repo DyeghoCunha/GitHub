@@ -7,7 +7,7 @@ import logo from "@/assets/image/logoHeaderHermes.png"
 function Header() {
 
   return (
-    <HStack as='header' zIndex={10000} backgroundColor="hermesBlue.400" h="80px">
+    <HStack as='header' zIndex={1000} backgroundColor="hermesBlue.400" h="80px" boxShadow="0px 5px 10px black">
       <Box ml={20} w="300px"><Image h="70px" src={logo.src} alt='Logo' /></Box>
       <HStack w="100%" h="100%" pt={5} pr="50px" justifyContent="center" alignItems="center">
         <HeaderTab />

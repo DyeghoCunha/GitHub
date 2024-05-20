@@ -93,24 +93,25 @@ export default function Home() {
     <main   >
       <VStack>
 
-         <HomeSection />
-        {/** <AnimatePresence mode="wait">
+  <HomeSection />  
+   <SecondSection />
+        <AnimatePresence mode="wait">
           {isLoading && <Preloader/>}
         </AnimatePresence>
-     
+   
        
-        <SecondSection />
+   
 
         <Box ref={container} position="relative" h="200vh">
           <Section1 scrollYProgress={scrollYProgress} />
           <Section2 scrollYProgress={scrollYProgress} />
         </Box>
-
+{/** 
         <Sobre />
         <Galeria />
         <Valores />
         <FifthSection />
-        <Footer />*/}
+        <Footer />  */}
       </VStack>
     </main>
   );

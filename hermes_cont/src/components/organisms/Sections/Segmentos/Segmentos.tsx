@@ -25,7 +25,7 @@ export default function Segmentos() {
 
 
   return (
-    <Box as='section' w="100vw" h="100vh"
+    <Box as='section' w="100vw"    h="100vh"
       bgGradient="linear(180deg, rgba(242,242,243,1) 0%,rgba(242,242,243,1) 50% , rgba(241,226,194,1)100%)"
       position="relative"
       ref={container}
@@ -73,11 +73,13 @@ export default function Segmentos() {
           position="relative"
           mt="300px"
           zIndex={20}
+           
         >
           <Box
             bgColor="rgba(241,226,194,1)"
             h="1550%"
             w="100%"
+            left="0"
             borderRadius="0 0 50% 50%"
             zIndex={1}
            
