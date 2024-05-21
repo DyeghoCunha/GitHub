@@ -12,12 +12,17 @@ import GradientText from '@/components/atoms/GradientText/GradientText'
 
 export default function HomeSection() {
   return (
-    <Box  as='section'  w="100%" position="relative"  h="100vh" bgColor="hermesBlue.500">
-    <Box overflow="hidden"  as='section' w="100%" position="absolute"   h="100vh" bgImage={bgImage.src} bgPosition="start" bgSize="contain" bgRepeat="no-repeat"></Box> 
-    <Box bgImage={bgSide.src}  overflow="hidden" w="100%"  right="0" position="absolute" h="100%" bgPosition="end" bgSize="cover" bgRepeat="no-repeat"></Box>
-      <Text mx="20px" bgColor="rgba(255,255,255,0.3)" p={3} 
-      borderRadius="8px" boxShadow="4px 4px 8px black" 
-      backdropFilter="blur(10px)" data-scroll data-scroll-speed={0.8}  position="absolute" left={0} bottom="-33%" opacity="1" color="white" fontSize="8vw" w="100%" lineHeight="8vw" ><GradientText>Relaxe enquanto nós fazemos as contas</GradientText></Text>
+    <Box as='section' w="100%" position="relative" h="100vh" bgColor="hermesBlue.500">
+      <Box overflow="hidden" as='section' w="100%" position="absolute" h="100vh" bgImage={bgImage.src} bgPosition="start" bgSize="contain" bgRepeat="no-repeat"></Box>
+      <Box bgImage={bgSide.src} overflow="hidden" w="100%" right="0" position="absolute" h="100%" bgPosition="end" bgSize="cover" bgRepeat="no-repeat"></Box>
+
+      <Text  bgColor="rgba(40, 40, 60,0.8)" p={3}
+      textAlign="center"
+        borderRadius="8px" boxShadow="0px 4px 8px black"
+        backdropFilter="blur(10px)" data-scroll data-scroll-speed={0.8}
+        position="absolute"  bottom="-33%" opacity="1" color="white"
+        fontSize="8vw" w="100%" lineHeight="8vw" >Relaxe enquanto 
+        <GradientText> nós fazemos as contas</GradientText></Text>
     </Box>
   )
 }

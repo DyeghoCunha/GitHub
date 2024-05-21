@@ -5,7 +5,7 @@ import HomeSection from "@/components/organisms/Sections/HomeSection/HomeSection
 import SecondSection from "@/components/organisms/Sections/SecondSection/SecondSection";
 import ThirdSection from "@/components/organisms/Sections/ThirdSection/ThirdSection";
 import Segmentos from "@/components/organisms/Sections/Segmentos/Segmentos";
-import FifthSection from "@/components/organisms/Sections/QuemSomos/QuemSomos";
+import QuemSomos from "@/components/organisms/Sections/QuemSomos/QuemSomos";
 import ParallaxSection from "@/components/organisms/Sections/ParallaxSection/ParallaxSection";
 import Sobre from "@/components/organisms/Sections/Sobre";
 import SmoothParallaxScroll from "@/components/molecules/SmoothParallaxScroll/SmoothParallaxScroll";
@@ -17,6 +17,9 @@ import { useEffect, useRef, useState } from "react";
 import Lenis from 'lenis';
 import Valores from "@/components/organisms/Sections/Valores/Valores";
 import Footer from "@/components/organisms/Footer";
+import { ForumLayout } from "@/components/templates/ForumLayout";
+
+
 const MotionBox = motion(Box);
 
 const Section1 = ({ scrollYProgress }) => {
@@ -52,6 +55,9 @@ const Section2 = ({ scrollYProgress }) => {
     </MotionBox>
   );
 };
+
+
+
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -92,26 +98,27 @@ export default function Home() {
   return (
     <main   >
       <VStack>
-{/** */}
-  
+        {/***/}
         <AnimatePresence mode="wait">
-          {isLoading && <Preloader/>}
+          {isLoading && <Preloader />}
         </AnimatePresence>
-   <HomeSection />  
-   <SecondSection />
-       
-   
-
-        <Box ref={container} position="relative" h="200vh">
+          <Box id="home" w="100%">
+          <HomeSection />
+        </Box>
+        <SecondSection />
+        <Box id="servicos" ref={container} position="relative" h="200vh">
           <Section1 scrollYProgress={scrollYProgress} />
           <Section2 scrollYProgress={scrollYProgress} />
         </Box>
-
-        <Sobre />
+        <Box id="sobre">
+          <Sobre />
+        </Box>
         <Galeria />
         <Valores />
-        <FifthSection />
-        <Footer />  
+       <Box id="time">
+          <QuemSomos />
+        </Box>
+         
       </VStack>
     </main>
   );

@@ -17,6 +17,7 @@ import { IEmpresa } from '@/types/types';
 import InputValue from '../InputCnpj/InputCnpj';
 import { contemCaractereInvalido, formatarNumero, limparNumero } from '@/utils/manipulaNumeros';
 import AnexoBox from '../AnexoBox/AnexoBox';
+import GradientBox from '@/components/atoms/GradientBox/GradientBox';
 
 interface ITextModal {
   title: string,
@@ -95,9 +96,19 @@ export default function ModalConsultaAnexo() {
   return (
 
     <Center >
-      <Button variant="hermes" justifyContent="end" pr={0} pt={2} pl="100px"
-        alignItems="end" borderRadius="100% 0px 8px 0px"
-        onClick={onOpen}><Text><GradientText>Consulta Anexo</GradientText></Text></Button>
+      <Box as='button' justifyContent="end" pr={0} pt={0} pl="0px"
+        alignItems="end" borderRadius="100% 0px 6px 0px"
+        onClick={onOpen}
+        outline="3px solid gray "
+        >
+        <Text color= "hermesBlue.400" _hover={{color:"white"}}><GradientBox style={{
+          
+          justifyContent: "end", paddingRight: "1px", paddingTop: "5px", paddingLeft: "120px",
+          alignItems: "end", borderRadius: "100% 0px 8px 0px",
+          fontSize: "25px", fontWeight: "bold",
+        }}>Consulta Anexo</GradientBox></Text>
+      </Box>
+
       <Modal isOpen={isOpen} onClose={onClose} >
         <ModalOverlay />
 

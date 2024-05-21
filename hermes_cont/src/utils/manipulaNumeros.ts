@@ -66,3 +66,7 @@ export function formatarParaReal(valor: string): string {
 
     return valorFormatado;
 }
+export function removerEspacos(str:any) {
+  // Substitui todos os espaços por uma string vazia
+  return str.replace(/\s+/g, "");
+}

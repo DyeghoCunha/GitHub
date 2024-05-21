@@ -64,7 +64,7 @@ export default function SecondSection() {
       >
         <Box bgColor="hermesBlue.400" 
           h="1550%"
-          w="101%"
+          w="100%"
           right="0"
           left="0"
           borderRadius="0 0 50% 50%"

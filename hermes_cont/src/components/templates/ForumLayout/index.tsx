@@ -1,6 +1,6 @@
 "use client"
 import Footer from "@/components/organisms/Footer";
-import Header from "@/components/organisms/Header";
+import Header from "./Header";
 import { Box, Container } from "@chakra-ui/react";
 import { useCycle } from "framer-motion";
 
@@ -9,7 +9,7 @@ interface IDefaultLayoutProps {
   children: React.ReactNode;
 }
 
-export function DefaultLayout({ p, children }: IDefaultLayoutProps) {
+export function ForumLayout({ p, children }: IDefaultLayoutProps) {
   return (
     <>
       <Box  position="fixed" w="100%" top={0} m={0} p={0} zIndex={100}>
@@ -25,6 +25,7 @@ export function DefaultLayout({ p, children }: IDefaultLayoutProps) {
         {children}
       </Container>
       <Footer/>
+
     </>
   );
 }

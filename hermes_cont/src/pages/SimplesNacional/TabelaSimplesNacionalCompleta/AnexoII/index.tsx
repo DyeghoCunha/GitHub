@@ -4,13 +4,14 @@ import { Box, Center, Heading, HStack, Table, TableCaption, TableContainer, Tbod
 import GradientText from '@/components/atoms/GradientText/GradientText';
 import Link from 'next/link';
 import image from "/public/hermesTabelaBg3.png"
+import { ForumLayout } from '@/components/templates/ForumLayout';
 
 export default function AnexoII() {
 
 
   return (
-    <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" mt="80px">
-      <VStack align="center" mt="50px" justify="start" h="100%" w="100%" >
+    <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" >
+      <VStack align="center" justify="start" h="100%" w="100%" mt="80px">
         <Box w="50%" h="100%" pb={10}>
           <VStack >
             <Box as='section'>
@@ -231,6 +232,6 @@ export default function AnexoII() {
 }
 AnexoII.getLayout = function getLayout(page: React.ReactElement) {
   return (
-    <DefaultLayout>{page}</DefaultLayout>
+   <ForumLayout>{page}</ForumLayout>
   );
 };

@@ -18,7 +18,7 @@ export default function AnexoBox({ cnae, descricao, isPrincipal }: IAnexoBox) {
       placement="right"
       hasArrow
     >
-      <Box w="100%">
+      <Box w="100%" >
         <Box border="3px solid gray" _hover={{ border: "3px solid white" }} role='group' position="relative" borderRadius="8px">
           <VStack p={2} >
             <HStack justify="space-between" w="100%">
@@ -30,7 +30,7 @@ export default function AnexoBox({ cnae, descricao, isPrincipal }: IAnexoBox) {
               <Box>
 
                 <Box border={anexo === "Não Optante" ? "1px solid red" : "1px solid gray"} p={2} bgColor={anexo === "Não Optante" ? "rgba(255,0,0,0.2)" : "hermesBlue.400"} borderRadius="8px"
-                  _groupHover={{ border: anexo==="Não Optante"?"1px solid rgba(255,0,0,0.2)":"1px solid white", bgColor: anexo==="Não Optante"?"red":"white", color:anexo==="Não Optante"?" rgba(0,0,0,0.6)": "hermesBlue.400", boxShadow: "inset 2px 2px 4px rgba(255,255,255,0.5),inset -2px -2px 4px rgba(0,0,0,0.5)" }}>
+                  _groupHover={{ outline: anexo==="Não Optante"?"1px solid rgba(255,0,0,0.2)":"none", bgColor: anexo==="Não Optante"?"red":"white", color:anexo==="Não Optante"?" rgba(0,0,0,0.6)": "hermesBlue.400", boxShadow: "inset 2px 2px 4px rgba(0,0,0,1),inset -2px -2px 4px rgba(0,0,0,1)" }}>
                   <Text>{anexo}</Text>
                 </Box>
 

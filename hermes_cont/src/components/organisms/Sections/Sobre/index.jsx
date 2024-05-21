@@ -25,14 +25,13 @@ export default function Sobre() {
 
 
             <Card
-
-
                 fontSize="32px" color="hermesBlue.400"
                 p={4}
                 textAlign="justify"
-                // bgColor="transparent"
+                bgColor="transparent"
                 backdropFilter="blur(10px)"
-                bgGradient="linear(130deg, rgba(241,226,194,0.5) 0%, rgba(242,242,243,0.5) 40%, rgba(242,242,243,0.5) 100%)"
+                boxShadow="4px 4px 8px black"
+                bgGradient="linear(130deg, rgba(241,226,194,0.8) 0%, rgba(242,242,243,0.8) 40%, rgba(242,242,243,1) 100%)"
                 position="absolute" bottom="40%" right="0" mx={10} zIndex={10}
             >
                 <HStack justifyContent="space-around">
@@ -51,11 +50,14 @@ export default function Sobre() {
                     </Box>
 
                     
-                    <Card w="30%" p={5} color="hermesBlue.400">
+                    <Card w="30%" 
+                    bgColor="transparent"
+                    p={5} color="hermesBlue.400" 
+                    boxShadow="inset 4px 4px 8px rgba(0,0,0,0.4), inset -4px -4px 8px rgba(0,0,0,0.2)">
                         <Text>Em busca de autonomia total para ir em
                             busca do seu propósito, ele decidiu abrir
-                            a Hermès com seu amigo e sócio Valmor.
-                            Em <GradientText>26 de novembro de 2020</GradientText> começaram
+                            a <GradientText>Hermès</GradientText> com seu amigo e sócio Valmor.
+                            Em <strong>26 de novembro de 2020</strong> começaram
                             as obras para a montagem do nosso
                             escritório, paralelamente aos primeiros
                             serviços prestados para clientes

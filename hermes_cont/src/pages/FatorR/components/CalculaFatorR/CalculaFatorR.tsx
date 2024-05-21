@@ -2,10 +2,11 @@ import GradientBox from '@/components/atoms/GradientBox/GradientBox'
 import GradientText from '@/components/atoms/GradientText/GradientText'
 import ImputNumber from '@/components/atoms/InputNumber/ImputNumber'
 import { atividadesFatorR, calculaFatorR, verificaAnexoFatorR } from '@/utils/fatorR'
-import { formatarParaReal } from '@/utils/manipulaNumeros'
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, FormControl, FormErrorMessage, FormHelperText, FormLabel, Heading, Input, Menu, MenuButton, MenuItem, MenuList, Select, Spacer, Text, Tooltip, VStack } from '@chakra-ui/react'
+import { formatarParaReal, limparNumero, removerEspacos } from '@/utils/manipulaNumeros'
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, FormControl, FormErrorMessage, FormHelperText, FormLabel, Heading, HStack, Input, Menu, MenuButton, MenuItem, MenuList, Select, Spacer, Text, Tooltip, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import bgImage from "@/assets/image/marcaDagua.png"
 
 export default function CalculaFatorR() {
 
@@ -79,9 +80,16 @@ export default function CalculaFatorR() {
   }, [fatorR])
 
   return (
-    <Card color="hermesBlue.500" bgColor="hermesBlue.400" boxShadow="4px 4px 8px rgba(0,0,0,0.8)">
+    <Card color="hermesBlue.500" bgColor="hermesBlue.400" 
+      boxShadow="4px 4px 8px rgba(0,0,0,0.8)"
+      bgImg={bgImage.src}
+      bgPos="center"
+      bgSize="contain"
+      bgRepeat="no-repeat"
+      mt="180px"
+    >
       <CardHeader>
-        <Text w="100%" fontSize="26px"><GradientText>Calculadora de Fator R</GradientText></Text>
+        <Heading w="100%"  textAlign="center" ><GradientText>Calculadora de Fator R</GradientText></Heading>
       </CardHeader>
       <CardBody w="100%">
         <Tooltip label={selectAtividadeString} >
@@ -159,8 +167,10 @@ export default function CalculaFatorR() {
         <VStack w="100%" color="white" >
           <Divider />
           <Text w="100%" textAlign="start" fontSize="20px">Seu <strong>Fator R</strong> atual é <GradientText style={{ fontSize: "30px" }}>{fatorR} %</GradientText></Text>
-          <Text w="100%" textAlign="start" fontSize="20px">Você está enquadrado no <GradientText style={{ fontSize: "30px" }}>{anexo}</GradientText></Text>
-
+          <HStack w="100%" >
+            <Text  textAlign="start" fontSize="20px">Você está enquadrado no </Text>
+            <Link href={`/SimplesNacional/TabelaSimplesNacionalCompleta/${removerEspacos(anexo)}`} ><Text><GradientText style={{ fontSize: "25px" }}>{anexo}</GradientText></Text></Link>
+          </HStack>
           <Link href="/SimplesNacional/CalculadoraSimples"><Text mt="20px"><GradientText>Calcule o Simples Nacional para o {anexo}</GradientText></Text></Link>
         </VStack>
 

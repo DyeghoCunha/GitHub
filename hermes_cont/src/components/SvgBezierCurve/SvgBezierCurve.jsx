@@ -59,12 +59,12 @@ export default function SvgBezierCurve() {
   }
 
   return (
-    <Flex align="center" justify="center" bgColor="black" zIndex={100}  w="100vw" >
+    <Flex align="center" justify="center" bgColor="black" zIndex={1}  w="100vw" >
         <Flex flexDir="column" alignItems="flex-end" width="100vw" >
             <Box h="0px" mb="0px" w="100vw" position="relative" >
-              <Box height="40px"  w="100%" position="relative" top="-20px" zIndex={100} _hover={{height:"500px", top:"-250px"}} onMouseEnter={() => {manageMouseEnter()}} onMouseMove={(e) => {manageMouseMove(e)}} onMouseLeave={() => {manageMouseLeave()}} ></Box>
-              <Box as='svg'  w="100%" height="500px" position="absolute" top="-250px">
-                <Box as='path' stroke="hermesGold.500" strokeWidth="3px" zIndex={100} fill="none" ref={path}></Box>
+              <Box height="40px"  w="100%" position="relative" top="-20px" zIndex={1} _hover={{height:"500px", top:"-250px"}} onMouseEnter={() => {manageMouseEnter()}} onMouseMove={(e) => {manageMouseMove(e)}} onMouseLeave={() => {manageMouseLeave()}} ></Box>
+              <Box as='svg'  w="100%" height="400px" position="absolute" top="-250px">
+                <Box as='path' stroke="hermesGold.500" strokeWidth="3px" zIndex={1} fill="none" ref={path}></Box>
               </Box>
             </Box>
         </Flex>

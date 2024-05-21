@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 
 const MotionBox = motion(Box)
 
-function HeaderTab() {
+function HeaderTabForum() {
 
 
 
@@ -47,29 +47,8 @@ function HeaderTab() {
         <Magnetic>
           <Box position="relative">
             <Box >
-              <LinkHeader href="#home" onClick={() => handleScrollToSection('home')}><Text fontSize="25px">Home</Text></LinkHeader>
+              <LinkHeader href="/" onClick={()=>{}}><Text fontSize="25px">Home</Text></LinkHeader>
             </Box>
-          </Box>
-        </Magnetic>
-      </HoverContainer>
-      <HoverContainer>
-        <Magnetic>
-          <Box position="relative">
-            <LinkHeader href="#sobre" onClick={() => handleScrollToSection('sobre')}><Text fontSize="25px">Sobre</Text></LinkHeader>
-          </Box>
-        </Magnetic>
-      </HoverContainer>
-      <HoverContainer>
-        <Magnetic>
-          <Box position="relative">
-            <LinkHeader href="#servicos" onClick={() => handleScrollToSection('servicos')} ><Text fontSize="25px">Serviços</Text></LinkHeader>
-          </Box>
-        </Magnetic>
-      </HoverContainer>
-      <HoverContainer>
-        <Magnetic>
-          <Box position="relative" >
-            <LinkHeader href="#time" onClick={() => handleScrollToSection('time')} ><Text fontSize="25px">Time</Text></LinkHeader>
           </Box>
         </Magnetic>
       </HoverContainer>
@@ -81,4 +60,4 @@ function HeaderTab() {
   );
 }
 
-export default HeaderTab;
+export default HeaderTabForum;

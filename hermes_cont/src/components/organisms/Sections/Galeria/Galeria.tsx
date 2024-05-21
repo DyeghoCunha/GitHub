@@ -42,9 +42,10 @@ export default function Galeria() {
         p={4}
         justifyContent="center"
         alignItems="center"
-        // bgColor="transparent"
+         bgColor="transparent"
+         boxShadow="4px 4px 8px black"
         backdropFilter="blur(10px)"
-        bgGradient="linear(130deg, rgba(241,226,194,0.5) 0%, rgba(242,242,243,0.5) 40%, rgba(242,242,243,0.5) 100%)"
+        bgGradient="linear(130deg, rgba(241,226,194,0.8) 0%, rgba(242,242,243,0.8) 40%, rgba(242,242,243,1) 100%)"
         position="absolute" top="5%" left="4%" zIndex={10}
       >
         <Text textAlign="justify">
@@ -64,9 +65,9 @@ export default function Galeria() {
         p={4}
         justifyContent="center"
         alignItems="center"
-        // bgColor="transparent"
+        boxShadow="4px 4px 8px black"
         backdropFilter="blur(10px)"
-        bgGradient="linear(130deg, rgba(241,226,194,0.5) 0%, rgba(242,242,243,0.5) 40%, rgba(242,242,243,0.5) 100%)"
+        bgGradient="linear(130deg, rgba(241,226,194,1) 0%, rgba(242,242,243,1) 40%, rgba(242,242,243,1) 100%)"
         position="absolute" top="25%" left="40%" zIndex={10}
       >
         <Text textAlign="justify">

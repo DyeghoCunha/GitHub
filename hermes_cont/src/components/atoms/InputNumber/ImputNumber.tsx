@@ -46,7 +46,7 @@ export default function ImputNumber({ isInvalid, valueNumber, onChange, onBlurVa
       />
       <Input
         type='text'
-        bgColor="hermesBlue.400"
+        bgColor="transparent"
         border="3px solid gray"
         color="white"
         fontSize="26px"

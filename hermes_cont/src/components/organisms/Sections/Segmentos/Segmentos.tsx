@@ -32,7 +32,7 @@ export default function Segmentos() {
     >
       <VStack w="100%" h="100%">
 
-        <Box ml="120px" mt="40px" w="100%">
+        <Box pl="120px" mt="40px" w="100%">
           <HermesCharacter colorProp={""} fontSize={""}  paragraph={paragraph} />
         </Box>
 
@@ -48,14 +48,15 @@ export default function Segmentos() {
             </SimpleGrid>
           </Center>
 
-          <Center w="100%" px="40px" h="100%" pt="7%" gap="60px" >
+          <Center w="100%" px="40px" mb="100px" h="100%" pt="7%" gap="60px" >
             <VStack w="100%" h="100%" data-scroll data-scroll-speed={0.1}>
-              <Text letterSpacing="3px" textAlign="right" fontSize="21px" mb="80px" >Unindo nossa experiência, profissionais
+              <Text letterSpacing="3px" textAlign="right" fontSize="21px" mb="80px" >
+                Unindo nossa experiência, profissionais
                 treinados e a diversidade da nossa atuação
                 nas mais diversas áreas, temos expertise para
                 fornecer a solução ideal para o seu negócio.</Text>
 
-              <VStack w="94%" alignItems="end">
+              <VStack  alignItems="end">
                 <Heading lineHeight="50px" textAlign="right">Seja qual for a sua
                   necessidade, estamos aqui
                   para impulsionar o seu sucesso

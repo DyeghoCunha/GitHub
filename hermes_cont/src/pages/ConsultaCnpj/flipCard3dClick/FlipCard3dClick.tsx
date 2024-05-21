@@ -20,7 +20,7 @@ export default function FlipCard3dClick({ front, back,isFlipProp }: IFlipCard3d)
   
 
   return (
-    <Box className={styles.container} >
+    <Box className={styles.container} zIndex={1000} >
       <Box className={styles["card-inner"]}
         transform={isFlipProp ? "rotateY(180deg)" : "rotateY(0deg)"}
       >

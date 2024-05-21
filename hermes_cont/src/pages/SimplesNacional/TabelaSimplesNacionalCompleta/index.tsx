@@ -4,13 +4,14 @@ import { Box, Center, Heading, HStack, Table, TableCaption, TableContainer, Tbod
 import Link from 'next/link';
 import React from 'react'
 import image from "/public/hermesTabelaBg3.png"
+import { ForumLayout } from '@/components/templates/ForumLayout';
 
 export default function TabelaSimplesNacionalCompleta() {
 
 
   return (
-    <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" my={10}>
-      <HStack w="80%"  >
+    <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" >
+      <HStack w="80%" mt="80px"  >
         <Box border="1px solid white" as='aside' h="100vh" w="10%" ></Box>
         <Box w="100%" h="100%" pb={10}>
           <VStack  mt={10}>
@@ -370,6 +371,6 @@ export default function TabelaSimplesNacionalCompleta() {
 }
 TabelaSimplesNacionalCompleta.getLayout = function getLayout(page: React.ReactElement) {
   return (
-    <DefaultLayout>{page}</DefaultLayout>
+    <ForumLayout>{page}</ForumLayout>
   );
 };
