@@ -86,7 +86,7 @@ export default function CalculaFatorR() {
       bgPos="center"
       bgSize="contain"
       bgRepeat="no-repeat"
-      mt="180px"
+      mt={{base:"50px",md:"10px",xxl:"50px"}}
     >
       <CardHeader>
         <Heading w="100%"  textAlign="center" ><GradientText>Calculadora de Fator R</GradientText></Heading>
@@ -159,11 +159,11 @@ export default function CalculaFatorR() {
             error='Massa Salarial inválida ! '
           />
 
-          <Button isDisabled={salario > 0 && faturamento > 0 ? false : true} onClick={handleClick} w="100%" mt="20px" variant="hermes"><Text><GradientText>Calcular</GradientText></Text></Button>
+          <Button zIndex={110} isDisabled={salario > 0 && faturamento > 0 ? false : true} onClick={handleClick} w="100%" mt="20px" variant="hermes"><Text><GradientText>Calcular</GradientText></Text></Button>
         </VStack>
       </CardBody>
 
-      <CardFooter display={anexo && anexo.length > 2 ? "flex" : "none"} >
+      <CardFooter display={anexo && anexo.length > 2 ? "flex" : "none"} zIndex={110} >
         <VStack w="100%" color="white" >
           <Divider />
           <Text w="100%" textAlign="start" fontSize="20px">Seu <strong>Fator R</strong> atual é <GradientText style={{ fontSize: "30px" }}>{fatorR} %</GradientText></Text>

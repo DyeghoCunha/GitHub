@@ -73,8 +73,8 @@ export const lightTheme = extendTheme({
     sm: "320px",
     md: "768px",
     lg: "960px",
-    xl: "1700px",
-    "2xl": "1900px",
+    xl: "1900px",
+    xxl: "2000px",
   },
   components: {
     PopoverContent: {

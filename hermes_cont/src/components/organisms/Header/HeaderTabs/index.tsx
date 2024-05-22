@@ -73,7 +73,9 @@ function HeaderTab() {
           </Box>
         </Magnetic>
       </HoverContainer>
+      <Box zIndex={1000000000}>
       <HeaderMenu />
+      </Box>
     </HStack>
 
 

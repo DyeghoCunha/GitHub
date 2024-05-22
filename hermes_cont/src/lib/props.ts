@@ -126,6 +126,6 @@ export const squadProps=[
   },
   {name:"Gabriel Von Fruhauf",
     text:"Sou contador, formado em 2019 e com atuação ativa na contabilidade de empresas desde 2012, tenho em mente que ser contador vai muito além de lidar com números, demonstrativos e declarações fiscais. Com a contabilidade podemos nos conectar com pessoas, absorver mais conhecimento e trocar experiências de vida para guardar em nossas memórias!"
-  ,image:gabriel2.src
+  ,image:gabriel.src
   }
 ]

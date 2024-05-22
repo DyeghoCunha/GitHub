@@ -50,7 +50,8 @@ export default function Sobre() {
                     </Box>
 
                     
-                    <Card w="30%" 
+                    <Card w="40%"
+                    
                     bgColor="transparent"
                     p={5} color="hermesBlue.400" 
                     boxShadow="inset 4px 4px 8px rgba(0,0,0,0.4), inset -4px -4px 8px rgba(0,0,0,0.2)">

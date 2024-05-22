@@ -33,13 +33,13 @@ export default function Segmentos() {
       <VStack w="100%" h="100%">
 
         <Box pl="120px" mt="40px" w="100%">
-          <HermesCharacter colorProp={""} fontSize={""}  paragraph={paragraph} />
+          <HermesCharacter colorProp={""} fontSize={{base:"100px",md:"130px",xxl:"180px"}}  paragraph={paragraph} />
         </Box>
 
 
         
-        <Box h="90px"></Box>
-        <HStack justifyContent="space-around" alignItems="center" px="80px">
+        
+        <HStack justifyContent="space-around" mt="130px" alignItems="center" px="80px">
           <Center w="100%" h="100%"  >
             <SimpleGrid columns={3} gap={3} data-scroll data-scroll-speed={0.1}>
               {props.map((card, index) => (

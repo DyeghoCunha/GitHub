@@ -12,7 +12,7 @@ import SvgBezierCurve from "@/components/SvgBezierCurve/SvgBezierCurve"
 
 const Endereco = () => {
   return (
-    <VStack zIndex={100} color="white" fontSize="20px" justify="start" align="start" mr="5%">
+    <VStack zIndex={{base:100,md:10,xxl:100}} color="white" fontSize="20px" justify="start" align="start" mr="5%">
       <Map />
       <GradientText style={{ fontSize: "30px" }}>Endereço</GradientText>
       <HStack gap="20px">

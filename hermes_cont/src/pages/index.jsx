@@ -3,7 +3,6 @@ import { Box, Center, Flex, HStack, Heading, Image, Mark, Text, VStack } from "@
 
 import HomeSection from "@/components/organisms/Sections/HomeSection/HomeSection";
 import SecondSection from "@/components/organisms/Sections/SecondSection/SecondSection";
-import ThirdSection from "@/components/organisms/Sections/ThirdSection/ThirdSection";
 import Segmentos from "@/components/organisms/Sections/Segmentos/Segmentos";
 import QuemSomos from "@/components/organisms/Sections/QuemSomos/QuemSomos";
 import ParallaxSection from "@/components/organisms/Sections/ParallaxSection/ParallaxSection";
@@ -18,6 +17,7 @@ import Lenis from 'lenis';
 import Valores from "@/components/organisms/Sections/Valores/Valores";
 import Footer from "@/components/organisms/Footer";
 import { ForumLayout } from "@/components/templates/ForumLayout";
+import Servicos from "@/components/organisms/Sections/Servicos/Servicos";
 
 
 const MotionBox = motion(Box);
@@ -40,7 +40,7 @@ const Section1 = ({ scrollYProgress }) => {
       color="white"
       pb="10vh"
     >
-      <ThirdSection />
+      <Servicos />
     </MotionBox>
   );
 };
@@ -97,12 +97,13 @@ export default function Home() {
 
   return (
     <main   >
-      <VStack>
-        {/***/}
+      <VStack w="100vw">
+        {/**
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
-        </AnimatePresence>
-          <Box id="home" w="100%">
+        </AnimatePresence>*/}
+
+        <Box id="home" w="100%">
           <HomeSection />
         </Box>
         <SecondSection />
@@ -115,10 +116,10 @@ export default function Home() {
         </Box>
         <Galeria />
         <Valores />
-       <Box id="time">
+        <Box id="time">
           <QuemSomos />
         </Box>
-         
+
       </VStack>
     </main>
   );

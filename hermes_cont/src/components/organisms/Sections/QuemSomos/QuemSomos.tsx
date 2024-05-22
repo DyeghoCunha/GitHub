@@ -36,7 +36,7 @@ export default function QuemSomos() {
             transition={{ duration: 1 }} />
           <Heading position="absolute" top="-15%" w="100vw" pl="2%" fontSize="7vw" color="white"><GradientText>Quem Somos</GradientText></Heading>
         </Box>
-        <VStack w="50%"  >
+        <VStack w="60%"  >
           <Box onMouseLeave={handleMouseLeave} >
             {cardProps.map((props, index) => (
               <Box key={index} my={10} onMouseOver={() => handleMouseEnter(props.image)} >

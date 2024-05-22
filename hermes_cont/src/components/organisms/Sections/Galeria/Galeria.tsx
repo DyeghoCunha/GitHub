@@ -21,24 +21,24 @@ export default function Galeria() {
       <Card bgColor="transparent" boxShadow="5px 5px 5px rgba(0,0,0,0.5)" border="1px solid white"
         bgGradient="linear(130deg, rgba(241,226,194,0.8) 0%, rgba(242,242,243,0.5) 40%, rgba(242,242,243,0.9) 100%)"
         backdropFilter="blur(10px)"
-        position="absolute" top="-7%" left="5%" w="70vw" zIndex={10} p={10} >
-        <Text textAlign="justify" >
-          <GradientText style={{ fontSize: "65px", textShadow: "-2px -2px 1px #28283c" }}>
+        position="absolute" top="-6%" left="5%" w="70vw" zIndex={10} p={10} >
+        <Text textAlign="justify" color="hermesBlue.400" fontWeight="bold" fontSize={{base:"30px",md:"40px",xxl:"50px"}}>
+         
             “
             Além de fazer a contabilidade contribuímos
             acompanhando de perto cada cliente, orientando,
             aconselhando e colaborando com o empresário.
             ”
 
-          </GradientText>
+         
         </Text>
-        <Text mt={5} w="100%" textAlign="end">
-          <GradientText style={{ fontSize: "80px" }}>
+        <Text mt={0} w="100%" textAlign="end" lineHeight={{base:"1px",xxl:"40px"}}>
+          <GradientText style={{ fontSize: "40px" }}>
             - Emir A. Muse</GradientText></Text>
       </Card>
       <Card
         w="25vw"
-        fontSize="32px" color="hermesBlue.400"
+        fontSize={{base:"20px",md:"25px",xxl:"32px"}} color="hermesBlue.400"
         p={4}
         justifyContent="center"
         alignItems="center"
@@ -60,15 +60,15 @@ export default function Galeria() {
       </Card>
 
       <Card
-        w="25vw"
-        fontSize="32px" color="hermesBlue.400"
+       w={{base:"30vw", md:"50vw", xxl:"35vw"}}
+        fontSize={{base:"20px",md:"25px",xxl:"32px"}} color="hermesBlue.400"
         p={4}
         justifyContent="center"
         alignItems="center"
         boxShadow="4px 4px 8px black"
         backdropFilter="blur(10px)"
         bgGradient="linear(130deg, rgba(241,226,194,1) 0%, rgba(242,242,243,1) 40%, rgba(242,242,243,1) 100%)"
-        position="absolute" top="25%" left="40%" zIndex={10}
+        position="absolute" top="25%" left={{base:"40%",md:"25%",xxl:"35%"}} zIndex={10}
       >
         <Text textAlign="justify">
           Dois meses depois o Gabriel se uniu à
@@ -83,8 +83,8 @@ export default function Galeria() {
           certo.</Text>
       </Card>
 
-      <Text position="absolute" top="14.2%" left="35%" zIndex={10}><GradientText style={{ fontSize: "500px" }}>Os</GradientText></Text>
-      <Text position="absolute" top="30%" left="50%" zIndex={10}><GradientText style={{ fontSize: "500px" }}>100</GradientText></Text>
+      <Text position="absolute" top={{base:"15.2%",md:"14%",xxl:"15.2%"}} left={{base:"35%",md:"5%",xxl:"20%"}} zIndex={10}><GradientText style={{ fontSize: "430px" }}>Os</GradientText></Text>
+      <Text position="absolute" top={{base:"29%",md:"26.3%",xxl:"29%"}} left={{base:"50%",md:"50%",xxl:"50%"}} zIndex={10}><GradientText style={{ fontSize: "460px" }}>100</GradientText></Text>
 
 
 
@@ -93,8 +93,8 @@ export default function Galeria() {
 
 
       <Card
-        w="25vw"
-        fontSize="32px" color="hermesBlue.400"
+        w={{base:"30vw", md:"50vw", xxl:"35vw"}}
+        fontSize={{base:"20px",md:"30px",xxl:"32px"}} color="hermesBlue.400"
         p={4}
 
         // bgColor="transparent"
