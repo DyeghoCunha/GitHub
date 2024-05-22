@@ -24,7 +24,9 @@ export function DefaultLayout({ p, children }: IDefaultLayoutProps) {
       >
         {children}
       </Container>
+     
       <Footer/>
+     
     </>
   );
 }

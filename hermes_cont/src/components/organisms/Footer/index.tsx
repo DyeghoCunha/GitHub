@@ -1,4 +1,4 @@
-import { Box, Card, Divider, HStack, Image, Link, List, ListIcon, ListItem, Spacer, Text, VStack } from '@chakra-ui/react'
+import { Box, Card, Divider, HStack, Image, Link, List, ListIcon, ListItem, Spacer, Stack, Text, useMediaQuery, VStack } from '@chakra-ui/react'
 import React from 'react'
 import ytLogo from "@/assets/image/youtube.png"
 import img from "@/assets/image/footerHermes.png"
@@ -11,23 +11,28 @@ import mailImg from "/public/images/email.png"
 import SvgBezierCurve from "@/components/SvgBezierCurve/SvgBezierCurve"
 
 const Endereco = () => {
+  
+ const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
   return (
-    <VStack zIndex={{base:100,md:10,xxl:100}} color="white" fontSize="20px" justify="start" align="start" mr="5%">
+    <VStack zIndex={{ base: 100, md: 10, xxl: 100 }} color="white" fontSize="20px" justify="start" align="start" mr="5%">
       <Map />
-      <GradientText style={{ fontSize: "30px" }}>Endereço</GradientText>
-      <HStack gap="20px">
+      <GradientText {{ fontSize: isLargerThan800 ? "30px" : "10px" }}>Endereço</GradientText>
+      <HStack gap="20px" fontSize={{ base: "10px", md: "22px" }}>
         <Text>Rua: 2028 </Text>
         <Text>nº: 100 </Text>
         <Text>Sala 01 </Text>
         <Text>Cep: 88330-486</Text>
       </HStack>
-      <Text>Balneário Camboriú - Santa Catarina</Text>
+      <Text fontSize={{ base: "10px", md: "22px" }}>Balneário Camboriú - Santa Catarina</Text>
 
     </VStack>)
 }
 
 
 export default function Footer() {
+
+  const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
+
   return (
     <Box as='footer' pb="20px" w="100vw" h="100%" bgColor="hermesBlue.400" bgImage={img.src} bgPos="top"
       bgRepeat="no-repeat" bgSize="fill">
@@ -35,37 +40,37 @@ export default function Footer() {
         <Box w="100%" h="100%" mb="40px" zIndex={1}>
           <SvgBezierCurve />
         </Box>
-        <HStack w="100%" h="100%" justify="space-between">
+        <Stack direction={{ base: "column", md: "row" }} w="100%" h="100%" justify="space-between" align="center">
 
           <VStack align="start" gap="20px" ml="5%">
-
             <Link href='https://api.whatsapp.com/send?phone=554735144771&text=Ola!%20Eu%20vim%20atrav%C3%A9s%20do%20Site%20e%20estou%20com%20d%C3%BAvidas' target='_blank'>
-              <HStack><Image w="60px" src={whatsImg.src} />
-                <GradientText style={{ fontSize: "30px" }}>
-                  (47) 3514 4771
-                </GradientText>
+              <HStack ><Image w={{ base: "30px", md: "60px" }} src={whatsImg.src} alt="" />
+                <Box>
+                  <GradientText style={{ fontSize: isLargerThan800 ? "30px" : "10px" }}>
+                    (47) 3514 4771
+                  </GradientText>
+                </Box>
+
               </HStack>
             </Link>
             <Link href='https://www.instagram.com/hermescontabilidade/' target='_blank'>
-              <HStack><Image w="60px" src={instaImg.src} />
-                <GradientText style={{ fontSize: "30px" }}>
+              <HStack><Image w={{ base: "30px", md: "60px" }} src={instaImg.src} alt="" />
+                <GradientText style={{ fontSize: isLargerThan800 ? "30px" : "10px" }}>
                   HERMESCONTABILIDADE
                 </GradientText>
               </HStack>
             </Link>
 
             <Link href="mailto:contato@hermes.cnt.br" target='_blank'>
-              <HStack><Image w="60px" src={mailImg.src} />
-                <GradientText style={{ fontSize: "30px" }}>
+              <HStack><Image w={{ base: "30px", md: "60px" }} src={mailImg.src} alt="" />
+                <GradientText style={{ fontSize: isLargerThan800 ? "30px" : "10px" }}>
                   contato@hermes.cnt.br
                 </GradientText>
               </HStack>
             </Link>
-
-
           </VStack>
           <Endereco />
-        </HStack>
+        </Stack>
       </VStack>
     </Box >
   )

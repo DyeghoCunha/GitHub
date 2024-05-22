@@ -16,7 +16,7 @@ export default function HomeSection() {
       <Box overflow="hidden"
         as='section' w="100%"
         position="absolute" h="100vh" bgImage={bgImage.src} bgPosition="start" bgSize="contain" bgRepeat="no-repeat"></Box>
-      <Box bgImage={bgSide.src} overflow="hidden" w="100%" right="0" position="absolute" h="100%" bgPosition="end" bgSize="cover" bgRepeat="no-repeat"></Box>
+      <Box display={{base:"none",md:"flex"}} bgImage={bgSide.src} overflow="hidden" w="100%" right="0" position="absolute" h="100%" bgPosition="end" bgSize="cover" bgRepeat="no-repeat"></Box>
 
       <Text bgColor="rgba(40, 40, 60,0.8)" p={3}
         textAlign="center"
