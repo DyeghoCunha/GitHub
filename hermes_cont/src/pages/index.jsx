@@ -101,14 +101,15 @@ export default function Home() {
 
         <Box id="home" w="100%">
           <HomeSection />
-        </Box>
-        {/**
+        </Box>  
+         <SecondSection />
+       {/**
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
 
         
-        <SecondSection />
+      
         <Box id="servicos" ref={container} position="relative" h="200vh">
           <Section1 scrollYProgress={scrollYProgress} />
           <Section2 scrollYProgress={scrollYProgress} />
