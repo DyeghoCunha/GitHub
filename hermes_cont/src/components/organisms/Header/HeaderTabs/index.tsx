@@ -6,12 +6,12 @@ import Magnetic from '@/common/Magnetic';
 
 import styles from './style.module.scss';
 import { motion } from 'framer-motion';
-
+import CurvedMenu from "@/components/CurvedMenu"
 
 
 const MotionBox = motion(Box)
 
-function HeaderTab() {
+function Desktop() {
 
 
 
@@ -40,8 +40,8 @@ function HeaderTab() {
   }
 
 
-  return (
 
+  return (
     <HStack gap="40px" className={styles.nav} >
       <HoverContainer>
         <Magnetic>
@@ -74,8 +74,54 @@ function HeaderTab() {
         </Magnetic>
       </HoverContainer>
       <Box zIndex={1000000000}>
-      <HeaderMenu />
+        <HeaderMenu />
       </Box>
+    </HStack>
+
+
+
+
+  );
+}
+function Mobile() {
+
+
+  function handleScrollToSection(sectionId: any) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  const original = () => <>
+
+    <Box position="relative">
+      <Box >
+        <LinkHeader href="#home" onClick={() => handleScrollToSection('home')}><Text fontSize="25px">Home</Text></LinkHeader>
+      </Box>
+    </Box>
+    <Box position="relative">
+      <LinkHeader href="#sobre" onClick={() => handleScrollToSection('sobre')}><Text fontSize="25px">Sobre</Text></LinkHeader>
+    </Box>
+
+
+    <Box position="relative">
+      <LinkHeader href="#servicos" onClick={() => handleScrollToSection('servicos')} ><Text fontSize="25px">Serviços</Text></LinkHeader>
+    </Box>
+
+    <Box position="relative" >
+      <LinkHeader href="#time" onClick={() => handleScrollToSection('time')} ><Text fontSize="25px">Time</Text></LinkHeader>
+    </Box>
+    <Box zIndex={1000000000}>
+      <HeaderMenu />
+    </Box>
+  </>
+  return (
+
+    <HStack gap="0px" className={styles.nav} >
+
+      <CurvedMenu />
+
     </HStack>
 
 
@@ -83,4 +129,6 @@ function HeaderTab() {
   );
 }
 
-export default HeaderTab;
+export const HeaderTab = {
+  Desktop, Mobile
+};
