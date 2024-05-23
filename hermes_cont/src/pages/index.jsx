@@ -103,17 +103,21 @@ export default function Home() {
           <HomeSection />
         </Box>  
          <SecondSection />
-       {/**
+      
+       
+
+        <Segmentos/>
+
+
+      {/**
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
-
-        
-      
+    
         <Box id="servicos" ref={container} position="relative" h="200vh">
           <Section1 scrollYProgress={scrollYProgress} />
           <Section2 scrollYProgress={scrollYProgress} />
-        </Box>
+        </Box> 
         <Box id="sobre">
           <Sobre />
         </Box>
