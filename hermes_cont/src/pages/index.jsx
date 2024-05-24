@@ -50,7 +50,7 @@ const Section2 = ({ scrollYProgress }) => {
   const rotate = useTransform(scrollYProgress, [0, 1], [5, 0]);
 
   return (
-    <MotionBox style={{ scale, rotate }} h="100vh" position="relative">
+    <MotionBox style={{ scale, rotate }} h={{base:"800px",md:"100vh"}} position="relative">
       <Segmentos />
     </MotionBox>
   );
@@ -104,20 +104,20 @@ export default function Home() {
         </Box>  
          <SecondSection />
       
-       
+      
 
-        <Segmentos/>
+     <Box id="servicos" ref={container} position="relative" h="200vh">
+          <Section1 scrollYProgress={scrollYProgress} />
+          <Section2 scrollYProgress={scrollYProgress} />
+     </Box> 
+{/**
 
-
-      {/**
+      
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
     
-        <Box id="servicos" ref={container} position="relative" h="200vh">
-          <Section1 scrollYProgress={scrollYProgress} />
-          <Section2 scrollYProgress={scrollYProgress} />
-        </Box> 
+   
         <Box id="sobre">
           <Sobre />
         </Box>
