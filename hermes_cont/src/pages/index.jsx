@@ -103,14 +103,16 @@ export default function Home() {
           <HomeSection />
         </Box>  
          <SecondSection />
-      
-      
+      <Box id="sobre">
+          <Sobre />
+        </Box>   
+ {/**     
 
      <Box id="servicos" ref={container} position="relative" h="200vh">
           <Section1 scrollYProgress={scrollYProgress} />
           <Section2 scrollYProgress={scrollYProgress} />
      </Box> 
-{/**
+
 
       
         <AnimatePresence mode="wait">
@@ -118,9 +120,7 @@ export default function Home() {
         </AnimatePresence>
     
    
-        <Box id="sobre">
-          <Sobre />
-        </Box>
+     
         <Galeria />
         <Valores />
         <Box id="time">

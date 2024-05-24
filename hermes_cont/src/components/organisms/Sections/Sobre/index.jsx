@@ -25,7 +25,7 @@ export default function Sobre() {
 
 
             <Card
-                fontSize="32px" color="hermesBlue.400"
+                fontSize={{ base: "10px", md: "32px" }} color="hermesBlue.400"
                 p={4}
                 textAlign="justify"
                 bgColor="transparent"
@@ -36,12 +36,12 @@ export default function Sobre() {
             >
                 <HStack justifyContent="space-around">
                     <Box w="50%" p={5}>
-                        <Heading mb={10}>Começamos da mesma forma que muitas empresas, que
+                        <Heading mb={10} fontSize={{ base: "10px", md: "32px" }}>Começamos da mesma forma que muitas empresas, que
                             hoje são sólidas, iniciaram no passado: com o sonho de
                             mudar o status quo da nossa área fazendo pelos clientes
                             algo de valor, realmente significativo para os seus negócios.
                         </Heading>
-                        <Text>Em 2020, em um cenário de pandemia, extremamente desafiador para
+                        <Text fontSize={{ base: "10px", md: "32px" }}>Em 2020, em um cenário de pandemia, extremamente desafiador para
                             pessoas e empresas, nosso sócio fundador, Emir Muse, havia recém
                             saído de uma sociedade que não estava alinhada com seus valores e o
                             seu desejo por entregar resultados que causassem impactos reais para
@@ -49,13 +49,13 @@ export default function Sobre() {
                         </Text>
                     </Box>
 
-                    
+
                     <Card w="40%"
-                    
-                    bgColor="transparent"
-                    p={5} color="hermesBlue.400" 
-                    boxShadow="inset 4px 4px 8px rgba(0,0,0,0.4), inset -4px -4px 8px rgba(0,0,0,0.2)">
-                        <Text>Em busca de autonomia total para ir em
+
+                        bgColor="transparent"
+                        p={5} color="hermesBlue.400"
+                        boxShadow="inset 4px 4px 8px rgba(0,0,0,0.4), inset -4px -4px 8px rgba(0,0,0,0.2)">
+                        <Text fontSize={{ base: "10px", md: "32px" }}>Em busca de autonomia total para ir em
                             busca do seu propósito, ele decidiu abrir
                             a <GradientText>Hermès</GradientText> com seu amigo e sócio Valmor.
                             Em <strong>26 de novembro de 2020</strong> começaram
