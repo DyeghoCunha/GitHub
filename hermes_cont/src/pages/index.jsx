@@ -103,10 +103,12 @@ export default function Home() {
           <HomeSection />
         </Box>  
          <SecondSection />
-      <Box id="sobre">
+
+      <Galeria />   
+  {/**          <Box id="sobre">
           <Sobre />
         </Box>   
- {/**     
+
 
      <Box id="servicos" ref={container} position="relative" h="200vh">
           <Section1 scrollYProgress={scrollYProgress} />
@@ -121,7 +123,7 @@ export default function Home() {
     
    
      
-        <Galeria />
+        
         <Valores />
         <Box id="time">
           <QuemSomos />

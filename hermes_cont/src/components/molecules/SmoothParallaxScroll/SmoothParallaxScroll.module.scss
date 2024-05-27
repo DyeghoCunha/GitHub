@@ -44,3 +44,56 @@
 .spacer{
     height: 1vh;
 }
+
+
+ @media (max-width: 600px) { 
+
+.gallery{
+    height: 200vh;
+    width: 100vw;
+    background: #28283c;
+    position: relative;
+    display: flex;
+    gap: 2vw;
+    padding: 2vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    .column{
+        position: relative;
+        height: 100%;
+        width: 25vw;
+        min-width: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        .imageContainer{
+            height: 40vh;
+            width: 100%;
+            position: relative;
+            border-radius: 1vw;
+            overflow: hidden;
+
+            img{
+                object-fit: cover;
+            }
+        }
+        &:nth-of-type(1){
+            top: -54%;
+        }
+        &:nth-of-type(2){
+            top: -50%;
+        }
+        &:nth-of-type(3){
+            top: -50%;
+        }
+        &:nth-of-type(4){
+            top: -50%;
+        }
+    }
+}
+.spacer{
+    height: 1vh;
+}
+
+
+ } 
