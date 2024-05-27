@@ -3,7 +3,7 @@ import styles from './page.module.scss'
 import ZoomParallax from '@/components/molecules/ZoomParallax';
 import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis'
-import { Box, Card, Center, Heading, HStack, Text, VStack } from '@chakra-ui/react';
+import { Box, Card, Center, Heading, HStack, Stack, Text, VStack } from '@chakra-ui/react';
 import SecondSection from '@/components/organisms/Sections/SecondSection/SecondSection';
 import GradientText from '@/components/atoms/GradientText/GradientText';
 
@@ -26,17 +26,18 @@ export default function Sobre() {
 
             <Card
                 fontSize={{ base: "10px", md: "32px" }} color="hermesBlue.400"
-                p={4}
+                p={{ base: 2, md: 4 }}
                 textAlign="justify"
                 bgColor="transparent"
                 backdropFilter="blur(10px)"
                 boxShadow="4px 4px 8px black"
                 bgGradient="linear(130deg, rgba(241,226,194,0.8) 0%, rgba(242,242,243,0.8) 40%, rgba(242,242,243,1) 100%)"
-                position="absolute" bottom="40%" right="0" mx={10} zIndex={10}
+                position="absolute" bottom={{base:"20%",md:"40%"}} right="0" mx={{ base: 0, md: 10 }} zIndex={10}
             >
-                <HStack justifyContent="space-around">
-                    <Box w="50%" p={5}>
-                        <Heading mb={10} fontSize={{ base: "10px", md: "32px" }}>Começamos da mesma forma que muitas empresas, que
+                <Stack direction={{ base: "column", md: "row" }} justifyContent="space-around">
+                    <Box w={{ base: "100%", md: "50%" }} p={{ base: 0, md: 5 }}>
+                        <Heading mb={{base:2,md:10}} fontSize={{ base: "10px", md: "32px" }}>
+                            Começamos da mesma forma que muitas empresas, que
                             hoje são sólidas, iniciaram no passado: com o sonho de
                             mudar o status quo da nossa área fazendo pelos clientes
                             algo de valor, realmente significativo para os seus negócios.
@@ -50,10 +51,11 @@ export default function Sobre() {
                     </Box>
 
 
-                    <Card w="40%"
+                    <Card w={{ base: "100%", md: "40%" }}
 
                         bgColor="transparent"
-                        p={5} color="hermesBlue.400"
+                        p={{ base: 2, md: 5 }}
+                        color="hermesBlue.400"
                         boxShadow="inset 4px 4px 8px rgba(0,0,0,0.4), inset -4px -4px 8px rgba(0,0,0,0.2)">
                         <Text fontSize={{ base: "10px", md: "32px" }}>Em busca de autonomia total para ir em
                             busca do seu propósito, ele decidiu abrir
@@ -66,20 +68,20 @@ export default function Sobre() {
                             recebendo o padrão de atendimento
                             superior que temos até hoje.</Text>
                     </Card>
-                </HStack>
+                </Stack>
             </Card>
 
 
             <Text
                 fontSize="10vw" color="hermesBlue.400"
                 textAlign="justify"
-                position="absolute" top="-5%" left="2%" zIndex={10}
+                position="absolute" top={{ base: "-5%", md: "-5%" }} left="2%" zIndex={0}
             ><GradientText>Nossa História</GradientText></Text>
 
             <Text
-                fontSize="10vw" color="hermesBlue.400"
+                fontSize={{ base: "20vw", md: "10vw" }} color="hermesBlue.400"
                 textAlign="justify"
-                position="absolute" top="30%" left="2%" zIndex={10}
+                position="absolute" top={{ base: "53%", md: "30%" }} left="2%" zIndex={10}
             ><GradientText>O Início</GradientText></Text>
 
             <ZoomParallax />

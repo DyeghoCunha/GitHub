@@ -99,7 +99,7 @@
 
  @media (max-width: 600px) {
 .container{
-    height: 400vh;
+    height: 200vh;
     position: relative;
     .sticky{
         position: sticky;
@@ -117,7 +117,7 @@
             justify-content: center;
             .imageContainer{
                 position: relative;
-                width: 25vw;
+                width: 45vw;
                 height: 25vh;
                 img{
                     object-fit: cover;
@@ -129,7 +129,7 @@
                 .imageContainer{
                     top: -30vh;
                     left: 5vw;
-                    width: 35vw;
+                    width: 65vw;
                     height: 30vh;
                   
                 }
@@ -137,8 +137,8 @@
             &:nth-of-type(3){
                 .imageContainer{
                     top: -17vh;
-                    left: -25vw;
-                    width: 20vw;
+                    left: -45vw;
+                    width: 30vw;
                     height: 45vh;
                     
 
@@ -147,8 +147,8 @@
             }
             &:nth-of-type(4){
                 .imageContainer{
-                    left: 27.5vw;
-                    width: 25vw;
+                    left: 42.5vw;
+                    width: 35vw;
                     height: 25vh;
 
                 }
@@ -157,7 +157,7 @@
                 .imageContainer{
                     top: 29.5vh;
                     left: 6vw;
-                    width: 25vw;
+                    width: 35vw;
                     height: 30vh;
 
                      
@@ -167,8 +167,8 @@
             &:nth-of-type(6){
                 .imageContainer{
                     top: 27.5vh;
-                    left: -30.5vw;
-                    width: 30vw;
+                    left: -32.5vw;
+                    width: 40vw;
                     height: 40vh;
                   
                      
@@ -178,7 +178,7 @@
                 .imageContainer{
                     top: 28.5vh;
                     left: 35vw;
-                    width: 25vw;
+                    width: 35vw;
                     height: 25vh;
                     
                 }
