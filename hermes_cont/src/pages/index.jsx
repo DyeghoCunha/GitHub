@@ -99,7 +99,9 @@ export default function Home() {
     <main   >
       <VStack w="100vw">
 
-  <Valores />
+  <Box id="time">
+          <QuemSomos />
+        </Box>
   {/**          <Box id="sobre">
           <Sobre />
         </Box>   
@@ -113,7 +115,7 @@ export default function Home() {
           <Section1 scrollYProgress={scrollYProgress} />
           <Section2 scrollYProgress={scrollYProgress} />
      </Box> 
-
+<Valores />
 
       
       <Galeria />  
@@ -125,9 +127,7 @@ export default function Home() {
      
         
        
-        <Box id="time">
-          <QuemSomos />
-        </Box>
+        
 */}
       </VStack>
     </main>
