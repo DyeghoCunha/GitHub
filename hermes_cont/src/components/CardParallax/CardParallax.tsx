@@ -38,6 +38,7 @@ const CardParallax = ({ i, title, description, src, color, progress, range, targ
   return (
     <Box
       h="100vh"
+      w={{base:"300px",md:"100%"}}
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -56,27 +57,31 @@ const CardParallax = ({ i, title, description, src, color, progress, range, targ
         flexDirection="column"
         position="relative"
         top="-25%"
-        height="800px"
-        width="900px"
-        p="50px"
+        height={{ base: "350px", md: "800px" }}
+        width={{ base: "82%", md: "900px" }}
+        p={{ base: "0px", md: "10px" }}
         transformOrigin="top"
       >
-        <HStack color="white" position="relative">
-          <ClientImg h="80px" src={Triangulo.src} />
-          <Box position="absolute" top="5px" left="90px">
-            <HermesCharacter colorProp={i === 2 ? "black" : "white"} fontSize="45px" paragraph={title} />
+        <HStack color="white" position="relative" w="100%" >
+          <ClientImg h={{ base: "30px", md: "80px" }} m={{base:"8px",md:"0"}} src={Triangulo.src} />
+          <Box position="absolute" top={{base:"-1px",md:"5px"}} left={{ base: 10, md: "90px" }}>
+            <HermesCharacter colorProp={i === 2 ? "black" : "white"} fontSize={{ base: "20px", md: "45px" }} paragraph={title} />
           </Box>
         </HStack>
-        <Flex h="100%" mt="50px" gap="50px" >
-          <Box w="50%" backdropFilter="blur(20px)" pos="relative" h="500px" px={4} py={2} top="6%" border={`1px solid ${color}20`} borderRadius="8px" boxShadow={`inset 4px 4px 8px rgba(0,0,0,0.3),inset -4px -4px 8px rgba(0,0,0,0.3)`}>
+        <Flex direction={{base:"column",md:"row"}} align={{base:"center",md:"start"}}  h="100%" mt={{base:"-20px",md:"50px"}} gap={{ base: 0, md: "50px" }}>
+          <Box w={{ base: "100%", md: "50%" }} backdropFilter="blur(20px)"
+            pos="relative" h={{base:"100px",md:"500px"}}
+            px={4} py={2} top="6%"
+            border={`1px solid ${color}20`}
+            borderRadius="8px" boxShadow={`inset 4px 4px 8px rgba(0,0,0,0.3),inset -4px -4px 8px rgba(0,0,0,0.3)`}>
 
-            <Text fontSize="26px" display={i === 2 ? "none" : "block"}>
-              <Box as="span" fontSize="48px" fontFamily="Title" >
+            <Text fontSize={{ base: "10px", md: "26px" }} display={i === 2 ? "none" : "block"}>
+              <Box as="span" fontSize={{base:"20px",md:"48px"}} fontFamily="Title" >
                 {description.charAt(0)}
               </Box>
               {description.slice(1)}
             </Text>
-            <UnorderedList display={i === 2 ? "block" : "none"} fontSize="26px" mt="30px" color="hermesBlue.400">
+            <UnorderedList display={i === 2 ? "block" : "none"} fontSize={{ base: "10px", md: "26px" }} mt={{base:"5px",md:"30px"}} color="hermesBlue.400">
               <ListItem>RESPONSABILIDADE </ListItem>
               <ListItem> TRANSPARÊNCIA </ListItem>
               <ListItem> ÉTICA </ListItem>
@@ -86,7 +91,7 @@ const CardParallax = ({ i, title, description, src, color, progress, range, targ
 
 
           </Box>
-          <Box pos="relative" w="60%" h="100%" borderRadius="25px" overflow="hidden"  >
+          <Box pos="relative" w={{ base: "90%", md: "50%" }} h={{base:"55%",md:"600px"}} mt={{base:"30px",md:"0"}} borderRadius="25px" overflow="hidden"  >
             <MotionBox
               style={{ scale: imageScale }}
               width="100%"

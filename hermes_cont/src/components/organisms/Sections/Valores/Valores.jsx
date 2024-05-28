@@ -56,12 +56,12 @@ export default function Valores() {
 
 
 
-    <Box ref={container} position="relative"  w="100%"
+    <Box ref={container} position="relative"  
    
     bgGradient="linear(180deg, rgba(242,242,243,1) 0%,rgba(242,242,243,1) 50% , rgba(241,226,194,1)100%)"
     >
-      <HStack w="100%" h="100%">
-        <VStack w="100%">
+      <HStack  h="100%">
+        <VStack w="100vw">
           {
             props.map((project, i) => {
               const targetScale = 1 - ((props.length - i) * 0.05);

@@ -99,16 +99,15 @@ export default function Home() {
     <main   >
       <VStack w="100vw">
 
-        <Box id="home" w="100%">
-          <HomeSection />
-        </Box>  
-         <SecondSection />
-
-      <Galeria />   
+  <Valores />
   {/**          <Box id="sobre">
           <Sobre />
         </Box>   
 
+        <Box id="home" w="100%">
+          <HomeSection />
+        </Box>  
+         <SecondSection />
 
      <Box id="servicos" ref={container} position="relative" h="200vh">
           <Section1 scrollYProgress={scrollYProgress} />
@@ -117,6 +116,7 @@ export default function Home() {
 
 
       
+      <Galeria />  
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
@@ -124,7 +124,7 @@ export default function Home() {
    
      
         
-        <Valores />
+       
         <Box id="time">
           <QuemSomos />
         </Box>
