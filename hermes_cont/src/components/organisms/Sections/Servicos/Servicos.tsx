@@ -36,11 +36,11 @@ export default function Servicos() {
               {
                 phrase.split(" ").map((word, index) => {
                   return (
-                    <Text as="span" key={index} color="hermesGold.500" position="relative" fontStyle="Fantasy" overflow="hidden" display="inline-flex" mr={{ base: "3px", md: "20px" }} >
-                      <MotionSpan variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>
+                      <MotionSpan 
+                      as="span" key={index} color="hermesGold.500" position="relative" fontStyle="Fantasy" overflow="hidden" display="inline-flex" mr={{ base: "3px", md: "20px" }} 
+                      variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>
                         <GradientText style={""}> {word}</GradientText>
                       </MotionSpan>
-                    </Text>
                   )
                 })
               }

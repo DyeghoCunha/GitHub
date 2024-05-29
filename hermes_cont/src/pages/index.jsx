@@ -50,7 +50,7 @@ const Section2 = ({ scrollYProgress }) => {
   const rotate = useTransform(scrollYProgress, [0, 1], [5, 0]);
 
   return (
-    <MotionBox style={{ scale, rotate }} h={{base:"800px",md:"100vh"}} position="relative">
+    <MotionBox style={{ scale, rotate }} h={{ base: "800px", md: "100vh" }} position="relative">
       <Segmentos />
     </MotionBox>
   );
@@ -99,29 +99,36 @@ export default function Home() {
     <main   >
       <VStack w="100vw">
 
-  <Box id="time">
-          <QuemSomos />
-        </Box>
-  {/**          <Box id="sobre">
-          <Sobre />
-        </Box>   
-
-        <Box id="home" w="100%">
-          <HomeSection />
-        </Box>  
-         <SecondSection />
-
-     <Box id="servicos" ref={container} position="relative" h="200vh">
-          <Section1 scrollYProgress={scrollYProgress} />
-          <Section2 scrollYProgress={scrollYProgress} />
-     </Box> 
-<Valores />
-
-      
-      <Galeria />  
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
+        <Box id="home" w="100%">
+          <HomeSection />
+        </Box>
+
+        <SecondSection />
+        <Box id="servicos" ref={container} position="relative" h="200vh">
+          <Section1 scrollYProgress={scrollYProgress} />
+          <Section2 scrollYProgress={scrollYProgress} />
+        </Box>
+
+        <Box id="sobre">
+          <Sobre />
+        </Box>
+        <Galeria />
+        <Valores />
+        <Box id="time">
+          <QuemSomos />
+        </Box>
+
+
+        {/**
+  
+
+
+
+      
+     
     
    
      

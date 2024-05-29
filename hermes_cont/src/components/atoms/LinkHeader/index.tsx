@@ -24,7 +24,6 @@ export default function LinkHeader({ href, children,onClick }: LinkHeaderType) {
 
 }
    const isSelected = currentHash === href
-  console.log(isSelected)
   return (
     <Box
       py="2px"
@@ -36,7 +35,7 @@ export default function LinkHeader({ href, children,onClick }: LinkHeaderType) {
       justifyContent="center"
       alignItems="center"
     >
-      <Link href={href} ><Text color="hermesWhite.500" 
+      <Link href={href} ><Text fontSize="25px" color="hermesWhite.500" 
       onClick={()=>onClick}
       _hover={{
         color:isSelected? "hermesWhite.500" :"hermesGold.500"}}

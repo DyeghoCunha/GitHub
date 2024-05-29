@@ -44,34 +44,26 @@ function Desktop() {
   return (
     <HStack gap="40px" className={styles.nav} >
       <HoverContainer>
-        <Magnetic>
           <Box position="relative">
             <Box >
-              <LinkHeader href="#home" onClick={() => handleScrollToSection('home')}><Text fontSize="25px">Home</Text></LinkHeader>
+              <LinkHeader href="#home" onClick={() => handleScrollToSection('home')}>Home</LinkHeader>
             </Box>
           </Box>
-        </Magnetic>
       </HoverContainer>
       <HoverContainer>
-        <Magnetic>
           <Box position="relative">
-            <LinkHeader href="#sobre" onClick={() => handleScrollToSection('sobre')}><Text fontSize="25px">Sobre</Text></LinkHeader>
+            <LinkHeader href="#sobre" onClick={() => handleScrollToSection('sobre')}>Sobre</LinkHeader>
           </Box>
-        </Magnetic>
       </HoverContainer>
       <HoverContainer>
-        <Magnetic>
           <Box position="relative">
-            <LinkHeader href="#servicos" onClick={() => handleScrollToSection('servicos')} ><Text fontSize="25px">Serviços</Text></LinkHeader>
+            <LinkHeader href="#servicos" onClick={() => handleScrollToSection('servicos')} >Serviços</LinkHeader>
           </Box>
-        </Magnetic>
       </HoverContainer>
       <HoverContainer>
-        <Magnetic>
           <Box position="relative" >
-            <LinkHeader href="#time" onClick={() => handleScrollToSection('time')} ><Text fontSize="25px">Time</Text></LinkHeader>
+            <LinkHeader href="#time" onClick={() => handleScrollToSection('time')} >Time</LinkHeader>
           </Box>
-        </Magnetic>
       </HoverContainer>
       <Box zIndex={1000000000}>
         <HeaderMenu />
