@@ -100,9 +100,9 @@ export default function ModalConsultaAnexo() {
         alignItems="end" borderRadius="100% 0px 6px 0px"
         onClick={onOpen}
         outline="3px solid gray "
-        >
-        <Text color= "hermesBlue.400" _hover={{color:"white"}}><GradientBox style={{
-          
+      >
+        <Text color="hermesBlue.400" _hover={{ color: "white" }}><GradientBox style={{
+
           justifyContent: "end", paddingRight: "1px", paddingTop: "5px", paddingLeft: "120px",
           alignItems: "end", borderRadius: "100% 0px 8px 0px",
           fontSize: "25px", fontWeight: "bold",
@@ -114,7 +114,7 @@ export default function ModalConsultaAnexo() {
 
         <ModalContent bgColor="hermesBlue.400" mt="5%">
           <ModalHeader>
-            <Heading><GradientText>Consulta de Anexo</GradientText></Heading>
+            <Heading><GradientText style={""}>Consulta de Anexo</GradientText></Heading>
             <Card p={4} bgColor="transparent"
               boxShadow=" 5px 5px 15px rgba(0,0,0,0.2),-5px -5px 15px rgba(255,255,255,0.1) , 
             inset -2px -2px 5px rgba(0,0,0,0.1),inset 2px 2px 5px rgba(255,255,255,0.1) "
@@ -133,7 +133,7 @@ export default function ModalConsultaAnexo() {
             <Button variant='outline' colorScheme='blue' mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button isDisabled={!isValidated} display={isShowBody ? "none" : "flex"} variant="hermes" onClick={handleShowBody}><Text><GradientText>Buscar</GradientText></Text></Button>
+            <Button isDisabled={!isValidated} display={isShowBody ? "none" : "flex"} variant="hermes" onClick={handleShowBody}><Text><GradientText style={""}>Buscar</GradientText></Text></Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

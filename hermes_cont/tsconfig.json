@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/api/tabela.js", "src/components/organisms/Sections/ParallaxSection/ParallaxSection.jsx", "src/components/organisms/Sections/Sobre/index.jsx", "src/components/atoms/CurvedTextFooter/CurvedTextFooter.jsx", "src/components/molecules/FooterCurved/FooterCurved.jsx", "src/pages/index.jsx", "src/components/organisms/Sections/Valores/Valores.jsx", "src/components/organisms/Header/HeaderTabs/index.tsx", "src/components/atoms/LinkHeader/index.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/api/tabela.js", "src/components/organisms/Sections/ParallaxSection/ParallaxSection.jsx", "src/components/organisms/Sections/Sobre/index.jsx", "src/components/atoms/CurvedTextFooter/CurvedTextFooter.jsx", "src/components/molecules/FooterCurved/FooterCurved.jsx", "src/pages/index.jsx", "src/components/organisms/Sections/Valores/Valores.jsx", "src/components/organisms/Header/HeaderTabs/index.tsx", "src/components/atoms/LinkHeader/index.tsx", "src/components/atoms/GradientBox/GradientBox.jsx", "src/components/atoms/GradientText/GradientText.jsx", "src/components/molecules/SmoothParallaxScroll/SmoothParallaxScroll.jsx", "src/pages/SimplesNacional/components/InputCnpj/InputCnpj.jsx"],
   "exclude": ["node_modules"]
 }

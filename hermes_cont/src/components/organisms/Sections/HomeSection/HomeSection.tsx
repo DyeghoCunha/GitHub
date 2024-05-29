@@ -28,7 +28,7 @@ export default function HomeSection() {
         position="absolute" 
         bottom={{ base: "-75px", xl: "-330px", xxl: "-420px" }} opacity="1" color="white"
         fontSize="8vw" w="100%" lineHeight="8vw" >Relaxe enquanto
-        <GradientText> nós fazemos as contas</GradientText></Text>
+        <GradientText style={""}> nós fazemos as contas</GradientText></Text>
     </Box>
   )
 }

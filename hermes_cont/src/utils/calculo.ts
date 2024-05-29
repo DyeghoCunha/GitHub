@@ -96,8 +96,6 @@ export function funcCalculaImpostoDetalhado({ faturamento, anexo, alqEfetiva, rb
 
   let faixa: any = []
 
-  let baseCalculo: number = faturamento * (alqEfetiva / 100);
-
   if (anexo == 'Anexo I') {
     faixa = [
       [180000, 0.0550, 0.0350, 0.0276, 0.1274, 0.4150, 0.3400, 0, 0],
@@ -148,7 +146,7 @@ export function funcCalculaImpostoDetalhado({ faturamento, anexo, alqEfetiva, rb
   }
 
   for (let i = 0; i < faixa.length; i++) {
-    if (rbt12 < faixa[i][0]) {
+    if (rbt12 < faixa[i][0] && alqEfetiva) {
       impostos["IR"] = faturamento * ((alqEfetiva / 100) * faixa[i][1]);
       impostos["CSLL"] = faturamento * ((alqEfetiva / 100) * faixa[i][2]);
       impostos["PIS"] = faturamento * ((alqEfetiva / 100) * faixa[i][3]);

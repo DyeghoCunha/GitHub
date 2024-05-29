@@ -61,7 +61,7 @@ export default function HeaderMenuMobile() {
   return (
     <VStack w="100vw" overflowY="auto" >
       <VStack w="100vw" boxShadow="inset -3px -3px 6px black,inset 3px 3px 6px black" pb={3} borderRadius="8px">
-        <Text w="100%" textAlign="center" fontSize="30px"><GradientText>Calculadora</GradientText></Text>
+        <Text w="100%" textAlign="center" fontSize="30px"><GradientText style={""}>Calculadora</GradientText></Text>
         <VStack w="100%" px={2} py={2} boxShadow=" -3px -3px 6px black, 3px 3px 6px black">
           {CalculadoraProp.map((prop, index) => (
             <Box w="100%" px={2} key={index}  >
@@ -72,7 +72,7 @@ export default function HeaderMenuMobile() {
 
       <VStack w="100vw" boxShadow="inset -3px -3px 6px black,inset 3px 3px 6px black" pb={3} borderRadius="8px">
 
-        <Text w="100%" textAlign="center" fontSize="30px"><GradientText>Consultar</GradientText></Text>
+        <Text w="100%" textAlign="center" fontSize="30px"><GradientText style={""}>Consultar</GradientText></Text>
         <HStack w="100%" px={2} py={2} boxShadow=" -3px -3px 6px black, 3px 3px 6px black">
           {ConsultarProp.map((prop, index) => (
             <Box w="100%" px={2} key={index}  >
@@ -82,7 +82,7 @@ export default function HeaderMenuMobile() {
       </VStack>
       <VStack w="100vw" boxShadow="inset -3px -3px 6px black,inset 3px 3px 6px black" pb={3} borderRadius="8px">
 
-        <Text w="100%" textAlign="center" fontSize="30px"><GradientText>Simples Nacional</GradientText></Text>
+        <Text w="100%" textAlign="center" fontSize="30px"><GradientText style={""}>Simples Nacional</GradientText></Text>
         <HStack w="100%" px={2} py={2} boxShadow=" -3px -3px 6px black, 3px 3px 6px black">
           <Box w="100%" justifyContent="center" alignItems="center" h="100px" px={2}  >
             <MenuButton href={SimplesNacionalProp[0].href} text={SimplesNacionalProp[0].text} />

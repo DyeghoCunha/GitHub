@@ -298,11 +298,11 @@ export default function CalculadoraSimples() {
           bgImg={BgImg.src}
           bgPos="center"
           bgSize="contain"
-          bgRepeat="no-repeat" 
+          bgRepeat="no-repeat"
           mb="30px"
-          >
+        >
           <CardHeader>
-            <Heading w="100%" textAlign="center"><GradientText>Calculadora do Simples Nacional</GradientText></Heading>
+            <Heading w="100%" textAlign="center"><GradientText style={""}>Calculadora do Simples Nacional</GradientText></Heading>
           </CardHeader>
           <CardBody>
             <HStack my="10px">
@@ -401,7 +401,7 @@ export default function CalculadoraSimples() {
                 </HStack>
               </RadioGroup>
               {!isError ? (
-                <FormHelperText><Text>Em caso de dúvida leia o nosso <Link target='_blank' rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"> <GradientText>artigo</GradientText></Link></Text></FormHelperText>
+                <FormHelperText><Text>Em caso de dúvida leia o nosso <Link target='_blank' rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"> <GradientText style={""}>artigo</GradientText></Link></Text></FormHelperText>
               ) : (
                 <FormErrorMessage>É necessário escolher um anexo</FormErrorMessage>
               )}
@@ -418,7 +418,7 @@ export default function CalculadoraSimples() {
               w="100%"
               onClick={() => handleButton({ rbt12Prop: rbt12, anexoProp: anexo, faturamentoProp: faturamento })}
             >
-              <GradientText>Calcular</GradientText>
+              <GradientText style={""}>Calcular</GradientText>
             </Button>
           </CardBody>
           <CardFooter gap={2} display={isFooter ? "flex" : "none"}  >
@@ -427,10 +427,10 @@ export default function CalculadoraSimples() {
             <VStack w="100%" >
               <HStack w="100%" justify="space-around">
                 <Box border="3px solid gray" borderRadius="8px" px={2} mb={10}>
-                  <HStack><Text fontSize="20px" color="gray">Aliquota: </Text><Text fontSize="26px"><GradientText>{formatNumberToPercentage(aliquota)}</GradientText></Text></HStack>
+                  <HStack><Text fontSize="20px" color="gray">Aliquota: </Text><Text fontSize="26px"><GradientText style={""}>{formatNumberToPercentage(aliquota)}</GradientText></Text></HStack>
                 </Box>
                 <Box border="3px solid gray" borderRadius="8px" px={2} mb={10}>
-                  <HStack><Text fontSize="20px" color="gray">DAS:</Text><Text fontSize="26px"> <GradientText>{formatarParaReal3(das)}</GradientText></Text></HStack>
+                  <HStack><Text fontSize="20px" color="gray">DAS:</Text><Text fontSize="26px"> <GradientText style={""}>{formatarParaReal3(das)}</GradientText></Text></HStack>
                 </Box>
               </HStack>
 

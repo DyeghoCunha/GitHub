@@ -35,7 +35,7 @@ export default function Galeria() {
         <Text mt={0} w="100%" textAlign="end" lineHeight={{ base: "1px", xxl: "40px" }}
           fontSize={{ base: "10px", md: "40px" }}
         >
-          <GradientText >
+          <GradientText style={""}>
             - Emir A. Muse</GradientText></Text>
       </Card>
       <Card
@@ -75,18 +75,18 @@ export default function Galeria() {
         <Text textAlign="justify" fontSize={{ base: "15px", md: "32px" }}>
           Dois meses depois o Gabriel se uniu à
           causa, e no dia <strong>01/01/2021</strong> abrimos
-          oficialmente a <GradientText>Hermès</GradientText>. Ainda no
+          oficialmente a <GradientText style={""}>Hermès</GradientText>. Ainda no
           primeiro ano o comprometimento
           com o atendimento personalizado e
           humanizado para cada cliente
-          proporcionou o marco de <GradientText>100 clientes </GradientText>
+          proporcionou o marco de <GradientText style={""}>100 clientes </GradientText>
           o que foi muito celebrado na época e
           provou que estávamos no caminho
           certo.</Text>
       </Card>
 
-      <Text position="absolute" top={{ base: "24.2%", md: "14%", xxl: "15.2%" }} left={{ base: "10%", md: "5%", xxl: "20%" }} zIndex={10} fontSize={{ base: "20vw", md: "430px" }}><GradientText >Os</GradientText></Text>
-      <Text position="absolute" top={{ base: "45%", md: "26.3%", xxl: "29%" }} left={{ base: "40%", md: "50%", xxl: "50%" }} zIndex={10} fontSize={{ base: "30vw", md: "460px" }}><GradientText >100</GradientText></Text>
+      <Text position="absolute" top={{ base: "24.2%", md: "14%", xxl: "15.2%" }} left={{ base: "10%", md: "5%", xxl: "20%" }} zIndex={10} fontSize={{ base: "20vw", md: "430px" }}><GradientText style={""}>Os</GradientText></Text>
+      <Text position="absolute" top={{ base: "45%", md: "26.3%", xxl: "29%" }} left={{ base: "40%", md: "50%", xxl: "50%" }} zIndex={10} fontSize={{ base: "30vw", md: "460px" }}><GradientText style={""} >100</GradientText></Text>
 
 
 
@@ -112,7 +112,7 @@ export default function Galeria() {
           propósito de fazer o melhor pelos
           clientes usando as melhores
           ferramentas tecnológicas sem perder
-          nosso traço fundamental, <GradientText>o contato
+          nosso traço fundamental, <GradientText style={""}>o contato
             individualizado e humano</GradientText>.</Text>
 
 

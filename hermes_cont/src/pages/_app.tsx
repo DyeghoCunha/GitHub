@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
-import ThemeContainer from "@/components/templates/ThemeContainer";
 import { ChakraProvider } from "@chakra-ui/react";
 import { lightTheme } from "@/styles/theme";
 
@@ -17,9 +16,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <ChakraProvider theme={lightTheme}>
-      <ThemeContainer>
+      
         {getLayout(<Component {...pageProps} />)}
-      </ThemeContainer>
+     
       </ChakraProvider>
   );
 }

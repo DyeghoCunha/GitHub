@@ -4,16 +4,16 @@ import { contemCaractereInvalido, formatarNumero, limparNumero } from '@/utils/m
 import { Box, Button, CircularProgress, FormControl, FormErrorMessage, FormHelperText, FormLabel, HStack, Input, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
-interface IInputValue {
-  setCnpjProp: React.Dispatch<React.SetStateAction<string>>,
-  setEmpresaProp: React.Dispatch<React.SetStateAction<null>>,
-  setIsValidated: React.Dispatch<React.SetStateAction<boolean>>
-  isLoading: boolean
-  setIsLoading?: React.Dispatch<React.SetStateAction<boolean>>
-  setShowCard?: React.Dispatch<React.SetStateAction<boolean>>
-}
+// interface IInputValue {
+//   setCnpjProp: React.Dispatch<React.SetStateAction<string>>,
+//   setEmpresaProp: React.Dispatch<React.SetStateAction<null>>,
+//   setIsValidated: React.Dispatch<React.SetStateAction<boolean>>
+//   isLoading: boolean
+//   setIsLoading?: React.Dispatch<React.SetStateAction<boolean>>
+//   setShowCard?: React.Dispatch<React.SetStateAction<boolean>>
+// }
 
-export default function InputCnpj({ setCnpjProp, setEmpresaProp, setIsValidated, isLoading, setIsLoading, setShowCard }: IInputValue) {
+export default function InputCnpj({ setCnpjProp, setEmpresaProp, setIsValidated, isLoading, setIsLoading, setShowCard }) {
 
   const [cnpj, setCnpj] = useState("");
   const [cnpjFormated, setCnpjFormated] = useState("")
@@ -21,7 +21,7 @@ export default function InputCnpj({ setCnpjProp, setEmpresaProp, setIsValidated,
   const [isValidar, setIsValidar] = useState(false)
   const [cnpjExists, setCnpjExists] = useState(0)
 
-  const onChangeInput = (e: any) => {
+  const onChangeInput = (e) => {
     let value = e.target.value
     let valorLimpo = limparNumero(value)
     //console.log(valorLimpo)
@@ -39,26 +39,26 @@ export default function InputCnpj({ setCnpjProp, setEmpresaProp, setIsValidated,
     setCnpjFormated(value)
   }
 
-  const consultaCNPJApi = async (prop: any) => {
+  const consultaCNPJApi = async (prop) => {
     try {
-      setIsLoading!(true)
+      setIsLoading(true)
       //console.log(prop)
       const data = await buscarEmpresa({ prop });
       //console.log("Buscando na API")
-      setShowCard!(prev => !prev)
+      setShowCard(prev => !prev)
       setEmpresaProp(data);
       setIsValidated(true);
       setCnpjExists(1)
-      setIsLoading!(false)
+      setIsLoading(false)
     } catch (error) {
       console.error(error);
-      setIsLoading!(false)
+      setIsLoading(false)
       //console.log("Cnpj Não Existe")
       setCnpjExists(2)
     }
   };
 
-  const validateCnpj = async (cnpjProp: any) => {
+  const validateCnpj = async (cnpjProp) => {
 
     let isValid = contemCaractereInvalido(cnpjProp)
 
@@ -130,7 +130,7 @@ export default function InputCnpj({ setCnpjProp, setEmpresaProp, setIsValidated,
           </Box>
           {!isLoading ?
             <Button onClick={() => validateCnpj(cnpj)} isDisabled={!isValidar} position="absolute" w="40px" h="40px" right="1px" top="33px" variant="hermes">
-              <Text><GradientText>☑︎</GradientText></Text>
+              <Text><GradientText style={""}>☑︎</GradientText></Text>
             </Button> :
             (<CircularProgress isIndeterminate color="hermesGold.500" thickness={6} trackColor='transparent' position="absolute" w="40px" h="40px" right="1px" top="29px" />)}
 

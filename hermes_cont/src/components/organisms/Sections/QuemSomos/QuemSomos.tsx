@@ -34,7 +34,7 @@ export default function QuemSomos() {
           <MotionImage src={imageSrc} alt='Foto da equipe Hermes' initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }} />
-          <Heading position="absolute" top={{base:"-12%",md:"-15%"}} w="100vw" pl="2%" fontSize={{base:"14vw",md:"7vw"}} color="white"><GradientText>Quem Somos</GradientText></Heading>
+          <Heading position="absolute" top={{base:"-12%",md:"-15%"}} w="100vw" pl="2%" fontSize={{base:"14vw",md:"7vw"}} color="white"><GradientText style={""}>Quem Somos</GradientText></Heading>
         </Box>
         <VStack w={{base:"100%",md:"60%"}}  >
           <Box onMouseLeave={handleMouseLeave} >

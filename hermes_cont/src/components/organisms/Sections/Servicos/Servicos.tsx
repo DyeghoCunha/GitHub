@@ -38,7 +38,7 @@ export default function Servicos() {
                   return (
                     <Text as="span" key={index} color="hermesGold.500" position="relative" fontStyle="Fantasy" overflow="hidden" display="inline-flex" mr={{ base: "3px", md: "20px" }} >
                       <MotionSpan variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>
-                        <GradientText> {word}</GradientText>
+                        <GradientText style={""}> {word}</GradientText>
                       </MotionSpan>
                     </Text>
                   )

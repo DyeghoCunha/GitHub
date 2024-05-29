@@ -31,7 +31,7 @@ const navItems = [
 ]
 
 const MotionDiv = motion(Box)
-export default function index({ isActive, setIsActive }) {
+export default function Nav({ isActive, setIsActive }) {
 
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
@@ -73,7 +73,7 @@ export default function index({ isActive, setIsActive }) {
             mt="10px"
             bgColor="hermesBlue.400"
           >
-            <Text w="100%" textAlign="center"><GradientText>Menu</GradientText></Text>
+            <Text w="100%" textAlign="center"><GradientText style={""}>Menu</GradientText></Text>
           </Box>
           <HStack w="100vw" p={0} gap="0" m={0}
             borderLeft="5px solid #28283c"

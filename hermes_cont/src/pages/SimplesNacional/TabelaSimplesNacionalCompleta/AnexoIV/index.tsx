@@ -11,7 +11,7 @@ export default function AnexoIV() {
 
   return (
     <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" >
-      <VStack align="center"  justify="start" h="100%" w="100%" marginTop="80px" >
+      <VStack align="center" justify="start" h="100%" w="100%" marginTop="80px" >
         <Box w="50%" h="100%" pb={10}>
           <VStack  >
             <Flex w="100%" justify="center" align="center" direction="column">
@@ -40,8 +40,8 @@ export default function AnexoIV() {
                 </Text>
 
 
-                <Flex  justify="center" align="center" >
-                  <UnorderedList border="3px solid #28283c" my="40px" bgColor="white" borderRadius="8px" boxShadow=" 4px 4px 8px rgba(0,0,0,0.5)"  px="40px" fontSize="20px" lineHeight="35px">
+                <Flex justify="center" align="center" >
+                  <UnorderedList border="3px solid #28283c" my="40px" bgColor="white" borderRadius="8px" boxShadow=" 4px 4px 8px rgba(0,0,0,0.5)" px="40px" fontSize="20px" lineHeight="35px">
                     <ListItem>Construção de imóveis e obras de engenharia em geral, inclusive sob a forma de subempreitada. </ListItem>
                     <ListItem>Execução de projetos e serviços de paisagismo, bem como decoração de interiores.</ListItem>
                     <ListItem>Serviço de vigilância, limpeza ou conservação</ListItem>
@@ -65,18 +65,18 @@ export default function AnexoIV() {
                       <Tr>
                         <Th color="white" textTransform="none" fontSize="18px">
                           <Tooltip placement='auto' hasArrow label='Faixa em que a empresa se encontra'>
-                            <Text>Faixa<GradientText>*</GradientText></Text>
+                            <Text>Faixa<GradientText style={""}>*</GradientText></Text>
                           </Tooltip> </Th>
 
                         <Th color="white" textTransform="none" fontSize="18px">
                           <Tooltip placement='auto' hasArrow label='Faturamento total dos últimos 12 meses'>
-                            <Text> Receita Bruta Total<GradientText>*</GradientText></Text>
+                            <Text> Receita Bruta Total<GradientText style={""}>*</GradientText></Text>
                           </Tooltip></Th>
                         <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Alíquota para fins de cálculo, não é a alíquota final'>
-                          <Text> Alíquota<GradientText>*</GradientText></Text>
+                          <Text> Alíquota<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                         <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Quanto descontar do valor recolhido'>
-                          <Text>Fator Redutor<GradientText>*</GradientText></Text>
+                          <Text>Fator Redutor<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       </Tr>
                     </Thead>
@@ -143,24 +143,24 @@ export default function AnexoIV() {
                         </Th>
                         <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                           label='Imposto Sobre Serviços'>
-                          <Text> ISS<GradientText>*</GradientText></Text>
+                          <Text> ISS<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                         <Th color="white" textTransform="none" fontSize="18px">
                           <Tooltip placement='auto' hasArrow label='Contribuição Social Sob Lucro Líquido'>
-                            <Text> CSLL<GradientText>*</GradientText></Text>
+                            <Text> CSLL<GradientText style={""}>*</GradientText></Text>
                           </Tooltip></Th>
 
                         <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                           label='Imposto de Renda de Pessoa Jurídica'>
-                          <Text>IRPJ<GradientText>*</GradientText></Text>
+                          <Text>IRPJ<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                         <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                           label='Contribuição para o Financiamento da Seguridade Social'>
-                          <Text>Cofins<GradientText>*</GradientText></Text>
+                          <Text>Cofins<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                         <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                           label='Programa de Integração Social (PIS) e o Programa de Formação do Patrimônio do Servidor Público (PASEP)'>
-                          <Text>PIS/Pasep<GradientText>*</GradientText></Text>
+                          <Text>PIS/Pasep<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       </Tr>
                     </Thead>
@@ -199,7 +199,7 @@ export default function AnexoIV() {
                       </Tr>
                       <Tr _hover={{ outline: "2px solid black" }} >
                         <Td>5ª Faixa	</Td>
-                        <Td>40,00%<GradientText>(*)</GradientText></Td>
+                        <Td>40,00%<GradientText style={""}>(*)</GradientText></Td>
                         <Td>19,20%</Td>
                         <Td>18,80%</Td>
                         <Td>18,08%</Td>
@@ -219,7 +219,7 @@ export default function AnexoIV() {
                   </Table>
                 </TableContainer>
               </Box>
-              <Text px={5} my={5} fontSize="23px" lineHeight="35px"><GradientText>(*)</GradientText> O percentual efetivo máximo devido ao ISS será de 5%, transferindo-se a diferença, de forma proporcional, aos tributos federais da mesma faixa de receita bruta anual. Sendo assim, na 5a faixa, quando a alíquota efetiva for superior a 12,5%, a repartição será:</Text>
+              <Text px={5} my={5} fontSize="23px" lineHeight="35px"><GradientText style={""}>(*)</GradientText> O percentual efetivo máximo devido ao ISS será de 5%, transferindo-se a diferença, de forma proporcional, aos tributos federais da mesma faixa de receita bruta anual. Sendo assim, na 5a faixa, quando a alíquota efetiva for superior a 12,5%, a repartição será:</Text>
 
 
               <Card color="hermesBlue.400" fontSize="23px" lineHeight="35px" p={3} border="1px solid #28283c">
@@ -241,6 +241,6 @@ export default function AnexoIV() {
 }
 AnexoIV.getLayout = function getLayout(page: React.ReactElement) {
   return (
-   <ForumLayout>{page}</ForumLayout> 
+    <ForumLayout>{page}</ForumLayout>
   );
 };

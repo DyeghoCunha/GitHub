@@ -22,7 +22,7 @@ export default function ConsultaCnpj() {
 
 
   const [cnpj, setCnpj] = useState("");
-  const [empresa, setEmpresa] = useState<any>();
+  const [empresa, setEmpresa] = useState<any>({});
   const [isValidated, setIsValidated] = useState(false)
   const [isFlip, setIsFlip] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -67,11 +67,17 @@ export default function ConsultaCnpj() {
     <>
       <PreloaderComponent />
       <PageContainer>
-        <Heading mb="60px" mt="180px" fontSize="4vw"><GradientText >Consulta de CNPJ</GradientText></Heading>
+        <Heading mb="60px" mt="180px" fontSize="4vw"><GradientText style={""}>Consulta de CNPJ</GradientText></Heading>
 
         <Box w="340px" mb="30px">
           <CardDefault>
-            <InputCnpj isLoading={isLoading} setShowCard={setShowCard} setIsLoading={setIsLoading} setCnpjProp={setCnpj} setEmpresaProp={setEmpresa} setIsValidated={setIsValidated} />
+            <InputCnpj 
+            isLoading={isLoading} 
+            setShowCard={setShowCard} 
+            setIsLoading={setIsLoading} 
+            setCnpjProp={setCnpj} 
+            setEmpresaProp={setEmpresa} 
+            setIsValidated={setIsValidated} />
           </CardDefault>
         </Box>
 
@@ -81,7 +87,7 @@ export default function ConsultaCnpj() {
               <CardDefault>
                 <CardHeader>
                   <HStack>
-                    <Heading><GradientText>Detalhes</GradientText></Heading>
+                    <Heading><GradientText style={""}>Detalhes</GradientText></Heading>
 
                   </HStack>
                 </CardHeader>
@@ -94,7 +100,7 @@ export default function ConsultaCnpj() {
                     <TextProps isLoading={isLoading} title='Data de Abertura' text={empresa.data_inicio_atividade} />
                     <TextProps isLoading={isLoading} title='Opção pelo Simples Nacional' text={`${empresa.opcao_pelo_simples === true ? `Optante desde ${empresa.data_opcao_pelo_simples}` : "Não Optante"}`} />
                   </SimpleGrid >
-                  <Heading fontSize={20} mt={10} mb={2}><GradientText>Endereço</GradientText></Heading>
+                  <Heading fontSize={20} mt={10} mb={2}><GradientText style={""}>Endereço</GradientText></Heading>
                   <SimpleGrid columns={2} spacingY={2} w="100%" >
                     <TextProps isLoading={isLoading} title={empresa.descricao_tipo_de_logradouro.length > 0 ? empresa.descricao_tipo_de_logradouro : "Rua"} text={empresa.logradouro} />
                     <TextProps isLoading={isLoading} title='Numero' text={empresa.numero} />
@@ -114,7 +120,7 @@ export default function ConsultaCnpj() {
                   bottom={5} right={0} onClick={() => setIsFlip(!isFlip)}
                   w="50px"
                 >
-                  <Text ml={3} fontSize="50px" textAlign="end"><GradientText>➧︎</GradientText></Text>
+                  <Text ml={3} fontSize="50px" textAlign="end"><GradientText style={""}>➧︎</GradientText></Text>
 
                 </Button>
               </Tooltip>
@@ -126,10 +132,10 @@ export default function ConsultaCnpj() {
               <Box position="relative" w="700px" h="550px">
                 <CardDefault>
                   <CardHeader>
-                    <Heading><GradientText>Detalhes</GradientText></Heading>
+                    <Heading><GradientText style={""}>Detalhes</GradientText></Heading>
                   </CardHeader>
                   <CardBody w="100%" pl={20} justifyContent="start" position="relative">
-                    <Heading fontSize={20} mt={0} mb={2}><GradientText>CNAE</GradientText></Heading>
+                    <Heading fontSize={20} mt={0} mb={2}><GradientText style={""}>CNAE</GradientText></Heading>
                     <VStack w="100%" overflowY="auto" overflowX="hidden" h="350px" >
                       <HStack w="100%" h="55px" border="1px solid white" px={0} py={0} borderRadius="8px" >
                         <Box pl={2}>
@@ -142,7 +148,7 @@ export default function ConsultaCnpj() {
                         </GradientBox>
                       </HStack>
 
-                      {empresa.cnaes_secundarios.map((cnae, index) => (
+                      {empresa.cnaes_secundarios.map((cnae:any, index:any) => (
                         <HStack w="100%" h="55px" key={index} border="1px solid white" px={0} py={0} borderRadius="8px" justify="space-between">
                           <Box pl={2} >
                             <TextPropsCnae isLoading={isLoading} title={cnae.codigo} text={cnae.descricao} />
@@ -165,7 +171,7 @@ export default function ConsultaCnpj() {
                   bottom={5} left={0} onClick={() => setIsFlip(!isFlip)}
                   w="50px"
                 >
-                  <Text transform="rotate(180deg)" mr={3} fontSize="50px" textAlign="end"><GradientText>➧︎</GradientText></Text>
+                  <Text transform="rotate(180deg)" mr={3} fontSize="50px" textAlign="end"><GradientText style={""}>➧︎</GradientText></Text>
                 </Button>
               </Box>
 

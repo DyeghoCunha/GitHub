@@ -29,7 +29,7 @@ export default function ImputNumber({ isInvalid, valueNumber, onChange, onBlurVa
 
 
     <FormControl isInvalid={isInvalid}>
-      <FormLabel><Text><GradientText>{label}</GradientText></Text></FormLabel>
+      <FormLabel><Text><GradientText style={""}>{label}</GradientText></Text></FormLabel>
       <Input
         type='number'
         value={valueNumber}

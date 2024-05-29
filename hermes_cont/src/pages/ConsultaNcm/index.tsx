@@ -29,7 +29,7 @@ export default function ConsultaNcm() {
     return (
       <CardDefault>
         <CardHeader mb={0} pb={0} >
-          <Text fontSize="20px"><GradientText>NCM</GradientText></Text>
+          <Text fontSize="20px"><GradientText style={""}>NCM</GradientText></Text>
           <VStack align="start" >
             <HStack justifyContent="start" gap="5%" w="100%">
               <HStack>
@@ -50,7 +50,7 @@ export default function ConsultaNcm() {
 
         <CardBody mt={0} w="100%">
           <VStack align="start">
-            <Text fontSize="20px"><GradientText>Descrição</GradientText></Text>
+            <Text fontSize="20px"><GradientText style={""}>Descrição</GradientText></Text>
             <Text w="100%"><Skeleton isLoaded={!isLoading} h="20px" startColor='rgba(242,242,243,1)' fadeDuration={4} endColor='rgba(241,226,194,1)'>{prop.descricao}</Skeleton></Text>
           </VStack>
         </CardBody>
@@ -63,7 +63,7 @@ export default function ConsultaNcm() {
     <>
       <PreloaderComponent />
       <PageContainer>
-        <Heading mb="60px" mt="180px" fontSize="4vw"><GradientText>Consulta de NCM</GradientText></Heading>
+        <Heading mb="60px" mt="180px" fontSize="4vw"><GradientText style={""}>Consulta de NCM</GradientText></Heading>
         <Box w="340px" mb="60px">
           <CardDefault>
             <InputNcm isLoading={isLoading} setResultProp={setNcm} setIsLoading={setIsLoading} setIsSearching={setIsSearching} />
@@ -97,7 +97,7 @@ export default function ConsultaNcm() {
 
             ) :
 
-              (ncm && ncm.map((ncm, index) => (
+              (ncm && ncm.map((ncm:any, index:any) => (
                 <CardNcm key={index} prop={ncm} />
               )))}
           </VStack>

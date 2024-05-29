@@ -1,13 +1,13 @@
 import { Box, keyframes, Text, useColorModeValue } from '@chakra-ui/react'
 import { css } from '@emotion/react';
 
-interface IGradientText {
-  children: React.ReactNode;
-  style?: React.CSSProperties; // Adicione esta linha
-}
+// interface IGradientText {
+  // children: React.ReactNode;
+  // style?: React.CSSProperties; // Adicione esta linha
+// }
 
 
-export default function GradientBox({ children, style }: IGradientText) {
+export default function GradientBox({ children, style }) {
   const waveAnimation = keyframes`
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

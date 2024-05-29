@@ -80,16 +80,16 @@ export default function CalculaFatorR() {
   }, [fatorR])
 
   return (
-    <Card color="hermesBlue.500" bgColor="hermesBlue.400" 
+    <Card color="hermesBlue.500" bgColor="hermesBlue.400"
       boxShadow="4px 4px 8px rgba(0,0,0,0.8)"
       bgImg={bgImage.src}
       bgPos="center"
       bgSize="contain"
       bgRepeat="no-repeat"
-      mt={{base:"50px",md:"10px",xxl:"50px"}}
+      mt={{ base: "50px", md: "10px", xxl: "50px" }}
     >
       <CardHeader>
-        <Heading w="100%"  textAlign="center" ><GradientText>Calculadora de Fator R</GradientText></Heading>
+        <Heading w="100%" textAlign="center" ><GradientText style={""}>Calculadora de Fator R</GradientText></Heading>
       </CardHeader>
       <CardBody w="100%">
         <Tooltip label={selectAtividadeString} >
@@ -99,7 +99,7 @@ export default function CalculaFatorR() {
         </Tooltip>
         <Menu >
           <MenuButton w="100%" as={Button} boxShadow="inset 4px 4px 8px rgba(0,0,0,0.5),inset -4px -4px 8px rgba(0,0,0,0.5)" outline="1px solid rgba(0,0,0,0.3)" variant={isAtividade ? "outlined" : "hermes"} fontSize="20px">
-            <Text><GradientText>Selecione a Atividade</GradientText></Text>
+            <Text><GradientText style={""}>Selecione a Atividade</GradientText></Text>
           </MenuButton>
           <MenuList zIndex={12} m={0} bgColor="rgba(255,255,255,0.4)" border=" 2px solid rgba(255,255,255,0.6)"
             backdropFilter="blur(5px)"
@@ -159,7 +159,7 @@ export default function CalculaFatorR() {
             error='Massa Salarial inválida ! '
           />
 
-          <Button zIndex={110} isDisabled={salario > 0 && faturamento > 0 ? false : true} onClick={handleClick} w="100%" mt="20px" variant="hermes"><Text><GradientText>Calcular</GradientText></Text></Button>
+          <Button zIndex={110} isDisabled={salario > 0 && faturamento > 0 ? false : true} onClick={handleClick} w="100%" mt="20px" variant="hermes"><Text><GradientText style={""}>Calcular</GradientText></Text></Button>
         </VStack>
       </CardBody>
 
@@ -168,10 +168,10 @@ export default function CalculaFatorR() {
           <Divider />
           <Text w="100%" textAlign="start" fontSize="20px">Seu <strong>Fator R</strong> atual é <GradientText style={{ fontSize: "30px" }}>{fatorR} %</GradientText></Text>
           <HStack w="100%" >
-            <Text  textAlign="start" fontSize="20px">Você está enquadrado no </Text>
+            <Text textAlign="start" fontSize="20px">Você está enquadrado no </Text>
             <Link href={`/SimplesNacional/TabelaSimplesNacionalCompleta/${removerEspacos(anexo)}`} ><Text><GradientText style={{ fontSize: "25px" }}>{anexo}</GradientText></Text></Link>
           </HStack>
-          <Link href="/SimplesNacional/CalculadoraSimples"><Text mt="20px"><GradientText>Calcule o Simples Nacional para o {anexo}</GradientText></Text></Link>
+          <Link href="/SimplesNacional/CalculadoraSimples"><Text mt="20px"><GradientText style={""}>Calcule o Simples Nacional para o {anexo}</GradientText></Text></Link>
         </VStack>
 
 

@@ -1,13 +1,10 @@
 import { keyframes, Text, useColorModeValue } from '@chakra-ui/react'
 import { css } from '@emotion/react';
 
-interface IGradientText {
-  children: React.ReactNode;
-  style?: React.CSSProperties; // Adicione esta linha
-}
 
 
-export default function GradientText({ children, style }: IGradientText) {
+
+export default function GradientText({ children, style }) {
   const waveAnimation = keyframes`
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

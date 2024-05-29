@@ -85,7 +85,7 @@ export default function InputNcm({ setResultProp, setIsLoading, isLoading, setIs
           </Box>
           {!isLoading ?
             <Button onClick={() => consultaNcmApi(ncm)} isDisabled={isValidar} position="absolute" w="40px" h="40px" right="1px" top="33px" variant="hermes">
-              <Text><GradientText>☑︎</GradientText></Text>
+              <Text><GradientText style={""}>☑︎</GradientText></Text>
             </Button> :
             (<CircularProgress isIndeterminate color="hermesGold.500" thickness={6} trackColor='transparent' position="absolute" w="40px" h="40px" right="1px" top="29px" />)}
 

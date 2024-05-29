@@ -68,7 +68,7 @@ export default function Segmentos() {
                   para impulsionar o seu sucesso
                 </Heading>
                 <Text fontStyle="italic" letterSpacing="3px" textAlign="right" fontSize={{ base: "15px", md: "35px" }} >
-                  <GradientText >- relaxe enquanto nós
+                  <GradientText style={""} >- relaxe enquanto nós
                     fazemos as contas!</GradientText>
                 </Text>
               </VStack>

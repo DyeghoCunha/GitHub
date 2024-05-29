@@ -59,7 +59,7 @@ export default function Sobre() {
                         boxShadow="inset 4px 4px 8px rgba(0,0,0,0.4), inset -4px -4px 8px rgba(0,0,0,0.2)">
                         <Text fontSize={{ base: "10px", md: "32px" }}>Em busca de autonomia total para ir em
                             busca do seu propósito, ele decidiu abrir
-                            a <GradientText>Hermès</GradientText> com seu amigo e sócio Valmor.
+                            a <GradientText style={""}>Hermès</GradientText> com seu amigo e sócio Valmor.
                             Em <strong>26 de novembro de 2020</strong> começaram
                             as obras para a montagem do nosso
                             escritório, paralelamente aos primeiros
@@ -76,13 +76,13 @@ export default function Sobre() {
                 fontSize="10vw" color="hermesBlue.400"
                 textAlign="justify"
                 position="absolute" top={{ base: "-5%", md: "-5%" }} left="2%" zIndex={0}
-            ><GradientText>Nossa História</GradientText></Text>
+            ><GradientText style={""}>Nossa História</GradientText></Text>
 
             <Text
                 fontSize={{ base: "20vw", md: "10vw" }} color="hermesBlue.400"
                 textAlign="justify"
                 position="absolute" top={{ base: "53%", md: "30%" }} left="2%" zIndex={10}
-            ><GradientText>O Início</GradientText></Text>
+            ><GradientText style={""}>O Início</GradientText></Text>
 
             <ZoomParallax />
 

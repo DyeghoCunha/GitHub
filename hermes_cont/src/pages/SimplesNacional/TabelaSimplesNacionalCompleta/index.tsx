@@ -14,7 +14,7 @@ export default function TabelaSimplesNacionalCompleta() {
       <HStack w="80%" mt="80px"  >
         <Box border="1px solid white" as='aside' h="100vh" w="10%" ></Box>
         <Box w="100%" h="100%" pb={10}>
-          <VStack  mt={10}>
+          <VStack mt={10}>
             <Box as='section'>
               <Heading my={10} fontSize="40" color="hermesBlue.500" w="100%" pl={5}>
                 O que é o Simples Nacional ?
@@ -43,7 +43,7 @@ export default function TabelaSimplesNacionalCompleta() {
                 Anexo I do Simples Nacional
               </Heading>
               <Text pl={5} as="h2"> Participantes: <strong>Empresas de Comércio </strong>(lojas em geral)</Text>
-              <Text pl={5} as="h3"> Tabela 1 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoI"><GradientText>Anexo 1 - Comércio</GradientText></Link></Text>
+              <Text pl={5} as="h3"> Tabela 1 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoI"><GradientText style={""}>Anexo 1 - Comércio</GradientText></Link></Text>
               <Text px={5} fontSize="23px" lineHeight="35px">
               </Text>
 
@@ -55,13 +55,13 @@ export default function TabelaSimplesNacionalCompleta() {
                     <Tr >
                       <Th textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Faturamento total dos últimos 12 meses'>
-                          <Text color="white"> Receita Bruta Total<GradientText>*</GradientText></Text>
+                          <Text color="white"> Receita Bruta Total<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Alíquota para fins de cálculo, não é a alíquota final'>
-                        <Text color="white"> Alíquota<GradientText>*</GradientText></Text>
+                        <Text color="white"> Alíquota<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Quanto descontar do valor recolhido'>
-                        <Text color="white">Fator Redutor<GradientText>*</GradientText></Text>
+                        <Text color="white">Fator Redutor<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                     </Tr>
                   </Thead>
@@ -108,7 +108,7 @@ export default function TabelaSimplesNacionalCompleta() {
                 Anexo II do Simples Nacional
               </Heading>
               <Text pl={5} as="h2"> Participantes: <strong>fábricas/indústrias e empresas industriais</strong></Text>
-              <Text pl={5} as="h3"> Tabela 2 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoII"><GradientText>Anexo 2 – Indústria</GradientText></Link></Text>
+              <Text pl={5} as="h3"> Tabela 2 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoII"><GradientText style={""}>Anexo 2 – Indústria</GradientText></Link></Text>
               <Text px={5} fontSize="23px" lineHeight="35px">
               </Text>
 
@@ -119,13 +119,13 @@ export default function TabelaSimplesNacionalCompleta() {
                     <Tr >
                       <Th textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Faturamento total dos últimos 12 meses'>
-                          <Text color="white"> Receita Bruta Total<GradientText>*</GradientText></Text>
+                          <Text color="white"> Receita Bruta Total<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Alíquota para fins de cálculo, não é a alíquota final'>
-                        <Text color="white"> Alíquota<GradientText>*</GradientText></Text>
+                        <Text color="white"> Alíquota<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Quanto descontar do valor recolhido'>
-                        <Text color="white"> Fator Redutor<GradientText>*</GradientText></Text>
+                        <Text color="white"> Fator Redutor<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                     </Tr>
                   </Thead>
@@ -173,7 +173,7 @@ export default function TabelaSimplesNacionalCompleta() {
                 Anexo III do Simples Nacional
               </Heading>
               <Text pl={5} as="h2"> Participantes: <strong>empresas que oferecem serviços de instalação, de reparos e de manutenção. Consideram-se neste anexo ainda, agências de viagens, escritórios de contabilidade, academias, laboratórios, empresas de medicina e odontologia.</strong></Text>
-              <Text pl={5} as="h3"> Tabela 3 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoIII"><GradientText>Anexo 3 – Prestadores de Serviço</GradientText></Link></Text>
+              <Text pl={5} as="h3"> Tabela 3 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoIII"><GradientText style={""}>Anexo 3 – Prestadores de Serviço</GradientText></Link></Text>
               <Text px={5} fontSize="23px" lineHeight="35px">
               </Text>
 
@@ -184,13 +184,13 @@ export default function TabelaSimplesNacionalCompleta() {
                     <Tr >
                       <Th textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Faturamento total dos últimos 12 meses'>
-                          <Text color="white"> Receita Bruta Total<GradientText>*</GradientText></Text>
+                          <Text color="white"> Receita Bruta Total<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Alíquota para fins de cálculo, não é a alíquota final'>
-                        <Text color="white"> Alíquota<GradientText>*</GradientText></Text>
+                        <Text color="white"> Alíquota<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Quanto descontar do valor recolhido'>
-                        <Text color="white"> Fator Redutor<GradientText>*</GradientText></Text>
+                        <Text color="white"> Fator Redutor<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                     </Tr>
                   </Thead>
@@ -237,7 +237,7 @@ export default function TabelaSimplesNacionalCompleta() {
                 Anexo IV do Simples Nacional
               </Heading>
               <Text pl={5} as="h2"> Participantes: <strong>empresas que fornecem serviço de limpeza, vigilância, obras, construção de imóveis, serviços advocatícios</strong></Text>
-              <Text pl={5} as="h3"> Tabela 4 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoIV"><GradientText>Anexo 4 – Prestadores de Serviço</GradientText></Link></Text>
+              <Text pl={5} as="h3"> Tabela 4 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoIV"><GradientText style={""}>Anexo 4 – Prestadores de Serviço</GradientText></Link></Text>
               <Text px={5} fontSize="23px" lineHeight="35px">
               </Text>
 
@@ -248,13 +248,13 @@ export default function TabelaSimplesNacionalCompleta() {
                     <Tr >
                       <Th textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Faturamento total dos últimos 12 meses'>
-                          <Text color="white"> Receita Bruta Total<GradientText>*</GradientText></Text>
+                          <Text color="white"> Receita Bruta Total<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Alíquota para fins de cálculo, não é a alíquota final'>
-                        <Text color="white"> Alíquota<GradientText>*</GradientText></Text>
+                        <Text color="white"> Alíquota<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Quanto descontar do valor recolhido'>
-                        <Text color="white"> Fator Redutor<GradientText>*</GradientText></Text>
+                        <Text color="white"> Fator Redutor<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                     </Tr>
                   </Thead>
@@ -301,7 +301,7 @@ export default function TabelaSimplesNacionalCompleta() {
                 Anexo V do Simples Nacional
               </Heading>
               <Text pl={5} as="h2"> Participantes: <strong> empresas que fornecem serviço de auditoria, jornalismo, tecnologia, publicidade, engenharia, entre outros</strong></Text>
-              <Text pl={5} as="h3"> Tabela 5 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoV"><GradientText>Anexo 5 – Prestadores de Serviço</GradientText></Link></Text>
+              <Text pl={5} as="h3"> Tabela 5 Simples Nacional: <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/AnexoV"><GradientText style={""}>Anexo 5 – Prestadores de Serviço</GradientText></Link></Text>
               <Text px={5} fontSize="23px" lineHeight="35px">
               </Text>
 
@@ -312,13 +312,13 @@ export default function TabelaSimplesNacionalCompleta() {
                     <Tr >
                       <Th textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Faturamento total dos últimos 12 meses'>
-                          <Text color="white"> Receita Bruta Total<GradientText>*</GradientText></Text>
+                          <Text color="white"> Receita Bruta Total<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Alíquota para fins de cálculo, não é a alíquota final'>
-                        <Text color="white"> Alíquota<GradientText>*</GradientText></Text>
+                        <Text color="white"> Alíquota<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Quanto descontar do valor recolhido'>
-                        <Text color="white"> Fator Redutor<GradientText>*</GradientText></Text>
+                        <Text color="white"> Fator Redutor<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                     </Tr>
                   </Thead>

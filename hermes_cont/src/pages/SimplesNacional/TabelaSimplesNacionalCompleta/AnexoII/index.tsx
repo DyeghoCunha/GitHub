@@ -49,18 +49,18 @@ export default function AnexoII() {
                     <Tr>
                       <Th color="white" textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Faixa em que a empresa se encontra'>
-                          <Text>Faixa<GradientText>*</GradientText></Text>
+                          <Text>Faixa<GradientText style={""}>*</GradientText></Text>
                         </Tooltip> </Th>
 
                       <Th color="white" textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Faturamento total dos últimos 12 meses'>
-                          <Text> Receita Bruta Total<GradientText>*</GradientText></Text>
+                          <Text> Receita Bruta Total<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Alíquota para fins de cálculo, não é a alíquota final'>
-                        <Text> Alíquota<GradientText>*</GradientText></Text>
+                        <Text> Alíquota<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Quanto descontar do valor recolhido'>
-                        <Text>Fator Redutor<GradientText>*</GradientText></Text>
+                        <Text>Fator Redutor<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                     </Tr>
                   </Thead>
@@ -127,31 +127,31 @@ export default function AnexoII() {
                       </Th>
                       <Th color="white" textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Contribuição Patronal Previdenciária'>
-                          <Text>CPP<GradientText>*</GradientText></Text>
+                          <Text>CPP<GradientText style={""}>*</GradientText></Text>
                         </Tooltip> </Th>
                       <Th color="white" textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Imposto sobre Produtos Industrializados'>
-                          <Text>IPI<GradientText>*</GradientText></Text>
+                          <Text>IPI<GradientText style={""}>*</GradientText></Text>
                         </Tooltip> </Th>
                       <Th color="white" textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Contribuição Social Sob Lucro Líquido'>
-                          <Text> CSLL<GradientText>*</GradientText></Text>
+                          <Text> CSLL<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                         label='Imposto de Circulação de Mercadoria e Serviços'>
-                        <Text> ICMS<GradientText>*</GradientText></Text>
+                        <Text> ICMS<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                         label='Imposto de Renda de Pessoa Jurídica'>
-                        <Text>IRPJ<GradientText>*</GradientText></Text>
+                        <Text>IRPJ<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                         label='Contribuição para o Financiamento da Seguridade Social'>
-                        <Text>Cofins<GradientText>*</GradientText></Text>
+                        <Text>Cofins<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                         label='Programa de Integração Social (PIS) e o Programa de Formação do Patrimônio do Servidor Público (PASEP)'>
-                        <Text>PIS/Pasep<GradientText>*</GradientText></Text>
+                        <Text>PIS/Pasep<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                     </Tr>
                   </Thead>
@@ -232,6 +232,6 @@ export default function AnexoII() {
 }
 AnexoII.getLayout = function getLayout(page: React.ReactElement) {
   return (
-   <ForumLayout>{page}</ForumLayout>
+    <ForumLayout>{page}</ForumLayout>
   );
 };
