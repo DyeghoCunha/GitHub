@@ -1,3 +1,4 @@
+"use client"
 import GradientText from '@/components/atoms/GradientText/GradientText'
 import { calculaFatorR } from '@/utils/fatorR'
 import { Box, Button, Center, Heading, ListItem, Text, UnorderedList, VStack } from '@chakra-ui/react'
@@ -43,7 +44,7 @@ export default function FatorR() {
             </UnorderedList>
           </VStack>
           <Box w="500px" h="800px" >
-            <CalculaFatorR />
+            {/* <CalculaFatorR /> */}
           </Box>
         </VStack>
       </VStack></Center>

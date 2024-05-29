@@ -40,12 +40,12 @@ import { ForumLayout } from '@/components/templates/ForumLayout';
 export default function CalculadoraSimples() {
 
   const [input, setInput] = useState('')
-  const [rbt12, setRbt12] = useState<number>()
+  const [rbt12, setRbt12] = useState<number>(0)
   const [rbt12String, setRbt12String] = useState("R$ 0,00")
   const [isRbt12, setIsRbt12] = useState(false)
   const [anexo, setAnexo] = useState<string>("")
   const [isAnexo, setIsAnexo] = useState(false)
-  const [faturamento, setFaturamento] = useState<number>()
+  const [faturamento, setFaturamento] = useState<number>(0)
   const [isFaturamento, setIsFaturamento] = useState(false)
   const [faturamentoString, setFaturamentoString] = useState("R$ 0,00")
   const [isBtnValid, setIsBtnValid] = useState(false)
@@ -343,7 +343,7 @@ export default function CalculadoraSimples() {
                     Receita Bruta dos últimos 12 meses
                   </FormHelperText>
                 ) : (
-                  <FormErrorMessage><Text>Você não preencheu o valor da <strong> Receita Bruta</strong></Text> </FormErrorMessage>
+                  <FormErrorMessage>Você não preencheu o valor da <strong> Receita Bruta</strong> </FormErrorMessage>
                 )}
               </FormControl>
               <FormControl isInvalid={isFaturamento}>
@@ -382,7 +382,7 @@ export default function CalculadoraSimples() {
                     Faturamento para base de Cálculo
                   </FormHelperText>
                 ) : (
-                  <FormErrorMessage><Text>Você não preencheu o valor do <strong> Faturamento </strong></Text></FormErrorMessage>
+                  <FormErrorMessage>Você não preencheu o valor do <strong> Faturamento </strong></FormErrorMessage>
                 )}
               </FormControl>
 
@@ -391,17 +391,15 @@ export default function CalculadoraSimples() {
 
             <FormControl as='fieldset' isInvalid={isError} px={4} borderRadius="8px" my={10} border="3px solid gray">
               <FormLabel as='legend' border="3px solid gray" px={2} borderRadius="8px">Selecione um Anexo</FormLabel>
-              <RadioGroup defaultValue='' onChange={(value) => setAnexo(value)} colorScheme='yellow' mb={8}>
-                <HStack justify="space-around">
-                  <Radio size="lg" value='Anexo I'><Text fontSize="20px">Anexo I</Text></Radio>
-                  <Radio size="lg" value='Anexo II'><Text fontSize="20px">Anexo II</Text></Radio>
-                  <Radio size="lg" value='Anexo III'><Text fontSize="20px">Anexo III</Text></Radio>
-                  <Radio size="lg" value='Anexo IV'><Text fontSize="20px">Anexo IV</Text></Radio>
-                  <Radio size="lg" value='Anexo V'><Text fontSize="20px">Anexo V</Text></Radio>
-                </HStack>
+              <RadioGroup defaultValue=''   onChange={(value) => setAnexo(value)} colorScheme='yellow' mb={8}>
+                  <Radio mr={5} size="lg" value='Anexo I' fontSize="20px">Anexo I</Radio>
+                  <Radio mr={5} size="lg" value='Anexo II' fontSize="20px" >Anexo II</Radio>
+                  <Radio mr={5} size="lg" value='Anexo III' fontSize="20px">Anexo III</Radio>
+                  <Radio mr={5} size="lg" value='Anexo IV' fontSize="20px">Anexo IV</Radio>
+                  <Radio mr={5} size="lg" value='Anexo V' fontSize="20px">Anexo V</Radio>
               </RadioGroup>
               {!isError ? (
-                <FormHelperText><Text>Em caso de dúvida leia o nosso <Link target='_blank' rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"> <GradientText style={""}>artigo</GradientText></Link></Text></FormHelperText>
+                <FormHelperText>Em caso de dúvida leia o nosso <Link target='_blank' rel="noopener noreferrer" href="/SimplesNacional/TabelaSimplesNacionalCompleta"> <strong>artigo</strong></Link></FormHelperText>
               ) : (
                 <FormErrorMessage>É necessário escolher um anexo</FormErrorMessage>
               )}
@@ -423,14 +421,21 @@ export default function CalculadoraSimples() {
           </CardBody>
           <CardFooter gap={2} display={isFooter ? "flex" : "none"}  >
 
-
             <VStack w="100%" >
               <HStack w="100%" justify="space-around">
                 <Box border="3px solid gray" borderRadius="8px" px={2} mb={10}>
-                  <HStack><Text fontSize="20px" color="gray">Aliquota: </Text><Text fontSize="26px"><GradientText style={""}>{formatNumberToPercentage(aliquota)}</GradientText></Text></HStack>
+                  <HStack>
+                    
+                    <Text fontSize="20px" color="gray">Aliquota: </Text>
+                    <GradientText style={{ fontSize: "26px" }}>{formatNumberToPercentage(aliquota)}</GradientText>
+                   
+                  </HStack>
                 </Box>
                 <Box border="3px solid gray" borderRadius="8px" px={2} mb={10}>
-                  <HStack><Text fontSize="20px" color="gray">DAS:</Text><Text fontSize="26px"> <GradientText style={""}>{formatarParaReal3(das)}</GradientText></Text></HStack>
+                  <HStack>
+                    <Text fontSize="20px" color="gray">DAS:</Text>
+                    <GradientText style={{ fontSize: "26px" }}>{formatarParaReal3(das)}</GradientText>
+                    </HStack>
                 </Box>
               </HStack>
 

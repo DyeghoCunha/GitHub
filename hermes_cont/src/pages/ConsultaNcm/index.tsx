@@ -34,15 +34,15 @@ export default function ConsultaNcm() {
             <HStack justifyContent="start" gap="5%" w="100%">
               <HStack>
                 <Text color="gray">Código: </Text>
-                <Text w="100px"><Skeleton isLoaded={!isLoading} h="20px" startColor='rgba(242,242,243,1)' fadeDuration={4} endColor='rgba(241,226,194,1)'>{prop.codigo}</Skeleton></Text>
+                <Skeleton w="200px" fontSize="20px" isLoaded={!isLoading} h="20px" startColor='rgba(242,242,243,1)' fadeDuration={4} endColor='rgba(241,226,194,1)'>{prop.codigo}</Skeleton>
               </HStack>
               <HStack>
                 <Text color="gray">Data de Início: </Text>
-                <Text w="100px"><Skeleton isLoaded={!isLoading} h="20px" startColor='rgba(242,242,243,1)' fadeDuration={4} endColor='rgba(241,226,194,1)'>{prop.data_inicio}</Skeleton></Text>
+                <Skeleton w="200px" isLoaded={!isLoading} h="20px" startColor='rgba(242,242,243,1)' fadeDuration={4} endColor='rgba(241,226,194,1)'>{prop.data_inicio}</Skeleton>
               </HStack>
               <HStack>
                 <Text color="gray">Data de Fim: </Text>
-                <Text w="100px"><Skeleton isLoaded={!isLoading} h="20px" startColor='rgba(242,242,243,1)' fadeDuration={4} endColor='rgba(241,226,194,1)'>{prop.data_fim}</Skeleton></Text>
+                <Skeleton w="200px" isLoaded={!isLoading} h="20px" startColor='rgba(242,242,243,1)' fadeDuration={4} endColor='rgba(241,226,194,1)'>{prop.data_fim}</Skeleton>
               </HStack>
             </HStack>
           </VStack>
@@ -51,7 +51,7 @@ export default function ConsultaNcm() {
         <CardBody mt={0} w="100%">
           <VStack align="start">
             <Text fontSize="20px"><GradientText style={""}>Descrição</GradientText></Text>
-            <Text w="100%"><Skeleton isLoaded={!isLoading} h="20px" startColor='rgba(242,242,243,1)' fadeDuration={4} endColor='rgba(241,226,194,1)'>{prop.descricao}</Skeleton></Text>
+            <Skeleton w="100%" isLoaded={!isLoading} h="20px" startColor='rgba(242,242,243,1)' fadeDuration={4} endColor='rgba(241,226,194,1)'>{prop.descricao}</Skeleton>
           </VStack>
         </CardBody>
       </CardDefault>

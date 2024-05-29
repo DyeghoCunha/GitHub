@@ -99,7 +99,7 @@ export default function CalculaFatorR() {
         </Tooltip>
         <Menu >
           <MenuButton w="100%" as={Button} boxShadow="inset 4px 4px 8px rgba(0,0,0,0.5),inset -4px -4px 8px rgba(0,0,0,0.5)" outline="1px solid rgba(0,0,0,0.3)" variant={isAtividade ? "outlined" : "hermes"} fontSize="20px">
-            <Text><GradientText style={""}>Selecione a Atividade</GradientText></Text>
+            <GradientText style={""}>Selecione a Atividade</GradientText>
           </MenuButton>
           <MenuList zIndex={12} m={0} bgColor="rgba(255,255,255,0.4)" border=" 2px solid rgba(255,255,255,0.6)"
             backdropFilter="blur(5px)"

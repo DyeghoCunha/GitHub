@@ -44,13 +44,11 @@ function HeaderTabForum() {
 
     <HStack gap="40px" className={styles.nav} >
       <HoverContainer>
-        <Magnetic>
           <Box position="relative">
             <Box >
-              <LinkHeader href="/" onClick={()=>{}}><Text fontSize="25px">Home</Text></LinkHeader>
+              <LinkHeader href="/" onClick={()=>{}}>Home</LinkHeader>
             </Box>
           </Box>
-        </Magnetic>
       </HoverContainer>
       <HeaderMenu />
     </HStack>

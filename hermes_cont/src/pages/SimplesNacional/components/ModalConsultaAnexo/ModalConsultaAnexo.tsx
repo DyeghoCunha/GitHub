@@ -99,14 +99,22 @@ export default function ModalConsultaAnexo() {
       <Box as='button' justifyContent="end" pr={0} pt={0} pl="0px"
         alignItems="end" borderRadius="100% 0px 6px 0px"
         onClick={onOpen}
-        outline="3px solid gray "
+        outline="2px solid gray "
+        boxShadow="-4px -4px 8px rgba(0,0,0,0.5)"
       >
-        <Text color="hermesBlue.400" _hover={{ color: "white" }}><GradientBox style={{
-
-          justifyContent: "end", paddingRight: "1px", paddingTop: "5px", paddingLeft: "120px",
-          alignItems: "end", borderRadius: "100% 0px 8px 0px",
+        <Box 
+        bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)"
+        justifyContent= "end" 
+        paddingRight= "1px" 
+        paddingTop= "6px" 
+        paddingLeft= "120px"
+          alignItems= "end" 
+          borderRadius= "100% 0px 8px 0px">
+        <GradientText style={{
           fontSize: "25px", fontWeight: "bold",
-        }}>Consulta Anexo</GradientBox></Text>
+        }}>Consulta Anexo</GradientText>
+        </Box>
+
       </Box>
 
       <Modal isOpen={isOpen} onClose={onClose} >
