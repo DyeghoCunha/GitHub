@@ -71,7 +71,18 @@ export interface IFormImput {
     children: React.ReactNode
   }
 
-  export interface Empresa {
+export interface INcm {
+  codigo: string;
+  descricao: string;
+  data_inicio: string;
+  data_fim: string;
+  tipo_ato: string;
+  numero_ato: string;
+  ano: string;
+}
+
+
+  export interface IEmpresa {
   cnpj: string;
   identificador_matriz_filial: number;
   descricao_matriz_filial: string;

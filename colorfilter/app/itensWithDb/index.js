@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from 'react';
 import { Box, Center, Card, Text, VStack, Heading, Image, SimpleGrid } from '@chakra-ui/react';
 import { SwatchesPicker } from 'react-color';

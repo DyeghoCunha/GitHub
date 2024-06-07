@@ -11,7 +11,7 @@ import { getSkins } from '@/lib/steamDb';
 interface IItemContext {
   skins: IItemType[];
   setSkins: React.Dispatch<React.SetStateAction<IItemType[]>>;
-  itemWithColor: ItemWithColor[];
+  itemWithColor: any;
   buildPalette: any
   quantization: any;
   buildRgb: any;
@@ -19,9 +19,11 @@ interface IItemContext {
   allColorsHEX: any
   groupColorsFinal: any;
   similarColors: any;
+  
+  setItemWithColor: React.Dispatch<React.SetStateAction<ItemWithColor[]>>;
  sortedColorGroups:any;
 }
-const ItemContext = createContext<IItemContext | undefined>(undefined);
+export const ItemContext = createContext(undefined);
 
 
 
@@ -71,10 +73,11 @@ export function ItemColorProvider({ children }: { children: React.ReactNode }) {
   const [sortedColorGroups, setSortedColorGroups] = useState({})
 
 useEffect(() => {
+  console.log("Start")
     async function fetchSkins() {
-      const skins = await getSkins();
-      setSkins(skins);
-      //console.log(skins);
+      const skinsProp = await getSkins();
+      setSkins(skinsProp);
+      console.log(skinsProp);
     }
     fetchSkins();
   }, []);
@@ -498,6 +501,7 @@ useEffect(() => {
       buildRgb,
       quantization,
       itemWithColor,
+      setItemWithColor,
       loadImageFromCanvas,
       allColorsHEX,
       groupColorsFinal,
@@ -512,8 +516,9 @@ useEffect(() => {
 
 export const useItemColorContext = () => {
   const context = useContext(ItemContext);
+  
   if (!context) {
-    throw new Error("useWeaponContext deve ser utilizado dentro de um WeaponProvider");
+    throw new Error("erro");
   }
   return context;
-};
+}

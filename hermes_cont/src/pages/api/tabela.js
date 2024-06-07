@@ -24,8 +24,8 @@ export async function accessSpreadsheet() {
     aliquota: row.Alíquota,
     hermes: row.Hermès
   }));
-console.log("click")
-  console.log(tabelaEnquadramento);
+//console.log("click")
+  //console.log(tabelaEnquadramento);
 }
 
 accessSpreadsheet();

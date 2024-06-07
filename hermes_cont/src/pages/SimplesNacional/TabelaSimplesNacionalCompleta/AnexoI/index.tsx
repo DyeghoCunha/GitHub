@@ -4,22 +4,22 @@ import { Box, Center, Heading, HStack, Table, TableCaption, TableContainer, Tbod
 import GradientText from '@/components/atoms/GradientText/GradientText';
 import Link from 'next/link';
 import image from "/public/hermesTabelaBg3.png"
+import { ForumLayout } from '@/components/templates/ForumLayout';
 
 export default function AnexoI() {
 
 
   return (
-    <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)" my={10}>
-      <HStack w="80%"  >
-        <Box border="1px solid white" as='aside' h="100vh" w="10%" ></Box>
-        <Box w="100%" h="100%" pb={10}>
+    <Center w="100vw" h="100%" bgGradient="linear(130deg, rgba(241,226,194,1) 0%, white 40%, rgba(242,242,243,1) 100%)">
+      <VStack align="center" justify="start" h="100%" w="100%" mt="80px">
+        <Box w="50%" h="100%" pb={10}>
           <VStack >
             <Box as='section'>
               <Heading my={10} fontSize="40" color="hermesBlue.500" w="100%" pl={5}>
                 O que é Anexo I do Simples Nacional?
               </Heading>
               <Text px={5} fontSize="23px" lineHeight="35px">
-                O Anexo I da tabela do <Link href="/"><GradientText style={{ fontWeight: "bold" }}>Simples Nacional</GradientText></Link> é destinado às empresas do Comércio em geral. Os impostos são calculados com base em percentual destinado a cada Tributo de acordo com a sua respectiva Faixa.
+                O Anexo I da tabela do <Link href="/SimplesNacional/TabelaSimplesNacionalCompleta/"><GradientText style={{ fontWeight: "bold" }}>Simples Nacional</GradientText></Link> é destinado às empresas do Comércio em geral. Os impostos são calculados com base em percentual destinado a cada Tributo de acordo com a sua respectiva Faixa.
               </Text>
             </Box>
             <Box as='section'>
@@ -48,18 +48,18 @@ export default function AnexoI() {
                     <Tr>
                       <Th color="white" textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Faixa em que a empresa se encontra'>
-                          <Text>Faixa<GradientText>*</GradientText></Text>
+                          <Text>Faixa<GradientText style={""}>*</GradientText></Text>
                         </Tooltip> </Th>
 
                       <Th color="white" textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Faturamento total dos últimos 12 meses'>
-                          <Text> Receita Bruta Total<GradientText>*</GradientText></Text>
+                          <Text> Receita Bruta Total<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Alíquota para fins de cálculo, não é a alíquota final'>
-                        <Text> Alíquota<GradientText>*</GradientText></Text>
+                        <Text> Alíquota<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow label='Quanto descontar do valor recolhido'>
-                        <Text>Fator Redutor<GradientText>*</GradientText></Text>
+                        <Text>Fator Redutor<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                     </Tr>
                   </Thead>
@@ -125,28 +125,28 @@ export default function AnexoI() {
                       </Th>
                       <Th color="white" textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Contribuição Patronal Previdenciária'>
-                          <Text>CPP<GradientText>*</GradientText></Text>
+                          <Text>CPP<GradientText style={""}>*</GradientText></Text>
                         </Tooltip> </Th>
 
                       <Th color="white" textTransform="none" fontSize="18px">
                         <Tooltip placement='auto' hasArrow label='Contribuição Social Sob Lucro Líquido'>
-                          <Text> CSLL<GradientText>*</GradientText></Text>
+                          <Text> CSLL<GradientText style={""}>*</GradientText></Text>
                         </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                         label='Imposto de Circulação de Mercadoria e Serviços'>
-                        <Text> ICMS<GradientText>*</GradientText></Text>
+                        <Text> ICMS<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                         label='Imposto de Renda de Pessoa Jurídica'>
-                        <Text>IRPJ<GradientText>*</GradientText></Text>
+                        <Text>IRPJ<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                         label='Contribuição para o Financiamento da Seguridade Social'>
-                        <Text>Cofins<GradientText>*</GradientText></Text>
+                        <Text>Cofins<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                       <Th color="white" textTransform="none" fontSize="18px" ><Tooltip placement='auto' hasArrow
                         label='Programa de Integração Social (PIS) e o Programa de Formação do Patrimônio do Servidor Público (PASEP)'>
-                        <Text>PIS/Pasep<GradientText>*</GradientText></Text>
+                        <Text>PIS/Pasep<GradientText style={""}>*</GradientText></Text>
                       </Tooltip></Th>
                     </Tr>
                   </Thead>
@@ -215,12 +215,12 @@ export default function AnexoI() {
           </VStack>
 
         </Box>
-      </HStack>
+      </VStack>
     </Center>
   )
 }
 AnexoI.getLayout = function getLayout(page: React.ReactElement) {
   return (
-    <DefaultLayout>{page}</DefaultLayout>
+    <ForumLayout>{page}</ForumLayout>
   );
 };
